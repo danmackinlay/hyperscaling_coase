@@ -1,0 +1,43 @@
+---
+title: Notes on agency
+authors:
+  - name: Norah Jones
+    affiliation: The University
+    roles: writing
+    corresponding: true
+bibliography: references.bib
+filters:
+- tikz
+---
+
+## Section
+This is a simple placeholder for the manuscript's main document [@knuth84].
+
+::: {#fig-bayesnet-3 .figure fig-align="center"}
+```{.tikz filename='bayesnet-3'}
+\usetikzlibrary{bayesnet}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\tikzstyle{latent}=[circle, draw, thick, minimum size=1cm]
+\begin{tikzpicture}[scale=2, transform shape]
+
+\node[obs] (X) {$X$};
+\node[obs, right=of X] (Y) {$Y$};
+\node[latent, right=of Y] (W) {$W$};
+\node[latent, below=of Y] (YS) {$Y_*$};
+\node[obs, left=of YS] (XS) {$X_*$};
+
+% Connect the nodes
+\edge {X} {Y};
+\edge {W} {Y};
+\edge {W} {YS};
+\edge {XS} {YS};
+
+% Add plate
+\plate {XY} {(X)(Y)} {$N$};
+
+% inferential target
+\draw[color=red, dotted, thick] (YS) circle (0.7cm);
+\end{tikzpicture}
+```
+:::

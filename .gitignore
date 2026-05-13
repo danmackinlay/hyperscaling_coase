@@ -1,0 +1,37 @@
+# Quarto render artifacts
+*_cache/
+/.quarto/
+**/*.quarto_ipynb
+.qmd-*/          # old per-doc caches, if any
+
+# Default output dirs
+/_site/
+/_book/
+/docs/
+/public/
+/output/
+/_manuscript/
+/_site/
+/_book/
+
+# Per-document HTML support dirs
+*_files/
+
+# Common document outputs (if rendered next to source)
+*.html
+*.pdf
+*.docx
+*.epub
+
+# Jupyter / R artifacts
+.ipynb_checkpoints/
+.Rproj.user/
+.Rhistory
+.RData
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
