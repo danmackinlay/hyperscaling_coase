@@ -1,17 +1,20 @@
 ---
 title: Notes on agency
 authors:
-  - name: Norah Jones
+  - name: Chris Pang
     affiliation: The University
     roles: writing
     corresponding: true
+  - name: Dan MacKinlay
+    affiliation: ACS Research
+    roles: writing
 bibliography: references.bib
 filters:
 - tikz
 ---
 
 ## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].
+This is a simple placeholder for the manuscript's main document [@Herrmann2026Bayesian].
 
 ::: {#fig-bayesnet-3 .figure fig-align="center"}
 ```{.tikz filename='bayesnet-3'}
