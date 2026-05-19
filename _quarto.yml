@@ -1,21 +1,34 @@
 project:
-  type: manuscript
+  type: book
+  render:
+    - index.qmd
+    - pgms.qmd
 
-manuscript:
-  article: index.qmd
+book:
+  title: Notes on agency
+  author:
+    - name: Chris Pang
+      affiliation: The University
+    - name: Dan MacKinlay
+      affiliation: ACS Research
+  chapters:
+    - index.qmd
+    - sec_pgms.qmd
+
+bibliography: references.bib
+
+filters:
+  - tikz
 
 format:
   html:
     comments:
       hypothesis: true
   docx: default
-  jats: default
 
+  # jats: not supported by book projects
   # (other formats)
   # pdf: default
 
 execute:
   freeze: true
-
-
-

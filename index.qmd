@@ -1,16 +1,5 @@
 ---
-title: Notes on agency
-authors:
-  - name: Chris Pang
-    affiliation: The University
-    roles: writing
-    corresponding: true
-  - name: Dan MacKinlay
-    affiliation: ACS Research
-    roles: writing
-bibliography: references.bib
-filters:
-- tikz
+title: Introduction
 ---
 
 ## Section
@@ -18,6 +7,9 @@ This is a simple placeholder for the manuscript's main document [@Herrmann2026Ba
 
 ::: {#fig-bayesnet-3 .figure fig-align="center"}
 ```{.tikz filename='bayesnet-3'}
+%%| caption: Example Bayesnet diagram
+%%| filename: bayesnet-4
+
 \usetikzlibrary{bayesnet}
 \usetikzlibrary{positioning}
 \usetikzlibrary{fit}
