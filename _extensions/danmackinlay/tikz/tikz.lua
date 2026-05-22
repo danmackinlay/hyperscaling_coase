@@ -89,9 +89,25 @@ end
 
 -- Function to process code block attributes and options
 local function diagram_options(cb)
+  -- The `%%| key: value` comment directives are the canonical, current
+  -- syntax (and match Quarto's cell-options convention). Code-block fence
+  -- attributes (`{.tikz filename=…}`) are the deprecated pre-1.0 form. When
+  -- a key is given both ways, the %%| directive wins; we only let a fence
+  -- attribute through if the %%| form didn't set that key, and we warn on
+  -- any genuine conflict so the silent override becomes visible.
   local attribs = properties_from_code(cb.text, '%%')
   for key, value in pairs(cb.attributes) do
-    attribs[key] = value
+    if attribs[key] == nil then
+      attribs[key] = value
+    elseif attribs[key] ~= value then
+      quarto.log.warning(
+        "tikz: '" .. key .. "' is set both as a code-block fence " ..
+        "attribute (" .. tostring(value) .. ") and via the canonical " ..
+        "%%| " .. key .. ": directive (" .. tostring(attribs[key]) ..
+        "). The %%| directive wins; the fence attribute is ignored. " ..
+        "Remove one to silence this warning."
+      )
+    end
   end
 
   local alt
@@ -249,7 +265,9 @@ end
 local function compile_tikz_to_svg(code, user_opts, conf, basename)  -- Added conf and basename parameters
   -- Ensure required dependencies are available
   if not check_dependency(conf.tex_engine) then
-    error(conf.tex_engine .. " not found. Please install LaTeX to compile TikZ diagrams.")
+    error(conf.tex_engine .. " not found on PATH. Install it, or set " ..
+      "tikz.tex-engine to a TeX engine you do have (pdflatex, lualatex, " ..
+      "xelatex, …).")
   end
   -- The svg converter is only needed when we actually convert to SVG. For
   -- PDF output we embed the intermediate PDF directly and nothing here is
@@ -310,8 +328,9 @@ $body$
       -- onto a copy of the current env to preserve PATH and friends.
       local env = pandoc.system.environment()
       env.TEXINPUTS = conf.texinputs
-      -- dvisvgm consumes a DVI file, so ask pdflatex for DVI output in that
-      -- case. Otherwise (inkscape) we want the default PDF output.
+      -- dvisvgm consumes a DVI file, so ask the TeX engine for DVI output
+      -- in that case. Every other path (inkscape, pdftocairo, custom
+      -- svg-command, PDF passthrough) consumes the default PDF output.
       local latex_args = { '-interaction=nonstopmode' }
       if conf.svg_engine == 'dvisvgm' then
         table.insert(latex_args, '-output-format=dvi')
@@ -581,10 +600,11 @@ local function build_texinputs()
   return table.concat(parts, sep) .. sep
 end
 
--- Function to configure the filter based on metadata and format
-local function configure (meta, format_name)
+-- Function to configure the filter based on document metadata. Reads
+-- top-level `tikz:` config and produces a normalized `conf` table that the
+-- per-block code path consumes.
+local function configure (meta)
   local conf = meta.tikz or {}
-  local format = format_name
   meta.tikz = nil  -- Remove tikz metadata to avoid processing it further
 
   -- cache for image files
@@ -729,7 +749,7 @@ end
 return {
   {
     Pandoc = function(doc)
-      local conf = configure(doc.meta, FORMAT)
+      local conf = configure(doc.meta)
       return doc:walk {
         CodeBlock = code_to_figure(conf),
       }
