@@ -13,7 +13,7 @@ book:
       affiliation: ACS Research
   chapters:
     - index.qmd
-    - sec_pgms.qmd
+    - sec_decision_theories.qmd
 
 bibliography: references.bib
 
