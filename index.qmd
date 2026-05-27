@@ -2,5 +2,5 @@
 title: Introduction
 ---
 
-This is a simple placeholder for the manuscript's main document [@Herrmann2026Bayesian].
-
+This is a simple placeholder for the manuscript's main document.
+It supports citations [@Herrmann2026Bayesian].

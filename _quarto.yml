@@ -13,6 +13,8 @@ book:
       affiliation: ACS Research
   chapters:
     - index.qmd
+    - sec_ai_epistemics.qmd
+    - sec_collective_agency.qmd
     - sec_decision_theories.qmd
 
 bibliography: references.bib

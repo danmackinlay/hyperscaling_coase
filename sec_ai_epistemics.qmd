@@ -1,0 +1,7 @@
+# Epistemic tools and models in AI
+
+First novelty issue here is that Owen Cotton-Barratt et al have staked a claim for many ideas.
+It is unclear to me if they plan to also action these ideas.
+
+* [AI for AI for Epistemics](https://www.forethought.org/research/ai-for-ai-for-epistemics)
+* [AI Tools for Trust: Community Notes, Rhetoric Detection & More](https://www.forethought.org/research/design-sketches-collective-epistemics) — design sketches for collective epistemics.

@@ -1,0 +1,18 @@
+% Shared TikZ style definitions for mechanised causal influence diagrams.
+% \input{cid_styles} from any .tikz code block in this project — the tikz
+% filter's TEXINPUTS includes the qmd directory.
+%
+% Convention:
+%   latent       — chance node (open circle)
+%   mechanism    — policy / decision-rule node (dashed circle)
+%   decision     — agent's decision (square)
+%   obsdecision  — observed past decision (shaded square)
+%   utility      — reward / utility (diamond)
+
+\usetikzlibrary{bayesnet,positioning,fit,shapes.geometric}
+
+\tikzstyle{latent}=[circle, draw, thick, minimum size=1cm]
+\tikzstyle{mechanism}=[circle, draw, thick, dashed, minimum size=1cm]
+\tikzstyle{decision}=[rectangle, draw, thick, minimum size=1cm]
+\tikzstyle{obsdecision}=[rectangle, draw, thick, minimum size=1cm, fill=gray!25]
+\tikzstyle{utility}=[diamond, draw, thick, minimum size=1cm, aspect=1.3]
