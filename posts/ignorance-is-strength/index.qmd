@@ -1,0 +1,7 @@
+---
+title: "Ignorance is strength"
+date: "2026-06-26"
+categories: [decision theory, agency]
+---
+
+*Notes in progress.*

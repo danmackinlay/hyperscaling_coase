@@ -1,6 +1,17 @@
 ---
-title: Introduction
+title: "Notes on agency"
+subtitle: "Working notes on mechanised causal graphs, decision theory, and agency."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
 ---
 
-This is a simple placeholder for the manuscript's main document.
-It supports citations [@Herrmann2026Bayesian].
+A loose collection of notes on mechanised causal influence diagrams, decision
+theory, and agency, following the MacDermott et al. framing. Each post below is a
+self-contained note; many are still stubs.

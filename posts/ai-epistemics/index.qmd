@@ -1,4 +1,8 @@
-# Epistemic tools and models in AI
+---
+title: "Epistemic tools and models in AI"
+date: "2026-05-27"
+categories: [AI, epistemics]
+---
 
 First novelty issue here is that Owen Cotton-Barratt et al have staked a claim for many ideas.
 It is unclear to me if they plan to also action these ideas.

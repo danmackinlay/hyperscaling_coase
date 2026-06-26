@@ -1,21 +1,22 @@
 project:
-  type: book
+  type: website
+  output-dir: _site
+  # Only real content renders; CLAUDE.md / README.md stay out of the site.
   render:
-    - index.qmd
-    - pgms.qmd
+    - "*.qmd"
+    - "posts/**/*.qmd"
 
-book:
-  title: Notes on agency
-  author:
-    - name: Chris Pang
-      affiliation: The University
-    - name: Dan MacKinlay
-      affiliation: ACS Research
-  chapters:
-    - index.qmd
-    - sec_ai_epistemics.qmd
-    - sec_collective_agency.qmd
-    - sec_decision_theories.qmd
+website:
+  title: "Notes on agency"
+  description: "Working notes on mechanised causal graphs, decision theory, and agency."
+  reader-mode: true
+  # To enable the RSS feed: set site-url to the deployed URL, re-add `feed: true`
+  # to the listing in index.qmd, and add an rss navbar item linking to index.xml.
+  # site-url: "https://example.com"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
 
 bibliography: references.bib
 
@@ -24,13 +25,10 @@ filters:
 
 format:
   html:
+    theme: cosmo
+    toc: true
     comments:
       hypothesis: true
-  docx: default
-
-  # jats: not supported by book projects
-  # (other formats)
-  # pdf: default
 
 execute:
   freeze: true

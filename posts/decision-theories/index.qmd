@@ -1,5 +1,12 @@
-# Decision theories
+---
+title: "Decision theories"
+date: "2026-05-13"
+categories: [decision theory, causal graphs]
+---
 
+Mechanised causal influence diagrams let us read the structure of a decision
+problem off the page. They rest on a causal framework [@Herrmann2026Bayesian];
+here are two classic puzzles drawn that way.
 
 ## Newcomb's problem
 

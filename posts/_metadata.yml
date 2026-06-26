@@ -1,0 +1,7 @@
+# Shared front-matter applied to every post in posts/.
+# Per-post index.qmd files only need title / date / categories.
+author:
+  - name: Chris Pang
+    affiliation: The University
+  - name: Dan MacKinlay
+    affiliation: ACS Research

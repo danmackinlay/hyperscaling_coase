@@ -1,14 +1,14 @@
 # notes_on_agency
 
-Quarto **book** on mechanized causal graphs, decision theory, and agency (MacDermott et al. framing). Outputs: HTML (chaptered, with Hypothesis annotations), DOCX. Output dir: `_book/`. (JATS is not supported by book projects.)
+Quarto **website** (blog) on mechanized causal graphs, decision theory, and agency (MacDermott et al. framing). Output: HTML with Hypothesis annotations. Output dir: `_site/`.
 
-Chapters and project-wide settings (`bibliography`, `filters`, formats) live in `_quarto.yml`. Only files in `project: render:` are rendered — stray `.md` (e.g. this file) are ignored. To add a chapter: create `foo.qmd`, then add it to both `project.render` and `book.chapters`.
+Each topic is a post under `posts/<slug>/index.qmd`. Root `index.qmd` is the listing/home page; shared post front-matter (authors) lives in `posts/_metadata.yml`; project-wide settings (`bibliography`, `filters`, `format`) live in `_quarto.yml`. Posts are auto-discovered by the listing — there is no render list to maintain. To add a post: create `posts/<slug>/index.qmd` with `title`, `date`, and `categories` front-matter and it appears on the home page automatically.
 
 ## Diagram rendering — TikZ
 
 Custom TikZ filter: `_extensions/danmackinlay/tikz/` (v1.3.0, Lua-based).
 
-**Usage pattern** (match `index.qmd` exactly):
+**Usage pattern** (see `posts/decision-theories/index.qmd`):
 
 ```qmd
 ::: {#fig-label .figure fig-align="center"}
@@ -24,6 +24,7 @@ Custom TikZ filter: `_extensions/danmackinlay/tikz/` (v1.3.0, Lua-based).
 - Code fence is `{.tikz}` — this is a Lua filter, not a knitr engine. No `r`/`python`.
 - Figure label, caption, and alignment go on the outer `:::` div, not inside the block.
 - `filename='...'` attribute controls the cache key.
+- `\input{cid_styles}` pulls in the shared node styles (`latent`, `mechanism`, `decision`, `obsdecision`, `utility`) from `cid_styles.tex`, which sits **next to the post** (`posts/decision-theories/cid_styles.tex`). The filter puts each source `.qmd`'s own directory on `TEXINPUTS`, so the file must live beside the post that uses it — *not* in the extension dir (a `quarto update` would clobber it). If several posts ever share these styles, promote them to a preamble via the filter's `tikz: tex-template:` option instead of copying the file.
 
 **bayesnet library** — key commands for causal graphs:
 - `\node[obs] (X) {$X$}` — observed variable (shaded circle)
@@ -48,7 +49,7 @@ Custom TikZ filter: `_extensions/danmackinlay/tikz/` (v1.3.0, Lua-based).
 ## Build
 
 ```sh
-quarto preview          # live book preview (per-chapter)
-quarto render           # all formats (HTML book, DOCX, JATS) → _book/
+quarto preview          # live website preview
+quarto render           # render site → _site/
 quarto render --to html # single format
 ```
