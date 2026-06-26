@@ -1,8 +1,8 @@
 % Shared TikZ style definitions for mechanised causal influence diagrams.
-% \input{cid_styles} from any .tikz block in this post. The tikz filter puts the
-% source .qmd's OWN directory on TEXINPUTS, so this file must sit next to the
-% post that uses it (here, posts/decision-theories/) — not in the extension dir,
-% which `quarto update` would clobber.
+% \input{cid_styles} from any .tikz block in a post. The tikz filter puts the
+% source .qmd's OWN directory on TEXINPUTS, so this file must sit in the same
+% directory as the post that uses it (here, the repo root, beside
+% decision-theories.qmd) — not in the extension dir, which `quarto update` would clobber.
 %
 % If several posts ever need these styles, promote them to a shared preamble via
 % `tikz: tex-template:` in _quarto.yml rather than copying this file around.

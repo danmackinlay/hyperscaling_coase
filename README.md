@@ -1,7 +1,7 @@
 # notes_on_agency
 
 A Quarto **website** (blog) on mechanized causal graphs, decision theory, and agency
-(MacDermott et al. framing). Each topic is a post under `posts/`. See `CLAUDE.md` for
+(MacDermott et al. framing). Each topic is a top-level `<name>.qmd`. See `CLAUDE.md` for
 build and authoring specifics.
 
 The repository also carries a small standalone utility,

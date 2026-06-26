@@ -1,5 +1,10 @@
 ---
 title: "Decision theories"
+author:
+  - name: Chris Pang
+    affiliation: The University
+  - name: Dan MacKinlay
+    affiliation: ACS Research
 date: "2026-05-13"
 categories: [decision theory, causal graphs]
 ---

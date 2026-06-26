@@ -4,7 +4,6 @@ project:
   # Only real content renders; CLAUDE.md / README.md stay out of the site.
   render:
     - "*.qmd"
-    - "posts/**/*.qmd"
 
 website:
   title: "Notes on agency"
