@@ -3,6 +3,9 @@ title: Open ended intelligence
 subtitle: Algorithms worth running for a billion years
 date: '2022-11-27T23:48:43'
 date-modified: '2026-06-26T01:50:41+02:00'
+author:
+  - name: Dan MacKinlay
+    affiliation: ACS Research
 categories:
 - adaptive
 - agents
@@ -27,27 +30,7 @@ nocite:
 csl: minimalist.csl
 reference-section-title: References
 bibliography: open_ended_intelligence.yaml
-image: /generated_thumbnails/site_previews/images/wheel_of_fate_trimmed_RP-P-1885-A-9610.thumbnail.avif
-open-graph:
-  image: /generated_thumbnails/opengraph_previews/images/wheel_of_fate_trimmed_RP-P-1885-A-9610.og.jpg
-  image-width: 1200
-  image-height: 630
-polish: 0
-novelty: 0
-certainty: 1
-usefulness: 0
-automation: 1
-date-ai-edit: '2025-09-25T11:51:27+00:00'
-date-ai-summary: '2025-09-25T11:57:43+00:00'
-description: "Wherein the Question of Open-Ended Algorithms — Processes Built to Never Finish — Is Posed, and Generators Such as POET, Quality-Diversity, OMNI-EPIC, and AI-Generating Algorithms Are Surveyed."
-quality: 6.1
-frecency: 4
-date-ai-quality: '2025-11-03T07:14:47+00:00'
 ---
-
-:::{#fig-wheel-of-fate-trimmed .figure .illustration .right}
-![](/images/wheel_of_fate_trimmed_RP-P-1885-A-9610.avif)
-:::
 
 What if [expected utility maximization over a defined domain](utility_if_we_must.qmd) is not the model of intelligence?
 What if, rather, it is [dangerously misleading](bitter_lesson_erm.qmd) to bet too hard on intelligence as a single-point optimization process?

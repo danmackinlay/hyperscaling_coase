@@ -3,47 +3,17 @@ title: Unreasonable effectiveness of empirical risk minimization
 subtitle: General methods that leverage computation are ones with scalar loss functions and a static data distribution are ultimately the most profitable, and by a large margin
 date: '2026-06-24T06:39:22+02:00'
 date-modified: '2026-06-25T11:37:08+02:00'
+author:
+  - name: Dan MacKinlay
+    affiliation: ACS Research
 categories:
-- bounded compute
-- classification
-- collective knowledge
-- culture
-- ethics
-- incentive mechanisms
-- machine learning
-- optimization
-- sociology
-- statmech
-- utility
-- when to compute
-- wonk
 link-citations: true
 description: "Wherein the Tension Between the Tractability of Empirical Risk Minimisation and the Open-Ended, Path-Dependent Nature of Human Life Is Examined, With Scalar Loss Functions Found to Impose a Static Distribution Upon an Irreducibly Contingent World."
-slug: bitter_lesson_erm
-reference-section-title: References
-image: /generated_thumbnails/site_previews/images/world_sticks_detail_RP-P-2016-1059.thumbnail.avif
-open-graph:
-  image: /generated_thumbnails/opengraph_previews/images/world_sticks_detail_RP-P-2016-1059.og.jpg
-  image-width: 1200
-  image-height: 630
-draft: true
-polish: 0
-novelty: 1
-certainty: 0
-usefulness: 0
-automation: 0
-date-ai-summary: '2026-06-25T16:40:28+00:00'
-date-ai-edit: '2026-06-25T16:40:24+00:00'
-quality: 7.2
-date-ai-quality: '2026-06-25T16:40:28+00:00'
-frecency: 7
 bibliography: bitter_lesson_erm.yaml
 csl: minimalist.csl
 nocite:
 - '@*'
 ---
-
-![](/images/world_sticks_detail_RP-P-2016-1059.avif){#fig-world-sticks-detail .figure .illustration .right}
 
 Loss functions!
 The engine of modern machine learning.

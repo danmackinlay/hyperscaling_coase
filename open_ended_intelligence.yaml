@@ -32,7 +32,7 @@ references:
   title: Open Questions about Time and Self-reference in Living Systems
   type: article
   URL: http://arxiv.org/abs/2508.11423
-- id: Arcas2024Computational
+- id: AguerayArcas2024Computational
   accessed:
   - year: 2024
     month: 9
@@ -54,7 +54,7 @@ references:
     given: Ettore
   - family: Versari
     given: Luca
-  citation-key: Arcas2024Computational
+  citation-key: AguerayArcas2024Computational
   DOI: 10.48550/arXiv.2406.19108
   issued:
   - year: 2024
