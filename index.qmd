@@ -13,7 +13,3 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-
-A loose collection of notes on mechanised causal influence diagrams, decision
-theory, and agency, following the MacDermott et al. framing. Each post below is a
-self-contained note; many are still stubs.

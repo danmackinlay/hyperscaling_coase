@@ -1,0 +1,414 @@
+references:
+- id: Bergadano1991Problem
+  accessed:
+  - year: 2026
+    month: 6
+    day: 24
+  author:
+  - family: Bergadano
+    given: F.
+  citation-key: Bergadano1991Problem
+  container-title: Proceedings of the 12th international joint conference on Artificial
+    intelligence-Volume 2
+  issued:
+  - year: 1991
+  title: The problem of induction and machine learning
+  type: paper-conference
+  URL: https://dl.acm.org/doi/abs/10.5555/1631552.1631621
+- id: Boyd2023Structuring
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: boyd
+    given: danah
+  citation-key: Boyd2023Structuring
+  container-title: Daedalus
+  DOI: 10.1162/daed_a_01983
+  ISSN: 0011-5266, 1548-6192
+  issue: '1'
+  issued:
+  - year: 2023
+    month: 2
+    day: 28
+  title: The Structuring Work of Algorithms
+  type: article-journal
+  URL: https://direct.mit.edu/daed/article/152/1/236/114992/The-Structuring-Work-of-Algorithms
+  volume: '152'
+- id: Egan2026Political
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: Egan
+    given: Martyn
+  citation-key: Egan2026Political
+  container-title: Capital & Class
+  DOI: 10.1177/03098168251326189
+  ISSN: 0309-8168
+  issue: '2'
+  issued:
+  - year: 2026
+    month: 6
+    day: 1
+  publisher: SAGE Publications Ltd
+  title: Towards a political economy of algorithmic capitalism
+  type: article-journal
+  URL: https://doi.org/10.1177/03098168251326189
+  volume: '50'
+- id: Farrell2023Moral
+  accessed:
+  - year: 2023
+    month: 4
+    day: 22
+  author:
+  - family: Farrell
+    given: Henry
+  - family: Fourcade
+    given: Marion
+  citation-key: Farrell2023Moral
+  container-title: Daedalus
+  DOI: 10.1162/daed_a_01982
+  ISSN: 0011-5266, 1548-6192
+  issue: '1'
+  issued:
+  - year: 2023
+    month: 2
+    day: 28
+  title: The Moral Economy of High-Tech Modernism
+  type: article-journal
+  URL: https://direct.mit.edu/daed/article/152/1/225/115009/The-Moral-Economy-of-High-Tech-Modernism
+  volume: '152'
+- id: Habaraduwa2024Inductive
+  accessed:
+  - year: 2026
+    month: 6
+    day: 24
+  author:
+  - family: Habaraduwa
+    given: Udesh
+  citation-key: Habaraduwa2024Inductive
+  DOI: 10.48550/arXiv.2401.09011
+  issued:
+  - year: 2024
+    month: 1
+    day: 17
+  number: arXiv:2401.09011
+  publisher: arXiv
+  title: Inductive Models for Artificial Intelligence Systems are Insufficient without
+    Good Explanations
+  type: article
+  URL: http://arxiv.org/abs/2401.09011
+- id: Hardt2026Emerging
+  author:
+  - family: Hardt
+    given: Moritz
+  citation-key: Hardt2026Emerging
+  issued:
+  - year: 2026
+  title: The emerging science of machine learning benchmarks
+  type: book
+  URL: https://mlbenchmarks.org
+- id: Hesselberth2018Legibility
+  accessed:
+  - year: 2026
+    month: 6
+    day: 24
+  author:
+  - family: Hesselberth
+    given: Pepita
+  - family: Houwen
+    given: Janna
+  - family: Peeren
+    given: Esther
+  - family: De Vos
+    given: Ruby
+  citation-key: Hesselberth2018Legibility
+  DOI: 10.1163/9789004376175
+  ISBN: 978-90-04-37617-5 978-90-04-37548-2
+  issued:
+  - year: 2018
+    month: 11
+    day: 1
+  publisher: BRILL
+  title: Legibility in the Age of Signs and Machines
+  type: book
+  URL: https://brill.com/view/title/38788
+- id: Kasy2026Political
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: Kasy
+    given: Maximilian
+  citation-key: Kasy2026Political
+  container-title: The Oxford Handbook of Algorithmic Governance and the Law
+  DOI: 10.1093/9780191996030.003.0006
+  edition: '1'
+  editor:
+  - family: Ajunwa
+    given: Ifeoma Y
+  - family: Adams-Prassl
+    given: Jeremias
+  ISBN: 978-0-19-199603-0 978-0-19-889073-7
+  issued:
+  - year: 2026
+    month: 3
+    day: 24
+  publisher: Oxford University PressOxford
+  title: 'The Political Economy of AI: Toward Democratic Control of the Means of Prediction'
+  type: chapter
+  URL: https://maxkasy.github.io/home/files/papers/handbook_politicalecon_ai.pdf
+- id: Laan2026Researchers
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: Laan
+    given: Lars
+    dropping-particle: van der
+  citation-key: Laan2026Researchers
+  DOI: 10.48550/arXiv.2602.21501
+  issued:
+  - year: 2026
+    month: 3
+    day: 3
+  number: arXiv:2602.21501
+  publisher: arXiv
+  title: A Researcher's Guide to Empirical Risk Minimization
+  type: article
+  URL: http://arxiv.org/abs/2602.21501
+- id: Mason2026Scalars
+  accessed:
+  - year: 2026
+    month: 6
+    day: 24
+  author:
+  - family: Mason
+    given: Tony
+  citation-key: Mason2026Scalars
+  DOI: 10.48550/arXiv.2604.09602
+  issued:
+  - year: 2026
+    month: 3
+    day: 10
+  number: arXiv:2604.09602
+  publisher: arXiv
+  title: 'From Scalars to Tensors: Declared Losses Recover Epistemic Distinctions
+    That Neutrosophic Scalars Cannot Express'
+  type: article
+  URL: http://arxiv.org/abs/2604.09602
+- id: NortonMaterial
+  author:
+  - family: Norton
+    given: John D
+  citation-key: NortonMaterial
+  issued:
+  - year: 2021
+  title: The Material Theory of Induction
+  type: article-journal
+- id: Prado2023Automated
+  author:
+  - family: Prado
+    given: Maria Belen
+  citation-key: Prado2023Automated
+  issued:
+  - year: 2023
+  title: 'Automated Patterns of Culture: Philosophy and Machine Learning'
+  type: article-journal
+- id: Raghavan2021Societal
+  accessed:
+  - year: 2022
+    month: 8
+    day: 1
+  author:
+  - family: Raghavan
+    given: Manish
+  citation-key: Raghavan2021Societal
+  DOI: 10.7298/eewn-0e35
+  issued:
+  - year: 2021
+    month: 8
+  publisher: Cornell University Library
+  title: The Societal Impacts of Algorithmic Decision-Making
+  type: thesis
+  URL: https://ecommons.cornell.edu/handle/1813/110626
+- id: Silver2021Reward
+  accessed:
+  - year: 2022
+    month: 5
+    day: 27
+  author:
+  - family: Silver
+    given: David
+  - family: Singh
+    given: Satinder
+  - family: Precup
+    given: Doina
+  - family: Sutton
+    given: Richard S.
+  citation-key: Silver2021Reward
+  container-title: Artificial Intelligence
+  container-title-short: Artificial Intelligence
+  DOI: 10.1016/j.artint.2021.103535
+  ISSN: 0004-3702
+  issued:
+  - year: 2021
+    month: 10
+    day: 1
+  title: Reward is enough
+  type: article-journal
+  volume: '299'
+- id: Sudhakar2026Biological
+  author:
+  - family: Sudhakar
+    given: Shivam
+  citation-key: Sudhakar2026Biological
+  issued:
+  - year: 2026
+    month: 3
+  title: 'Biological Neural Networks as Substrate for Philosophical Constructs: A
+    Unified Framework'
+  type: article-journal
+- id: Taylor2020Rise
+  author:
+  - family: Taylor
+    given: Tim
+  - family: Dorin
+    given: Alan
+  citation-key: Taylor2020Rise
+  ISBN: 978-3-030-48233-6
+  issued:
+  - year: 2020
+  number-of-pages: '135'
+  publisher: Springer
+  publisher-place: Cham
+  title: 'Rise of the Self-Replicators: Early Visions of Machines, AI and Robots That
+    Can Reproduce and Evolve'
+  type: book
+- id: Valizada2026Artificial
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: Valizada
+    given: Kamran
+  citation-key: Valizada2026Artificial
+  container-title: Acta Globalis Humanitatis et Linguarum
+  DOI: 10.69760/aghel.026001001
+  ISSN: 3030-1718
+  issue: '1'
+  issued:
+  - year: 2026
+    month: 1
+    day: 20
+  title: Artificial Intelligence and the Design of Politics in the Modern World
+  type: article-journal
+  URL: https://egarp.lt/index.php/aghel/article/view/467
+  volume: '3'
+- id: Vamplew2022Scalar
+  accessed:
+  - year: 2026
+    month: 6
+    day: 25
+  author:
+  - family: Vamplew
+    given: Peter
+  - family: Smith
+    given: Benjamin J.
+  - family: Källström
+    given: Johan
+  - family: Ramos
+    given: Gabriel
+  - family: Rădulescu
+    given: Roxana
+  - family: Roijers
+    given: Diederik M.
+  - family: Hayes
+    given: Conor F.
+  - family: Heintz
+    given: Fredrik
+  - family: Mannion
+    given: Patrick
+  - family: Libin
+    given: Pieter J. K.
+  - family: Dazeley
+    given: Richard
+  - family: Foale
+    given: Cameron
+  citation-key: Vamplew2022Scalar
+  container-title: Autonomous Agents and Multi-Agent Systems
+  container-title-short: Auton Agent Multi-Agent Syst
+  DOI: 10.1007/s10458-022-09575-5
+  ISSN: 1573-7454
+  issue: '2'
+  issued:
+  - year: 2022
+    month: 7
+    day: 16
+  title: 'Scalar reward is not enough: a response to Silver, Singh, Precup and Sutton
+    (2021)'
+  type: article-journal
+  URL: https://doi.org/10.1007/s10458-022-09575-5
+  volume: '36'
+- id: Venkatasubramanian2021Fairness
+  accessed:
+  - year: 2021
+    month: 10
+    day: 26
+  author:
+  - family: Venkatasubramanian
+    given: Suresh
+  - family: Scheidegger
+    given: Carlos
+  - family: Friedler
+    given: Sorelle
+  - family: Clauset
+    given: Aaron
+  citation-key: Venkatasubramanian2021Fairness
+  collection-title: KDD '21
+  container-title: Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery
+    & Data Mining
+  DOI: 10.1145/3447548.3470821
+  ISBN: 978-1-4503-8332-5
+  issued:
+  - year: 2021
+    month: 8
+    day: 14
+  publisher: Association for Computing Machinery
+  publisher-place: New York, NY, USA
+  title: 'Fairness in Networks: Social Capital, Information Access, and Interventions'
+  type: paper-conference
+- id: ZhiXuan2025Preferences
+  accessed:
+  - year: 2026
+    month: 3
+    day: 17
+  author:
+  - family: Zhi-Xuan
+    given: Tan
+  - family: Carroll
+    given: Micah
+  - family: Franklin
+    given: Matija
+  - family: Ashton
+    given: Hal
+  citation-key: ZhiXuan2025Preferences
+  container-title: Philosophical Studies
+  container-title-short: Philos Stud
+  DOI: 10.1007/s11098-024-02249-w
+  ISSN: 1573-0883
+  issue: '7'
+  issued:
+  - year: 2025
+    month: 7
+    day: 1
+  title: Beyond Preferences in AI Alignment
+  type: article-journal
+  URL: https://arxiv.org/abs/2408.16984v2
+  volume: '182'
