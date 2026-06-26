@@ -1,18 +1,21 @@
-"""Copy Zotero collections from a personal library into a group library.
+"""Copy Zotero collections between libraries (personal/user and group), in any direction.
+(Script file: zot_coll_copy.py.)
 
 This is a deliberately specific tool: it deep-copies whole collections (their items, and
-optionally child notes and file attachments) from your personal ("user") library into a
-shared group library. Zotero keys are per-library, so items are *recreated* in the target
--- a copy, not a move.
+optionally child notes and file attachments) from one Zotero library into another -- user to
+group (the common case), group to user, or group to group. Zotero keys are per-library, so
+items are *recreated* in the target -- a copy, not a move. Collections may be renamed on the
+way across.
 
 Credentials come from the environment (loaded by direnv from .env), so run via direnv:
 
-    direnv exec . uv run copy_collections_to_group.py <command> [options]
+    direnv exec . uv run zot_coll_copy.py <command> [options]
 
 Required environment variables:
-    ZOTERO_LIBRARY_ID   your personal ("user") library id
-    ZOTERO_API_KEY      an API key with WRITE access to the target group
-                        (grant per-group/all-group access at zotero.org/settings/keys)
+    ZOTERO_LIBRARY_ID   your personal ("user") library id (used as the default source and for
+                        account/group discovery)
+    ZOTERO_API_KEY      an API key with READ access to the source and WRITE access to the
+                        target (grant per-group/all-group access at zotero.org/settings/keys)
 
 User-facing documentation lives in the command docstrings below; run any command with
 --help to read it.
@@ -35,16 +38,53 @@ def _env(name):
     except KeyError:
         raise click.ClickException(
             f"${name} is not set. Run via "
-            f"`direnv exec . uv run copy_collections_to_group.py ...` so .env is loaded."
+            f"`direnv exec . uv run zot_coll_copy.py ...` so .env is loaded."
         )
 
 
-def _source():
+def _parse_ref(spec):
+    """Parse a library spec into (library_type, library_id).
+
+    Accepts 'user', 'user:<id>' or 'group:<id>'. Bare 'user' resolves to ZOTERO_LIBRARY_ID.
+    """
+    s = (spec or "").strip()
+    if s in ("", "user"):
+        return ("user", _env("ZOTERO_LIBRARY_ID"))
+    kind, sep, rid = s.partition(":")
+    kind, rid = kind.strip().lower(), rid.strip()
+    if sep and kind in ("user", "group") and rid:
+        return (kind, rid)
+    raise click.ClickException(
+        f"Bad library spec {spec!r}; use 'user', 'user:<id>', or 'group:<id>'."
+    )
+
+
+def _client(ref):
+    library_type, library_id = ref
+    return zotero.Zotero(str(library_id), library_type, _env("ZOTERO_API_KEY"))
+
+
+def _account():
+    """A user-bound client, used for key_info()/groups() discovery (group-bound groups() is
+    unreliable)."""
     return zotero.Zotero(_env("ZOTERO_LIBRARY_ID"), "user", _env("ZOTERO_API_KEY"))
 
 
-def _target(group_id):
-    return zotero.Zotero(str(group_id), "group", _env("ZOTERO_API_KEY"))
+def _can(access, ref, mode):
+    """Whether the key's access map (from key_info) permits `mode` ('read'/'write') on ref."""
+    if ref[0] == "user":
+        u = access.get("user", {}) or {}
+        return bool(u.get("write")) if mode == "write" else bool(u.get("library") or u.get("write"))
+    g = access.get("groups", {}) or {}
+    perms = g.get("all") or g.get(str(ref[1])) or {}
+    return bool(perms.get("write")) if mode == "write" else bool(perms.get("library") or perms.get("write"))
+
+
+def _ref_label(ref, groups_by_id):
+    if ref[0] == "user":
+        you = " (you)" if str(ref[1]) == _env("ZOTERO_LIBRARY_ID") else ""
+        return f"user:{ref[1]}{you}"
+    return f"group:{ref[1]} ({groups_by_id.get(str(ref[1])) or 'unknown / not visible'})"
 
 
 # --------------------------------------------------------------------------- pagination
@@ -102,40 +142,43 @@ def _chunks(seq, n=50):
 
 
 # --------------------------------------------------------------------------- provenance
-def _source_uri(uid, key):
-    return f"http://zotero.org/users/{uid}/items/{key}"
+def _item_uri(ref, key):
+    """Zotero item URI for provenance, e.g. http://zotero.org/users/2862/items/ABCD1234 or
+    http://zotero.org/groups/6598607/items/ABCD1234."""
+    seg = "groups" if ref[0] == "group" else "users"
+    return f"http://zotero.org/{seg}/{ref[1]}/items/{key}"
 
 
-def _sameas_keys(relations, uid):
+def _sameas_keys(relations, src_ref):
     """Source item keys recorded in an owl:sameAs relation (value may be a str or a list)."""
     val = (relations or {}).get("owl:sameAs")
     if not val:
         return set()
     vals = val if isinstance(val, list) else [val]
-    prefix = _source_uri(uid, "")
+    prefix = _item_uri(src_ref, "")
     return {v[len(prefix):] for v in vals if isinstance(v, str) and v.startswith(prefix)}
 
 
 # --------------------------------------------------------------------------- item transforms
-def _clean_item(data, new_collection_keys, uid):
+def _clean_item(data, new_collection_keys, src_ref):
     """Strip per-library fields, remap collections, stamp owl:sameAs provenance."""
     d = dict(data)
     old_key = d.get("key")
     for f in STRIP_FIELDS:
         d.pop(f, None)
-    d["relations"] = {"owl:sameAs": _source_uri(uid, old_key)}
+    d["relations"] = {"owl:sameAs": _item_uri(src_ref, old_key)}
     d["collections"] = list(new_collection_keys)
     return d
 
 
-def _clean_child(data, uid):
+def _clean_child(data, src_ref):
     """Prepare a child note/attachment for recreation under a new parent (via parentid)."""
     d = dict(data)
     old_key = d.get("key")
     for f in STRIP_FIELDS:
         d.pop(f, None)
     d.pop("parentItem", None)
-    d["relations"] = {"owl:sameAs": _source_uri(uid, old_key)}
+    d["relations"] = {"owl:sameAs": _item_uri(src_ref, old_key)}
     d["collections"] = []
     return d
 
@@ -170,11 +213,13 @@ def _depth(key, by_key):
     return d
 
 
-def _ensure_collections(tgt, to_copy, by_key, reuse, dry_run):
+def _ensure_collections(tgt, to_copy, by_key, rename, reuse, dry_run):
     """Recreate the collection subtree in the target, parents first.
 
-    Returns old_collection_key -> new_collection_key. With `reuse`, an existing target
-    collection with the same name under the same (mapped) parent is reused, not duplicated.
+    Returns old_collection_key -> new_collection_key. `rename` maps a source collection key to
+    a new target name (others keep their source name). With `reuse`, an existing target
+    collection with the same (target) name under the same (mapped) parent is reused, not
+    duplicated.
     """
     existing = {}
     if reuse and not dry_run:
@@ -184,7 +229,7 @@ def _ensure_collections(tgt, to_copy, by_key, reuse, dry_run):
 
     col_map = {}
     for old in sorted(to_copy, key=lambda k: _depth(k, by_key)):
-        name = by_key[old]["name"]
+        name = rename.get(old) or by_key[old]["name"]
         src_parent = by_key[old].get("parentCollection")
         new_parent = col_map.get(src_parent) if src_parent in to_copy else None
         where = f"under {new_parent}" if new_parent else "top-level"
@@ -235,17 +280,17 @@ def _gather_items(src, to_copy, col_map):
     return items_by_key, membership
 
 
-def _already_copied(tgt, new_collection_keys, uid):
+def _already_copied(tgt, new_collection_keys, src_ref):
     """{source_key: target_key} for items already present in the target collections."""
     mapping = {}
     for col in set(new_collection_keys):
         for it in _paginate(tgt.collection_items_top, col):
-            for sk in _sameas_keys(it["data"].get("relations"), uid):
+            for sk in _sameas_keys(it["data"].get("relations"), src_ref):
                 mapping[sk] = it["data"]["key"]
     return mapping
 
 
-def _copy_items(src, tgt, items_by_key, membership, col_map, uid, skip_existing, dry_run):
+def _copy_items(src, tgt, items_by_key, membership, col_map, src_ref, skip_existing, dry_run):
     """Create (or locate) target items. Returns (item_map, created, skipped).
 
     item_map maps EVERY copied source item key -> its target key, including items that
@@ -253,7 +298,7 @@ def _copy_items(src, tgt, items_by_key, membership, col_map, uid, skip_existing,
     the parent record).
     """
     already = (
-        _already_copied(tgt, set(col_map.values()), uid)
+        _already_copied(tgt, set(col_map.values()), src_ref)
         if (skip_existing and not dry_run)
         else {}
     )
@@ -268,7 +313,7 @@ def _copy_items(src, tgt, items_by_key, membership, col_map, uid, skip_existing,
             item_map[k] = already[k]  # reuse existing record; children may still be topped up
             skipped += 1
             continue
-        to_create.append((k, _clean_item(it["data"], membership[k], uid)))
+        to_create.append((k, _clean_item(it["data"], membership[k], src_ref)))
 
     if attach_top:
         click.echo(f"  · skipping {attach_top} standalone top-level attachment(s) "
@@ -290,7 +335,7 @@ def _copy_items(src, tgt, items_by_key, membership, col_map, uid, skip_existing,
 
 
 # --------------------------------------------------------------------------- child copy
-def _copy_children(src, tgt, item_map, uid, with_notes, with_files, skip_existing):
+def _copy_children(src, tgt, item_map, src_ref, with_notes, with_files, skip_existing):
     """Top up child notes and/or file attachments under each copied parent.
 
     Runs for every item in item_map (newly created AND pre-existing), so notes/files can be
@@ -308,7 +353,7 @@ def _copy_children(src, tgt, item_map, uid, with_notes, with_files, skip_existin
             seen_sameas, seen_files = set(), set()
             for ch in _paginate(tgt.children, new_k):
                 cd = ch["data"]
-                seen_sameas |= _sameas_keys(cd.get("relations"), uid)
+                seen_sameas |= _sameas_keys(cd.get("relations"), src_ref)
                 if cd.get("itemType") == "attachment":
                     seen_files.add(cd.get("filename") or cd.get("title") or "")
             existing[old_k] = (seen_sameas, seen_files)
@@ -320,7 +365,7 @@ def _copy_children(src, tgt, item_map, uid, with_notes, with_files, skip_existin
 
         if with_notes:
             notes = [
-                _clean_child(ch["data"], uid)
+                _clean_child(ch["data"], src_ref)
                 for ch in children
                 if ch["data"].get("itemType") == "note"
                 and ch["data"]["key"] not in seen_sameas
@@ -349,7 +394,7 @@ def _copy_children(src, tgt, item_map, uid, with_notes, with_files, skip_existin
                             res = tgt.attachment_simple([path], parentid=new_k)
                         files_made += _count_uploads(res, name)
                     else:  # linked_url / linked_file: recreate the link item, no bytes
-                        resp = tgt.create_items([_clean_child(cd, uid)], parentid=new_k)
+                        resp = tgt.create_items([_clean_child(cd, src_ref)], parentid=new_k)
                         files_made += len(_success_map(resp))
                 except Exception as exc:  # noqa: BLE001 - report and keep going
                     click.echo(f"  ! attachment '{name}' failed: {exc}", err=True)
@@ -359,32 +404,33 @@ def _copy_children(src, tgt, item_map, uid, with_notes, with_files, skip_existin
 # --------------------------------------------------------------------------- CLI
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
 def cli():
-    """Copy Zotero collections from your personal library into a group library.
+    """Copy Zotero collections between libraries (user <-> group, group <-> group).
 
     Credentials are read from the environment (loaded by direnv from .env), so run every
     command through direnv + uv:
 
-        direnv exec . uv run copy_collections_to_group.py <command>
+        direnv exec . uv run zot_coll_copy.py <command>
 
     Required env vars: ZOTERO_LIBRARY_ID (your personal/user id) and ZOTERO_API_KEY (a key
-    with WRITE access to the target group -- grant it at zotero.org/settings/keys).
+    with READ on the source and WRITE on the target -- grant group access at
+    zotero.org/settings/keys).
 
     Typical workflow:
 
-        ... list-groups                              # find the target group id
-        ... list-collections                         # find the collection keys to copy
-        ... copy KEY1 KEY2 --to-group GID --dry-run  # preview, write nothing
-        ... copy KEY1 KEY2 --to-group GID            # do it
+        ... list-groups                                  # find a group library id
+        ... list-collections --from group:6598607        # find source collection keys
+        ... copy KEY1 KEY2 --to group:6598607 --dry-run  # preview, write nothing
+        ... copy KEY1 KEY2 --to group:6598607            # do it
     """
 
 
 @cli.command("list-groups")
 def list_groups():
-    """List group libraries this API key can access (find the target group id here).
+    """List group libraries this API key can access (find a group library id here).
 
     Note: a private group only appears once the key has been granted access to it.
     """
-    for g in _source().groups():
+    for g in _account().groups():
         d = g["data"]
         click.echo(
             f"{d['id']}\t{d['name']}"
@@ -393,12 +439,15 @@ def list_groups():
 
 
 @cli.command("list-collections")
-def list_collections():
-    """Show your personal-library collections as an indented tree.
+@click.option("--from", "from_", default="user", metavar="SPEC",
+              help="Library to list: user | user:<id> | group:<id> (default: user).")
+def list_collections(from_):
+    """Show a library's collections as an indented tree.
 
-    The leading 8-character key on each line is what you pass to `copy`.
+    The leading 8-character key on each line is what you pass to `copy`. Use --from to browse
+    a group library (e.g. `--from group:6598607`) so you can copy *out* of a group.
     """
-    src = _source()
+    src = _client(_parse_ref(from_))
     full = {c["data"]["key"]: c for c in _paginate(src.collections)}
     kids, roots = defaultdict(list), []
     for k, c in full.items():
@@ -418,29 +467,46 @@ def list_collections():
 
 @cli.command()
 @click.argument("collection_keys", nargs=-1)
-@click.option("--to-group", required=True, metavar="GROUP_ID", help="Target group library id.")
-@click.option("--all", "copy_all", is_flag=True, help="Copy every collection in the personal library.")
+@click.option("--from", "from_", default="user", metavar="SPEC",
+              help="Source library: user | user:<id> | group:<id> (default: user).")
+@click.option("--to", "to_spec", metavar="SPEC", default=None,
+              help="Target library: user | user:<id> | group:<id>.")
+@click.option("--to-group", metavar="GROUP_ID", default=None,
+              help="Deprecated alias for --to group:<id>.")
+@click.option("--all", "copy_all", is_flag=True, help="Copy every collection in the source library.")
+@click.option("--as", "as_name", metavar="NAME", default=None,
+              help="Rename the single copied collection to NAME (errors if >1 key or --all).")
+@click.option("--rename", "rename_opt", metavar="KEY=NAME", multiple=True,
+              help="Rename source collection KEY to NAME in the target (repeatable).")
 @click.option("--recursive/--no-recursive", default=True, help="Include sub-collections (default: yes).")
 @click.option("--with-notes/--no-notes", default=True, help="Copy child notes (default: yes).")
-@click.option("--with-files", is_flag=True, help="Also download+upload file attachments (uses group storage).")
+@click.option("--with-files", is_flag=True, help="Also download+upload file attachments (uses target storage).")
 @click.option("--skip-existing/--no-skip-existing", default=True, help="Make re-runs idempotent (default: yes).")
 @click.option("--dry-run", is_flag=True, help="Show what would happen without writing anything.")
 @click.option("--yes", "-y", is_flag=True, help="Skip the confirmation prompt.")
-def copy(collection_keys, to_group, copy_all, recursive, with_notes, with_files, skip_existing, dry_run, yes):
-    """Copy COLLECTION_KEYS (or --all) into the target group library.
+def copy(collection_keys, from_, to_spec, to_group, copy_all, as_name, rename_opt,
+         recursive, with_notes, with_files, skip_existing, dry_run, yes):
+    """Copy COLLECTION_KEYS (or --all) from the source library into the target library.
 
-    Items are deep-copied: Zotero keys are per-library, so this recreates them in the group
+    Direction is set by --from (default: your personal `user` library) and --to, each a
+    library spec: `user`, `user:<id>`, or `group:<id>`. So user->group, group->user and
+    group->group all work; copying a library onto itself is refused.
+
+    Items are deep-copied: Zotero keys are per-library, so this recreates them in the target
     (a copy, not a move). Tags, creators and the `extra` field -- including Better BibTeX
     citation keys -- are preserved. Sub-collections and child notes come along by default;
-    file attachments only with --with-files (they consume the group's storage quota and use
+    file attachments only with --with-files (they consume the TARGET's storage quota and use
     pyzotero's beta upload API; HTML snapshots transfer imperfectly, as zips).
+
+    Renaming: --as NAME renames the single collection being copied; --rename KEY=NAME renames
+    specific collections (repeatable, works on sub-collections too). Unlisted collections keep
+    their source names.
 
     Safe, incremental re-runs (default --skip-existing): every copy carries a hidden
     `owl:sameAs` relation back to its source item, existing target collections are reused by
-    name, and already-copied items are reused rather than duplicated. Crucially, a re-run
-    also TOPS UP whatever is newly requested or newly present -- e.g. adding --with-files on
-    a second run uploads the PDFs onto the already-copied items WITHOUT creating duplicate
-    records, and notes added in the source since the last run get synced. File
+    (target) name, and already-copied items are reused rather than duplicated. A re-run also
+    TOPS UP whatever is newly requested or present -- e.g. adding --with-files on a later run
+    uploads PDFs onto already-copied items WITHOUT creating duplicate records. File
     de-duplication is by filename within each parent item.
 
     Standalone attachments sitting directly in a collection (no parent item) are not copied;
@@ -448,20 +514,43 @@ def copy(collection_keys, to_group, copy_all, recursive, with_notes, with_files,
 
     Examples:
 
-        ... copy Q8FKSMLQ --to-group 6598607 --dry-run
-        ... copy Q8FKSMLQ ZLDYV7BR --to-group 6598607
-        ... copy --all --to-group 6598607 --with-files
+        ... copy Q8FKSMLQ --to group:6598607 --dry-run
+        ... copy Q8FKSMLQ --to group:6598607 --as 4d_data
+        ... copy AAAAAAAA BBBBBBBB --to group:6598607 --rename AAAAAAAA="Renamed"
+        ... copy CCCCCCCC --from group:6598607 --to user             # group -> personal
+        ... copy DDDDDDDD --from group:111 --to group:222 --with-files
     """
     if not collection_keys and not copy_all:
         raise click.ClickException("Give one or more collection keys, or pass --all.")
 
-    src = _source()
-    tgt = _target(to_group)
-    uid = _env("ZOTERO_LIBRARY_ID")
+    if to_group and not to_spec:
+        to_spec = f"group:{to_group}"
+    if not to_spec:
+        raise click.ClickException("Specify a target with --to (e.g. --to group:6598607).")
 
-    gname = next((g["data"]["name"] for g in src.groups() if str(g["data"]["id"]) == str(to_group)), None)
-    if gname is None:
-        click.echo(f"! Warning: group {to_group} not visible to this API key — writes may fail.", err=True)
+    src_ref = _parse_ref(from_)
+    tgt_ref = _parse_ref(to_spec)
+    if src_ref == tgt_ref:
+        raise click.ClickException(
+            f"Source and target are the same library ({src_ref[0]}:{src_ref[1]}); "
+            "same-library duplication isn't supported."
+        )
+    src, tgt = _client(src_ref), _client(tgt_ref)
+
+    # Permission pre-check + labels via a single account client.
+    acct = _account()
+    access = acct.key_info().get("access", {})
+    groups_by_id = {str(g["data"]["id"]): g["data"]["name"] for g in acct.groups()}
+    if not _can(access, tgt_ref, "write"):
+        raise click.ClickException(
+            f"API key lacks WRITE access to {_ref_label(tgt_ref, groups_by_id)}. "
+            "Grant it at https://www.zotero.org/settings/keys."
+        )
+    if not _can(access, src_ref, "read"):
+        click.echo(
+            f"! Warning: key may lack read access to {_ref_label(src_ref, groups_by_id)} "
+            "— reads may fail (ok if it's a public library).", err=True
+        )
 
     by_key = _collections_by_key(src)
     if copy_all:
@@ -473,26 +562,45 @@ def copy(collection_keys, to_group, copy_all, recursive, with_notes, with_files,
         seeds = set(collection_keys)
     to_copy = _descendants(seeds, by_key) if recursive else seeds
 
-    click.echo(f"Target group: {to_group} ({gname or 'unknown'})")
+    rename = {}
+    for spec in rename_opt:
+        k, sep, nm = spec.partition("=")
+        k, nm = k.strip(), nm.strip()
+        if not sep or not nm:
+            raise click.ClickException(f"--rename expects KEY=NewName, got {spec!r}.")
+        rename[k] = nm
+    if as_name is not None:
+        if copy_all or len(collection_keys) != 1:
+            raise click.ClickException(
+                "--as only works when copying exactly one collection key "
+                "(use --rename KEY=NAME for multiple)."
+            )
+        rename[collection_keys[0]] = as_name
+    stray = [k for k in rename if k not in to_copy]
+    if stray:
+        click.echo(f"! Warning: rename key(s) not in the copy set: {', '.join(stray)}", err=True)
+
+    click.echo(f"Copy: {_ref_label(src_ref, groups_by_id)} -> {_ref_label(tgt_ref, groups_by_id)}")
     click.echo(
         f"Collections to copy: {len(to_copy)}"
         + ("  [DRY RUN]" if dry_run else "")
         + f"  notes={'on' if with_notes else 'off'} files={'on' if with_files else 'off'}"
         + f" skip-existing={'on' if skip_existing else 'off'}"
+        + (f" rename={len(rename)}" if rename else "")
     )
     if not dry_run and not yes:
         click.confirm("Proceed?", abort=True)
 
-    col_map = _ensure_collections(tgt, to_copy, by_key, reuse=skip_existing, dry_run=dry_run)
+    col_map = _ensure_collections(tgt, to_copy, by_key, rename, reuse=skip_existing, dry_run=dry_run)
     items_by_key, membership = _gather_items(src, to_copy, col_map)
     item_map, created, skipped = _copy_items(
-        src, tgt, items_by_key, membership, col_map, uid, skip_existing, dry_run
+        src, tgt, items_by_key, membership, col_map, src_ref, skip_existing, dry_run
     )
 
     notes_made = files_made = files_skipped = 0
     if item_map and (with_notes or with_files):
         notes_made, files_made, files_skipped = _copy_children(
-            src, tgt, item_map, uid, with_notes, with_files, skip_existing
+            src, tgt, item_map, src_ref, with_notes, with_files, skip_existing
         )
 
     click.echo(

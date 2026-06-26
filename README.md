@@ -1,9 +1,11 @@
 # notes_on_agency
 
-A Quarto **book** on mechanized causal graphs, decision theory, and agency (MacDermott et
-al. framing). See `CLAUDE.md` for build and authoring specifics.
+A Quarto **website** (blog) on mechanized causal graphs, decision theory, and agency
+(MacDermott et al. framing). Each topic is a post under `posts/`. See `CLAUDE.md` for
+build and authoring specifics.
 
 The repository also carries a small standalone utility,
-`copy_collections_to_group.py` (a Zotero personal→group collection copier); its
+`zot_coll_copy.py` (a Zotero collection copier between personal and group
+libraries, in any direction); its
 documentation lives in the command `--help` output, e.g.
-`direnv exec . uv run copy_collections_to_group.py --help`.
+`direnv exec . uv run zot_coll_copy.py --help`.
