@@ -415,12 +415,12 @@ def cli():
     with READ on the source and WRITE on the target -- grant group access at
     zotero.org/settings/keys).
 
+    \b
     Typical workflow:
-
-        ... list-groups                                  # find a group library id
-        ... list-collections --from group:6598607        # find source collection keys
-        ... copy KEY1 KEY2 --to group:6598607 --dry-run  # preview, write nothing
-        ... copy KEY1 KEY2 --to group:6598607            # do it
+      ... list-groups                                  # find a group library id
+      ... list-collections --from group:6598607        # find source collection keys
+      ... copy KEY1 KEY2 --to group:6598607 --dry-run  # preview, write nothing
+      ... copy KEY1 KEY2 --to group:6598607            # do it
     """
 
 
@@ -512,13 +512,13 @@ def copy(collection_keys, from_, to_spec, to_group, copy_all, as_name, rename_op
     Standalone attachments sitting directly in a collection (no parent item) are not copied;
     attach files to a bibliographic item instead.
 
+    \b
     Examples:
-
-        ... copy Q8FKSMLQ --to group:6598607 --dry-run
-        ... copy Q8FKSMLQ --to group:6598607 --as 4d_data
-        ... copy AAAAAAAA BBBBBBBB --to group:6598607 --rename AAAAAAAA="Renamed"
-        ... copy CCCCCCCC --from group:6598607 --to user             # group -> personal
-        ... copy DDDDDDDD --from group:111 --to group:222 --with-files
+      ... copy Q8FKSMLQ --to group:6598607 --dry-run
+      ... copy Q8FKSMLQ --to group:6598607 --as 4d_data
+      ... copy AAAAAAAA BBBBBBBB --to group:6598607 --rename AAAAAAAA="Renamed"
+      ... copy CCCCCCCC --from group:6598607 --to user             # group -> personal
+      ... copy DDDDDDDD --from group:111 --to group:222 --with-files
     """
     if not collection_keys and not copy_all:
         raise click.ClickException("Give one or more collection keys, or pass --all.")
