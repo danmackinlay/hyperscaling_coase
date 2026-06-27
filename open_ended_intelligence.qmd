@@ -32,9 +32,9 @@ reference-section-title: References
 bibliography: open_ended_intelligence.yaml
 ---
 
-What if [expected utility maximization over a defined domain](utility_if_we_must.qmd) is not the model of intelligence?
-What if, rather, it is [dangerously misleading](bitter_lesson_erm.qmd) to bet too hard on intelligence as a single-point optimization process?
-This page collects the non-utility alternatives: entities that [persist rather than optimize](utility_fitness.qmd), and agents that manufacture their own goals through [intrinsic motivation](intrinsic_motivation.qmd).
+What if [expected utility maximization over a defined domain](https://danmackinlay.name/notebook/utility_if_we_must.qmd) is not the model of intelligence?
+What if, rather, it is [dangerously misleading](https://danmackinlay.name/notebook/bitter_lesson_erm.qmd) to bet too hard on intelligence as a single-point optimization process?
+This page collects the non-utility alternatives: entities that [persist rather than optimize](https://danmackinlay.name/notebook/utility_fitness.qmd), and agents that manufacture their own goals through [intrinsic motivation](https://danmackinlay.name/notebook/intrinsic_motivation.qmd).
 This page is about a third idea that draws on both but lives at the level of the whole process — open-endedness.
 
 ## Open-endedness
@@ -65,7 +65,7 @@ These approaches move away from a single-point optimization worldview toward som
 * Alex Graves surely
 * David Ha likewise
 * Sankana AI seems to be commercially and thinking about this, and probably has David’s attention at the moment
-* [A-life](./artificial_life.qmd) folks kinda started on this. I should reactivate the synapses that used to hold my A-life knowledge
+* [A-life](https://danmackinlay.name/notebook/artificial_life.qmd) folks kinda started on this. I should reactivate the synapses that used to hold my A-life knowledge
 * HT [Chris Pang](https://aclevernamegoeshere.substack.com) for pointing out that I should link to
 
   * Infinite games [@Carse2012Finite]

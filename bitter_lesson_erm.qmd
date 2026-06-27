@@ -46,7 +46,7 @@ There are a few things to note about these bad boys
 2. We generally choose $\ell$ for computational convenience, not because it is a perfect reflection of the true cost of errors in the real world, which is part of why we are so good at #1
 3. Notice we assumed that the data distribution $P$ is fixed and static.
    This is a _strong_ assumption.
-   Sometimes we can make it nearly true by choosing static pieces of the world to model, or conditioning in some clever way, or [changing the world to make it true](./legibility_automation.qmd) but in general it is not very true and we jus’ frontin’.
+   Sometimes we can make it nearly true by choosing static pieces of the world to model, or conditioning in some clever way, or [changing the world to make it true](https://danmackinlay.name/notebook/legibility_automation.qmd) but in general it is not very true and we jus’ frontin’.
 4. If you can approximate your real problem with an optimisation like this, you generally win, in the sense of shipping fancy products fast.
 
 This notebook is about that pressure to remake the world into parts that can be well-described by static distributions with scalar loss functions, and to wonder what that does to us.
@@ -62,7 +62,7 @@ Predicting the weather is a great way to work out if we should take an umbrella.
 That this is unreasonably effective, and brings great benefit is, in a sense, the “problem” I want to address here.
 So many things can be made to go via ERM, so many things now depend upon it, that I wonder what the case is for the things for which it does not work.
 
-The most gob-smackingly astonishing place that ERM works, of course, is the famous case of [Large Language Models](./nn_transformers.qmd) where, fuck me dead, minimising the error on next word prediction might yet learn to supplant all human intellectual labour.
+The most gob-smackingly astonishing place that ERM works, of course, is the famous case of [Large Language Models](https://danmackinlay.name/notebook/nn_transformers.qmd) where, fuck me dead, minimising the error on next word prediction might yet learn to supplant all human intellectual labour.
 
 I am still astonished that we live in the transformer-work world.
 
@@ -72,10 +72,10 @@ Note that various of the ERM assumptions have been relaxed in divers ways across
 This is the local variant of Sutton’s famous bitter lesson about “methods that leverage computation” being the most effective; the _way we leverage that computation_ is to make things look like ERM.
 
 1. We don’t always take the distribution $P$ as fixed.
-   For example, [online methods](./online_learning.qmd) learn something like a “recently good” model, and are happy to forget older things
+   For example, [online methods](https://danmackinlay.name/notebook/online_learning.qmd) learn something like a “recently good” model, and are happy to forget older things
 2. We let the model range over more interesting spaces than a fixed-size input-output distribution. For example LLMs do this, predicting whole conversations.
    This is because they ingeniously decompose the sentence prediction problem into smaller, manageable components, allowing them to handle complex, structured data.
-3. We let the models be more than passive predictors. For example, they can learn to *choose actions*, in, e.g. [reinforcement learning](./reinforcement_learning.qmd) or [Bayesian optimisation](./design_of_experiments_adaptive.qmd).
+3. We let the models be more than passive predictors. For example, they can learn to *choose actions*, in, e.g. [reinforcement learning](https://danmackinlay.name/notebook/reinforcement_learning.qmd) or [Bayesian optimisation](https://danmackinlay.name/notebook/design_of_experiments_adaptive.qmd).
 
 These can get ERM to do surprising things; still within, I argue, basically the same formalism, with all the unearned tractability that gives us.
 
@@ -85,7 +85,7 @@ This was controversial; there have been various responses to this, for example, 
 
 ## Against utility
 
-As I am prone to rant to strangers at the bus-stop, a cognitive danger of [machine learning](./utility_if_we_must.qmd) is reification of utility functions.
+As I am prone to rant to strangers at the bus-stop, a cognitive danger of [machine learning](https://danmackinlay.name/notebook/utility_if_we_must.qmd) is reification of utility functions.
 Utility functions are an interesting method of analysis, but clearly maladapted for some purposes.
 
 For one thing, if we look at their usage in economics, utilities are induced valuations over allocations of goods.
@@ -103,7 +103,7 @@ The one that comes next?
 Human beings strive for, not bundles of goods, but complicated, contingent, path-dependent, interacting situations that they co-create with the world itself.
 If trading apples for oranges helps along the way, all the better, but this seems only ever an incidental goal.
 
-Elsewhere this rejection of an underlying utility function has been described as a [thick model of value](./human_values.qmd#thick-value), although I won’t do so here, because it is not _just_ the *thickness* of this concept that I want to consider, but the open-endedness, the contingency.
+Elsewhere this rejection of an underlying utility function has been described as a [thick model of value](https://danmackinlay.name/notebook/human_values.qmd#thick-value), although I won’t do so here, because it is not _just_ the *thickness* of this concept that I want to consider, but the open-endedness, the contingency.
 
 ## Static distributions and closed systems
 
@@ -115,7 +115,7 @@ How do they do this wizardry?
 ## Empowerment must concern outcomes outside the data distribution
 
 The minimizers have only interpreted $\mathcal{D}$-world in various ways; the point, however, is to change $P$.
-Some of this is addressed in [open-ended intelligence](./open_ended_intelligence.qmd).
+Some of this is addressed in [open-ended intelligence](https://danmackinlay.name/notebook/open_ended_intelligence.qmd).
 
 ## Incoming
 
@@ -126,12 +126,12 @@ $$
 
 This should connect to
 
-* [performative prediction](./performative_prediction.qmd)
-* [legibility and automation](./legibility_automation.qmd)
-* [disempowerment](./ai_disempowerment.qmd)
-* [open-endedness](./open_ended_intelligence.qmd)
-* [Goodhart’s law](./goodharts_law.qmd)
-* I think maybe [domestication](./human_domestication.qmd) is connected.
+* [performative prediction](https://danmackinlay.name/notebook/performative_prediction.qmd)
+* [legibility and automation](https://danmackinlay.name/notebook/legibility_automation.qmd)
+* [disempowerment](https://danmackinlay.name/notebook/ai_disempowerment.qmd)
+* [open-endedness](https://danmackinlay.name/notebook/open_ended_intelligence.qmd)
+* [Goodhart’s law](https://danmackinlay.name/notebook/goodharts_law.qmd)
+* I think maybe [domestication](https://danmackinlay.name/notebook/human_domestication.qmd) is connected.
 
 ## References
 
