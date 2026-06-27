@@ -31,3 +31,15 @@ format:
 
 execute:
   freeze: true
+tikz:
+  renderer: tikzjax
+  # cache: true
+  ## pdftocairo (from poppler-utils) replaces inkscape as the SVG engine.
+  ## Pre-installed on macOS via brew and on the ubuntu-latest GH Actions runner,
+  ## so no extra install step needed anywhere. Lighter and faster than inkscape.
+  # svg-engine: pdftocairo
+  ## Project-root cache, relative-resolution trick: ../.tikz-cache from any
+  ## depth-1 qmd (notebook/, post/, presentation/, …) converges on the same
+  ## <project-root>/.tikz-cache. Depth-2 qmds (e.g. notebook/genbp/index.qmd)
+  ## need a per-doc override of `../../.tikz-cache`. See README.md "Cache strategy".
+  # cache-dir: ../.tikz-cache
