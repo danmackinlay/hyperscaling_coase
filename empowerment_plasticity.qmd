@@ -273,8 +273,69 @@ $$
 J_\beta \;=\; \mathrm{Emp}_t \;+\; \beta \cdot I\!\left(S_{t:t+n} \to A_{t:t+n}\right)
 $$
 
-trades control over the world against steerability by the world: $\beta = 0$ is the pure empowerment agent, large $\beta$ rewards agents that keep their actions contingent on what they observe rather than on a pre-committed plan.
+trades control over the world against steerability by the world: $\beta = 0$ is the pure empowerment agent, and the plasticity slot pays for actions contingent on observation.
 With the *unrepaired* term in the second slot the family collapses — by @prp-saturation the optimizer saturates the plasticity slot through self-signalling, and every $\beta$ yields approximately the pure empowerment agent.
+"Contingent on observation" is still a slogan, though.
+The next section computes what the slot actually pays for.
+
+## What the plasticity slot actually rewards
+
+Apply the chain rule $H(A_{t:t+n}) = \sum_k H(A_{t+k} \mid A_{t:t+k-1})$ to the directed information:
+
+$$
+I\!\left(S_{t:t+n} \to A_{t:t+n}\right)
+\;=\; H\!\left(A_{t:t+n}\right) \;-\; \underbrace{\sum_{k=0}^{n} H\!\left(A_{t+k} \,\middle|\, A_{t:t+k-1},\, S_{t:t+k}\right)}_{\text{causally conditioned entropy } H(A \,\|\, S)} .
+$$
+
+So maximizing the term means doing exactly two things: raise the total behavioural entropy $H(A_{t:t+n})$, and eliminate the part of it not resolvable from the percepts available at the moment of acting.
+The second part, $H(A \,\|\, S)$, is the residual plan noise — randomness that $U$ injects into actions beyond what the sensors dictate — and the objective counts it *against* the agent.
+At the optimum of the second lever the identity becomes exact:
+
+::: {#prp-transcription .proposition}
+If the policy is a deterministic function of sensor history, $A_{t+k} = \pi_k(S_{t:t+k})$, then
+$$
+I\!\left(S_{t:t+n} \to A_{t:t+n}\right) \;=\; H\!\left(A_{t:t+n}\right),
+$$
+and this entropy is entirely environment-sourced: writing $\varepsilon$ for the exogenous noise variables of the loop (initial state $W_t$, transition noise, sensor noise), every action is a measurable function of $\varepsilon$, so $H(A_{t:t+n}) = I(A_{t:t+n}; \varepsilon)$.
+:::
+
+::: {.proof}
+Determinism makes every summand of $H(A \,\|\, S)$ zero, giving the first claim.
+For the second, induct along the window: $S_{t:t+k}$ is a measurable function of $(\varepsilon, A_{t:t+k-1})$, and each $A_{t+j}$ with $j < k$ is by hypothesis a function of $S_{t:t+j}$, so all of $A_{t:t+k}$ is a function of $\varepsilon$ alone; then $H(A) = I(A; \varepsilon)$ because entropy of a function of $\varepsilon$ is mutual information with $\varepsilon$.
+:::
+
+That is the precise content of the reward: **bits of exogenous randomness transcribed into behaviour per window**.
+The causal conditioning on $A_{t:t+k-1}$ is what enforces "exogenous" — sensor variation that the agent's own past actions produced is conditioned away, which is the same echo-suppression that motivated the repair.
+Three consequences fix its character.
+
+**It rewards reacting, not adapting.**
+Any injective transcription of disturbances scores; nothing requires the response to be useful.
+A device that deterministically mirrors its noisy input — a thermometer driving a dial — is optimal.
+This is not a defect relative to empowerment; it is the same defect.
+Both are task-free channel objectives, and just as empowerment counts influence without asking whether the influenced states matter, plasticity counts responsiveness without asking whether the responses do.
+The "willingness to adapt" gloss imports an intentional reading the functional does not contain; what it contains is sensitivity.
+
+**It penalizes exploration noise.**
+The $-H(A \,\|\, S)$ term actively punishes stochasticity that is not sensor-driven.
+Large $\beta$ therefore pushes toward *deterministic* reactive policies — close to the opposite of the open, exploratory agent the word plasticity suggests.
+An agent that dithers is, by this measure, less plastic than a thermostat, because its dithering is plan noise and plan noise is subtracted.
+
+**Its budget is the environment's noise supply.**
+By @prp-transcription the reward is capped by $H(\varepsilon)$ as seen through the sensors.
+In the extreme case this cap is zero:
+
+::: {#prp-zerocap .proposition}
+If dynamics and sensors are deterministic and the initial state $W_t$ is known, then $I(S_{t:t+n} \to A_{t:t+n}) = 0$ for *every* policy.
+:::
+
+::: {.proof}
+Given $A_{t:t+k-1}$, the trajectory $S_{t:t+k}$ is a deterministic function of $(W_t, A_{t:t+k-1})$ and hence constant; conditioning on a constant changes no entropy, so every summand $I(S_{t:t+k}; A_{t+k} \mid A_{t:t+k-1})$ vanishes.
+:::
+
+Set @prp-zerocap beside @prp-saturation and the raw and repaired terms disagree maximally on the same test case: in a deterministic, fully legible world, raw plasticity is $\log\lvert\mathcal{A}\rvert$ — its largest possible value — while repaired plasticity is identically zero.
+The raw term reads a noiseless world as maximal adaptability because self-signalling works best there; the repaired term reads it correctly as offering nothing to adapt *to*.
+Deterministic worlds are also where empowerment is largest and cheapest to compute, so the two slots of $J_\beta$ pull toward different environments as well as different policies: $\mathrm{Emp}_t$ counts the state distinctions the agent's actions can create, the plasticity slot counts the action distinctions the world's disturbances can create, and $\beta$ prices bits of control against bits of transcription.
+
 The same discounting that @Schneider2025InformationTheoretic apply to empowerment horizons applies verbatim here: a $\lambda$-discounted sum of window-$k$ directed informations gives a discounted plasticity that weights short-horizon against long-horizon responsiveness, and the $\lambda \to 0$ and Abel $\lambda \to 1$ limits play the same roles as for discounted empowerment.
 
 ## References
