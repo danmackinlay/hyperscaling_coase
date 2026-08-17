@@ -30,7 +30,9 @@ In the **joint-objective** setting, one functional is applied to the pair: each 
 The claim of this note is that the difference between them is not a modelling detail.
 The single-agent repair conditioned on "the agent's own past actions" — and with two agents that phrase becomes ambiguous in exactly one place: *own* actions, or *our* actions?
 The two settings are the two answers, and every difference between them — what counts as communication, what counts as confound, who has an incentive to manipulate whom, whether the exogeneity trick that spared empowerment a $do$-operator survives — is downstream of that choice of conditioning set.
-The boundary of the agent is not given by the graph; it is a bookkeeping decision about which mechanisms count as "self" [@Kenton2023Discovering], and the information objectives are not invariant to it.
+The graph, to be clear, knows where the candidate boundaries are: the factorization of the loop into two sensor–action–noise blocks is genuine structure, and gluing the pair into one decision process would erase real independencies.
+What the graph does not do is elect one of its own seams: both settings live on the identical object-level graph and differ only in which union of action nodes the objective's causal conditioning treats as "self".
+The information objectives are not invariant to that election — and, we will argue, the election is not prior to the objectives either: each makes the other true.
 
 ## Setup
 
@@ -110,7 +112,11 @@ The graph is symmetric between the agents; every asymmetry below is put in by an
 
 Note what the graph does *not* contain: any edge between the agents.
 All interaction is mediated by $W$.
-Whatever "communication", "manipulation", or "cooperation" turn out to mean here, they are patterns of influence routed through the shared world, and the machinery of the companion note — which was built to sort world-routed influence into sensing versus echo — is exactly the machinery that will have to sort them.
+Whatever "communication", "manipulation", or "cooperation" turn out to mean here, they are patterns of influence routed through the shared world.
+The companion note's machinery was built to sort exactly such world-routed dependence into two kinds, and it will pay to have a name for the second: call **echo** the component of an agent's sensor–action dependence that is mediated by the agent's own past actions — equivalently, the component that vanishes once its own action history is causally conditioned on, which is what directed information and interventional flow both do.
+The operational reading is *news*: a sensor reading counts toward plasticity exactly to the extent that it was unpredictable from the agent's record of its own actions and plan, and it is echo to the extent that the record already determines it.
+(In the companion note's saturation example the agent writes its plan into the world and reads it back: the reading is perfectly predictable from the plan, pure echo, and the repair scores it zero.)
+Echo is a property of a sensor reading relative to an action log — not of whatever response the reading provokes — and the question this note turns on is: when agent 1's marks arrive at agent 2's sensors, *whose log do we check them against?*
 
 ## The boundary is a conditioning set
 
@@ -122,7 +128,38 @@ With two, the repaired plasticity of agent 2 can condition on $A^2_{t:k-1}$, or 
 - Conditioning on **own** actions only is the separate-objectives reading: agent 1 is environment, $U^1$ is one more exogenous noise source, and any influence agent 1 exerts on agent 2's sensors is genuine, creditable contingency.
 - Conditioning on **joint** actions is the joint-objective reading: the "self" has expanded to the team, the echo-suppression expands with it, and anything either agent wrote into the world is self-signalling of the composite agent.
 
-Everything in this note unwinds from this fork, so it is worth making the flip concrete before drawing consequences.
+An objection is worth meeting head-on: isn't the boundary in the graph after all?
+The partition into two loops is not a fiction — @fig-two-agent-loop encodes it as missing edges ($S^2$ never parents $A^1$) and as the independence $U^1 \perp U^2$, and a modeller who fused the pair into a single decision process with one joint action node would be writing a coarser graph that suppresses true independencies.
+Granted entirely: the *seams* are structural.
+Decentralization — who can read what, whose noise drives which actuator — is physics, and it is why the joint-objective setting will maximize over product policies rather than arbitrary joint ones.
+What is not structural is the *election*.
+The two settings share every node and edge of @fig-two-agent-loop and differ only in the functional evaluated on it — in which seam-bounded blocks are unioned into a "self" before the echo-suppression is applied.
+The graph offers a lattice of candidate selves — each agent, the pair, in larger systems any coalition — and ranks none of them.
+
+The mechanised-graph framing sharpens this rather than dissolving it.
+At the object level a policy node and a noise node look alike; what makes a subsystem an *agent* is a mechanism-level fact — its policy would adapt if the rest of the graph changed — and such boundaries are discoverable from mechanised structure [@Kenton2023Discovering].
+But adapt *toward what*?
+Toward whatever objective trains the mechanism.
+Run agent-discovery on a pair trained under separate objectives and it returns two agents; train the same architecture under the joint objective and the pair's mechanisms covary as one adaptive unit.
+The boundary is real, and even detectable — *ex post*.
+It is created by the choice of objective, not consulted by it, which is why this note treats it as the free parameter.
+
+Utility nodes make the election explicit — for agents that have them.
+In MAID language [@Hammond2023Reasoning] the two settings are two wirings of the same object-level graph: partition the utility variables into per-agent blocks $\boldsymbol{U}^1, \boldsymbol{U}^2$ with each decision process best-responding on its own block and you have drawn the two-player game; wire every decision to one shared block and you have drawn the team — a single agent with two decision nodes and decentralized information sets.
+Mechanising the game makes the dependence explicit: each decision-rule variable $\Pi_D$ is selected by a *rationality relation* as a function of the other mechanism variables — the environment's parameters $\boldsymbol{\Theta}$ and the other decision rules — and for expected-utility agents that relation is best response with respect to the agent's own utility block, so the boundary is visible in the graph as which utilities each decision rule answers to [@Hammond2023Reasoning; @Kenton2023Discovering; @MacDermott2023Characterising].
+
+For our objectives there is a wrinkle: empowerment and plasticity are not utilities in the node sense.
+A utility variable is a function of each trajectory whose expectation the agent maximizes; a capacity or a directed information is a nonlinear functional of the whole policy-induced distribution — its "integrand" $\log p(s \mid a)/p(s)$ depends on the very distribution the policy induces — so no fixed trajectory variable has it as an expectation.
+This does not eject information-theoretic agents from the formalism, because rationality relations are deliberately more general than best response: @Hammond2023Reasoning allow $r_D$ to be an arbitrary (everywhere-defined) relation between the other mechanisms and the chosen decision rule, and since the mechanism profile $(\boldsymbol{\theta}, \boldsymbol{\pi})$ determines the joint distribution, "$\pi_D$ maximizes this information functional of that distribution" is a legitimate relation with no utility node in sight.
+Both of our settings mechanise this way — the separate-objectives game as two relations referencing two per-agent functionals, the joint objective as both relations referencing one.
+But note what has happened to the boundary: with no utility nodes to wire, the election retreats into the *labels* of the rationality relations, and the two settings can now share not only the object-level graph but the entire mechanised graph — even the pattern of which mechanisms are relevant to which decision rules can coincide, since in both settings each policy answers to the environment's parameters and to the other policy.
+The one way to drag the election back into the graph is the estimator move: reify the functional as a reward node computed from a learned model.
+That makes it a bona fide utility variable and the wiring graphical again — and makes the node a descendant of the agent's own actions through the model.
+In the incentives literature that descendancy is precisely the graphical precondition for *reward tampering* — an instrumental control incentive on the mechanism that computes one's own reward [@Everitt2021Reward; @Everitt2021Agent] — and it is the estimator-exploitation failure of the companion note, resurfacing at the level of representation.
+(The companion note files that failure under "Goodhart", which is fair as an umbrella but worth keeping distinct from Goodhart's law proper: proxy–target divergence afflicts an honestly computed measure, whereas tampering corrupts the computation itself; the noisy-TV optimum is the former, the estimator loop the latter.)
+For information-theoretic agents the boundary election can be drawn in the graph, or it can be exact, but not both.
+
+Everything else unwinds from this fork, so it is worth making the flip concrete before drawing consequences.
 
 ## Communication flips sign
 
@@ -162,7 +199,14 @@ Verbatim the zero-capacity proposition of the companion note applied to the comp
 
 Same episode, same physics, same behaviour: the member's plasticity is maximal, the team's is zero.
 Nothing changed except the bookkeeping of $U^1$ — environment noise from agent 2's side of the boundary, plan noise from the team's side.
-**Under separate objectives, communication between agents is reward; under the joint objective, it is echo.**
+Be precise about what the pair of propositions does and does not say.
+It does not say that communication makes agent 2's response a function of agent 1's action — the determinism of $\varphi$ is incidental, and agent 2 could respond stochastically without changing either verdict.
+Both verdicts apply the same *news* test to the same sensor reading against two different logs.
+Against agent 2's log, which contains only agent 2's actions, $S^2_{t+1}$ is unpredictable — $V$ is genuine news to agent 2, so it counts (@prp-member).
+Against the team's log, which contains the entry $A^1_t = V$ itself, $S^2_{t+1}$ is exactly computable, so it delivers zero news to the team and the joint conditioning removes it (@prp-team).
+An internal message is one part of a system telling another part something the system as a whole already wrote down; a memo is not news about the world outside the organization.
+And the split is quantitative, not absolute: make the world noisy and whatever corruption the channel adds to the trace is *not* in the team's log, so agent 2's transcription of the corruption counts as team plasticity — the team is credited with learning about the world's noise, just not with re-reading its own plan.
+**Under separate objectives, communication between agents is reward; under the joint objective, it is echo — the team's own plan, reflected off the world back into the team's sensors, and subtracted as such.**
 Neither reading is a bug.
 The team-level metric is doing precisely what the repair was designed to do: an ensemble whose members busily "respond" to marks the other members left is, viewed as one agent, signalling to itself, and a team-plasticity metric correctly scores an organization that reacts only to its own internal memos at zero.
 The member-level metric is also doing its job: from inside the boundary, the other agent genuinely is part of the world's contingency supply.
@@ -191,7 +235,7 @@ The power-seeking theorems [@Turner2021Optimal] say optimal policies for almost 
 Disempowerment of the other is not a perverse corner of this setting; it is the gradient.
 
 The XOR world also records, for later, that joint empowerment is not the sum of individual empowerments: the controllable bit exists only for the coordinated pair.
-This is the interaction-information / synergy structure familiar from partial information decomposition,^[TODO: cite Williams & Beer on partial information decomposition — not yet in references.bib.] and it is why "make both agents altruistic about each other's individual metric" does not converge to the joint setting: a sum of marginal terms cannot see synergistic control at all, and double-counts redundant control.
+This is the interaction-information / synergy structure familiar from partial information decomposition [@Williams2010Nonnegative], and it is why "make both agents altruistic about each other's individual metric" does not converge to the joint setting: a sum of marginal terms cannot see synergistic control at all, and double-counts redundant control.
 The aggregate a naive utilitarian would write down is not a midpoint between the selfish game and the team objective; it is off the line entirely.
 
 ### An entropy supply for plasticity
@@ -275,7 +319,7 @@ Shared randomness $U^0$ — correlated plans, agreed before the window — buys 
 Correlation you buy with shared dice is causally innocent.
 
 Correlation you buy with *sensors* is not, and here is the sharp point.
-The classic multiple-access results^[TODO: cite Gaarder & Wolf 1975 and Ozarow 1984 on feedback enlarging the MAC capacity region, and Kramer's causally-conditioned directed information formulation for networks with feedback — none in references.bib yet.] show that feedback, useless for a memoryless point-to-point channel, *strictly enlarges* the capacity region of a multiple-access channel.
+The classic multiple-access results [@Gaarder1975Capacity; @Ozarow1984Capacity] show that feedback, useless for a memoryless point-to-point channel, *strictly enlarges* the capacity region of a multiple-access channel.
 The mechanism is exactly what it sounds like in our setting: by observing the channel output, the senders can correlate their subsequent inputs with each other — the shared world doubles as the team's communication bus, and closed-loop policies recover part of the centralized capacity that product policies forfeit.
 So the team's empowerment maximizer *wants* the dashed sensor-to-action edges of @fig-two-agent-loop.
 And the moment it has them, the exogeneity argument that let single-agent empowerment skip the causal machinery is dead: a closed-loop $A^i_k$ has sensor parents, which opens the back-door
@@ -285,7 +329,7 @@ $$
 a fork at $W_k$ with nothing conditioned, so the observational $I(\mathbf{A}; S_{t+n})$ overcounts: part of the measured "influence" is the world driving both its own future and the actions.
 This is the plasticity confound, verbatim, now infecting empowerment — because coordinating through the world *is* sensing, and sensing destroys exogeneity.
 
-The repair is also verbatim: replace the mutual information with its causally conditioned form, crediting actions only with influence on sensor readings that follow them — which is precisely how feedback capacity is defined in the point-to-point case [@Massey1990Causality; @Tatikonda2009Capacity] and, via causally conditioned directed information, in the network case.
+The repair is also verbatim: replace the mutual information with its causally conditioned form, crediting actions only with influence on sensor readings that follow them — which is precisely how feedback capacity is defined in the point-to-point case [@Massey1990Causality; @Tatikonda2009Capacity] and, via causally conditioned directed information, in the network case [@Kramer2003Capacity].
 The symmetric summary of both notes is then:
 
 > Single agent: empowerment is causally innocent, plasticity needs the repair.
@@ -312,8 +356,8 @@ The genuinely open directions we see:
 
 What no boundary choice will decide, as usual, is which boundary is right.
 The companion note ended by observing that the task/non-task partition is a value judgment the functionals cannot make; this note ends one step deeper in the same hole.
-Whether another agent is world or self — whether its signals are contingency to honour or echo to mute, whether its steerability is a resource or a vulnerability held in trust — is not readable off the graph, which is symmetric.
-It is the first thing the modeller writes down, and everything the metrics subsequently say is an elaboration of that first stroke.
+Whether another agent is world or self — whether its signals are contingency to honour or echo to mute, whether its steerability is a resource or a vulnerability held in trust — is not decided by the graph, which exhibits every candidate boundary and ranks none of them.
+It is decided by the objective the modeller writes down, and everything the metrics subsequently say is an elaboration of that first stroke.
 
 ## References
 
