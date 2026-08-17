@@ -1,0 +1,321 @@
+---
+title: Empowerment and plasticity in multi-agent systems
+date: '2026-08-16T02:49:13+01:00'
+date-modified: '2026-08-16'
+author:
+  - name: Dan MacKinlay
+    affiliation: ACS Research
+  - name: Chris Pang
+    affiliation: PIBBSS
+categories:
+  - agency
+  - information theory
+  - causality
+  - reinforcement learning
+  - multi agent systems
+link-citations: true
+description: "Two ways to put a second agent in the perception–action loop — separate objectives, or one joint objective over both — differ in where the causal boundary lies, and everything follows from that. Communication flips from reward to echo; your influence over another agent is bounded by their plasticity; and team empowerment turns out to be multiple-access feedback capacity, which resurrects for empowerment the very confound that the single-agent story never had."
+bibliography: references.bib
+csl: minimalist.csl
+---
+
+**WARNING**: Machine-generated draft.
+
+The [companion note](./empowerment_plasticity.qmd) repaired the plasticity dual of empowerment [@Klyubin2005All; @Abel2025Plasticity] by treating it causally: the raw mutual information is confounded by the agent's own plan, and the fix — Massey's directed information [@Massey1990Causality], or Ay–Polani interventional flow [@Ay2008Information] — works by conditioning away the agent's own past actions.
+This note puts a second agent in the loop and asks what happens to both objectives.
+
+There are two natural constructions.
+In the **separate-objectives** setting, each agent optimizes its own empowerment or plasticity, treating the other as part of the environment.
+In the **joint-objective** setting, one functional is applied to the pair: each agent directly controls only its own actions, but both accrue the score of the joint action process.
+The claim of this note is that the difference between them is not a modelling detail.
+The single-agent repair conditioned on "the agent's own past actions" — and with two agents that phrase becomes ambiguous in exactly one place: *own* actions, or *our* actions?
+The two settings are the two answers, and every difference between them — what counts as communication, what counts as confound, who has an incentive to manipulate whom, whether the exogeneity trick that spared empowerment a $do$-operator survives — is downstream of that choice of conditioning set.
+The boundary of the agent is not given by the graph; it is a bookkeeping decision about which mechanisms count as "self" [@Kenton2023Discovering], and the information objectives are not invariant to it.
+
+## Setup
+
+Two agents $i \in \{1, 2\}$ share a world.
+Write $W_k$ for the latent world state, $S^i_k$ for agent $i$'s sensor reading, $A^i_k$ for its action, and $U^i$ for its private policy randomness.
+The world evolves under both agents' actions, $W_{k+1} \sim P(\cdot \mid W_k, A^1_k, A^2_k)$, and each sensor reads the shared state, $S^i_k \sim P(\cdot \mid W_k)$.
+Policies are as in the companion note: in closed loop $A^i_k$ may depend on $(S^i_{t:k}, A^i_{t:k-1}, U^i)$, in open loop on $U^i$ alone, and $U^1 \perp U^2$, both independent of the environment noise.
+Boldface collects the pair: $\mathbf{A}_k = (A^1_k, A^2_k)$, $\mathbf{S}_k = (S^1_k, S^2_k)$.
+
+::: {#fig-two-agent-loop .figure fig-align="center"}
+
+```{.tikz filename='pa-loop-two-agent'}
+%%| renderer: latex
+
+\input{cid_styles}
+\begin{tikzpicture}[scale=1.3, transform shape]
+
+\node[mechanism] (U2) at (3.9,4.4) {$U^2$};
+
+\node[obs]      (S2t)  at (0,2.2)   {$S^2_t$};
+\node[obs]      (S2t1) at (2.6,2.2) {$S^2_{t+1}$};
+\node[obs]      (S2t2) at (5.2,2.2) {$S^2_{t+2}$};
+\node[decision] (A2t)  at (1.3,2.2) {$A^2_t$};
+\node[decision] (A2t1) at (3.9,2.2) {$A^2_{t+1}$};
+\node[decision] (A2t2) at (6.5,2.2) {$A^2_{t+2}$};
+
+\node[latent] (Wt)  at (0,0)   {$W_t$};
+\node[latent] (Wt1) at (2.6,0) {$W_{t+1}$};
+\node[latent] (Wt2) at (5.2,0) {$W_{t+2}$};
+
+\node[obs]      (S1t)  at (0,-2.2)   {$S^1_t$};
+\node[obs]      (S1t1) at (2.6,-2.2) {$S^1_{t+1}$};
+\node[obs]      (S1t2) at (5.2,-2.2) {$S^1_{t+2}$};
+\node[decision] (A1t)  at (1.3,-2.2) {$A^1_t$};
+\node[decision] (A1t1) at (3.9,-2.2) {$A^1_{t+1}$};
+\node[decision] (A1t2) at (6.5,-2.2) {$A^1_{t+2}$};
+
+\node[mechanism] (U1) at (3.9,-4.4) {$U^1$};
+
+\edge {Wt} {Wt1};
+\edge {Wt1} {Wt2};
+
+\edge {Wt} {S1t};
+\edge {Wt1} {S1t1};
+\edge {Wt2} {S1t2};
+\edge {Wt} {S2t};
+\edge {Wt1} {S2t1};
+\edge {Wt2} {S2t2};
+
+\edge {A1t} {Wt1};
+\edge {A1t1} {Wt2};
+\edge {A2t} {Wt1};
+\edge {A2t1} {Wt2};
+
+\edge {U1} {A1t};
+\edge {U1} {A1t1};
+\edge {U1} {A1t2};
+\edge {U2} {A2t};
+\edge {U2} {A2t1};
+\edge {U2} {A2t2};
+
+\edge[dashed] {S1t} {A1t};
+\edge[dashed] {S1t1} {A1t1};
+\edge[dashed] {S1t2} {A1t2};
+\edge[dashed] {S2t} {A2t};
+\edge[dashed] {S2t1} {A2t1};
+\edge[dashed] {S2t2} {A2t2};
+
+\end{tikzpicture}
+```
+
+Two perception–action loops sharing one world, $n = 2$.
+Both agents' actions parent each world transition; each agent's sensors read the shared state.
+Dashed sensor-to-action edges exist only in closed loop.
+The graph is symmetric between the agents; every asymmetry below is put in by an objective, not by the physics.
+:::
+
+Note what the graph does *not* contain: any edge between the agents.
+All interaction is mediated by $W$.
+Whatever "communication", "manipulation", or "cooperation" turn out to mean here, they are patterns of influence routed through the shared world, and the machinery of the companion note — which was built to sort world-routed influence into sensing versus echo — is exactly the machinery that will have to sort them.
+
+## The boundary is a conditioning set
+
+Recall the shape of the single-agent repair.
+Raw plasticity $I(S_{t:t+n}; A_{t+n})$ was confounded because the agent's plan reaches the sensors through the world; the repair — directed information, or interventional flow — conditions on (or intervenes on) *the agent's own past actions*, cutting the echo path while leaving the sensing path intact.
+"Own past actions" was unambiguous with one agent.
+With two, the repaired plasticity of agent 2 can condition on $A^2_{t:k-1}$, or on $\mathbf{A}_{t:k-1}$, and these are different quantities with different fixed points:
+
+- Conditioning on **own** actions only is the separate-objectives reading: agent 1 is environment, $U^1$ is one more exogenous noise source, and any influence agent 1 exerts on agent 2's sensors is genuine, creditable contingency.
+- Conditioning on **joint** actions is the joint-objective reading: the "self" has expanded to the team, the echo-suppression expands with it, and anything either agent wrote into the world is self-signalling of the composite agent.
+
+Everything in this note unwinds from this fork, so it is worth making the flip concrete before drawing consequences.
+
+## Communication flips sign
+
+Put the pair in the environment of the companion note's saturation proposition: deterministic dynamics and sensors, initial state known, and a set $\mathcal{A}' \subseteq \mathcal{A}^1$ of agent-1 actions whose one-step traces are distinguishable in agent 2's sensor, i.e. $a \mapsto s^2_{t+1}(a)$ is injective on $\mathcal{A}'$.
+Let agent 1 play open loop: draw $V$ uniform on $\mathcal{A}'$ and play $A^1_t = V$.
+Let agent 2 play a deterministic reactive policy that reads the trace: $A^2_{t+1} = \varphi(S^2_{t+1})$ with $\varphi$ injective on the trace set, all its other actions constant.
+Agent 1 is, in the plainest sense, sending agent 2 a message through the world.
+
+::: {#prp-member .proposition}
+In the episode above, agent 2's *individual* repaired plasticity is maximal:
+$$
+I\!\left(S^2_{t:t+n} \to A^2_{t:t+n}\right) \;=\; \log \lvert \mathcal{A}' \rvert .
+$$
+:::
+
+::: {.proof}
+All of agent 2's actions except $A^2_{t+1}$ are constant, so only the $k=1$ summand of the directed information is nonzero: $I(S^2_{t:t+1}; A^2_{t+1} \mid A^2_t) = H(A^2_{t+1}) - H(A^2_{t+1} \mid S^2_{t:t+1}) = \log\lvert\mathcal{A}'\rvert - 0$, since $A^2_{t+1} = \varphi(S^2_{t+1})$ is an injective deterministic function of the sensor reading and $V$ is uniform.
+:::
+
+And this is not a confound: it survives the companion note's own repair.
+Conditioning (or intervening) on agent 2's past actions does nothing here — the dependence runs $U^1 \to A^1_t \to W_{t+1} \to S^2_{t+1} \to A^2_{t+1}$, and $U^1$ is exogenous *to agent 2*.
+By the transcription theorem of the companion note, $U^1$ simply joins agent 2's noise supply $\varepsilon$.
+Agent 2 really is sensing; what it is sensing happens to be another agent.
+
+Now redraw the boundary around the pair, treating $(\mathbf{A}_k)$ as one action process and $(\mathbf{S}_k)$ as one sensor process.
+
+::: {#prp-team .proposition}
+In any deterministic world with known initial state — in particular, in the episode above — the *team's* repaired plasticity vanishes for every policy pair, closed-loop or not:
+$$
+I\!\left(\mathbf{S}_{t:t+n} \to \mathbf{A}_{t:t+n}\right) \;=\; 0 .
+$$
+:::
+
+::: {.proof}
+Verbatim the zero-capacity proposition of the companion note applied to the composite agent: given the joint past actions $\mathbf{A}_{t:t+k-1}$, the joint sensor trajectory is a deterministic function of $(W_t, \mathbf{A}_{t:t+k-1})$ and hence constant, so every summand of the directed information vanishes.
+:::
+
+Same episode, same physics, same behaviour: the member's plasticity is maximal, the team's is zero.
+Nothing changed except the bookkeeping of $U^1$ — environment noise from agent 2's side of the boundary, plan noise from the team's side.
+**Under separate objectives, communication between agents is reward; under the joint objective, it is echo.**
+Neither reading is a bug.
+The team-level metric is doing precisely what the repair was designed to do: an ensemble whose members busily "respond" to marks the other members left is, viewed as one agent, signalling to itself, and a team-plasticity metric correctly scores an organization that reacts only to its own internal memos at zero.
+The member-level metric is also doing its job: from inside the boundary, the other agent genuinely is part of the world's contingency supply.
+The two settings disagree about the *value of communication* because they disagree about *who is talking*.
+
+## Separate objectives: the other agent is three things at once
+
+Fix the separate-objectives setting and look at agent 2 from agent 1's side of the boundary.
+Agent 2 shows up in agent 1's objectives in three distinct roles.
+
+### A noise source on the actuation channel
+
+Agent 1's empowerment is still causally innocent: if $A^1$ is drawn open-loop from $U^1$, its only parent is $U^1$, there is no back-door into the world, and paths routed through agent 2 — $A^1 \to W \to S^2 \to A^2 \to W \to S^1$ — are *directed*, so the observational mutual information still measures causal influence.
+What breaks is not the causal semantics but the fixedness of the channel: the kernel $p(s^1_{t+n} \mid a^1_{t:t+n})$ now has agent 2's policy baked into it.
+Empowerment stops being a property of an agent-in-a-world and becomes a property of a *profile*.
+
+A two-action example makes this stark.
+Let the world be a XOR gate: binary actions, $W_{t+1} = A^1_t \oplus A^2_t$, sensors read $W$ noiselessly.
+
+- Against an agent 2 that plays uniformly at random, agent 1's empowerment is **zero**: the output is uniform whatever $a^1$ is.
+- Against an agent 2 that plays a constant, agent 1's empowerment is **one bit**.
+- The *pair*, under independent uniform inputs, has joint empowerment $I(A^1_t, A^2_t; S_{t+1}) = 1$ bit — all of it synergistic, since both marginal terms are zero.
+
+So the other agent's mere entropy is interference on my channel; two empowerment maximizers each have a native incentive to make the other predictable, or impotent — quieter on the shared channel by whatever means.
+The power-seeking theorems [@Turner2021Optimal] say optimal policies for almost any goal drain option value from the rest of the world by default; in the mutual-empowerment game the "goal" is itself option value, and the drain aims directly at the other agent.
+Disempowerment of the other is not a perverse corner of this setting; it is the gradient.
+
+The XOR world also records, for later, that joint empowerment is not the sum of individual empowerments: the controllable bit exists only for the coordinated pair.
+This is the interaction-information / synergy structure familiar from partial information decomposition,^[TODO: cite Williams & Beer on partial information decomposition — not yet in references.bib.] and it is why "make both agents altruistic about each other's individual metric" does not converge to the joint setting: a sum of marginal terms cannot see synergistic control at all, and double-counts redundant control.
+The aggregate a naive utilitarian would write down is not a midpoint between the selfish game and the team objective; it is off the line entirely.
+
+### An entropy supply for plasticity
+
+By the transcription theorem, agent 1's plasticity budget is the exogenous entropy its sensors can see — and $U^2$ is now part of it.
+The other agent's unpredictability is my contingency supply.
+But recall what the repaired objective does to its *own* holder: the $-H(A \,\|\, S)$ term punishes plan noise, so a plasticity maximizer is driven toward deterministic reactive policies.
+Two mutual plasticity maximizers therefore *starve each other*: each kills exactly the randomness the other feeds on.
+At the deterministic-reactive fixed point, both agents' actions are functions of the world's genuinely exogenous noise, and the pair's total budget collapses back to $H(\varepsilon)$ plus one nonrenewable stock — each agent's initial uncertainty about the *other's policy*, which is a $\theta$-like epistemic reserve in the sense of the companion note's Bayesian section, drawn down as the agents identify each other.
+With one twist: unlike nature's $\theta$, an opponent that keeps learning keeps renewing the stock.
+A pair of plasticity maximizers has a shared interest in each other's continued non-stationarity that neither's objective can express directly — a tension worth poking at in simulation.
+
+### An actuator — and the steerability bound
+
+The third role is the interesting one.
+Agent 2's policy is a channel from agent 2's sensors to the world; if agent 1 can write into those sensors, agent 2 becomes an actuator agent 1 operates by messaging.
+How big is that actuator?
+Exactly as big as agent 2's plasticity:
+
+::: {#prp-steer .proposition}
+Let agent 1 play any open-loop policy and agent 2 any policy (parents of $A^2_k$: $S^2_{t:k}$, $A^2_{t:k-1}$, $U^2$).
+Then agent 1's information-theoretic handle on agent 2's actions is bounded by agent 2's realized plasticity:
+$$
+I\!\left(A^1_{t:t+n};\, A^2_{t:t+n}\right) \;\le\; I\!\left(S^2_{t:t+n} \to A^2_{t:t+n}\right).
+$$
+:::
+
+::: {.proof}
+Chain rule and the data-processing bound term by term:
+$$
+I(A^1; A^2_{t:t+n}) = \sum_k I\!\left(A^1; A^2_{t+k} \,\middle|\, A^2_{t:t+k-1}\right)
+\le \sum_k I\!\left(A^1, S^2_{t:t+k}; A^2_{t+k} \,\middle|\, A^2_{t:t+k-1}\right),
+$$
+and each summand splits as $I(S^2_{t:t+k}; A^2_{t+k} \mid A^2_{t:t+k-1}) + I(A^1; A^2_{t+k} \mid S^2_{t:t+k}, A^2_{t:t+k-1})$.
+The second piece vanishes: conditional on its observed parents, $A^2_{t+k}$ is randomized by $U^2$ alone, and $U^2$ is d-separated from the open-loop $A^1$ given that conditioning set — every path out of $U^2$ passes through a conditioned earlier action of agent 2 (a non-collider, hence blocked) or through an unconditioned collider at a future world state.
+Summing the first pieces gives the directed information.
+:::
+
+Since any influence of agent 1 on downstream variables that is mediated wholly by agent 2's actions factors through $A^2_{t:t+n}$, the mediated part of agent 1's *empowerment* inherits the same bound by data processing.
+Read it in both directions:
+
+- **Your plasticity is my empowerment.** A responsive agent is an amplifier available to whoever can reach its sensors. The assistance framing — help the human by maximizing the human's options — has a mirror image: an agent that maximizes its *influence via* another agent is rewarded for the other's steerability.
+- **Steerability is exploitability.** Under separate objectives, high plasticity is not merely a virtue of adaptedness; it is an attack surface, and the bound quantifies the attack budget in bits. The intrinsic-motivation literature has already met this object from the influencer's side: rewarding influence over other agents' actions [@Jaques2019Social] is precisely rewarding the left-hand side, and notably that work found the reward had to be computed counterfactually — the same causal correction, arrived at for the same reason.
+
+Under the joint objective, this entire incentive structure is void: influencing your teammate is echo, worth nothing per se, and the steerability bound becomes a statement about the team's internal wiring rather than about anyone's payoff.
+Internalization is the information-theoretic version of merging the firms to stop them advertising at each other.
+
+### The martingale defence dies socially
+
+One more consequence of the boundary.
+The companion note's defence of the Bayesian setting was that an exact Bayesian cannot game its own beliefs: the belief martingale kills every experiment's expected effect.
+That theorem is about the agent's *own* posterior.
+Nothing protects agent 2's posterior from agent 1: choosing actions to steer what another agent observes, and hence believes, and hence does, is not self-signalling — it is ordinary control, routed through the other's inference machinery, and the separate-objectives setting prices it like any other actuation.
+When it raises the other's accuracy we call it teaching; when it lowers it, deception; the functional does not distinguish.
+The estimator-Goodhart failure mode of the companion note also returns at the social level with the roles split between agents: my learned model of you is part of *my* measuring instrument, and your policy gradient reaches it.
+
+## The joint objective: team empowerment is multiple-access feedback capacity
+
+Now the other fork.
+Define team empowerment as the joint actuation capacity under decentralized control:
+$$
+\mathrm{Emp}^{\text{team}}_t \;=\; \max_{p(a^1)\,p(a^2)} I\!\left(\mathbf{A}_{t:t+n};\, S_{t+n}\right),
+$$
+the maximum over *product* policies — each agent randomizes only its own actions — of the joint information imprinted on a future sensor reading.
+Information theory has a name for this object: it is the **multiple-access channel** problem, two senders and one receiver, and the correspondence is worth taking seriously because the MAC literature has already mapped the terrain.
+
+First, the constraint set matters, and its levels are the coordination resources:
+
+$$
+\underbrace{\text{selfish equilibrium}}_{\text{game}}
+\;\le\;
+\underbrace{\max_{p(a^1)p(a^2)}}_{\text{independent}}
+\;\le\;
+\underbrace{\max_{p(a^1|u^0)p(a^2|u^0)}}_{\text{shared randomness}}
+\;\le\;
+\underbrace{\max_{p(a^1,a^2)}}_{\text{centralized}} .
+$$
+
+The first gap is a price of anarchy; the last gap is the price of decentralization, the value of being one agent rather than two.
+Shared randomness $U^0$ — correlated plans, agreed before the window — buys some correlation *without* touching the causal structure: inputs correlated through exogenous common noise are still exogenous, still back-door-free, still $do$-free.
+Correlation you buy with shared dice is causally innocent.
+
+Correlation you buy with *sensors* is not, and here is the sharp point.
+The classic multiple-access results^[TODO: cite Gaarder & Wolf 1975 and Ozarow 1984 on feedback enlarging the MAC capacity region, and Kramer's causally-conditioned directed information formulation for networks with feedback — none in references.bib yet.] show that feedback, useless for a memoryless point-to-point channel, *strictly enlarges* the capacity region of a multiple-access channel.
+The mechanism is exactly what it sounds like in our setting: by observing the channel output, the senders can correlate their subsequent inputs with each other — the shared world doubles as the team's communication bus, and closed-loop policies recover part of the centralized capacity that product policies forfeit.
+So the team's empowerment maximizer *wants* the dashed sensor-to-action edges of @fig-two-agent-loop.
+And the moment it has them, the exogeneity argument that let single-agent empowerment skip the causal machinery is dead: a closed-loop $A^i_k$ has sensor parents, which opens the back-door
+$$
+A^i_k \;\leftarrow\; S^i_k \;\leftarrow\; W_k \;\rightarrow\; W_{k+1} \;\rightarrow\; \cdots \;\rightarrow\; S_{t+n},
+$$
+a fork at $W_k$ with nothing conditioned, so the observational $I(\mathbf{A}; S_{t+n})$ overcounts: part of the measured "influence" is the world driving both its own future and the actions.
+This is the plasticity confound, verbatim, now infecting empowerment — because coordinating through the world *is* sensing, and sensing destroys exogeneity.
+
+The repair is also verbatim: replace the mutual information with its causally conditioned form, crediting actions only with influence on sensor readings that follow them — which is precisely how feedback capacity is defined in the point-to-point case [@Massey1990Causality; @Tatikonda2009Capacity] and, via causally conditioned directed information, in the network case.
+The symmetric summary of both notes is then:
+
+> Single agent: empowerment is causally innocent, plasticity needs the repair.
+> Team of agents: *both* need the repair, and for the same reason — the behaviour that makes a team more than the sum of its members (coordination through the shared world) is exactly the behaviour that breaks the innocence.
+
+The $do$-free zone of the theory is the exogenous-input zone: open-loop individuals, and teams coordinated only by shared randomness.
+Everything beyond it — feedback, coordination, communication, manipulation — lives where the causal machinery is mandatory.
+That the interesting phenomena and the need for causal treatment arrive at exactly the same doorstep is, we think, the real lesson of the exercise, and it matches the direction of the causal-games literature, which had to build mechanised/multi-agent causal graphs to say anything stable about incentives in the first place [@Hammond2023Reasoning; @MacDermott2023Characterising].
+
+As for **team plasticity**, @prp-team already showed its character: causally conditioning on the joint action history mutes all internal chatter, and the budget shrinks to what is genuinely exogenous to the team — the shared world's noise rate $H(\varepsilon)$ and epistemic stock $H(\theta)$.
+That is arguably the correct notion of *collective* adaptivity: it measures the team's coupling to what neither member controls, and it cannot be Goodharted by members performing responsiveness at each other.
+The cost is the same as everywhere in this note: the metric is relative to a drawn boundary, and redrawing the boundary relabels the same bits between "adaptation" and "echo".
+
+## Where this leaves other-regarding preferences
+
+The two settings bracket a spectrum rather than exhausting it, but the spectrum is not the naive one.
+Averaging the members' individual objectives does not interpolate toward the team objective — the XOR example shows the sum misses synergistic control entirely — so "increasingly altruistic weights on each other's metrics" is not a path from the game to the team.
+The genuinely open directions we see:
+
+- **Asymmetric other-regarding terms.** Agent 1 maximizing agent 2's individual empowerment is the assistance/option-value-preservation family of the companion note's coda, learnable in practice [@Franzmeyer2021Learning]. Structurally it is a separate-objectives game with an other-regarding payoff, not a joint objective — the boundary stays drawn between the agents, which is exactly what makes it a statement of *deference* rather than *fusion*. How the steerability bound interacts with it is a concrete question: an assistant that maximizes your empowerment while you retain a large handle on its actions (@prp-steer, with roles fixed) looks like a formalization of corrigible helpfulness.
+- **Intermediate boundaries.** The conditioning set is a dial, not a switch: one can condition on own actions plus a declared subset of the other's (public commitments, broadcast actions), grading the partner from "environment" to "self" channel by channel. Whether any interesting fixed points live strictly between the endpoints is open.
+- **Equilibrium structure.** The separate-objectives setting needs its game theory done: existence and character of equilibria of the mutual-empowerment game (is mutual disempowerment an attractor?), of the mutual-plasticity game (the starvation fixed point sketched above), and of mixed profiles — one empowerment maximizer and one plasticity maximizer look, on paper, like a natural predator–prey pair, the one seeking handles and the other offering them.
+- **Quantities to compute.** Every named gap in the coordination hierarchy — price of anarchy, value of shared randomness, feedback gain — is a well-posed number in a small world (the XOR gate and its relatives), computable by the same Blahut–Arimoto-style machinery as empowerment itself. Small-world tables of these gaps would make the abstractions in this note falsifiable, and would show where the confound quantitatively bites: the difference between observational and causally conditioned team empowerment under the optimal closed-loop profile *is* the size of the resurrected confound.
+
+What no boundary choice will decide, as usual, is which boundary is right.
+The companion note ended by observing that the task/non-task partition is a value judgment the functionals cannot make; this note ends one step deeper in the same hole.
+Whether another agent is world or self — whether its signals are contingency to honour or echo to mute, whether its steerability is a resource or a vulnerability held in trust — is not readable off the graph, which is symmetric.
+It is the first thing the modeller writes down, and everything the metrics subsequently say is an elaboration of that first stroke.
+
+## References
+
+::: {#refs}
+:::
