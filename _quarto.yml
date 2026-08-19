@@ -32,14 +32,21 @@ format:
 execute:
   freeze: true
 tikz:
-  renderer: tikzjax
-  # cache: true
-  ## pdftocairo (from poppler-utils) replaces inkscape as the SVG engine.
-  ## Pre-installed on macOS via brew and on the ubuntu-latest GH Actions runner,
-  ## so no extra install step needed anywhere. Lighter and faster than inkscape.
-  # svg-engine: pdftocairo
-  ## Project-root cache, relative-resolution trick: ../.tikz-cache from any
-  ## depth-1 qmd (notebook/, post/, presentation/, …) converges on the same
-  ## <project-root>/.tikz-cache. Depth-2 qmds (e.g. notebook/genbp/index.qmd)
-  ## need a per-doc override of `../../.tikz-cache`. See README.md "Cache strategy".
-  # cache-dir: ../.tikz-cache
+  # Diagrams are pre-rendered to SVG and the results are COMMITTED to the repo
+  # (see .tikz-cache/). Contributors without a TeX install can therefore render
+  # the site normally — the filter finds every diagram in the cache and never
+  # shells out to pdflatex. Only someone *editing* a .tikz block needs TeX.
+  renderer: latex
+  cache: true
+  # Project-relative: every post is a top-level .qmd, so pandoc's cwd is the
+  # project root and this resolves to <project-root>/.tikz-cache.
+  cache-dir: .tikz-cache
+  # Pinned, not left to the filter's defaults: the cache key is a hash of the
+  # block source PLUS these engine names, so an upstream default change would
+  # silently invalidate every committed entry.
+  tex-engine: pdflatex
+  # pdftocairo (poppler) rather than the default inkscape: it is lighter, is
+  # already on both a brew macOS box and the ubuntu-latest GH Actions runner,
+  # and needs no kpathsea wiring (the brew `dvisvgm` cannot find texmf.cnf).
+  # It outlines text to paths, so the committed SVGs are self-contained.
+  svg-engine: pdftocairo

@@ -1,5 +1,8 @@
 # Quarto render artifacts
 *_cache/
+# NB: .tikz-cache/ is deliberately NOT ignored — the pre-rendered diagram SVGs
+# are committed so contributors without a TeX install can render the site.
+# (`*_cache/` above matches names ending in "_cache", not ".tikz-cache".)
 /.quarto/
 **/*.quarto_ipynb
 .qmd-*/          # old per-doc caches, if any

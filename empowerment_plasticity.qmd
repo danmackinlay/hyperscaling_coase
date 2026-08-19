@@ -38,8 +38,6 @@ Crucially, $U$ is independent of the environment noise and touches the world onl
 ::: {#fig-pa-loop .figure fig-align="center"}
 
 ```{.tikz filename='pa-loop-closed'}
-%%| renderer: latex
-
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.4, transform shape]
 
@@ -125,8 +123,6 @@ An agent that senses nothing has positive "plasticity", because its plan is writ
 ::: {#fig-confound .figure fig-align="center"}
 
 ```{.tikz filename='pa-loop-confound'}
-%%| renderer: latex
-
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.4, transform shape]
 
@@ -390,8 +386,6 @@ Graphically $\theta$ is one more latent exogenous variable, a parent of every tr
 ::: {#fig-theta .figure fig-align="center"}
 
 ```{.tikz filename='pa-loop-theta'}
-%%| renderer: latex
-
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.4, transform shape]
 
@@ -534,8 +528,6 @@ The reward node is then a *descendant of the agent's actions* through the model:
 ::: {#fig-goodhart .figure fig-align="center"}
 
 ```{.tikz filename='goodhart-loop'}
-%%| renderer: latex
-
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.4, transform shape]
 

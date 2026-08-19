@@ -45,8 +45,6 @@ Boldface collects the pair: $\mathbf{A}_k = (A^1_k, A^2_k)$, $\mathbf{S}_k = (S^
 ::: {#fig-two-agent-loop .figure fig-align="center"}
 
 ```{.tikz filename='pa-loop-two-agent'}
-%%| renderer: latex
-
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.3, transform shape]
 

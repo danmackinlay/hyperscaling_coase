@@ -32,11 +32,47 @@ Custom TikZ filter: `_extensions/danmackinlay/tikz/` (v1.3.0, Lua-based).
 - `\edge {A} {B}` — directed edge A → B
 - `\plate {name} {(node1)(node2)} {label}` — plate notation
 
-**Rendering pipeline:** pdflatex → SVG (via inkscape/dvisvgm/pdftocairo). Requires local LaTeX.
+**Rendering pipeline:** pdflatex → SVG via `pdftocairo`. Configured in `_quarto.yml` under `tikz:`.
 
-**TikZJax** (browser WebAssembly, no LaTeX needed): add `tikzjax: true` as a block attribute.
+### Cache is committed — contributors do not need LaTeX
 
-**Cache:** `~/.cache/tikz-diagram-filter/` — delete to force re-render.
+`cache-dir: .tikz-cache` (project-relative, *not* the filter's default
+`~/.cache/tikz-diagram-filter/`) and `.tikz-cache/` is deliberately **not**
+gitignored. The rendered SVGs are checked in, so `quarto render` succeeds with
+no TeX toolchain at all — verified by rendering the whole site with `pdflatex`,
+`inkscape`, `dvisvgm` and `pdftocairo` all absent from `PATH`.
+
+Consequences to respect:
+
+- **`tex-engine` and `svg-engine` are pinned explicitly in `_quarto.yml`.** The
+  cache key is `sha1(block source .. stringify(options))` and those engine names
+  are folded into the options. Leaving them to the filter's defaults would mean
+  an upstream default change silently invalidates every committed entry. Don't
+  un-pin them, and don't change them casually — either invalidates all 8 files.
+- **Editing a `.tikz` block or `cid_styles.tex` requires LaTeX**, because it
+  changes the cache key. After editing, re-render *with* TeX and commit the new
+  `.tikz-cache/*.svg` alongside the `.qmd` change. Stale entries are not
+  garbage-collected; delete the orphan by hand.
+- On a cache miss without TeX the render does **not** hard-fail: the affected
+  figure is dropped and Quarto logs
+  `ERROR … pdflatex not found on PATH`. Loud, but non-fatal — check the log.
+- `svg-engine: dvisvgm` would give smaller, text-selectable SVGs, but the
+  Homebrew `dvisvgm` formula cannot find `texmf.cnf` against a `brew`-installed
+  TeX Live (`kpathsea: configuration file texmf.cnf not found`). `pdftocairo`
+  needs no kpathsea wiring, hence the choice.
+
+### Why not TikZJax
+
+`renderer: tikzjax` (browser WebAssembly, no LaTeX at read time) is a supported
+option of the filter and **does not work for this project**. TikZJax ships a
+fixed TeX filesystem; unpacking its dump shows `bayesnet` is absent (only the
+stock libraries — `positioning`, `fit`, `shapes.*`, `calc`, … — are bundled).
+Every diagram here depends on `bayesnet` for `\edge`, `\plate` and the `obs`
+style, and on `\input{cid_styles}`, which cannot resolve in a browser at all.
+The blocks silently emit nothing. Adopting it would mean hand-writing a
+`\edge`/`\plate` shim, inlining `cid_styles` into every block, a ~10 MB WASM
+download per reader, and no non-HTML output. Not worth it; the committed cache
+solves the same problem with none of the cost.
 
 ## Execution / freeze
 
