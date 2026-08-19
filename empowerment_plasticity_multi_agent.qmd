@@ -19,7 +19,7 @@ bibliography: references.bib
 csl: minimalist.csl
 ---
 
-**WARNING**: Machine-generated draft.
+**WARNING**: Machine-generated draft. May include shameless use of unfortunate phrases such as _the metric is relative to a drawn boundary, and redrawing the boundary relabels the same bits between "adaptation" and "echo"_.
 
 The [companion note](./empowerment_plasticity.qmd) repaired the plasticity dual of empowerment [@Klyubin2005All; @Abel2025Plasticity] by treating it causally: the raw mutual information is confounded by the agent's own plan, and the fix — Massey's directed information [@Massey1990Causality], or Ay–Polani interventional flow [@Ay2008Information] — works by conditioning away the agent's own past actions.
 This note puts a second agent in the loop and asks what happens to both objectives.

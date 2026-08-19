@@ -18,7 +18,7 @@ bibliography: references.bib
 csl: minimalist.csl
 ---
 
-**WARNING**: Machine-generated draft.
+**WARNING**: Machine-generated draft. May include shameless use of unfortunate phrases such as “repair has no purchase here”.
 
 Empowerment measures how much an agent can do *to* the world.
 A natural-looking dual, "plasticity", tries to measure how much the world can do *to the agent* — how much the agent's actions can be informed by what it senses.
