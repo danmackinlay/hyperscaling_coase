@@ -77,7 +77,9 @@ the disposition to smoke — via $\tilde D \to D$ — and the cancer $C$, but th
 is **no** $D \to C$ edge: smoking does not cause cancer.
 
 ::: {#fig-lesion .figure fig-align="center"}
-```{.tikz filename='lesion'}
+```{.tikz}
+%%| filename: lesion
+
 \input{cid_styles}
 \begin{tikzpicture}[scale=1.5, transform shape]
 
