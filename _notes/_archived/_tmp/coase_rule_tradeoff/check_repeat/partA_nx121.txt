@@ -1,0 +1,25 @@
+Sanity anchor (uniform [0.5,2.5], e=1, P=3):
+  one-round rate 1.750000 profit 0.781250
+  strategic cutoff 1.500005 r1 2.250003 total two-round profit 1.406250
+
+sigma=inf
+  forget    total 1.500000 company 1.000000 carol 0.500000
+      {'rate': 1.5000000074505806}
+  myopic    total 1.591837 company 1.142857 carol 0.448980
+      {'choice': 'cut', 'cutoff': 1.3571428735267888, 'r1': 1.3571428735267888}
+      candidates: [('cut', 2.285714285714285, 0.8979592091845502, 1.3571428735267888, 1.3571428735267888), ('none', 1.0, 0.5000000074505806, None, None), ('top', 1.0, 2.5000000074505806, None, 2.5)]
+  strategic total 1.550012 company 0.900000 carol 0.650012
+      {'choice': 'cut', 'cutoff': 1.3000159894685344, 'r1': 1.9000079957360203, 'eq_margin': np.float64(-0.0), 'r2a': 1.3000159894685344, 'r2r': 1.9000079957360203}
+      candidates: [('cut', 1.7999999988790027, 1.3000239857650535, 1.3000159894685344, 1.9000079957360203), ('none', 1.0, 0.5000000074505806, None, None), ('top', 1.0, 2.5000000074505806, None, 2.5)]
+
+sigma=0.3  (x grid 121 points on [L-7s, U+7s], mass of x density on grid 1.00000000)
+  forget    total 1.768991 company 1.308520 carol 0.460471
+  myopic    total 1.795518 company 1.404740 carol 0.390778
+  strategic total 1.786205 company 1.217692 carol 0.568513
+  choices per x-node: {'myopic': {'cut': 121}, 'strategic': {'cut': 121}}  min eq margin (strategic): -0.0
+
+sigma=0.1  (x grid 121 points on [L-7s, U+7s], mass of x density on grid 1.00000000)
+  forget    total 1.916688 company 1.633098 carol 0.283590
+  myopic    total 1.919568 company 1.678626 carol 0.240942
+  strategic total 1.923270 company 1.572973 carol 0.350296
+  choices per x-node: {'myopic': {'cut': 121}, 'strategic': {'cut': 121}}  min eq margin (strategic): -0.0

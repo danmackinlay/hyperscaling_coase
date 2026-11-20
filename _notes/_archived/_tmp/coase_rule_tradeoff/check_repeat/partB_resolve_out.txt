@@ -1,0 +1,26 @@
+  [strategic] 10288 profiles, 4913 round-two problems solved in 1.4s
+  equilibrium check: 3030/10272 profiles with >=1 cut household pass (0.2950); 3046/10288 of all profiles incl. no-cut ones
+  NG=9 best 3.545290; 400-th best 3.038211
+  re-solved 1189 problems at NG=25 in 5s: max improvement 4.441e-16, count >1e-9: 0
+  after re-solve: 400/400 of top profiles still pass
+Strategic coarse (NG=25 re-solve): per-round total 3.354603 company 1.772645 households 1.581959 (A 0.014482 B 1.004392 C 0.563084)
+   round-one slots MD; kinds (('cut', 0.8), ('cut', 2.3), ('top',)); rates [0.85     2.492255 2.5     ]
+   R1 1.559391 R2 1.985899 E [0.45   1.15   0.5175]
+   eq check: True {'Alice': {'min_below': 0.000675, 'min_above': -0.0, 'Xref': 0.45, 'E': 0.45}, 'Bob': {'min_below': 0.00092, 'min_above': 4.5e-05, 'Xref': 1.105469, 'E': 1.15}}
+     3.545290 MD (('cut', 0.8), ('cut', 2.3), ('top',))
+     3.542377 MD (('cut', 0.8), ('cut', 2.44), ('top',))
+     3.542182 MD (('cut', 1.1), ('cut', 2.0), ('top',))
+     3.539898 MD (('cut', 0.8), ('cut', 2.48), ('top',))
+  [strategic] 194113 profiles, 103823 round-two problems solved in 26.2s
+  equilibrium check: 33372/194097 profiles with >=1 cut household pass (0.1719); 33388/194113 of all profiles incl. no-cut ones
+  NG=9 best 3.561279; 400-th best 3.472592
+  re-solved 1813 problems at NG=25 in 6s: max improvement 2.072e-03, count >1e-9: 7
+  after re-solve: 395/400 of top profiles still pass
+Strategic fine (NG=25 re-solve): per-round total 3.402324 company 1.780640 households 1.621684 (A 0.034310 B 0.994921 C 0.592453)
+   round-one slots MD; kinds (('cut', 1.0), ('cut', 2.2), ('top',)); rates [1.05 2.44 2.5 ]
+   R1 1.492813 R2 2.068467 E [0.425   1.25    0.53125]
+   eq check: True {'Alice': {'min_below': 0.000584, 'min_above': -0.0, 'Xref': 0.425, 'E': 0.425}, 'Bob': {'min_below': 0.001025, 'min_above': 0.00025, 'Xref': 1.0, 'E': 1.25}}
+     3.561279 MD (('cut', 1.0), ('cut', 2.2), ('top',))
+     3.558060 MD (('cut', 1.0), ('cut', 2.1), ('top',))
+     3.553560 MD (('cut', 1.0), ('cut', 2.3), ('top',))
+     3.550682 MD (('cut', 1.1), ('cut', 2.2), ('top',))

@@ -1,0 +1,2 @@
+nodeal 0.3 {"fleet_best": {"mean_realised_gains": [2.6617, 1.0, 2.4336, 0.0], "nash_of_means": 0.0, "mean_of_nash": 0.0, "exp_surplus": 5.9923}, "maximin": {"mean_realised_gains": [0.6654, 1.6654, 3.0991, 0.6654], "nash_of_means": 2.2854, "mean_of_nash": 2.2773, "exp_surplus": 5.9923}}
+liab1.5 0.3 {"fleet_best": {"mean_realised_gains": [0.0239, 0.0547, 0.0268, 0.0], "nash_of_means": 0.0, "mean_of_nash": 0.0, "exp_surplus": 5.9923}, "maximin": {"mean_realised_gains": [0.006, 0.0606, 0.0328, 0.006], "nash_of_means": 0.0, "mean_of_nash": 0.0, "exp_surplus": 5.9923}}

@@ -1,0 +1,138 @@
+{
+ "street forget": {
+  "total": 3.2147627037500004,
+  "company": 1.7661525350000005,
+  "households": 1.4486101687499997,
+  "named": "MDE",
+  "rates": [
+   0.681,
+   2.26,
+   2.5
+  ]
+ },
+ "street myopic": {
+  "total": 3.40307293,
+  "company": 2.11788991375,
+  "households": 1.28518301625,
+  "named": "MDE",
+  "rates": [
+   1.3,
+   1.7,
+   1.9
+  ],
+  "cutoffs": [
+   1.3,
+   1.7,
+   1.9
+  ],
+  "kinds": [
+   "cut",
+   "cut",
+   "cut"
+  ]
+ },
+ "street strategic": {
+  "total": 3.4118427687499997,
+  "company": 1.7755779905572635,
+  "households": 1.6362647781927366,
+  "named": "MD",
+  "rates": [
+   1.198,
+   2.408,
+   2.5
+  ],
+  "cutoffs": [
+   1.1,
+   2.1,
+   null
+  ],
+  "kinds": [
+   "cut",
+   "cut",
+   "all"
+  ]
+ },
+ "street unchecked": {
+  "total": 3.4118427687499997,
+  "company": 1.7755779905572635,
+  "households": 1.6362647781927366,
+  "named": "MD",
+  "rates": [
+   1.198,
+   2.408,
+   2.5
+  ],
+  "cutoffs": [
+   1.1,
+   2.1,
+   null
+  ],
+  "kinds": [
+   "cut",
+   "cut",
+   "all"
+  ]
+ },
+ "street valid": [
+  24321,
+  5256
+ ],
+ "solo inf strategic offer": {
+  "cutoff": 1.3,
+  "rate": 1.9000000000000001
+ },
+ "solo sigma=inf forget": {
+  "total": 1.5005705849999909,
+  "company": 1.00045,
+  "carol": 0.5001205849999908,
+  "se": 0.0
+ },
+ "solo sigma=inf myopic": {
+  "total": 1.586453717498932,
+  "company": 1.14273774999894,
+  "carol": 0.44371596749999187,
+  "se": 0.0
+ },
+ "solo sigma=inf strategic": {
+  "total": 1.5497718724963323,
+  "company": 0.8998379999963237,
+  "carol": 0.6499338725000086,
+  "se": 0.0
+ },
+ "solo sigma=0.3 forget": {
+  "total": 1.754141933333334,
+  "company": 1.293898233333334,
+  "carol": 0.46024370000000003,
+  "se": 0.03475592335625918
+ },
+ "solo sigma=0.3 myopic": {
+  "total": 1.779829433333333,
+  "company": 1.3898340249999996,
+  "carol": 0.38999540833333335,
+  "se": 0.03467519541758372
+ },
+ "solo sigma=0.3 strategic": {
+  "total": 1.7701664124999996,
+  "company": 1.2035881999999998,
+  "carol": 0.5665782125,
+  "se": 0.034759633372404314
+ },
+ "solo sigma=0.1 forget": {
+  "total": 1.9526595249999996,
+  "company": 1.6667881833333331,
+  "carol": 0.28587134166666667,
+  "se": 0.0401830994712873
+ },
+ "solo sigma=0.1 myopic": {
+  "total": 1.9547942083333336,
+  "company": 1.7121338708333338,
+  "carol": 0.2426603375,
+  "se": 0.04002234255683848
+ },
+ "solo sigma=0.1 strategic": {
+  "total": 1.957042729166667,
+  "company": 1.605931129166667,
+  "carol": 0.35111159999999997,
+  "se": 0.04011044456700035
+ }
+}

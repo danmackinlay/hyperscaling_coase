@@ -1,0 +1,90 @@
+=== BASELINE (all rows) ===
+parametric: best MDE pie 6.00; equal split 1.500 each, product 5.0625
+arbitrary: best MD pie 5.00; equal split 1.250 each, product 2.4414
+MDEN parametric pie 5.5 ; arbitrary MDE pie 4.5
+
+=== LANGUAGE: clause menus (rows language, enforcer, bundling) ===
+  four slots             par: MDE   pie 6.00 product 5.062
+  four slots             arb: MD    pie 5.00 product 2.441
+  two A: {M,D}|{E,N}     par: MDEN  pie 5.50 product 3.574
+  two A: {M,D}|{E,N}     arb: MD    pie 5.00 product 2.441
+  two B: {M,D,E}|{N}     par: MDE   pie 6.00 product 5.062
+  two B: {M,D,E}|{N}     arb: MDE   pie 4.50 product 1.602
+  one: all or nothing    par: MDEN  pie 5.50 product 3.574
+  one: all or nothing    arb: MDEN  pie 4.00 product 1.000
+
+=== LANGUAGE: uniform per-head price (Krier club), parametric ===
+  MDE: best uniform t 4.277, gains [0.67  3.277 1.777 0.277], product 1.079; bare clearing price 4.0 -> total 12.0 vs profit 13.5
+  MD: best uniform t 2.819, gains [1.044 2.319 0.819 0.819], product 1.622; bare clearing price 2.0 -> total 6.0 vs profit 9.5
+  MDEN: 3*8 = 24 vs profit 18.5 -> no deal
+
+=== WEALTH: Nash product in log utility on pie 6 (MDE), rows wealth/incumbent/language ===
+  money gains (f; r1,r2,r3) = (1.634; 1.535, 1.535, 1.296); utility gains [0.1428 0.1428 0.4997 0.0162]; product 1.651e-04
+  equal money split: utility gains [0.1398 0.1398 0.5596 0.0149], product 1.628e-04; floor in utility = fleet 0.0149
+  fleet-holds-right origin under money harm: resident 3 wealth at MDEN = -6.0
+
+=== OUTSIDE OPTION (row scale) ===
+  reroute value per slot [1.  2.5 1.  2. ] total 6.5
+  MD    joint value 8.00 gain over reroute 1.50
+  MDE   joint value 8.00 gain over reroute 1.50
+  D     joint value 7.50 gain over reroute 1.00
+  DE    joint value 7.50 gain over reroute 1.00
+  equal split of 1.5: 0.375 each, product 0.0198
+
+=== k=2 coalition values and core (rows enforcer, incumbent, pact) ===
+  fleet+residents (1, 2): MDEN value 13.5; excluded resident 3 at -8.0
+  fleet+residents (1, 3): MDE value 8.5; excluded resident 2 at -2.5
+  fleet+residents (2, 3): MDEN value 7.5; excluded resident 1 at -2.0
+  sum of pair values 13.5+8.5+7.5 = 29.5 ; 2*6 + u_F >= 29.5 -> u_F >= 17.5 > 6: core empty
+  consents compete to zero: (18.5; -2, -3, -8); arbitrary: resident 3 at -9.5
+  delta 0.5: one-shot break vs grim boycott: 7.50 vs stay 3.00 -> breaks
+  delta 0.8: one-shot break vs grim boycott: -1.50 vs stay 7.50 -> holds (if boycott credible)
+  delta 0.95: one-shot break vs grim boycott: -46.50 vs stay 30.00 -> holds (if boycott credible)
+  k=3 fleet reneging bound: 1.5 each needs delta >= 0.75; at delta 0.5 best product 3.0 at (3;1,1,1)
+
+=== SYBIL (row incumbent) ===
+  resident 2 as 1 agents: household 1.50; per-person product  fleet/r1/r3 each 1.500; product over four households 5.06
+  resident 2 as 2 agents: household 2.40; per-person product  fleet/r1/r3 each 1.200; product over four households 4.15
+  resident 2 as 3 agents: household 3.00; per-person product  fleet/r1/r3 each 1.000; product over four households 3.00
+  resident 2 as 10 agents: household 4.62; per-person product  fleet/r1/r3 each 0.462; product over four households 0.45
+
+=== BUNDLING reopening cost (row bundling) ===
+  delta 0.5: drop E via bundle 1.5 - 0.5*1.25 = 0.8750; slot-by-slot own quarter of E = 0.25; extra deadweight (1-d)*1.25 = 0.6250
+  delta 0.8: drop E via bundle 1.5 - 0.8*1.25 = 0.5000; slot-by-slot own quarter of E = 0.25; extra deadweight (1-d)*1.25 = 0.2500
+  delta 0.95: drop E via bundle 1.5 - 0.95*1.25 = 0.3125; slot-by-slot own quarter of E = 0.25; extra deadweight (1-d)*1.25 = 0.0625
+  delta 1.0: drop E via bundle 1.5 - 1.0*1.25 = 0.2500; slot-by-slot own quarter of E = 0.25; extra deadweight (1-d)*1.25 = 0.0000
+
+=== BITS: Segal 2007 Cor.4 bound (K-1) log2(1+1/(N-1)) (row bits) ===
+  m=4: N=4 -> 6.23 bits; N=2 -> 15 bits
+  m=8: N=4 -> 106 bits; N=2 -> 255 bits
+  m=24: N=4 -> 6.96e+06 bits; N=2 -> 1.68e+07 bits
+  m=48: N=4 -> 1.17e+14 bits; N=2 -> 2.81e+14 bits
+
+=== REMEDIATION (rows incumbent, optimist) ===
+  insulate resident 3, run MDEN: harms [2. 3. 4.], pie 7.50; equal split 1.875, product 12.36
+  at MDE, insulating resident 3 saves 2.0 against cost 2
+
+=== SCALE: Mailath-Postlewaite limit thresholds (row scale) ===
+  top-of-support harm at proportional width a: MDE feasible iff 7.5(1+a) <= 13.5 -> a <= 0.8
+  bounded residual +-w: 7.5 + 5.5w <= 13.5 -> w <= 1.091 ; with reroute: MD 4.5+3.5w <= 6 -> w <= 0.429
+
+=== FINITE BUDGET: fleet take-it-or-leave-it, parametric, k=3 (rows budgets, incumbent, wealth, bundling) ===
+  sigma 1.0: deal 0.553, eff 0.017, night run 0.000, gains (f; r) (1.114; 0.007, 0.477, 0.388), residents' take 0.872, pie 1.99, product 0.0015, floor 0.007
+  sigma 0.3: deal 0.858, eff 0.435, night run 0.000, gains (f; r) (2.946; 0.318, 0.785, 0.536), residents' take 1.640, pie 4.59, product 0.3954, floor 0.318
+  sigma 0.1: deal 0.960, eff 0.960, night run 0.000, gains (f; r) (4.615; 0.236, 0.488, 0.421), residents' take 1.145, pie 5.76, product 0.2239, floor 0.236
+  arbitrary truth, additive (misspecified) model:
+  sigma 1.0: deal 0.523, MD chosen 0.008, gains (1.019; 0.002, 0.473, 0.350), product 0.0003
+  sigma 0.3: deal 0.448, MD chosen 0.355, gains (1.310; 0.120, 0.371, 0.301), product 0.0175
+  sigma 0.1: deal 0.000, MD chosen 0.000, gains (0.000; 0.000, 0.000, 0.000), product 0.0000
+
+=== FINITE BUDGET: bits-row Nash-split protocol (fleet estimates, pays estimated harm + quarter of estimated pie; veto if true gain < 0) ===
+  truth parametric:
+    eps 1.0: deal 0.449, gains (0.502; 0.486, 0.702, 0.668), pie 2.36, product 0.1144, floor 0.486
+    eps 0.3: deal 0.933, gains (1.396; 1.350, 1.391, 1.371), pie 5.51, product 3.5921, floor 1.350
+    eps 0.1: deal 1.000, gains (1.500; 1.498, 1.500, 1.495), pie 5.99, product 5.0364, floor 1.495
+    eps 0.01: deal 1.000, gains (1.500; 1.500, 1.500, 1.500), pie 6.00, product 5.0625, floor 1.500
+  truth arbitrary:
+    eps 1.0: deal 0.315, gains (0.298; 0.271, 0.436, 0.365), pie 1.37, product 0.0128, floor 0.271
+    eps 0.3: deal 0.483, gains (0.695; 0.672, 0.602, 0.195), pie 2.16, product 0.0549, floor 0.195
+    eps 0.1: deal 0.498, gains (0.740; 0.734, 0.702, 0.065), pie 2.24, product 0.0248, floor 0.065
+    eps 0.01: deal 0.496, gains (0.743; 0.743, 0.740, 0.007), pie 2.23, product 0.0027, floor 0.007

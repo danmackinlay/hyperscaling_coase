@@ -1,0 +1,22 @@
+local step-0.01 grid around fine-grid optimum: 441/441 pass
+  Strategic (local): per-round total 3.391601 company 1.782139 households 1.609463 (A 0.028166 B 0.996356 C 0.584941)
+   round-one slots MD; kinds (('cut', 0.95), ('cut', 2.23), ('top',)); rates [0.995    2.450408 2.5     ]
+   R1 1.518129 R2 2.046148 E [0.4325   1.225    0.529812]
+   eq check: True {'Alice': {'min_below': 0.000589, 'min_above': -0.0, 'Xref': 0.4325, 'E': 0.4325}, 'Bob': {'min_below': 0.001022, 'min_above': 0.000225, 'Xref': 1.0, 'E': 1.225}}
+local step-0.01 grid around coarse-grid optimum: 441/441 pass
+  Strategic (local): per-round total 3.363897 company 1.773714 households 1.590183 (A 0.012603 B 1.014674 C 0.562906)
+   round-one slots MD; kinds (('cut', 0.8), ('cut', 2.35), ('top',)); rates [0.8      2.494192 2.5     ]
+   R1 1.604116 R2 1.943313 E [0.4625   1.15     0.531875]
+   eq check: True {'Alice': {'min_below': 0.00112, 'min_above': 0.000462, 'Xref': 0.0, 'E': 0.4625}, 'Bob': {'min_below': 0.000895, 'min_above': 4.5e-05, 'Xref': 1.105469, 'E': 1.15}}
+
+myopic: refined best per round-one slot set (two-round company profit)
+   4.237160 MDE (('cut', 1.403481), ('cut', 1.68101), ('cut', 1.841702))
+   4.147745 MDEN (('cut', 1.15207), ('cut', 1.66283), ('cut', 1.707023))
+   4.133244 MD (('cut', 1.290025), ('cut', 1.696019), ('cut', 1.935712))
+   4.117621 DE (('cut', 1.261307), ('cut', 1.724971), ('cut', 1.868743))
+   4.054701 MDN (('cut', 1.010719), ('cut', 1.678583), ('cut', 1.774339))
+   4.051259 DEN (('cut', 1.018845), ('cut', 1.69503), ('cut', 1.742583))
+   3.976816 DN (('cut', 0.827355), ('cut', 1.723387), ('cut', 1.852657))
+   3.950538 D (('none',), ('cut', 1.798063), ('cut', 2.088063))
+
+NG=21 vs NG=9 on 3000 random round-two problems: max |diff| 5.625e-03, max (NG21-NG9) 5.625e-03

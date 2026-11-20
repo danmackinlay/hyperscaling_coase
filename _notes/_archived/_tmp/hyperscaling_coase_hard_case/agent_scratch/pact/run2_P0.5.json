@@ -1,0 +1,1026 @@
+{
+ "nodeal": {
+  "sq_true": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "sq_interim": {
+   "F": 0.0,
+   "r1s1": 0.0,
+   "r1s2": 0.0,
+   "r2s1": 0.0,
+   "r2s2": 0.0,
+   "r3s1": 0.0,
+   "r3s2": 0.0
+  },
+  "max_exp_surplus": 5.625,
+  "maximin_level": 0.9375,
+  "hs_msg": "Optimization terminated successfully",
+  "fleet_opt": {
+   "exante_payoffs": [
+    3.75,
+    0.25,
+    0.6875,
+    0.5
+   ],
+   "exante_gains": [
+    3.75,
+    0.25,
+    0.6875,
+    0.5
+   ],
+   "exante_nash": 0.3223,
+   "exp_surplus": 5.1875,
+   "interim": {
+    "F": 3.75,
+    "r1s1": 0.5,
+    "r1s2": 0.0,
+    "r2s1": 1.375,
+    "r2s2": 0.0,
+    "r3s1": 1.0,
+    "r3s2": 0.0
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     6.0,
+     0.625,
+     1.375,
+     -2.0
+    ],
+    "gains_over_sq": [
+     6.0,
+     0.625,
+     1.375,
+     -2.0
+    ],
+    "nash_gains": null,
+    "floor_gain": -2.0,
+    "pie_over_sq": 6.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.0,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -2.0
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       1
+      ],
+      [
+       2
+      ],
+      [
+       1
+      ]
+     ],
+     0.025
+    ],
+    [
+     [
+      [
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ]
+     ],
+     0.0156
+    ],
+    [
+     [
+      [
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.025
+    ],
+    [
+     [
+      [
+       2
+      ],
+      [
+       2
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     0.0139
+    ],
+    [
+     [
+      [
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0625
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0156
+    ]
+   ]
+  },
+  "res_bloc_opt": {
+   "exante_payoffs": [
+    0.0,
+    3.6875,
+    1.125,
+    0.8125
+   ],
+   "exante_gains": [
+    0.0,
+    3.6875,
+    1.125,
+    0.8125
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 0.0,
+    "r1s1": 4.188,
+    "r1s2": 3.188,
+    "r2s1": 2.25,
+    "r2s2": 0.0,
+    "r3s1": 1.625,
+    "r3s2": 0.0
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     -0.438,
+     4.688,
+     2.5,
+     -0.75
+    ],
+    "gains_over_sq": [
+     -0.438,
+     4.688,
+     2.5,
+     -0.75
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.75,
+    "pie_over_sq": 6.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 1.073,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -0.75
+   },
+   "replaceable_on": []
+  },
+  "maximin_interim": {
+   "exante_payoffs": [
+    0.9375,
+    1.1875,
+    1.75,
+    1.4375
+   ],
+   "exante_gains": [
+    0.9375,
+    1.1875,
+    1.75,
+    1.4375
+   ],
+   "exante_nash": 2.8006,
+   "exp_surplus": 5.3125,
+   "interim": {
+    "F": 0.938,
+    "r1s1": 1.437,
+    "r1s2": 0.938,
+    "r2s1": 2.563,
+    "r2s2": 0.938,
+    "r3s1": 1.937,
+    "r3s2": 0.938
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     2.813,
+     1.687,
+     2.562,
+     -1.063
+    ],
+    "gains_over_sq": [
+     2.813,
+     1.687,
+     2.562,
+     -1.063
+    ],
+    "nash_gains": null,
+    "floor_gain": -1.063,
+    "pie_over_sq": 6.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.531,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.063
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.05
+    ],
+    [
+     [
+      [
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0469
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0312
+    ]
+   ]
+  },
+  "hs_nash": {
+   "exante_payoffs": [
+    1.1657,
+    1.2759,
+    1.5827,
+    1.3507
+   ],
+   "exante_gains": [
+    1.1657,
+    1.2759,
+    1.5827,
+    1.3507
+   ],
+   "exante_nash": 3.1795,
+   "exp_surplus": 5.375,
+   "interim": {
+    "F": 1.166,
+    "r1s1": 1.651,
+    "r1s2": 0.901,
+    "r2s1": 2.395,
+    "r2s2": 0.77,
+    "r3s1": 1.851,
+    "r3s2": 0.851
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     2.728,
+     1.901,
+     2.52,
+     -1.149
+    ],
+    "gains_over_sq": [
+     2.728,
+     1.901,
+     2.52,
+     -1.149
+    ],
+    "nash_gains": null,
+    "floor_gain": -1.149,
+    "pie_over_sq": 6.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.545,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.149
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0417
+    ]
+   ]
+  }
+ },
+ "liab1.5": {
+  "sq_true": [
+   5.25,
+   0.5,
+   1.25,
+   -1.0
+  ],
+  "sq_interim": {
+   "F": 5.25,
+   "r1s1": 0.5,
+   "r1s2": -0.5,
+   "r2s1": 1.25,
+   "r2s2": -1.25,
+   "r3s1": 1.0,
+   "r3s2": -1.0
+  },
+  "max_exp_surplus": 5.625,
+  "maximin_level": 0.0938,
+  "hs_msg": "Positive directional derivative for linesearch",
+  "fleet_opt": {
+   "exante_payoffs": [
+    5.625,
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "exante_gains": [
+    0.375,
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "exante_nash": -0.0,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 5.625,
+    "r1s1": 0.5,
+    "r1s2": -0.5,
+    "r2s1": 1.25,
+    "r2s2": -1.25,
+    "r3s1": 1.0,
+    "r3s2": -1.0
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     5.25,
+     1.0,
+     1.5,
+     -1.75
+    ],
+    "gains_over_sq": [
+     0.0,
+     0.5,
+     0.25,
+     -0.75
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.75,
+    "pie_over_sq": 0.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.125,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.75
+   },
+   "replaceable_on": []
+  },
+  "res_bloc_opt": {
+   "exante_payoffs": [
+    5.25,
+    0.0625,
+    0.125,
+    0.1875
+   ],
+   "exante_gains": [
+    0.0,
+    0.0625,
+    0.125,
+    0.1875
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 5.25,
+    "r1s1": 0.562,
+    "r1s2": -0.438,
+    "r2s1": 1.25,
+    "r2s2": -1.0,
+    "r3s1": 1.0,
+    "r3s2": -0.625
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     4.812,
+     1.062,
+     1.5,
+     -1.375
+    ],
+    "gains_over_sq": [
+     -0.438,
+     0.562,
+     0.25,
+     -0.375
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.438,
+    "pie_over_sq": 0.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.198,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.375
+   },
+   "replaceable_on": []
+  },
+  "maximin_interim": {
+   "exante_payoffs": [
+    5.3438,
+    0.0937,
+    0.0938,
+    0.0938
+   ],
+   "exante_gains": [
+    0.0938,
+    0.0937,
+    0.0938,
+    0.0938
+   ],
+   "exante_nash": 0.0001,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 5.344,
+    "r1s1": 0.594,
+    "r1s2": -0.406,
+    "r2s1": 1.344,
+    "r2s2": -1.156,
+    "r3s1": 1.094,
+    "r3s2": -0.906
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     4.969,
+     1.094,
+     1.594,
+     -1.656
+    ],
+    "gains_over_sq": [
+     -0.281,
+     0.594,
+     0.344,
+     -0.656
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.656,
+    "pie_over_sq": 0.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.172,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.656
+   },
+   "replaceable_on": []
+  },
+  "hs_nash": {
+   "exante_payoffs": [
+    5.3437,
+    0.0938,
+    0.0938,
+    0.0937
+   ],
+   "exante_gains": [
+    0.0937,
+    0.0938,
+    0.0938,
+    0.0937
+   ],
+   "exante_nash": 0.0001,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 5.344,
+    "r1s1": 0.594,
+    "r1s2": -0.406,
+    "r2s1": 1.344,
+    "r2s2": -1.156,
+    "r3s1": 1.094,
+    "r3s2": -0.906
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     4.969,
+     1.094,
+     1.594,
+     -1.656
+    ],
+    "gains_over_sq": [
+     -0.281,
+     0.594,
+     0.344,
+     -0.656
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.656,
+    "pie_over_sq": 0.0,
+    "pie_abs": 6.0,
+    "res_share_abs": 0.172,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -1.656
+   },
+   "replaceable_on": []
+  }
+ },
+ "liab1.0": {
+  "sq_true": [
+   9.5,
+   0.0,
+   0.0,
+   -4.0
+  ],
+  "sq_interim": {
+   "F": 9.5,
+   "r1s1": 0.0,
+   "r1s2": -2.0,
+   "r2s1": 0.0,
+   "r2s2": -3.0,
+   "r3s1": 0.0,
+   "r3s2": -4.0
+  },
+  "max_exp_surplus": 5.625,
+  "maximin_level": 0.0938,
+  "hs_msg": "Positive directional derivative for linesearch",
+  "fleet_opt": {
+   "exante_payoffs": [
+    9.875,
+    -1.0,
+    -1.4375,
+    -2.0
+   ],
+   "exante_gains": [
+    0.375,
+    0.0,
+    0.0625,
+    0.0
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.4375,
+   "interim": {
+    "F": 9.875,
+    "r1s1": 0.0,
+    "r1s2": -2.0,
+    "r2s1": 0.0,
+    "r2s2": -2.875,
+    "r3s1": 0.0,
+    "r3s2": -4.0
+   },
+   "at_true": {
+    "schedule": {
+     "MDEN": 1.0
+    },
+    "payoffs": [
+     11.875,
+     0.0,
+     -0.125,
+     -6.25
+    ],
+    "gains_over_sq": [
+     2.375,
+     0.0,
+     -0.125,
+     -2.25
+    ],
+    "nash_gains": null,
+    "floor_gain": -2.25,
+    "pie_over_sq": 0.0,
+    "pie_abs": 5.5,
+    "res_share_abs": -1.159,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -6.25
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       1
+      ],
+      [
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.25
+    ],
+    [
+     [
+      [
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0625
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0469
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.125
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     0.0312
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0938
+    ]
+   ]
+  },
+  "res_bloc_opt": {
+   "exante_payoffs": [
+    9.5,
+    -0.75,
+    -1.375,
+    -1.75
+   ],
+   "exante_gains": [
+    0.0,
+    0.25,
+    0.125,
+    0.25
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "interim": {
+    "F": 9.5,
+    "r1s1": 0.0,
+    "r1s2": -1.5,
+    "r2s1": 0.0,
+    "r2s2": -2.75,
+    "r3s1": 0.0,
+    "r3s2": -3.5
+   },
+   "at_true": {
+    "schedule": {
+     "MDE": 1.0
+    },
+    "payoffs": [
+     9.5,
+     0.5,
+     0.25,
+     -4.25
+    ],
+    "gains_over_sq": [
+     0.0,
+     0.5,
+     0.25,
+     -0.25
+    ],
+    "nash_gains": null,
+    "floor_gain": -0.25,
+    "pie_over_sq": 0.5,
+    "pie_abs": 6.0,
+    "res_share_abs": -0.583,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -4.25
+   },
+   "replaceable_on": []
+  },
+  "maximin_interim": {
+   "exante_payoffs": [
+    9.5938,
+    -0.7813,
+    -1.3438,
+    -1.9062
+   ],
+   "exante_gains": [
+    0.0938,
+    0.2187,
+    0.1562,
+    0.0938
+   ],
+   "exante_nash": 0.0003,
+   "exp_surplus": 5.5625,
+   "interim": {
+    "F": 9.594,
+    "r1s1": 0.094,
+    "r1s2": -1.656,
+    "r2s1": 0.094,
+    "r2s2": -2.781,
+    "r3s1": 0.094,
+    "r3s2": -3.906
+   },
+   "at_true": {
+    "schedule": {
+     "MDEN": 1.0
+    },
+    "payoffs": [
+     12.844,
+     -0.156,
+     -0.031,
+     -7.156
+    ],
+    "gains_over_sq": [
+     3.344,
+     -0.156,
+     -0.031,
+     -3.156
+    ],
+    "nash_gains": null,
+    "floor_gain": -3.156,
+    "pie_over_sq": 0.0,
+    "pie_abs": 5.5,
+    "res_share_abs": -1.335,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -7.156
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       1
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.05
+    ],
+    [
+     [
+      [
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0312
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0313
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0312
+    ]
+   ]
+  },
+  "hs_nash": {
+   "exante_payoffs": [
+    9.6136,
+    -0.8059,
+    -1.3588,
+    -1.8864
+   ],
+   "exante_gains": [
+    0.1136,
+    0.1941,
+    0.1412,
+    0.1136
+   ],
+   "exante_nash": 0.0004,
+   "exp_surplus": 5.5625,
+   "interim": {
+    "F": 9.614,
+    "r1s1": 0.069,
+    "r1s2": -1.681,
+    "r2s1": 0.079,
+    "r2s2": -2.796,
+    "r3s1": 0.114,
+    "r3s2": -3.886
+   },
+   "at_true": {
+    "schedule": {
+     "MDEN": 1.0
+    },
+    "payoffs": [
+     12.866,
+     -0.181,
+     -0.046,
+     -7.139
+    ],
+    "gains_over_sq": [
+     3.366,
+     -0.181,
+     -0.046,
+     -3.139
+    ],
+    "nash_gains": null,
+    "floor_gain": -3.139,
+    "pie_over_sq": 0.0,
+    "pie_abs": 5.5,
+    "res_share_abs": -1.339,
+    "nash_abs_vs_clean": null,
+    "floor_abs": -7.139
+   },
+   "replaceable_on": [
+    [
+     [
+      [
+       1
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0502
+    ],
+    [
+     [
+      [
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0314
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1
+      ],
+      [
+       2
+      ]
+     ],
+     0.0313
+    ],
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2
+      ]
+     ],
+     0.0312
+    ]
+   ]
+  }
+ }
+}

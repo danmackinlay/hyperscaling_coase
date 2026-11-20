@@ -1,0 +1,74 @@
+[
+ {
+  "id": "run01",
+  "pool": "A",
+  "start": "Winter 2004, Incentives and discrimination (AER 94), https://www.aeaweb.org/articles?id=10.1257/0002828041464434",
+  "model": "opus"
+ },
+ {
+  "id": "run02",
+  "pool": "A",
+  "start": "Genicot and Ray 2006, Contracts and externalities: how things fall apart (JET 131), working-paper copy via https://econpapers.repec.org/RePEc:geo:guwopa:gueconwpa~03-03-30",
+  "model": "fable"
+ },
+ {
+  "id": "run03",
+  "pool": "A",
+  "start": "Chipty and Snyder 1999, The role of firm size in bilateral bargaining (REStat 81)",
+  "model": "opus"
+ },
+ {
+  "id": "run04",
+  "pool": "A",
+  "start": "Segal 2003, Coordination and discrimination in contracting with externalities: divide and conquer? (JET 113), open copy https://web.stanford.edu/~isegal/discrim.pdf",
+  "model": "fable"
+ },
+ {
+  "id": "run05",
+  "pool": "B",
+  "start": "When the street becomes a town",
+  "model": "opus"
+ },
+ {
+  "id": "run06",
+  "pool": "B",
+  "start": "When the deal comes as one package",
+  "model": "fable"
+ },
+ {
+  "id": "run07",
+  "pool": "B",
+  "start": "When the street is one of many",
+  "model": "opus"
+ },
+ {
+  "id": "run08",
+  "pool": "B",
+  "start": "When Bob's household signs as three",
+  "model": "fable"
+ },
+ {
+  "id": "run09",
+  "pool": "C",
+  "start": "the council, which must write the one rule that restores the fair deal when the company's agent has more compute, and must say what the rule costs and who pays for it",
+  "model": "opus"
+ },
+ {
+  "id": "run10",
+  "pool": "C",
+  "start": "the designer of the delivery company's negotiating agent, told to take the most from Carol, the most-harmed and poorest neighbour, using a stated compute edge over the neighbours' agents",
+  "model": "fable"
+ },
+ {
+  "id": "run11",
+  "pool": "D",
+  "start": "Arm 2a of _plans/hyperscaling_coase_round5_instance.md, the formation stage, with its parameters as written",
+  "model": "opus"
+ },
+ {
+  "id": "run12",
+  "pool": "D",
+  "start": "Arm 2c of _plans/hyperscaling_coase_round5_instance.md, two neighbourhoods competing, with its parameters as written",
+  "model": "fable"
+ }
+]

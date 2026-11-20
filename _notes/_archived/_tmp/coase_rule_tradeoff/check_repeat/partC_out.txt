@@ -1,0 +1,39 @@
+(a) round-two optimality
+  NG=9 optimum profits: [1.75       1.81217784 1.85640625 2.17862949]
+  NG=25 optimum profits: [1.75       1.81217784 1.85640625 2.17862949]
+  NG=41 optimum profits: [1.75       1.81217784 1.85640625 2.17862949]
+  pattern ('refuse', 'refuse', 'accept') beliefs [(np.float64(0.8), np.float64(2.5)), (np.float64(2.44), np.float64(2.5)), (np.float64(0.5), np.float64(2.5))]
+     claimed: slots MDE rates [0.  2.5 2.5] profit 1.7500000000
+     mine   : slots D rates [0.  2.5 2.5] profit 1.7500000000   shortfall of claimed = 0.000e+00
+     claimed run probabilities: {'M': 0.0, 'D': 1.0, 'E': 0.0}
+  pattern ('refuse', 'accept', 'accept') beliefs [(np.float64(0.8), np.float64(2.5)), (np.float64(0.5), np.float64(2.44)), (np.float64(0.5), np.float64(2.5))]
+     claimed: slots MDE rates [0.    2.392 2.5  ] profit 1.8120288660
+     mine   : slots D rates [0.    2.375 2.5  ] profit 1.8121778351   shortfall of claimed = 1.490e-04
+     claimed run probabilities: {'M': 0.0, 'D': 0.975258, 'E': 0.0}
+  pattern ('accept', 'refuse', 'accept') beliefs [(np.float64(0.5), np.float64(0.8)), (np.float64(2.44), np.float64(2.5)), (np.float64(0.5), np.float64(2.5))]
+     claimed: slots MDE rates [0.8 2.5 1.9] profit 1.8550000000
+     mine   : slots MDE rates [0.8    2.5    1.8625] profit 1.8564062500   shortfall of claimed = 1.406e-03
+     claimed run probabilities: {'M': 0.7, 'D': 0.7, 'E': 0.7}
+  pattern ('accept', 'accept', 'accept') beliefs [(np.float64(0.5), np.float64(0.8)), (np.float64(0.5), np.float64(2.44)), (np.float64(0.5), np.float64(2.5))]
+     claimed: slots MDE rates [0.8   1.858 2.3  ] profit 2.1766500000
+     mine   : slots MDE rates [0.8        1.89333333 2.24166667] profit 2.1786294864   shortfall of claimed = 1.979e-03
+     claimed run probabilities: {'M': 0.63, 'D': 0.63, 'E': 0.63}
+
+(b) indifference
+  E (round-one expected exposure if accept): [0.485   1.15    0.55775]
+  Alice (claimed round-two offers): G=0.000000000000  implied r1=0.800000000000000  claimed r1=0.800000000000000  diff(claimed-implied)=0.000e+00
+  Alice (my optimal round-two offers): G=0.000000000000  implied r1=0.800000000000000  claimed r1=0.800000000000000  diff(claimed-implied)=0.000e+00
+  Bob (claimed round-two offers): G=0.066750000000  implied r1=2.498043478260870  claimed r1=2.498041602569697  diff(claimed-implied)=-1.876e-06
+  Bob (my optimal round-two offers): G=0.066328125000  implied r1=2.497676630434783  claimed r1=2.498041602569697  diff(claimed-implied)=3.650e-04
+  Carol: kind all, rate 2.5000000000 (top of support = 2.5)
+
+(c) round-one deviations (claimed offers)
+  Alice: min over types<=cut of (accept-refuse) = 0.000e+00 at s=0.800000; min over types>cut of (refuse-accept) = 4.850e-06 at s=0.800010
+     D at cut = 0.000e+00
+  Bob: min over types<=cut of (accept-refuse) = -1.782e-06 at s=2.439990; min over types>cut of (refuse-accept) = 2.157e-06 at s=2.440000
+     D at cut = -2.157e-06
+  Carol: min over types<=cut of (accept-refuse) = 0.000e+00 at s=2.500000
+     D at cut = 0.000e+00
+
+Company two-round value of claimed profile (claimed offers):
+  R1 1.6778595923 R2 1.8636928750 per-round company 1.7707762337

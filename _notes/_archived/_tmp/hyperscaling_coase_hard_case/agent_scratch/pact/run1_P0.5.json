@@ -1,0 +1,609 @@
+{
+ "nodeal": {
+  "fleet_opt": {
+   "label": "fleet_opt",
+   "exante_gains": [
+    3.75,
+    0.25,
+    0.688,
+    0.5
+   ],
+   "exante_nash": 0.3223,
+   "exp_surplus": 5.188,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.5,
+    "r1s2": 0.0,
+    "r2s1": 1.375,
+    "r2s2": 0.0,
+    "r3s1": 1.0,
+    "r3s2": 0.0
+   },
+   "at_true_gains": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 6.0,
+   "at_true_res_share": -1.25,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "res_opt": {
+   "label": "res_opt",
+   "exante_gains": [
+    0.0,
+    3.688,
+    1.125,
+    0.812
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 4.188,
+    "r1s2": 3.188,
+    "r2s1": 2.25,
+    "r2s2": 0.0,
+    "r3s1": 1.625,
+    "r3s2": 0.0
+   },
+   "at_true_gains": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 6.0,
+   "at_true_res_share": -1.25,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "surplus_max": {
+   "label": "surplus_max",
+   "exante_gains": [
+    2.938,
+    0.562,
+    1.188,
+    0.938
+   ],
+   "exante_nash": 1.8395,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 1.125,
+    "r1s2": 0.0,
+    "r2s1": 2.375,
+    "r2s2": 0.0,
+    "r3s1": 1.875,
+    "r3s2": 0.0
+   },
+   "at_true_gains": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 6.0,
+   "at_true_res_share": -1.25,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "maximin_exante": {
+   "label": "maximin_exante",
+   "exante_gains": [
+    1.406,
+    1.406,
+    1.406,
+    1.406
+   ],
+   "exante_nash": 3.9107,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 2.156,
+    "r1s2": 0.656,
+    "r2s1": 2.781,
+    "r2s2": 0.031,
+    "r3s1": 2.813,
+    "r3s2": 0.0
+   },
+   "at_true_gains": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 6.0,
+   "at_true_res_share": -1.25,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "nash_exante": {
+   "label": "nash_exante",
+   "exante_gains": [
+    1.406,
+    1.406,
+    1.406,
+    1.406
+   ],
+   "exante_nash": 3.9107,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 2.156,
+    "r1s2": 0.656,
+    "r2s1": 2.781,
+    "r2s2": 0.031,
+    "r3s1": 2.813,
+    "r3s2": 0.0
+   },
+   "at_true_gains": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 6.0,
+   "at_true_res_share": -1.25,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  }
+ },
+ "liab1.5": {
+  "fleet_opt": {
+   "label": "fleet_opt",
+   "exante_gains": [
+    0.375,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.5,
+    "r1s2": -0.5,
+    "r2s1": 1.25,
+    "r2s2": -1.25,
+    "r3s1": 1.0,
+    "r3s2": -1.0
+   },
+   "at_true_gains": [
+    8.25,
+    -1.5,
+    -3.75,
+    -3.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.75,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "res_opt": {
+   "label": "res_opt",
+   "exante_gains": [
+    0.0,
+    0.062,
+    0.125,
+    0.188
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.562,
+    "r1s2": -0.438,
+    "r2s1": 1.25,
+    "r2s2": -1.0,
+    "r3s1": 1.0,
+    "r3s2": -0.625
+   },
+   "at_true_gains": [
+    8.25,
+    -1.5,
+    -3.75,
+    -3.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.75,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "surplus_max": {
+   "label": "surplus_max",
+   "exante_gains": [
+    0.25,
+    0.062,
+    0.0,
+    0.062
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.625,
+    "r1s2": -0.5,
+    "r2s1": 1.25,
+    "r2s2": -1.25,
+    "r3s1": 1.0,
+    "r3s2": -0.875
+   },
+   "at_true_gains": [
+    8.25,
+    -1.5,
+    -3.75,
+    -3.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.75,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "maximin_exante": {
+   "label": "maximin_exante",
+   "exante_gains": [
+    0.094,
+    0.094,
+    0.094,
+    0.094
+   ],
+   "exante_nash": 0.0001,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.687,
+    "r1s2": -0.5,
+    "r2s1": 1.438,
+    "r2s2": -1.25,
+    "r3s1": 1.188,
+    "r3s2": -1.0
+   },
+   "at_true_gains": [
+    8.25,
+    -1.5,
+    -3.75,
+    -3.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.75,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "nash_exante": {
+   "label": "nash_exante",
+   "exante_gains": [
+    0.094,
+    0.094,
+    0.094,
+    0.094
+   ],
+   "exante_nash": 0.0001,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.687,
+    "r1s2": -0.5,
+    "r2s1": 1.438,
+    "r2s2": -1.25,
+    "r3s1": 1.188,
+    "r3s2": -1.0
+   },
+   "at_true_gains": [
+    8.25,
+    -1.5,
+    -3.75,
+    -3.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.75,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  }
+ },
+ "liab1.0": {
+  "fleet_opt": {
+   "label": "fleet_opt",
+   "exante_gains": [
+    0.375,
+    0.0,
+    0.062,
+    0.0
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.438,
+   "at_true_schedule": {
+    "MDEN": 1.0
+   },
+   "at_true_payoffs": [
+    18.5,
+    -2.0,
+    -3.0,
+    -8.0
+   ],
+   "interim": {
+    "r1s1": 0.0,
+    "r1s2": -2.0,
+    "r2s1": 0.0,
+    "r2s2": -2.875,
+    "r3s1": 0.0,
+    "r3s2": -4.0
+   },
+   "at_true_gains": [
+    9.0,
+    -2.0,
+    -3.0,
+    -4.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -4.0,
+   "at_true_pie_over_sq": 0.0,
+   "at_true_res_share": null,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -8.0
+  },
+  "res_opt": {
+   "label": "res_opt",
+   "exante_gains": [
+    0.0,
+    0.25,
+    0.125,
+    0.25
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.0,
+    "r1s2": -1.5,
+    "r2s1": 0.0,
+    "r2s2": -2.75,
+    "r3s1": 0.0,
+    "r3s2": -3.5
+   },
+   "at_true_gains": [
+    4.0,
+    -1.0,
+    -2.5,
+    0.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -2.5,
+   "at_true_pie_over_sq": 0.5,
+   "at_true_res_share": -7.0,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "surplus_max": {
+   "label": "surplus_max",
+   "exante_gains": [
+    0.0,
+    0.25,
+    0.125,
+    0.25
+   ],
+   "exante_nash": 0.0,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    13.5,
+    -1.0,
+    -2.5,
+    -4.0
+   ],
+   "interim": {
+    "r1s1": 0.0,
+    "r1s2": -1.5,
+    "r2s1": 0.0,
+    "r2s2": -2.75,
+    "r3s1": 0.0,
+    "r3s2": -3.5
+   },
+   "at_true_gains": [
+    4.0,
+    -1.0,
+    -2.5,
+    0.0
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -2.5,
+   "at_true_pie_over_sq": 0.5,
+   "at_true_res_share": -7.0,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.0
+  },
+  "maximin_exante": {
+   "label": "maximin_exante",
+   "exante_gains": [
+    0.143,
+    0.143,
+    0.143,
+    0.143
+   ],
+   "exante_nash": 0.0004,
+   "exp_surplus": 5.571,
+   "at_true_schedule": {
+    "MDE": 0.143,
+    "MDEN": 0.857
+   },
+   "at_true_payoffs": [
+    17.786,
+    -1.857,
+    -2.929,
+    -7.429
+   ],
+   "interim": {
+    "r1s1": 0.0,
+    "r1s2": -1.714,
+    "r2s1": 0.071,
+    "r2s2": -2.786,
+    "r3s1": 0.143,
+    "r3s2": -3.857
+   },
+   "at_true_gains": [
+    8.286,
+    -1.857,
+    -2.929,
+    -3.429
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -3.429,
+   "at_true_pie_over_sq": 0.071,
+   "at_true_res_share": -115.001,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -7.429
+  },
+  "nash_exante": {
+   "label": "nash_exante",
+   "exante_gains": [
+    0.125,
+    0.25,
+    0.125,
+    0.125
+   ],
+   "exante_nash": 0.0005,
+   "exp_surplus": 5.625,
+   "at_true_schedule": {
+    "MDE": 1.0
+   },
+   "at_true_payoffs": [
+    14.351,
+    -1.214,
+    -2.679,
+    -4.458
+   ],
+   "interim": {
+    "r1s1": -0.0,
+    "r1s2": -1.5,
+    "r2s1": -0.0,
+    "r2s2": -2.75,
+    "r3s1": 0.0,
+    "r3s2": -3.75
+   },
+   "at_true_gains": [
+    4.851,
+    -1.214,
+    -2.679,
+    -0.458
+   ],
+   "at_true_nash": null,
+   "at_true_floor": -2.679,
+   "at_true_pie_over_sq": 0.5,
+   "at_true_res_share": -8.702,
+   "abs_true_nash_vs_clean_river": null,
+   "abs_true_floor_vs_clean_river": -4.458
+  }
+ }
+}

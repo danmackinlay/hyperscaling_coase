@@ -1,0 +1,55 @@
+== Status quo (ordinance: MDE, no compensation) ==
+  company 13.5, residents [-1.  -2.5 -4. ]
+
+== Fair deal (equal split of pie 6 on MDE): gains 1.5 each; payments (2.5, 4.0, 5.5); company 1.5 ==
+
+== Full information, k=3 (base instance): unique implementation = IR for all ==
+  schedule MDE, company 6.00, resident gains [0. 0. 0.], payments [1.  2.5 4. ]
+
+== Full information, k=2 ==
+  -- DAC --
+   MDEN  company  13.50  resident gains [ 0.  0. -8.]  pay [2. 3. 0.]
+   DEN   company  11.00  resident gains [ 0.  0. -7.]  pay [1.5 2.  0. ]
+   MDN   company  10.50  resident gains [ 0.  0. -6.]  pay [1.5 2.5 0. ]
+   MDE   company  10.00  resident gains [ 0.  0. -4.]  pay [1.  2.5 0. ]
+   MEN   company   9.00  resident gains [ 0.  0. -7.]  pay [2. 2. 0.]
+   CHOSEN MDEN: company 13.50, Alice 0.00, Bob 0.00, Carol -8.00
+   mission tiers: worst-off -8.00; residents at/below no deal 3/3; GM over positive-gain parties 13.50 (1 parties); LOSER tier
+  -- club --
+   MDEN  company   9.50  resident gains [ 1.  0. -5.]  pay [3. 3. 3.]
+   DEN   company   8.50  resident gains [ 0.5  0.  -5. ]  pay [2. 2. 2.]
+   MEN   company   7.00  resident gains [ 0.  0. -5.]  pay [2. 2. 2.]
+   MDN   company   7.00  resident gains [ 1.   0.  -3.5]  pay [2.5 2.5 2.5]
+   DN    company   6.00  resident gains [ 0.5  0.  -3.5]  pay [1.5 1.5 1.5]
+   CHOSEN MDEN: company 9.50, Alice 1.00, Bob 0.00, Carol -5.00
+   mission tiers: worst-off -5.00; residents at/below no deal 2/3; GM over positive-gain parties 3.08 (2 parties); LOSER tier
+
+== Mission tiers for the comparators ==
+  ordinance: worst-off -4.00; residents at/below no deal 3/3; GM over positive-gain parties 13.50 (1 parties); LOSER tier
+  fair deal: worst-off 1.50; residents at/below no deal 0/3; GM over positive-gain parties 1.50 (4 parties); no-loser tier
+  k=3 base, IR-binding: worst-off 0.00; residents at/below no deal 3/3; GM over positive-gain parties 6.00 (1 parties); no-loser tier
+
+== Robustness: night profit p_N varied, k=2 DAC schedule choice ==
+  p_N=2.0: chosen MDEN, company 10.50, Carol -8.00
+  p_N=3.0: chosen MDEN, company 11.50, Carol -8.00
+  p_N=4.0: chosen MDEN, company 12.50, Carol -8.00
+  p_N=5.0: chosen MDEN, company 13.50, Carol -8.00
+
+== Finite estimation, k=2. err = sigma/sqrt(c_f); residents' c_N irrelevant ==
+  columns: pass rate | four-slot rate | E[company] | E[Alice] E[Bob] E[Carol] | P(Carol < ordinance -4)
+  -- principal naive m=0 --
+   err 1.0: pass 0.18 | four 0.17 |  -0.74 |  1.39  1.47  -1.13 | 0.17
+   err 0.3: pass 0.24 | four 0.24 |   0.91 |  0.94  1.42  -1.93 | 0.24
+   err 0.1: pass 0.24 | four 0.24 |   1.22 |  0.82  1.23  -1.94 | 0.24
+  -- principal naive m=0.5 --
+   err 1.0: pass 0.25 | four 0.24 |  -0.14 |  1.64  1.59  -1.69 | 0.24
+   err 0.3: pass 0.58 | four 0.58 |   5.58 |  1.05  1.19  -4.64 | 0.58
+   err 0.1: pass 0.94 | four 0.94 |  11.63 |  0.59  0.53  -7.56 | 0.94
+  -- principal cautious (planning) --
+   err 1.0: pass 0.75 | four 0.39 |   4.42 |  2.30  0.62  -3.49 | 0.46
+   err 0.3: pass 0.96 | four 0.96 |   9.80 |  1.59  1.56  -7.67 | 0.96
+   err 0.1: pass 0.99 | four 0.99 |  11.92 |  0.76  0.73  -7.94 | 0.99
+  -- principal naive m=0.5, SIMULTANEOUS updating --
+   err 1.0: pass 0.25 | four 0.24 |   0.36 |  1.49  1.39  -1.86 | 0.24
+   err 0.3: pass 0.56 | four 0.56 |   5.47 |  1.03  1.09  -4.50 | 0.56
+   err 0.1: pass 0.95 | four 0.95 |  11.66 |  0.59  0.53  -7.57 | 0.95

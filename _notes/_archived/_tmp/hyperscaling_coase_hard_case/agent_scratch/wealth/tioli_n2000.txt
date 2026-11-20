@@ -1,0 +1,21 @@
+
+=== fleet TIOLI, residents' right, lin ===
+ sigma 1.0: deal 0.565; E gains (u) [1.1348 0.0086 0.4908 0.3926]; product 1.888e-03; money-equiv [1.135 0.009 0.491 0.393] prod 0.00189; schedules {'D': 0.5415, 'MDE': 0.0165, 'MD': 0.0065}
+ sigma 0.3: deal 0.834; E gains (u) [2.8968 0.312  0.7297 0.5118]; product 3.375e-01; money-equiv [2.897 0.312 0.73  0.512] prod 0.337; schedules {'MDE': 0.416, 'MD': 0.3275, 'D': 0.0905}
+ sigma 0.1: deal 0.955; E gains (u) [4.5827 0.2319 0.4965 0.4159]; product 2.195e-01; money-equiv [4.583 0.232 0.497 0.416] prod 0.219; schedules {'MDE': 0.9545}
+ sigma 0.0: deal 1.000; E gains (u) [6. 0. 0. 0.]; product 0.000e+00; money-equiv [6. 0. 0. 0.] prod 0; schedules {'MDE': 1.0}
+   bloc TIOLI limit (lin): schedule MDE, transfers [3.  4.5 6. ], resident gains [2. 2. 2.], EV [2. 2. 2.]; fleet gain 0
+
+=== fleet TIOLI, residents' right, marg ===
+ sigma 1.0: deal 0.530; E gains (u) [0.0095 0.     0.0319 0.0912]; product 0.000e+00; money-equiv [0.958 0.    0.324 0.191] prod 0; schedules {'D': 0.53}
+ sigma 0.3: deal 0.897; E gains (u) [0.0194 0.     0.0406 0.1129]; product 0.000e+00; money-equiv [1.959 0.    0.414 0.239] prod 0; schedules {'D': 0.897}
+ sigma 0.1: deal 0.973; E gains (u) [0.026  0.     0.0214 0.0548]; product 0.000e+00; money-equiv [2.637 0.    0.216 0.113] prod 0; schedules {'D': 0.9725}
+ sigma 0.0: deal 1.000; E gains (u) [0.0328 0.     0.     0.    ]; product 0.000e+00; money-equiv [3.337 0.    0.    0.   ] prod 0; schedules {'MD': 1.0}
+   bloc TIOLI limit (marg): schedule D, transfers [1.08 2.13 2.29], resident gains [0.1022 0.0933 0.2636], EV [1.076 0.978 0.603]; fleet gain 0
+
+=== fleet TIOLI, residents' right, wta ===
+ sigma 1.0: deal 0.552; E gains (u) [0.011  0.0008 0.0419 0.1113]; product 4.221e-08; money-equiv [1.107 0.008 0.428 0.236] prod 0.000917; schedules {'D': 0.523, 'MDE': 0.0175, 'MD': 0.012}
+ sigma 0.3: deal 0.823; E gains (u) [0.0279 0.0276 0.0565 0.1042]; product 4.536e-06; money-equiv [2.827 0.28  0.582 0.22 ] prod 0.101; schedules {'MDE': 0.4075, 'MD': 0.319, 'D': 0.0965}
+ sigma 0.1: deal 0.960; E gains (u) [0.045  0.0207 0.0389 0.0665]; product 2.410e-06; money-equiv [4.608 0.209 0.397 0.138] prod 0.0525; schedules {'MDE': 0.9595}
+ sigma 0.0: deal 1.000; E gains (u) [0.0583 0.     0.     0.    ]; product 0.000e+00; money-equiv [6. 0. 0. 0.] prod 0; schedules {'MDE': 1.0}
+   bloc TIOLI limit (wta): schedule MDE, transfers [3.03 4.55 5.93], resident gains [0.1693 0.1516 0.2783], EV [1.844 1.637 0.642]; fleet gain 0

@@ -1,0 +1,1565 @@
+Mechanism Design by an Informed Principal
+
+         Roger B. Myerson
+
+         Econometrica, Vol. 51, No. 6. (Nov., 1983), pp. 1767-1797.
+
+Stable URL:
+http://links.jstor.org/sici?sici=0012-9682%28198311%2951%3A6%3C1767%3AMDBAIP%3E2.0.CO%3B2-F
+
+Econometrica is currently published by The Econometric Society.
+
+
+
+
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at
+http://www.jstor.org/about/terms.html. JSTOR's Terms and Conditions of Use provides, in part, that unless you have obtained
+prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you may use content in
+the JSTOR archive only for your personal, non-commercial use.
+
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at
+http://www.jstor.org/journals/econosoc.html.
+
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+
+
+
+
+The JSTOR Archive is a trusted digital repository providing for long-term preservation and access to leading academic
+journals and scholarly literature from around the world. The Archive is supported by libraries, scholarly societies, publishers,
+and foundations. It is an initiative of JSTOR, a not-for-profit organization with a mission to help the scholarly community take
+advantage of advances in technology. For more information regarding JSTOR, please contact support@jstor.org.
+
+
+
+
+                                                                                                          http://www.jstor.org
+                                                                                                      Sun Jul 15 20:17:11 2007
+                          Econornetrica, Vol. 51, No. 6 (November, 1983)
+
+           MECHANISM DESIGN BY AN INFORMED PRINCIPAL
+
+
+
+       When a principal with private information designs a mechanism to coordinate his
+    subordinates, he faces a dilemma: to conceal his information, his selection of mechanism
+    must not depend on his information; but his information may influence which mechanism
+    he prefers. To resolve this dilemma, this paper develops a theory of inscrutable mechanism
+    selection. The principal's neutral optima are defined as the smallest possible set of
+    unblocked mechanisms. They are shown to exist and are characterized using parametric
+    linear programs. Any safe and undominated mechanism is a neutral optimum. Any neutral
+    optimum is an expectational equilibrium and a core mechanism.
+
+
+                                      1. INTRODUCTION
+
+AN INDIVIDUAL WHO BARGAINS when he has private information often faces a
+dilemma. On the one hand, he may want to conceal his information from the
+people with whom he is bargaining. But on the other hand, his goals in
+bargaining may depend on his information. For example, if the seller of a used
+car knows that he has a low quality car (a "lemon"), then he wants to conceal
+this fact from the buyer. But the seller's information may also make him prefer
+not to offer any warranty on the car's performance, even if he has to concede a
+lower price to do so. Should such a seller try to avoid giving any warranty, as he
+bargains with the buyer over the terms of sale, or should he offer a warranty, to
+conceal his information? The seller's actual preferences are in conflict with his
+need to be inscrutable. In this paper we shall develop a general theory of how
+individuals may resolve such conflicts.
+   Even in games with complete information, there is still no general definitive
+theory of bargaining between two individuals. We might expect the players to
+agree on some outcome on their Pareto frontier, but which point is agreed upon
+may depend on many factors. (See Roth [20] for a survey of mathematical
+theories of bargaining.) However, if we assume that the player has all of the
+bargaining ability, then the solution to the bargaining problem with complete
+information is obvious: the individual with all the bargaining ability should insist
+on the best outcome possible for himself, subject to the constraint that the other
+individual cannot be made worse off than if he refused to cooperate.
+   Because the issues of bargaining with incomplete information are so compli-
+cated, a good research strategy is to begin by just studying this case, where one
+individual has all of the bargaining ability. Even in this case, which is trivial with
+complete information, difficult issues arise when the individual in control has
+private information. This paper will be devoted entirely to the study of this case.
+
+   'Research for this paper was supported by the Kellogg Center for Advanced Study in Managerial
+Economics and Decision Sciences, and by a research fellowship from I.B.M. Many helpful sugges-
+tions and criticisms by colleagues in the M.E.D.S. department and the Math Center at Northwestern
+University and in the I.M.S.S.S. summer workshop at Stanford University are gratefully acknowl-
+edged.
+1768                            ROGER B. MYERSON
+
+However, the insights which we develop here will also lay the foundations for
+later papers that will develop a general theory of bargaining with incomplete
+information between individuals who all have bargaining ability. (See Myerson
+[15] and [16].)
+   We shall refer to the individual with all of the bargaining ability as the
+principal in the bargaining situation, and all other individuals are the subordi-
+nates. This terminology is meant to suggest one kind of environment (the
+hierarchical organization) in which individuals typically do interact with asym-
+metric bargaining ability. Also, one salient feature of most principal-agent
+models (see, for example, Ross [19], Mirrlees [12], Harris and Raviv [6], and
+Holmstrom [lo]) is that the principal can implement the coordination mechanism
+that is best for him, subject to the constraint that the agent must be given at least
+the minimal incentives to act as the principal desires. It is this feature of the
+principal's role which we are generalizing in this paper. The idea of giving one
+individual the authority to select an incentive-compatible mechanism in general
+Bayesian social choice problems was suggested by Harris and Townsend [7].
+   If an individual is the principal, in the sense of this paper, it does not mean that
+he can force the subordinates to do anything he wants. The subordinates may
+have control over private decisions which the principal cannot dictate, or they
+may have private information which the principal cannot observe, or they may
+simply have the option of leaving the principal's organization if he does not offer
+them some minimal expected payoffs. If an individual is the principal, it means
+that he has effective control over the channels of communication between all
+individuals and that the subordinates cannot make threats against him. That is,
+the principal knows that the subordinates will do whatever he asks, provided that
+he makes it at least minimally in their best interests to do so, so they cannot
+bargain against him for a larger share of the social surplus. If the principal
+designs a game for the subordinates to play, then he can be confident that they
+will use the strategies which he suggests for them in this game, provided that
+these strategies form a Nash equilibrium. Or, using his control over the channels
+of communication, the principal can direct the subordinates to use some corre-
+lated equilibrium, in the sense of Aumann [I]. In general, when we say that an
+individual is the principal, we mean that he can control the subordinates only to
+the extent that he can manipulate their incentives, but they accept such manipu-
+lation passively.
+   One source of informed-principal problems is in the theory of signalling in
+markets with adverse selection. For example, Rothschild and Stiglitz [21] and
+Wilson [22] have studied equilibria in insurance markets where each customer
+has private information about his risk category, information which may affect
+the expected profits of an insurance company that sells him a policy. In a market
+equilibrium, Rothschild and Stiglitz and Wilson assume that competition be-
+tween insurance companies should always give them zero expected profits. We
+may now ask, if there were just one customer bargaining with one insurance
+company, as monopsonist and monopolist, would they negotiate the same
+                                MECHANISM DESIGN                                 1769
+
+insurance policy as in a Rothschild-Stiglitz or a Wilson market equilibrium?
+Since the insurance company makes zero expected profits in the market model,
+clearly the bargaining model can simulate the market model only if the customer
+has all the bargaining ability; that is, the customer must be the principal
+bargainer. Examples are known in which the principal's neutral mechanisms, as
+defined in this paper, do coincide with Wilson's E2 equilibria (or anticipatory
+equilibria, in the sense of Riley [17]), when the customer is the principal. It is
+hoped that this equivalence might be shown to hold for some class of signalling
+problems. (This question has been investigated recently by Bhattacharya [2].)
+Other related models of markets in which informed individuals are given price-
+setting power have been studied by Wilson [23].
+   The basic structure of our model is developed in Section 2 of this paper. In
+Section 3, the principal's mechanism-selection problem is introduced. We argue
+that all types of the principal should be expected to select the same mechanism,
+even though they have different preferences, so that the selection itself does not
+reveal any information. In Section 4 we argue that, if there exists a mechanism
+that is safe and undominated (as will be defined), then it is essentially unique for
+this property, and all types of the principal should implement it. We call such
+safe and undominated mechanisms strong solutions. Sections 5 and 6 introduce
+the concepts of expectational equilibria and core mechanisms, to help delimit the
+set of mechanisms that the principal could reasonably consider, in cases where
+no strong solution exists.
+   In Section 7, we systematically approach the problem of developing a theory to
+determine what an informed principal should do. We define the principal's
+neutral optima as the set of mechanisms that cannot be blocked, with any concept
+of blocking that satisfies four axioms. The main results of this paper are the
+characterization of neutral optima, presented in Section 8, and the general proof
+of existence of neutral optima, from which the existence of expectational equilib-
+ria and core mechanisms is also derived.
+   Most of the technical proofs are deferred to Section 9.
+
+
+                     2. BAYESIAN INCENTIVE PROBLEMS A N D
+                      INCENTIVE-COMPATIBLE MECHANISMS
+
+   We consider a general Bayesian incentive problem with n individuals, numbered
+i = 1,2, . . . , n. As in Myerson [14], we allow for both informational (adverse
+selection) and strategic (moral hazard) constraints on the ability of these individ-
+uals to coordinate themselves, so that our model can subsume the most general
+class of problems.
+   For each individual i, we let T, denote the set of possible types for individual i.
+Each type ti in Ti completely specifies some possible state of i's preferences,
+abilities, and beliefs. That is, i's type is a random variable which subsumes all of
+i's information that is not public knowledge. (This terminology is based on the
+seminal paper of Harsanyi [8].)We shall assume that, from the first point in time
+1770                            ROGER B. MYERSON
+
+when these n individuals can actually make decisions or interact with each other,
+each individual already knows his own type.
+   A mechanism is any rule determining the individuals' actions as a function of
+their types. The set of feasible mechanisms is limited by two factors. First, each
+individual must be given the incentive to report his private information honestly.
+That is, we assume that the individuals' types are unverifiable, so that each
+individual may conceal or lie about his type unless he is given the correct
+incentives to tell the truth. Second, each individual may control some private
+decisions that cannot be cooperatively coordinated with the others. These private
+decisions may be unverifiable, like the agent's level of effort in the conventional
+principal-agent problem; or these private decisions may be intrinsically unalien-
+able, like a worker's option to refuse employment if compensation is below his
+reservation wage. In either case, the result is that there are some decisions or
+actions which cannot be implemented unless the individual responsible is given
+the correct incentives to choose them.
+  Thus, we must distinguish between actions that are publicly observable and
+enforceable, and actions that must be privately controlled. We let Do denote the
+set of all possible enforceable or public actions, which can be contractually
+specified. That is, any do in Do represents a combination of actions and decisions
+which the individuals can (in principle) commit themselves to carry out, even if it
+may turn out ex post to be harmful to any or all of the individuals. For each
+individual i, we let Di represent the set of all possibleprivate actions controlled by
+individual i. For example, Di may be a set of unobservable levels for individual i,
+and Do may be a set of capital-resource allocations for the n individuals.
+  We let
+
+
+denote the set of all possible combinations of individuals' types, with t
+= (t,, . . . , t,) denoting a typical types-vector or state in T. We let T P i denote
+the set of possible combinations of types of the individuals other than i, that is
+          T-i = T1 X .    . X T,-, X Ti+, X . . . X T,.
+Similarly, we let
+          D=DoXDIX              XD,
+denote the set of all possible combinations of public and private actions, with
+d = (do,dl, . . . , d,) denoting a typical actions-vector or outcome in D. For
+mathematical convenience, we shall assume that D and T are (nonempty) finite
+sets.
+  Given any vector of types t and actions d, we let ui(d,t) denote the payoff to
+individual i, measured in a vonNeumann-Morgenstern utility scale, when d is
+the outcome and t is the actual state of the game. We let pi(t-, I ti) denote the
+conditional probability that individual i would assign to the event that t
+= (t,, . . . , t,) is the actual state of the game, given that he knows his actual type
+                                MECHANISM DESIGN                                  1771
+
+to be ti. (We use here the notation t-, = (t,, . . . , ti-,,ti+,, . . . , t,).) As a
+regularity assumption, we will assume that these conditional probabilities are all
+nonzero, so that
+(2.1)     pi(t-,lti)>O,       V i E (1,. . . , n), Vt E T.
+That is, no individual is absolutely sure that any combination of others' types is
+impossible. (This assumption will be needed in definition (5.1) and in the proof
+of Lemma 2.)
+   Thus, the general Bayesian incentive problem r is characterized by these
+structures
+
+
+Our next task is to describe the set of feasible mechanisms for coordinating the
+public and private actions, as a function of the individuals' types.
+   Consider the following scenario. Each individual simultaneously and confiden-
+tially reports his type to a trustworthy mediator (or a mechanical information
+processor). The mediator then chooses an outcome d = (do,dl, . . . , d,) in D, as a
+(possibly random) function of the vector of types reported to him. Then the
+enforceable action do is carried out, and each individual i is confidentially
+informed that 4. is the private action recommended for him.
+   Formally, a mechanism is any function p : D x T+ R such that
+
+(2.3)      2 p(c 1 t) = 1 and p(d 1 t) 2 0,          Vd € D, Vt E T.
+          cED
+
+Here p(d 1 t) is interpreted as the probability that d will be the outcome chosen
+by the mediator in the above scenario, if t is the reported state of individuals'
+types.
+  For any possible types ti and si of individual i, any function ai : Di + Di, and
+any mechanism p, we make the following definitions:
+
+
+
+and
+
+
+
+(In this paper, whenever t, ti, and t P i appear in the same formula, t-i denotes
+the vector of all components other than ti in the vector t = (t,, . . . , t,). Also,
+(t-,,si) and (d-,,Si(di)) are respectively the vectors that differ from t and d in
+that s, replaces ti and 6,(di) replaces d,.) Thus, Ui(p 1 ti) is the conditionally
+expected utility for individual i, given that his type is ti, if all individuals report
+their types honestly and carry out their recommended private actions obediently,
+when the mediator uses mechanism p. On the other hand, if individual i reports s,
+1772                           ROGER B. MYERSON
+
+and plans to use private action 6,(di) when di is recommended, while all other
+individuals are honest and obedient, then U,*(p,Gi,si1 ti) is i's conditionally
+expected utility from mechanism p, given that i's true type is ti. Notice that the
+mediator's recommendation may convey information to i about the others' types,
+so that i might rationally choose his private actions as some function Si(.) of his
+recommended action.
+  The mechanism p is incentive compatible (in the Bayesian sense of D'Aspre-
+mont and Gerard-Varet [4]) iff
+
+
+                         V i ~ { 1 ., . . , n}, VtiE Ti, Vsi€ Ti, Vai:Di-+Di.
+Condition (2.6) asserts that honest and obedient participation in the mechanism
+p must be a Bayesian Nash equilibrium for the n individuals, in the sense of
+Harsanyi [8]. In Myerson [14], it has been shown that there is no loss of
+generality in considering only incentive-compatible coordination mechanisms, in
+the following sense: for any Bayesian equilibrium of any other coordination
+game which the individuals might play, there exists an equivalent incentive-
+compatible mechanism satisfying (2.6). This idea, called the revelation principle,
+has been presented in related contexts by Gibbard [5], Rosenthal [18], Dasgupta,
+Hammon, and Maskin [3], Holmstrom [9], Harris and Townsend [7], and
+Myerson [13].
+   One special case of the above structures may be worth considering, as an
+example. Suppose that each individual's set of private actions is simply Di =
+{"accept", "reject"), and that all utility payoffs will be zero if any individual
+chooses his "reject" option. Suppose that there is an enforceable action ("fire
+everyone") that also makes all payoffs zero. Then without loss of generality, we
+need only consider mechanisms in which no individual is ever asked to "reject,"
+since the "fire everyone" action may be used instead. Then the incentive
+constraints (2.6) reduce to
+
+
+
+                                                        Vi, V t i E T , , V s i E T i ,
+and
+(2.8)    U,(pIti)>O,       Vi, V t i E q .
+That is, no individual should have any incentive to lie or reject in the mechanism.
+
+                         3. THE INSCRUTABLE PRINCIPAL
+
+  If an outsider with no private information (an academic economist, perhaps)
+were given the authority to control all communication between the n individuals
+and to determine the enforceable actions in Do, then he could implement any
+incentive-compatible mechanism satisfying constraints (2.3) and (2.6). But if one
+of the n informed individuals can influence the selection of the mechanism when
+he already knows his own type, then a fundamentally new issue arises to
+constrain the choice of mechanism: if the selection of the coordination mecha-
+nism depends in any way on one individual's type, then the selection of the
+mechanism itself will convey information about his type to the other individuals.
+Under these circumstances, for a mechanism to be feasible, it must be incentive
+compatible after all other individuals have inferred whatever information might
+be implicit in the establishment of the mechanism itself.
+   In this paper we will assume that individual # 1 can effectively control all
+communications and can dictate how the action in Do is to be determined,
+without any need to bargain or compromise with any of the other n - 1
+individuals. (The difference between Do and D l is that the action in D, is subject
+to moral hazard, in the incentive constraints, but the action in Do is not.) That is,
+individual 1 has complete authority to select any mechanism for coordinating the
+enforceable and private actions of the n individuals. The mediator described in
+the preceding section is a mere tool of individual 1, implementing the coordina-
+tion mechanism that he selects. In view of this asymmetry of power, we shall
+henceforth refer to individual 1 as the principal in the system; individuals
+2, . . . , n will be referred to as the subordinates.
+    We assume that the principal already knows his type at the time when he
+ selects the mechanism, and that this is not a repeated situation. Thus, tne best
+incentive-compatible mechanism for the principal maximizes his conditionally
+expected utility U l ( p I t , ) given his true type t , , subject to the constraints (2.3)
+ and (2.6). But if the principal chooses p to maximize U , ( p I t , ) , then his choice
+will depend on the true type t , , and so the subordinate individuals may be able to
+ infer something about the principal's type from his choice of p. With this new
+ information, the subordinates may find new opportunities to gain by dishonesty
+ or disobedience. So a mechanism might not be incentive-compatible in practice,
+ even though it satisfies (2.5), if the fact that p is used allows the subordinates to
+ learn about the principal's type.
+    Let R be any nonempty subset of T,. We say that a mechanism p is incentive
+ compatible given R iff ,u is incentive compatible for the principal (that is, p
+ satisfies (2.6) for i = 1) and
+
+
+
+
+                           V i E (2, . . . , n ) , V t , E T , , V S ,E T, , Val : Dl + D l .
+(The summations in (3.1) indicate that t ~is ,to range over vectors such that the
+first component t , is in R.) This condition (3.1) asserts that no subordinate i
+1774                            ROGER B. MYERSON
+
+should expect to gain by reporting si and by disobeying his instructions according
+to Si,when he knows that ti is his true type and that the principal's type is in R.
+Thus, if the subordinates expected that the principal would propose mechanism p
+if his type were in R, but othewise would propose some other mechanism, then p
+could be successfully implemented only if it were incentive compatible given R.
+(The two sides of (3.1) differ from conditionally-expected utilities because we
+have not divided by i's probability of the event t, E R; however, this factor can
+be ignored, since it is the same on both sides, and is positive by (2.1).)
+   This concept of conditional incentive compatibility describes what the princi-
+pal could achieve if some information were revealed. However, as we try to
+construct a theory to determine which mechanism the principal should imple-
+ment, there is no loss of generality in assuming that all types of the principal
+should choose the same mechanism, so that his actual choice of mechanism will
+convey no information. We may refer to this claim as the principle of inscrutabil-
+ity. Its essential justification is that the principal should never need to communi-
+cate any information to the subordinates by his choice of mechanism, because he
+can always build such communication into the process of the mechanism itself
+(in that p(d 1 t) can depend on t,).
+   A more formal justification for this principle of inscrutability may be given as
+follows. Suppose to the contrary, that there are some mechanisms { p,, . . . , pK}
+and sets of types {R,, . . . , R,) forming a partition of TI, such that the types in
+Rk are expected to implement pk, for every k in (1, . . . , K}. (For simplicity, we
+ignore randomized mechanism-selection plans here, but our argument could be
+easily extended to cover this case as well.) Since the subordinates would ratio-
+nally infer that the principal's type is in Rk when pk is proposed, each pk must be
+incentive compatible given Rk. Since the principal already knows his type, he
+would choose to implement these mechanisms in this fashion only if they satisfy
+
+
+and are incentive compatible for him separately. But now consider the mecha-
+nism p* defined by
+
+
+This mechanism p* is completely equivalent to the system of mechanisms
+{ pl, . . . , pk} on the partition {R,, . . . , RK), giving the same distribution of
+outcomes in every state. That is, saying that "for each k, if the principal's type is
+in Rk then he will implement pk" is empirically indistinguishable from saying that
+"the principal will implement p*, no matter what his type is." It is straightfor-
+ward to verify that p* is incentive compatible, using (3.1) (with p = pk and
+R = Rk) and (3.2) to prove that (2.6) holds for p = p*.
+  The goal of this paper is to develop a theory to predict which mechanisms a
+principal with private information might select. For inscrutability, any mecha-
+nism that we predict must be reasonable for all of his types to select. If the
+principal's different types would actually prefer different incentive-compatible
+                                    MECHANISM DESIGN                                            1775
+
+mechanisms, then the predicted mechanism must be some kind of compromise
+between the different goals of the principal's possible types. The main task of this
+paper is to develop formal notions of what such a "reasonable compromise"
+should be.
+
+
+                      4. SAFE AND UNDOMINATED MECHANISMS
+
+  We say that a mechanism p. is dominated by another mechanism v iff U,( p. I t , )
+ jU,(v I t , ) for every t l in T I , with strict inequality for at least one t , in T I . We
+say that p. is undominated iff p. is incentive compatible and p. is not dominated by
+any other incentive-compatible mechanism. If U , ( y 1 t , ) < U,(v I t , ) for every t ,
+in T I , then p. is strictly dominated by v.
+   Because the principal has effective control over the communication channels
+between himself and the subordinates, he should never be expected to implement
+any strictly dominated mechanism. To see why, suppose to the contrary that the
+principal is expected to implement some mechanism y that is strictly dominated
+by another incentive-compatible mechanism v. Then the principal could address
+the subordinates as follows:
+
+       "I am going to implement the mechanism v. Notice that all of my types prefer v over y,
+    which you might have thought we would implement. Thus, you should not infer anything
+    about my type from the fact that I have chosen v rather than y. With no new information
+    about my type, you should each find it optimal to participate honestly and obediently in
+    this incentive-compatible mechanism v."
+
+When we assume that the principal can communicate effectively and has all of
+the bargaining ability, we mean that the subordinates would understand such an
+argument and accept it.
+   We say that a mechanism y is safe iff, for every type t , in T I , p is incentive
+compatible given { t , ) .That is, a safe mechanism is one which would be incentive
+compatible if the subordinates knew the principal's type. No matter what the
+subordinates might infer about the principal's type, he can successfully imple-
+ment a safe mechanism, because it is incentive compatible given any subset of
+TI
+   Safe mechanisms may not necessarily exist for a Bayesian incentive problem.
+Even if one does exist, it may be strictly dominated in the class of incentive-
+compatible mechanisms. However, we now show that a mechanism that is both
+safe and undominated, if it exists, should be implemented by all types of the
+principal. This result defines a class of problems in which it is clear what the
+informed principal should do. We call a safe and undominated mechanism a
+strong solution for the principal.
+
+  THEOREM
+        1: Suppose that y is a strong solution. Let v be any other mechanism,
+and let
+i i76                             ROGER B. MYERSON
+
+If S Z 0 then v is not incentive compatible given S. Furthermore, if & is any other
+safe and undominated mechanism, then
+          Ul( & l tl) = U1( P I tl),   Vtl E T1.
+
+  PROOF:Consider the mechanism y* defined by
+
+
+
+
+If S # 0, then y is dominated by y*, which differs from y only in that the types
+which prefer v switch to v. If v is incentive compatible given S, then y* is
+incentive compatible (since y is incentive compatible given T,\S); but this
+contradicts the assumption that y is undominated.
+   To prove the last sentence of the theorem, let v = &. Since & is incentive
+compatible given any set, { t , I U,( & I t,) > U1(y I t,)) = 0. Similarly, switching
+the roles ofG and>, we get {t, I U,( y I t,) > U,(&It,)) = 0.                 Q.E.D.
+
+   Theorem 1 shows us why the principal should implement a strong solution (if
+one exists), even though he might actually (given his true type) prefer some other
+incentive-compatible mechanism. If the subordinates were to interpret his selec-
+tion of any other mechanism v as evidence that his type must be in the set
+preferring v over the strong solution, then v would become infeasible as soon as it
+was selected. Furthermore, Theorem 1 states that, if a strong solution exists, it
+must be essentially unique.
+   Let us now consider Example I, an incentive problem with one subordinate (so
+n = 2). The principal has two equally-likely types T, = { l a , 1b). The subordinate
+has no private information, so I T21 = 1 and the variable t, can be ignored. There
+are three enforceable actions in Do = {a,, a,, a,) available to the principal, but he
+has no private options (so ID,\ = 1 and the variable dl can be ignored). The
+subordinate has two private actions D, = {?,a). If the subordinate chooses ?
+("reject") then both incentives will get payoffs of zero. If the subordinate chooses
+Z ("accept") then the individuals' utility payoffs (u,, u,) depend on do and t, as in
+Table I.
+   In this example (by (2.7) and (2.8)), an incentive-compatible mechanism must
+give nonnegative expected utility to the subordinate, and must not give either
+type of the principal any incentive to report the other type. Among such
+                                    MECHANISM DESIGN                            1777
+
+mechanisms, the expected utility for type l a is maximized by the mechanism p i ,
+defined by
+          p , ( a , , i i l l a ) = p,(a,,Zl Ib) = 1.
+
+The expected utility for type I b is maximized by the mechanism p,, defined by
+
+
+That is, type l a prefers the mechanism p,. in which both of the principal's types
+implement a , ; and type Ib prefers the mechanism p2, in which both types
+implement a,. These mechanism give expected utilities as follows:
+
+
+
+
+   Unfortunately for the principal. neither p, nor p, is incentive compatible
+unless both types are expected to implement it. If the principal were expected to
+choose p, only if his type is l a , and to choose p, only if his type is I b, then the
+subordinate's expected utility would be - 2 in each case and he would be better
+off rejecting. Although the subordinate is willing to accept either a , or a, ex ante,
+he would prefer to reject against either action if he knew that it was the one that
+the principal preferred.
+   To guarantee that the subordinate would be willing to accept, no matter what
+he might infer, the principal could offer to randomize between a, and a,. For
+example he could use p,, defined by
+
+
+This mechanism p3 is safe, since the subordinate's expected utility would be
+nonnegative ( + . 5 ) even if he learned the principal's type. However p3 is not
+undominated. The unique safe and undominated mechanism is p,, defined by
+
+
+
+
+That is, p4 is the mechanism in which the subordinate never rejects, and the
+principal randomizes between a, and a,, giving at most 60 per cent probability to
+the action that he actually prefers. (The trustworthy mediator, described in
+Section 2, could verify to the subordinate that the randomization was actually
+carried out within these .60-.40 bounds.) The subordinate expects zero utility
+from p,, with either type of the principal, and the principal's expected-utility
+allocation is U,( p, I 1a) = 7.4 = U , ( p 4( I b). Thus, although p4 is not the best
+incentive-compatible mechanism for either type, it is the principal's strong
+solution. Any mechanism v that offers higher expected utility to either type of the
+principal would be rejected by the subordinate, because he would expect negative
+1778                             ROGER B. MYERSON
+
+utility from the mechanism after inferring that the principal was of the type for
+which U,(u I tl) > UI(P', l tl).
+
+                           5. EXPECTATIONAL EQUILIBRIA
+
+   In the preceding section, we argued that, if there exists a mechanism that is
+both safe and undominated, then this (essentially unique) mechanism should be
+implemented by all types of the principal. To fully justify this claim, and to begin
+to derive a theory of rational selection of a mechanism by the principal for the
+general case in which a strong solution may not exist, we must consider the
+principal's selection of a mechanism as part of a noncooperative game.
+   In this noncooperative game, each individual first learns his own type; then
+the principal selects and announces a coordination mechanism; then each
+subordinate makes some inferences about the principal's type, based on this
+announcement; and finally the coordination mechanism is implemented, with
+each individual using some participation strategy that is rational for him given
+his information. To rigorously analyze this game, we must first develop some
+notation.
+   For any vector q in RTl such that 0 q(t,) 5 1 Vt,, and q # 0, we let
+
+
+
+
+                                                          V i € (2, . . . , n ) , Vt E T ,
+and
+
+
+To interpret this definition, suppose that, for each t,, q(t,) is the likelihood (or
+conditional probability) of the principal selecting mechanism v when his type is
+tl. Thenp,*(t - 1 ti, q) is the posterior probability that individual i would assign to
+state t if his own type were ti and the principal selected mechanism u.
+   For any likelihood vector q as above, the normalized-likelihood vector Q
+corresponding to q is defined by
+
+
+
+
+Notice that (5.2) imples that p,*(tPi I ti, q) = ~ ~ * (I tti,- ~
+                                                               Q), for every i and t, for
+any nonzero vector q. Thus, we need to know only the normalized-likelihood
+vector Q associated with a mechanism ,v, to compute the individuals' posterior
+probabilities if u were selected by the principal.
+  Suppose now that mechanism u has zero likelihood of being selected by each
+type of the principal, so that q = 0. Then the posterior probabilities if u actually
+were selected cannot be computed from (5.1), because the denominator of (5.1) is
+zero. (The regularity assumption (2.1) prevented this difficulty in all other cases.)
+                                 MECHANISM DESIGN                                    1779
+
+On the other hand, (5.2) is satisfied by any normalized-likelihood vector Q when
+q = 0. Thus, following Kreps and Wilson [ll],we may say that the individuals'
+posterior beliefs after the selection of v are consistent iff there exists some
+normalized-likelihood vector Q , satisfying
+
+(5.3)      2 Q ( s I ) = l and Q ( t , ) 2 0 ,        Vt,ET,,
+         $ 1 E TI
+
+
+such that, for every i and t , p : ( t ~ ,1 t,, Q ) is the posterior probability that
+individual i would assign to state t if his own type were t, and the principal
+selected v. This vector Q may be interpreted as the normalized-likelihood vector
+corresponding to some vector of nonzero but infinitesimal likelihoods of the
+principal selecting v.
+  We do not need to assume that the principal must select a direct revelation
+mechanism. A generalized mechanism is defined to be any function v : D' x T '
++ R such that D' and T ' are nonempty finite sets of the form
+         D ' = D , X D ; x . . . x D,',        T I = T ; X . . . x T;,
+and
+
+           x v(cI t)
+          cED'
+                        = 1   and v ( d 1 t ) 2 0 ,    V d E D',     V t E T'.
+
+Here TI' is the set of possible reports that i may send, Dl' is the set of possible
+instructions that i may receive, and v ( d 1 t ) is the probability of implementing do
+and sending instructions dl to each i, if each i has reported t, into the mechanism.
+The only change from (2.3) is that D; and T,' may differ from Dl and T,..
+  When the generalized mechanism v is implemented, each individual i will
+determine his reports and private actions according to some participation strategy,
+denoted by a pair ( y ,,7,) such that
+
+(5.4)      ~r,(sl~tl)=l
+                     and r , ( r l l t l ) 2 0 ,          Vr,€T,',     Vt,€T,;
+          s,E T,'
+
+and
+
+
+
+
+Here ri(s, I t,) is the probability that i will report s, if his type is t,; and
+y,(c, I dl,si,t,) is the probability that i will use his private action ci if ti is his true
+type but he reported s, and then received instructions d,, in the implementation
+of v.
+   We let W , ( v ,y, r 1 ti, Q ) denote the expected utility for individual i in the
+mechanism v if his type is t,, his posterior distribution given the selection of v is
+characterized by the normalized-likelihood vector Q , and y = ( y , , . . . , y,) and
+1780                           ROGER B. MYERSON
+
+7 =(rl, . . . , 7,) characterize the participation strategies of the n individuals.
+That is
+
+
+
+
+where
+
+
+
+
+and
+
+
+
+
+  We say that the participation strategies (y, 7) are a Nash equilibrium for n given
+Q iff every individual's participation strategy maximizes the expected utility for
+each type, given the other individuals' strategies, so that
+
+
+for every i in {l, . . . , n ) , every ti in Ti,and every alternative participation
+strategy (r:, y,') satisfying (5.4) and (5.5) for i.
+   We say that a mechanism y is an expectational equilibrium iff y is incentive
+compatible and, for every generalized mechanism v, there exist Q, y, and r
+satisfying (5.3)-(5.5) such that (y, r) is a Nash equilibrium for v given Q and
+
+
+In the terminology of Kreps and Wilson [ll], any expectational equilibrium can
+be supported as a sequential equilibrium of the mechanism-selection game.
+   When y is an expectational equilibrium then rational behavior of the subordi-
+nates can force all types of the principal to implement p. If he were to try to
+implement some other mechanism v then, with the posterior expectations charac-
+terized by Q, the subordinates would find it rational to use their equilibrium
+participation strategies (y, 7). By (5.7), these participation strategies in v would
+leave the principal no better off than in p, no matter what his type may be. So all
+of the principal's types would prefer to implement y. But then any posterior
+probabilities characterized by any normalized likelihood vector such as Q would
+be consistent with rational Bayesian inference after the principal selected v,
+because the event of v being selected has zero probability for every type in T,.
+   Theorem 1 did not completely justify our claim that, if y is a strong solution,
+then all types of the principal should select it. Theorem 1 showed that any
+                                MECHANISM DESIGN                                 1781
+
+alternative mechanism v could not be incentive compatible given the information
+that the principal would prefer it, implemented honestly and obediently, over y.
+One could still ask, however, whether the subordinates would use some dishonest
+or disobedient strategies in v such that some types of the principal would be
+better off than in y. The following theorem shows that the answer to this question
+is No, because for any alternative mechanism there are consistent posterior
+beliefs and a Nash equilibrium of participation strategies such that no type of the
+principal would be better off than in the strong solution.
+
+        2: Any strong solution is an expectational equilibrium.
+  THEOREM
+
+  We defer the proof of this theorem to Section 9.
+  The concept of expectational equilibrium can be applied to any Bayesian
+incentive problem, even if there is no strong solution. We prove the following
+general existence theorem in Section 9.
+
+  THEOREM    3: For any Bayesian incentive problem as in (2.2), there exists at least
+one expectational equilibrium.
+
+                               6. CORE MECHANISMS
+
+  For Example 1 (discussed in Section 4), one can show that the strong solution
+y, is the unique expectational equilibrium. Unfortunately, expectational equilib-
+ria are not generally unique (even when a strong solution exists), and for some
+Bayesian incentive problems the set of expectational equilibria may be quite
+large. Thus, to get a more useful theory, we must investigate other solution
+concepts for the informed principal's problem.
+   Let us consider now Example 2, which differs from Example 1 only in that the
+utility functions ( u , ,u,) are as in Table 11. (The only changes are in the subordi-
+nate's payoffs from outcome a,.) As before, the subordinate (individual 2)
+believes ex ante that types 1a and 1 b are equally likely, and he has the option to
+reject the principal's mechanism, in which case both individuals' payoffs are zero.
+Thus, a mechanism is incentive compatible iff it gives nonnegative expected
+utility to the subordinate, and gives neither type of the principal any incentive to
+lie.
+   In this example, every incentive-compatible mechanism is an expectational
+equilibrium (including even the strictly dominated mechanisms). This is because
+
+
+                                      TABLE I1
+1782                                 ROGER B. MYERSON
+
+the subordinate would choose to reject against any mechanism if he believed that
+the principal was type l a . Thus, to show that any given incentive-compatible
+mechanism y is an expectational equilibrium, let Q(1a) = 1 and Q ( l b ) = 0 for
+any alternative mechanism v. Then both types of the principal should rationally
+select y, because the subordinate believes that only type l a could make the
+"mistake" of choosing anything else, and so he would reject anything else.
+   As before, let y, be the mechanism in which both of the principal's types do a,,
+and let y, be the mechanism in which both types do a,. Although each of these
+mechanisms is an expectational equilibrium, there is good reason to believe that
+the principal should actually implement p,. After all, y, is the best incentive-
+compatible mechanism for type 1b. Thus, it would seem strange for the subordi-
+nate to infer that the principal is type l a when y2 is announced, as was required
+to make y, an expectational equilibrium.
+   The weakness of expectational equilibrium as a solution concept is that it
+allows so much flexibility in the designation of the posterior beliefs after an
+alternative mechanism is selected. If the principal is able to communicate
+effectively with his subordinates, he may actually have some control over the
+subordinates' posterior beliefs, to the extent that he can explain why he is
+choosing a particular mechanism. In Example 2, if the subordinate were expect-
+ing both types of the principal to use p,, then the principal could speak to the
+subordinate as follows:
+        "I am going to implement p2. This mechanism is strictly better for 16, but worse for l a ,
+    than the mechanism p , which you may have been expecting me to implement. Thus you
+    should take my selection of p2 as evidence in favor of my being type 16. But whether you
+    infer that my type is 16, or you remain with your prior belief that my two types are equally
+    likely (or even if you make any inference in between), this mechanism p2 gives you
+    nonnegative expected utility. Thus, you should not reject against p2."
+
+If the principal can communicate effectively, then the subordinate should under-
+stand this speech and accept it. Furthermore, if it is common knowledge that he
+would accept it, then the subordinate could not rationally expect type l b to
+choose y,, so he should reject against y,.
+   The above argument can be extended to the general case. We say that y is a
+core mechanism for the principal iff y is incentive compatible and there does not
+exist any other mechanism v such that
+
+
+
+and, for every set S that satisfies
+
+
+
+v would be incentive compatible given S . That is, if y is not a core mechanism,
+then there is some other mechanism v that some types would prefer, such that v
+would be incentive compatible given the information revealed by its selection,
+provided that (at least) all the types that prefer v over y are expected to choose v.
+                               MECHANISM DESIGN                               1783
+
+In Example 2, p, is the unique core mechanism. The following existence theorem
+is proven in Section 9.
+
+  THEOREM   4: For any Bayesian incentive problem, there exists at least one core
+mechanism for the principal.
+   The term "core mechanism" suggests a connection with cooperative game
+theory. Indeed, these core mechanisms can be characterized as the core of a
+cooperative game, but one in which the players are different types of the
+principal, rather than different individuals. In this cooperative game, the set of
+feasible mechanisms for a coalition S is the set of mechanisms that would be
+incentive compatible given any superset of S.
+   It is not surprising that the problem of mechanism design by an informed
+principal should have parallels with cooperative game theory. The principal's
+problem is to select a mechanism that will be perceived as a reasonable
+compromise between the different goals of his different possible types, and the
+problem of reasonable compromise between conflicting goals of different individ-
+uals is the subject of cooperative game theory.
+   It also should not be surprising that the methods of noncooperative game
+theory, as embodied in the concept of expectational equilibrium, are not gener-
+ally sufficient to determine the solution to the informed principal's problem. Our
+notion of principal is meant to refer to someone who can communicate effectively
+with his subordinates in some common language like English. We used this
+assumption of effective communication when we quoted hypothetical speeches
+that a principal could make to justify his selection of an undominated or core
+mechanism. However, noncooperative game theory is meant to apply also to
+situations in which the individuals might not share any common language. Thus,
+our assumption of effective communication has required us to go beyond the
+scope of existing noncooperative game theory.
+
+
+             7. BLOCKED ALLOCATIONS AND NEUTRAL MECHANISMS
+
+  Thus far, we have developed a variety of solution concepts for the principal's
+problem: undominated mechanisms, strong solutions, expectational equilibria,
+and core mechanisms. A strong solution is essentially unique when it exists, but it
+may fail to exist. Mechanisms that satisfy the other three solution concepts can
+be shown to always exist, but the set of such mechanisms may be quite large.
+(There was a unique core mechanism in each of the two examples above, but
+other examples can be constructed in which the entire continuum of undomi-
+nated mechanisms are core mechanisms.) We still want a more powerful solution
+concept, to identify the principal's best inscrutable mechanisms.
+  For inscrutability, the informed principal must select a mechanism that would
+seem like a reasonable selection for all of his types to make. Some mechanisms
+would clearly be unreasonable selections for some types, when these types could
+do better by selecting some other mechanism (even though they may reveal some
+1784                               ROGER B. MYERSON
+
+information by doing so). That is, some mechanisms may be blocked or elimi-
+nated for the principal because they give too low expected utility to some types
+of the principal.
+   For any mechanism p, we let UI(p) denote the expected utility allocation
+vector for the principal's types; that is
+
+
+
+By the above argument, some mechanisms may be blocked for the principal
+because some components of this allocation vector are too low. Thus, for any
+Bayesian incentive problem       (as in (2.2)), there should be some set B(r), a
+subset of RTl, such that B(r) represents the set of blocked allocation vectors. Our
+theoretical task is to determine what this set B(r) should be, for every Bayesian
+incentive problem I?. Then we could say that an incentive-compatible mechanism
+ p would be a reasonable selection for all types of the principal, in the incentive
+problem r , only if the allocation U,(p) is not in the blocked set B(r).
+   Most of the solution concepts that we have discussed so far can be character-
+ized in terms of such sets of blocked allocations, with a different B(T) for each
+solution concept. Let us now approach the problem of constructing a new
+solution concept more systematically. We list four properties that the sets of
+"blocked" allocations should satisfy, and then construct the largest B(r) sets that
+can satisfy these four axioms.
+   Our first axiom expresses the idea that an allocation vector is blocked when
+some of its components are too low. Thus, any other vector that is component-
+wise lower than a blocked allocation vector should also be blocked.
+
+  AXIOM1 (Domination): For any Bayesian incentive problem r and any vectors
+w and x in RT],if w E B(r) and x(t,) 5 w(tl) for every t, in T I then x E B(r).
+
+  If the blocking of an allocation w is supposed to occur because some types
+could do strictly better by selecting some other mechanism, then these strict
+inequalities would also hold for all allocation vectors that are sufficiently close to
+w. Thus, B(r) should be an open set.
+
+  AXIOM2 (Openness): For any incentive problem I?, B(T) is an open subset of
+RTl.
+
+  Consider any two Bayesian incentive problems r and                   where
+
+
+
+and
+         -                      - -             -
+         r = (Do,Dl, . . . , D,, , T,, . . . , T,, ,a,, . . . , a,,,    . . . ,?,,).
+                               MECHANISM DESIGN
+
+We say that    is an extension of I' iff:
+                         -
+         Di = Di,        Ti = I;,    pi =pi,    Vi E { I , . . . , n};
+
+         &,2 D,;     and q(d, t) = ui(d, t)      whenever do E DO.
+
+That is, f is an extension of r iff f differs from r only in that some new
+enforceable actions have been added to those in Do. Every incentive-compatible
+mechanism available to the principal in r is also available in any extension P.
+Thus, the set of blocked allocations in any extension of r should be at least as
+large as in r , because there are more mechanisms available with which the types
+in T, can block.
+
+  AXIOM3 (Extensions): If P is any extension of an incentive problem r , then
+~ ( f>) B(r).
+
+   We have argued (by Theorems 1 and 2) that, if there exists a mechanism that
+is both safe and undominated, then this mechanism can be called a strong
+solution and all types of the principal should select it or some other mechanism
+that gives the same utility allocation. Thus, these strong solutions must not be
+blocked.
+
+   AXIOM4 (Strong Solutions): If y is a safe and undominated mechanism for the
+principal in an incentive problem r , then U,(y) G B(r).
+
+  We let H denote the set of all functions B(.) (mapping Bayesian incentive
+problems into subsets of the principal's utility-allocation space) that satisfy all
+four of these axioms, and we let
+
+         B*(r) = U B ( r )
+                   BEH
+
+for any incentive problem I?. That is, B*(r) is the union of all sets of allocations
+that can be blocked in T, consistently with Axioms 1 through 4. It is straightfor-
+ward to check that B*(.) itself satisfies Axioms 1 through 4.
+   Given any Bayesian incentive problem r , we say that y is a neutral optimum
+for the principal iff y is an incentive-compatible mechanism and U,( y) is not in
+B*(r). That is, a neutral optimum is an incentive-compatible mechanism that
+cannot be blocked by any theory of "blocking" that satisfies our four axioms.
+Thus, the neutral optima form the smallest class of mechanisms that we could
+hope to identify as solutions for the principal.
+   It is shown in Section 9 that expectational equilibria and core mechanisms can
+both be characterized as sets of unblocked incentive-compatible mechanisms, in
+terms of some blocking concepts that satisfy the four axioms. By Axiom 4, strong
+solutions are never blocked. Thus, we get the following theorem.
+1786                              ROGER B. MYERSON
+
+  THEOREM    5: Any safe and undominated mechanism is a neutral optimum. Any
+neutral optimum is both an expectational equilibrium and a core mechanism.
+
+  In Section 9 we also prove our main existence theorem, from which Theorems
+3 and 4 will follow immediately.
+
+  THEOREM    6: For any Bayesian incentive problem, there exists at least one
+neutral optimum for the principal.
+
+   From these two theorems, we can determine the principal's neutral optima in
+our two examples. In Example 1, p4 was the unique expectational equilibrium, so
+it must also be the unique neutral optimum. In Example 2, p2 was the unique
+core mechanism, although there were infinitely many expectational equilibria; so
+p2 is the unique neutral optimum in Example 2.
+
+                   8. CHARACTERIZING THE NEUTRAL OPTIMA
+
+   Given any Bayesian incentive problem r as in (2.2), we now show how to
+characterize the set of neutral optima for the principal. First, some notation
+should be developed.
+   We let G? denote the set of vectors or functions on T, into the real numbers R;
+that is, G? = RTl. We let G?+ denote the set of nonnegative-valued functions in G?,
+and we let G?+ denote the set of strictly positive-valued functions in G?. That is,
+               +
+
+A E G?+ iff A(t,) 2 0 for every t, in T,; and A E G?+ + iff A(t,) > 0 for every t,
+in TI.
+   The set of incentive-compatible mechanisms is a convex polyhedron (since D
+and T are finite). Thus, by the supporting hyperplane theorem, a mechanism p*
+is undominated if and only if there is some A in G?+ + such that p* is an optimal
+solution to the problem
+
+(8.1)    maximize          A(t,) U,( p I t,),         subject to (2.3) and (2.6).
+                    t 1 ETI
+
+
+We may refer to (8.1) as the primal problem for A. With finite D and T, it is a
+linear programming problem.
+   To formulate its dual, let Ai denote the set of all functions from Di into Di. We
+define
+                     "     A,xT,xT,
+                                      1 a i ( 4 ,si I ti) 2 0,
+                    i= 1
+
+                Vi, V6, E Ai , Vs, E Ti, Vti E Ti
+                                                           I.
+For any a in A, we will interpret ai(6,,si 1 ti) as a shadow price for the primal
+constraint q(p 1 ti) 2 Ui*( p, Gi,si 1 ti).
+                                  MECHANISM DESIGN
+
+   For any d in D, t in T, A in Q + , and a in A , we define
+
+
+
+
+When the incentive. constraints (2.6) are multiplied by their shadow prices and
+added into the primal objective function, we get the Lagrangian function
+
+
+
+
+That is, L ( d , t , A, a ) has been defined as the linear coefficient of the term p(d I t )
+in the Lagrangian function. The Lagrangian is maximized by y (subject to the
+remaining probability constraints (2.3)) iff all probability weight in each y ( . I t )
+distribution is put on the outcomes d that maximize L ( d , t, A, a). Thus, the dual
+problem for A (the dual to (8.1)) may be written as
+
+(8.5)      minimize
+             aEA
+                      2 max L ( d , t, A, a ) .
+                      tETdED
+
+
+  When we vary A as a free parameter over Q + +, the optimal solutions to the
+primal (8.1) cover the entire set of undominated mechanisms for the principal.
+Our problem is to characterize which of these mechanisms are neutral optima for
+the principal.
+  One more bit of notation will be useful. For any a in A , we define
+
+
+
+
+That is, ai(si I ti) is the aggregated shadow price for the constraint that type ti of
+individual i should not be tempted to claim to be type si.
+  We can now state the necessary and sufficient conditions that characterize the
+principal's neutral optima.
+1788                                      ROGER B. MYERSON
+
+   THEOREM    7 : An incentive-compatible mechanism y is a neutral optimum for the
+principal if and only if there exist sequences { Ak , a k , w k , p='=, such that
+
+(8.7)      Ak € a + + ,           ak EA,        o k EG?,        Vk;
+
+
+
+
+                 =      C       m a x ~ ( d , t , A ~ , a ~ )V, t , E T I , V k ;
+                     t L I E T L Id E D
+
+
+
+
+    This theorem is proved in Section 9.
+    To interpret Theorem 7 , one must understand equation (8.8). We say that a
+vector w in G? is warranted by A and a (and o ( t , ) is the warranted claim of type t , )
+iff
+
+
+
+
+                 =      2       maxL(d,t,A,a),           Vt,E TI.
+                     t L I E T L ld E D
+
+Lemma 2 in Section 9 asserts that, if w is warranted by some A in G?+ and a in       +
+
+A, then there exists an extension of r in which a strong solution gives, to each
+type tl of the principal, an expected utility equal to w(t,). Theorem 7 asserts that
+y is a neutral optimum if and only if there are such warranted utility allocations
+for the principal in which no type's warranted claim exceeds what it gets from y
+by more than an arbitrarily small amount.
+  The following theorem lists some simpler necessary conditions for a neutral
+optimum.
+
+   THEOREM    8: If p is a neutral optimum then there exist A in G?, , a in A , and o in
+G?, such that
+(8.1 1 )   p is an optimal solution of the primal problem for A,
+(8.12)     a is an optimal solution of the dual problem for A,
+(8.13)     o is warranted by A and a ,
+(8.14)     o(t1) lUI( P l t l ) and A l ( t l ) ( ~ ( t l-) Ul( P l t l ) ) = 0,    Vtl E T I .
+(8.15)     (A,a)#(O,O).
+
+   The proof is deferred to Section 9.
+                                MECHANISM DESIGN                                   1789
+
+   Notice that the conditions of Theorem 8 form a well-determined system, in the
+sense of having as many equations as variables. Condition (8.15) is a nontriviality
+condition, requiring that at least one component of A or a must be strictly
+positive. By (8.11)-(8.13), the primal problem (8.1) determines y, the dual
+problem (8.5) determines a, and the warrant equations (8.10) determine o.
+Finally, (8.14) gives us as many equations (o(t,) = U,( y I t,) or A(tl) = 0) as there
+are parameters A(t,) to be determined. This suggests a conjecture that the set of
+neutral optima may be generically finite.
+   Examples are known in which there are several neutral optima for the
+principal. By the axiomatic definition of neutral optima, no game-theoretic
+concept of blocking that satisfies our four axioms can eliminate a* of these
+neutral optima. Extra-game-theoretic considerations of history or tradition may
+be decisive in determining the principal's selection of a mechanism when there
+are many neutral optima.
+   Let us consider the special case mentioned in Section 2, in which the general
+incentive constraints (2.6) can be replaced by simpler self-selection constraints
+(2.7) and no~.negative-payoffconstraints (2.8). In this case, the Lagrangian
+coefficients can be written
+
+
+
+
+where a,,(ti) is the dual variable for the constraint Q( y I ti) 2 0, and ai(si I ti) is
+the shadow price of the constraint that type ti should not expect to gain by
+reporting type 4 . With this one modification, Theorems 7 and 8 can be adapted
+to this case.
+  For example, consider Example 2, in which we saw that p2 must be the unique
+neutral optimum for the principal. To verify the conditions of Theorem 7, let
+
+
+
+
+Then for any k 2 3, the warranted claims satisfying (8.8) are o k ( l a ) = 0 and
+o k(lb) = 9   +
+            5/k, so
+
+          lim o k ( l a ) = 0 < 5 = U1(p211a),
+          k-rcc
+
+          lim o k ( l b ) = 9 = U,(y21 lb).
+          k-r a,
+1790                             ROGER B. MYERSON
+
+                                       9. PROOFS
+
+  We prove the theorems in the following order: 2, 7, 8, 6 , 5, 3, and 4.
+
+   PROOFOF THEOREM       2: Let p be a safe and undominated mechanism in the
+incentive problem r. We must show that p is an expectational equilibrium.
+   Let v be any generalized mechanism, and consider a mechanism-selection
+game in which the principal must select either p or v. Since p is incentive
+compatible given any of the principal's types, we may assume that the individu-
+als will participate honestly and obediently in p if he selects it. Let q(t,) denote
+the probability that the principal selects v if his type is t, ; let Q be a normalized
+likelihood vector corresponding to q, satisfying (5.2); and let ( y , ~ )denote the
+participation strategies that the individuals would use in v. In a sequential
+equilibrium of this mechanism-selection game, we must have
+
+
+
+
+and (y,r) must be a Nash equilibrium of v given Q. Condition (5.2) uniquely
+determines Q, unless q = 0, in which case any Q in the unit simplex will do. By a
+straightforward argument using the Kakutani fixed point theorem, it can be
+shown that such a sequential equilibrium (q, Q, y, r) does exist.
+   This equilibrium of the mechanism-selection game is equivalent to the direct
+revelation mechanism 7,defined by
+
+
+
+
+By (9. l), U1(q I t,) = max{ U,( p I t,), Wl(v, y, r 1 tl , Q)). Furthermore, q is incen-
+tive compatible, because p is safe and the individuals are using equilibrium
+participation strategies in v given their rational beliefs following its selection. But
+p is not dominated by any incentive-compatible mechanism, so U,( p 1 t,)
+2 W1(v,y , I ~t,, Q) for every t,. Thus (y,r, Q) support p as an expectational
+equilibrium over v.                                                               Q.E.D.
+
+  We now state and prove three lemmas.
+
+   LEMMA1: Given any a in A , h in a , and A in !2++, there is a unique vector o in
+!d such that
+                                    MECHANISM DESIGN                            1791
+
+Furthermore, the solution w to these linear equations is increasing in the vector h.
+(That is, if h'(t,) 2 h(t,) Vt,, and a' solves (9.2) for h' instead of h, then
+~ ' ( t l )2 w(t,) Vtl.)
+
+   PROOF:Suppose first that h(t,) 2 0 Vt,. Let S be the set of all t, such that
+     >
+~ ( t , ) 0. Then summing (9.2) over all t, not in S, we get
+
+
+
+
+The first term here must be strictly negative, unless S = T,. (We use here the fact
+that every A(t,) > 0, since A E a++ .) Since the second term is nonnegative and
+subtracted, we would have a strictly negative left side equal to a nonnegative
+right side, unless S = T, . So if all h(t,) 2 0 then all w(t,) 2 0.
+   Thus there can be no nonzero solutions to (9.2) if h = 0 (since w and - w
+would both be solutions). So (9.2) is a system of IT,( independent linear
+equations in ( TII unknowns, and it must have a unique solution a. The fact that
+w is componentwise increasing follows from the nonnegativity result of the
+preceding paragraph, by linearity.                                         Q.E.D.
+
+  LEMMA   2: For a given incentive problem I?, suppose that a utility allocation w is
+warranted by some A in a++ and a in A . Then there exists f , an extension of I?,
+and there exists p *, a safe and undominated mechanism in F, such that Dl(p* I t,)
+='o(t,) for every t, .
+
+  PROOF:By Lemma 1, there exists some y in RT such that
+
+
+
+              = max L(d, t, A, a),           Vt E T.
+                 dED
+
+We now construct the extension f by letting
+
+         Do=D,U {c;),            and
+
+                     y ( t ) / p , ( t ~ ~ ( t , ) if   i = 1 and d o = cd,
+                                                   if   i # 1 and do = c,*,
+                     ui ( 4 t)                     if   do # cd .
+(This definition is the only place where we use the regularity assumption (2.1) in
+the theory of neutral optima.) Let c* be any outcome with cd as its enforceable
+component; and let p* be the mechanism such that p*(c* ( t) = 1 for every t in T.
+Then p* is safe, because the utility payoffs do not depend on type-reports or
+private actions, as long as the enforceable action c,* is implemented.
+1792                           ROGER B. MYERSON
+
+  Furthermore, y* is undominated for the principal in F, because it is an optimal
+solution to the (extended) primal problem for A. To show this, observe that
+
+
+
+
+(Here z ( . ) is defined by the analogue of (8.3) for F instead of T.) Thus, y* and a
+respectively are optimal solutions of the primal and dual problems for A, in the
+context of the extended game T, because they are feasible for their respective
+problems and give equal value to the objective functions.
+   From the definition of iS,(c*,t), it easily follows that
+
+
+
+
+SO U1(y*I tl) = w(tl) for every t,, because w is the unique allocation vector
+satisfying the warrant equations (8.10).
+  Thus y* is safe and undominated in F and gives the utility allocation w to the
+principal.                                                              Q.E.D.
+
+      3: Suppose that w is warranted by some A in 52, + and a in A . Then
+  LEMMA
+
+
+
+
+  PROOF:Let T, cd, and y* be as in the proof of Lemma 2. By Theorem 2, y* is
+an expectational equilibrium in ?. But if w violated the inequality in Lemma 3
+for some t,, then this t, could do better than y* by selecting any mechanism that
+never used the new enforceable action cd, so y* would not be an expectational
+equilibrium.                                                              Q.E.D.
+
+   PROOFOF THEOREM    7 (Characterization of Neutral Optima): Given the incen-
+tive problem T, let C1(T) be the set of all w in 52 such that there exist A in 52, +
+and a in A by which w is warranted. Let c2(I?)   be the set of all w in 52 such that
+                                  MECHANISM DESIGN                               1793
+
+there exists a sequence {Wk }=:     , satisfying w k E C '(T) for each k and
+(9.3)     lim supw k(t,) 5 w(t,),        Vt, E TI
+           k+m
+
+Let B 2(1') be the complement of c 2 ( r ) in S2; that is B 2(r) = 3\ c 2 ( r ) .
+   By the Strong Solutions and Extensions Axiom, together with Lemma 2, no
+allocation in C '(r) can be blocked in I?. Then by the Openness and Domination
+Axioms, no allocation in c 2 ( r ) can be blocked in r. Thus, B(r) & B2(r) for any
+B(.) that satisfies the four axioms.
+   We now show that B2(-), as a blocking correspondence, satisfies the four
+axioms. Domination and Openness are straightforward to check (since c 2 ( r ) is
+closed and upward-comprehensive).
+   To check the Extensions Axiom, let F be any extension of r. Let o be any
+                                         ,
+allocation in c2(F), and let {wk }=: be a sequence of allocations in C '(r) that
+satisfies (9.3). Let A k in 3, and a in A be the parameters that warrant w for
+-                             +
+
+
+r , and let 3 be the allocation warranted by A k and a for r. Then for every t,,
+
+
+
+              =   C max E(d, t, A, a )
+                  t-, d € D
+
+
+
+
+since L is the extension of L to the larger domain > D. Thus, by Lemma 1,
+  k(tl)2 3k(tl)for every t, , and so ( 3 k , =: Js a sequence of allocations in C '(r)
+that satisfies (9.3) for w. Thus w E c2(r). So c 2 ( r ) > c2(T), and B2(I') & B2(r).
+   To check the Strong Solutions Axiom, suppose that y is safe and undominated
+in r. There exists some A in a++ such that y is an optimal solution of the primal
+problem for A. Let a be an optimal solution of the dual problem for A, and let o
+be the principal's allocation warranted by A and a. By duality theory and the
+warrant equations,
+
+
+
+By Lemma 2, there is an extension of r in which some safe and undominated
+mechanism y* gives the principal the expected utility allocation w. But y
+(extended by giving zero probability to the new outcomes in D\ D) would still be
+a safe and undominated mechanism in this extension of r. ( y would be
+undominated because it would still be an optimal solution of the primal for A.)
+So w(t,) 2 U,(y I t,) for all t,, by Theorem 1. This implies that U,(y) E C ' ( r )
+C c 2 ( r ) , SO U1(y) cl B 2(I').
+1794                             ROGER B. MYERSON
+
+  Thus B 2(-) is the maximal blocking correspondence that satisfies the four
+axioms, and so ~ ~ (= r )  B*(r), in the notation of Section 7. Thus p is a neutral
+optimum for the principal in r if and only if U,(p) fj! B2(r), or equivalently, if
+and only if U,( p) E c 2 ( r ) . The conditions in Theorem 7 restate the definition of
+c2(r).                                                                        Q.E.D.
+
+   PROOFOF THEOREM         8 (Necessary Conditions for a Neutral Optimum): Let
+ {Ak,a k,w k , ?=, satisfy the conditions of Theorem 7 for the neutral optimum p.
+Since the warrant equations (8.8) are linearly homogeneous in A k and a k , we
+may assume without loss of generality that each (Ak,a k ) pair is in some closed
+and bounded set that excludes (0,O) in 52, x A. (For example, we could require
+           +
+that llA 11 lla 11 = 1 Vk.) Choosing a subsequence if necessary, we can also
+assume that the {Ak) and { a k ) sequences are convergent to some (A, a ) such that
+(A, a ) # (0,O). By Lemma 3 and (8.9), the {wk , sequence is also bounded, so we
+can also assume that it is convergent to some limit w. By summing (8.8) over all
+t,, we get
+            2 A k ( t l ) ~ k ( t ,=) C maxl(d,t,Ak,ak),       Vk.
+          tt E T I               ~              E   T    ~     ~        ~
+
+Then taking limits as k + oo and applying (8.9), we get w(t,)      < U,(p I t,) Vt,, and
+(9.4)       C A(t1) U,(P l t,) 2 22 A(t,)W(t,) = C maxL(d, t, A, a).
+          IIETI                      11 E T I           ~ E T ~ E D
+
+But p is feasible in the primal for A, and a is feasible in the dual for A. So by
+duality theory, p and a are optimal solutions of the primal and dual problems for
+A, respectively, and the inequality (9.4) must be an equality,
+
+
+
+Equation (9.5) implies the complementary slackness conditions in (8.14), since
+each-A(t,)2 0. The limit of (8.8) gives us (8.13).                    Q.E.D.
+
+   PROOFOF THEOREM    6 (Existence of Neutral Optima): To prove the existence
+of neutral optima, we begin with some definitions. Let A be the unit simplex in
+52 = RT1,
+
+
+
+For any k larger than I T I ( l,et
+          Ak = {A E AIA(tl) 2 l / k , Vtl E TI).
+We let F denote the set of all incentive-compatible mechanisms for r.
+  There exists a compact convex set A* such that A* c A and, for each X in A,
+A* contains at least one optimal solution of the dual problem for A. To prove this
+fact, observe that F, the feasible set of the primal problem, is compact and
+                                   MECHANISM DESIGN                            1795
+
+independent of A. So the simplex A can be covered by a finite collection of sets
+(each set corresponding to the range of optimality of one basic feasible solution
+in the primal) such that, within each set, an optimal solution of the dual can be
+given as a linear function of A. Each of these linear functions is bounded on A, so
+we can let A* be the convex hull of the union of the ranges of these linear
+functions on A.
+  For any k greater than ( T I [ ,we now define a correspondence Z k : F X A* X
+Ak* F X A* X Ak SO that (y",a",A") E Zk(y',a',A') iff
+          y" is an optimal solution of the primal for A';
+          a" is an optimal solution of the dual for A'; and
+          A" = l / k for each t, such that
+
+
+
+where w' is the allocation warranted by A' and a'. That is, A" must put as much
+weight as possible on the types whose claims warranted by A' and a' most exceed
+their actual allocation from y'.
+  By the Kakutani fixed point theorem, for each k there exists some ( y ', a k,A k,
+such that
+
+
+Since this sequence of fixed points is in a compact domain, we can choose a
+convergent subsequence, converging to some ( y, a , A) in F x A * x A. We now
+show that this y is a neutral optimum for the principal in the incentive prob-
+lem r.
+  Let w k be the principal's allocation that is warranted by A k and a k . By the
+warrant equations and duality theory (as in (9.5)),
+
+
+
+For any t,, if wk(t,) < u l ( y k l t,) then Ak(t,) = 1 / k . So for any t,,
+          if     liminfwk(t,)< U , ( y ( t , ) then   limA2(t,)=0.
+                  k+m                                 k-m
+
+Now suppose that there were some s, in T I such that
+          limsupwk(t,) > U , ( y ~ s , )= lim ~ , ( y ~ I s , ) .
+               k+ m                        k- m
+
+Then we could find some such s, for which A(s,) > 0 also. But then
+1796                                  ROGER B. MYERSON
+
+which is impossible. So no such s, can exist, and so for every t,
+
+
+
+Thus {A k,a k,o k , =:   , satisfy the conditions of Theorem 7 for y.                          Q.E.D.
+
+   PROOFOF THEOREM         5: We must show that expectational equilibria and core
+mechanisms can both be characterized as the set of incentive-compatible mecha-
+nisms that give "unblocked" allocations, in terms of some blocking concepts that
+satisfy the four axioms.
+   Given an incentive problem r , we define BC(r) so that o E B '(r) iff there
+exists some mechanism v and some nonempty set R such that R G T I , w(t,)
+< U,(v I t,) for every t, in R, and v is incentive compatible given S, for every S
+such that R c S c TI. Thus y is a core mechanism if and only if y is incentive
+compatible and U,( y) @ B '(r). It is straightforward to check that B          satisfies'(a)
+
+
+
+the Domination and Openness Axioms. The Extensions Axiom holds, because
+any mechanism that is incentive compatible given S in r is also incentive
+compatible given S in any extension of r. By Theorem 1, strong solutions are
+core mechanisms, so BC(.) satisfies the Strong Solutions Axiom. So BC(T)
+ C B*(r), and every neutral optimum is a core mechanism.
+   We define BE(r) so that o E BE(r) iff there exists some mechanism v such
+that, for every ( y , ~ ,Q), if ( y , ~ )is a Nash equilibrium of v given Q then there
+exists some t, in T I such that o(t,) < W,(v, y , 1 ~t,, Q). Thus, y is an expecta-
+tional equilibrium if and only if U,( y) @ B E(r). By Theorem 2, BE(.) satisfies
+the Strong Solutions Axiom. The Extensions Axiom holds because if ( y , ~ )is a
+Nash equilibrium for v given Q in r then the same is true in any extension of r
+(since the extension differs from r only by the addition of new enforceable
+actions which v does not use). The Domination Axiom is obvious for BE(.).
+   To prove that B E(r) is open, we show that the complement is closed. Suppose
+that {wk):=, is a sequence of allocations that are not in BE(r) and that
+converge to some o. Given any v, for every k there exists some normalized-
+likelihood vector    ek  and some Nash equilibrium ( y k , ~ k )  for v given e k , such
+                                  ,
+that o k(t,) 2 w,(v, k,r I t , Q k, for every t, . Choosing a subsequence if neces-
+sary, the (y k,T ~e ,k ) converge to some (y, T, Q) such that (y, T) is a Nash
+equilibrium for v given Q and w(t,) 2 W , ( v , y , 1~t,, Q) for every t,. This
+construction is possible for every v, so o @ BE(r). Thus BE(.) satisfies all four
+axioms, and any neutral optimum is an expectational equilibrium.                Q.E.D.
+
+  PROOFOF THEOREMS      3 AND 4: By Theorem 6 , a neutral optimum exists. By
+Theorem 5, a neutral optimum is a core mechanism and an expectational
+equilibrium. So there exists a core mechanism and an expectational equilibrium.
+
+  Northwestern University
+                Manuscript received September, 1981; revision received January, 1983.
+                                      MECHANISM DESIGN
+
+                                          REFERENCES
+  [I] AUMANN,    R. J.: "Subjectivity and Correlation in Randomized Strategies," Journal of Mathemati-
+         cal Economics, 1(1974), 67-96.
+  [2] BHATTACHARYA,      S.: "Signaling Environments: Efficiency, Sequential Equilibria, and Myerson's
+         Conjecture," Mimeo, Stanford University, 1981.
+  [3] DASGUPTA,     P. C., P. J. HAMMOND,   AND E. S. MASKIN:"The Implementation of Social Choice
+         Rules: Some Results on Incentive Compatibility," Review of Economic Studies, 46(1979),
+         185-216.
+  [4] D'ASPREMONT,     C., AND L.-A. GERARD-VARET:    "Incentives and Incomplete Information," Journal
+         of Public Economics, 11(1979), 25-45.
+  [S] GIBBARD,    A.: "Manipulation of Voting Schemes: A General Result," Econometrica, 41(1973),
+         587-602.
+  [6] HARRIS,M., AND A. RAVIV:"Optimal Incentive Contracts with Imperfect Information," Journal
+         of Economic Theory, 20(1979), 231-259.
+  [7] HARRIS,M., AND R. M. TOWNSEND:          "Resource Allocation Under Asymmetric Information,"
+         Econometrica, 49(1981), 33-64.
+  [8] HARSANYI,    J. C.: "Games with Incomplete Information Played by 'Bayesian' Players," Manage-
+         ment Science, 14(1967-8), 159- 182, 320-334, 486-502.
+  [9] HOLMSTROM,      B.: "On Incentives and Control in Organizations," Ph.D. Dissertation, Stanford
+         University, 1977.
+[lo] -        : "Moral Hazard and Observability," BeN Journal of Economics, 10(1979), 74-91.
+[ l l ] KREPS,D. M., AND R. WILSON:"Sequential Equilibria," Econometrica, 50(1982), 863-894.
+[12] MIRRLEES,    J.: "The Optimal Structure of Incentives and Authority within an Organization," Ben
+         Journal of Economics, 7(1976), 165- 181.
+[13] MYERSON,R. B.: "Incentive Compatibility and the Bargaining Problem," Econometrica,
+         47(1979), 61-73.
+[I41 -        : "Optimal Coordination Mechanisms in Generalized Principal-Agent Problems," Journal
+         of Mathematical Economics, 10(1982), 67-81.
+[15] -        : "Two-Person Bargaining Problems with Incomplete Information," Mimeo, Northwest-
+         ern University, 1982; to appear in Econometrica.
+[I61 -        : "Cooperative Games with Incomplete Information," Mimeo, Northwestern University,
+         1982; to appear in International Journal of Game Theory.
+[17] RILEY,J. G.: "Informational Equilibrium," Econometrica, 47(1979), 331-359.
+[18] ROSENTHAL,      R. W.: "Arbitration of Two-Party Disputes under Uncertainty," Review of Eco-
+         nomic Studies, 45(1978), 595-604.
+[19] Ross, S.: "The Economic Theory of Agency: The Principal's Problem," American Economic
+         Review, 63(1973), 134- 139.
+[20] R o m , A. E.: Axiomatic Models of Bargaining. Berlin: Springer-Verlag, 1979.
+[21] ROTHSCHILD,      M., AND J. STIGLITZ:"Equilibrium in Competitive Insurance Markets: An Essay
+         on the Economics of Imperfect Information," Quarterly Journal of Economics, 90(1976),
+         629-649.
+[22] WILSON,C.: "A Model of Insurance Markets with Incomplete Information," Journal of Eco-
+         nomic Theory, 16(1977), 167-207.
+[23] -        : "The Nature of Equilibrium in Markets with Adverse Selection," Bell Journal of
+         Economics, 11(1980), 108- 130.
+http://www.jstor.org
+
+
+                         LINKED CITATIONS
+                                  - Page 1 of 3 -
+
+
+
+You have printed the following article:
+        Mechanism Design by an Informed Principal
+        Roger B. Myerson
+        Econometrica, Vol. 51, No. 6. (Nov., 1983), pp. 1767-1797.
+        Stable URL:
+        http://links.jstor.org/sici?sici=0012-9682%28198311%2951%3A6%3C1767%3AMDBAIP%3E2.0.CO%3B2-F
+
+
+
+This article references the following linked citations. If you are trying to access articles from an
+off-campus location, you may be required to first logon via your library web site to access JSTOR. Please
+visit your library's website or contact a librarian to learn about options for remote access to JSTOR.
+
+References
+
+    3
+     The Implementation of Social Choice Rules: Some General Results on Incentive
+    Compatibility
+    Partha Dasgupta; Peter Hammond; Eric Maskin
+    The Review of Economic Studies, Vol. 46, No. 2. (Apr., 1979), pp. 185-216.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0034-6527%28197904%2946%3A2%3C185%3ATIOSCR%3E2.0.CO%3B2-E
+
+    5
+     Manipulation of Voting Schemes: A General Result
+    Allan Gibbard
+    Econometrica, Vol. 41, No. 4. (Jul., 1973), pp. 587-601.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0012-9682%28197307%2941%3A4%3C587%3AMOVSAG%3E2.0.CO%3B2-M
+
+    7
+     Resource Allocation Under Asymmetric Information
+    Milton Harris; Robert M. Townsend
+    Econometrica, Vol. 49, No. 1. (Jan., 1981), pp. 33-64.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0012-9682%28198101%2949%3A1%3C33%3ARAUAI%3E2.0.CO%3B2-A
+
+
+
+
+NOTE: The reference numbering from the original has been maintained in this citation list.
+http://www.jstor.org
+
+
+                        LINKED CITATIONS
+                                  - Page 2 of 3 -
+
+
+
+    8
+     Games with Incomplete Information Played by "Bayesian" Players, I-III. Part I. The Basic
+    Model
+    John C. Harsanyi
+    Management Science, Vol. 14, No. 3, Theory Series. (Nov., 1967), pp. 159-182.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0025-1909%28196711%2914%3A3%3C159%3AGWIIPB%3E2.0.CO%3B2-P
+
+    11
+     Sequential Equilibria
+    David M. Kreps; Robert Wilson
+    Econometrica, Vol. 50, No. 4. (Jul., 1982), pp. 863-894.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0012-9682%28198207%2950%3A4%3C863%3ASE%3E2.0.CO%3B2-4
+
+    13
+     Incentive Compatibility and the Bargaining Problem
+    Roger B. Myerson
+    Econometrica, Vol. 47, No. 1. (Jan., 1979), pp. 61-73.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0012-9682%28197901%2947%3A1%3C61%3AICATBP%3E2.0.CO%3B2-O
+
+    17
+      Informational Equilibrium
+    John G. Riley
+    Econometrica, Vol. 47, No. 2. (Mar., 1979), pp. 331-359.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0012-9682%28197903%2947%3A2%3C331%3AIE%3E2.0.CO%3B2-K
+
+    18
+     Arbitration of Two-Party Disputes Under Uncertainty
+    Robert W. Rosenthal
+    The Review of Economic Studies, Vol. 45, No. 3. (Oct., 1978), pp. 595-604.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0034-6527%28197810%2945%3A3%3C595%3AAOTDUU%3E2.0.CO%3B2-Z
+
+    19
+      The Economic Theory of Agency: The Principal's Problem
+    Stephen A. Ross
+    The American Economic Review, Vol. 63, No. 2, Papers and Proceedings of the Eighty-fifth Annual
+    Meeting of the American Economic Association. (May, 1973), pp. 134-139.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0002-8282%28197305%2963%3A2%3C134%3ATETOAT%3E2.0.CO%3B2-D
+
+
+NOTE: The reference numbering from the original has been maintained in this citation list.
+http://www.jstor.org
+
+
+                        LINKED CITATIONS
+                                  - Page 3 of 3 -
+
+
+
+    21
+      Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect
+    Information
+    Michael Rothschild; Joseph Stiglitz
+    The Quarterly Journal of Economics, Vol. 90, No. 4. (Nov., 1976), pp. 629-649.
+    Stable URL:
+    http://links.jstor.org/sici?sici=0033-5533%28197611%2990%3A4%3C629%3AEICIMA%3E2.0.CO%3B2-N
+
+
+
+
+NOTE: The reference numbering from the original has been maintained in this citation list.
+

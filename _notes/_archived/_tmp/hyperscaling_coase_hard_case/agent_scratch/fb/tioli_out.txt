@@ -1,0 +1,40 @@
+
+=== T-f fleet TIOLI, arbitrary=False model=-
+sf=1.0000: deal 0.819 | f 1.713 r (0.027,0.696,0.555) | NP 0.0178 floor 0.027 | pie 2.990 Rshare 0.43 | N offered 0.022 N in deal 0.000 pointflipN 0.401 | mode D
+sf=0.3162: deal 0.831 | f 2.803 r (0.297,0.718,0.520) | NP 0.3106 floor 0.297 | pie 4.338 Rshare 0.35 | N offered 0.001 N in deal 0.000 pointflipN 0.236 | mode MDE
+sf=0.3000: deal 0.833 | f 2.879 r (0.313,0.724,0.519) | NP 0.3387 floor 0.313 | pie 4.435 Rshare 0.35 | N offered 0.001 N in deal 0.000 pointflipN 0.232 | mode MDE
+sf=0.1000: deal 0.959 | f 4.611 r (0.232,0.492,0.418) | NP 0.2206 floor 0.232 | pie 5.754 Rshare 0.20 | N offered 0.000 N in deal 0.000 pointflipN 0.012 | mode MDE
+sf=0.0949: deal 0.963 | f 4.675 r (0.224,0.478,0.401) | NP 0.2008 floor 0.224 | pie 5.778 Rshare 0.19 | N offered 0.000 N in deal 0.000 pointflipN 0.011 | mode MDE
+sf=0.0316: deal 0.988 | f 5.466 r (0.091,0.203,0.168) | NP 0.0170 floor 0.091 | pie 5.928 Rshare 0.08 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MDE
+
+=== T-f fleet TIOLI, arbitrary=True model=miss
+sf=1.0000: deal 0.776 | f 1.545 r (0.007,0.663,0.535) | NP 0.0041 floor 0.007 | pie 2.750 Rshare 0.44 | N offered 0.025 N in deal 0.000 pointflipN 0.398 | mode D
+sf=0.3162: deal 0.451 | f 1.292 r (0.113,0.369,0.294) | NP 0.0159 floor 0.113 | pie 2.068 Rshare 0.38 | N offered 0.001 N in deal 0.000 pointflipN 0.245 | mode MDE
+sf=0.3000: deal 0.415 | f 1.208 r (0.113,0.344,0.269) | NP 0.0126 floor 0.113 | pie 1.934 Rshare 0.38 | N offered 0.001 N in deal 0.000 pointflipN 0.235 | mode MDE
+sf=0.1000: deal 0.000 | f 0.000 r (0.000,0.000,0.000) | NP 0.0000 floor 0.000 | pie 0.000 Rshare 0.00 | N offered 0.000 N in deal 0.000 pointflipN 0.016 | mode MDE
+sf=0.0949: deal 0.000 | f 0.000 r (0.000,0.000,0.000) | NP 0.0000 floor 0.000 | pie 0.000 Rshare 0.00 | N offered 0.000 N in deal 0.000 pointflipN 0.011 | mode MDE
+sf=0.0316: deal 0.000 | f 0.000 r (0.000,0.000,0.000) | NP 0.0000 floor 0.000 | pie 0.000 Rshare 0.00 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MDE
+
+=== T-f fleet TIOLI, arbitrary=True model=table
+sf=1.0000: deal 0.117 | f 0.303 r (0.052,0.097,0.048) | NP 0.0001 floor 0.048 | pie 0.500 Rshare 0.39 | N offered 0.501 N in deal 0.000 pointflipN 0.390 | mode DE
+sf=0.3162: deal 0.420 | f 1.311 r (0.122,0.328,0.176) | NP 0.0092 floor 0.122 | pie 1.937 Rshare 0.32 | N offered 0.178 N in deal 0.005 pointflipN 0.243 | mode MD
+sf=0.3000: deal 0.444 | f 1.414 r (0.129,0.327,0.189) | NP 0.0113 floor 0.129 | pie 2.060 Rshare 0.31 | N offered 0.182 N in deal 0.007 pointflipN 0.230 | mode MD
+sf=0.1000: deal 0.854 | f 3.289 r (0.117,0.341,0.417) | NP 0.0550 floor 0.117 | pie 4.166 Rshare 0.21 | N offered 0.040 N in deal 0.017 pointflipN 0.017 | mode MD
+sf=0.0949: deal 0.869 | f 3.374 r (0.113,0.335,0.419) | NP 0.0535 floor 0.113 | pie 4.241 Rshare 0.20 | N offered 0.029 N in deal 0.011 pointflipN 0.009 | mode MD
+sf=0.0316: deal 0.982 | f 4.418 r (0.048,0.162,0.279) | NP 0.0096 floor 0.048 | pie 4.907 Rshare 0.10 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MD
+
+=== T-b bloc TIOLI, arbitrary=False
+sN=1.0000: deal 0.692 | f 0.840 r (0.994,0.994,0.994) | NP 0.8257 floor 0.840 | pie 3.823 Rshare 0.78 | N offered 0.248 N in deal 0.111 pointflipN 0.316 | mode MDE
+sN=0.3162: deal 0.957 | f 0.905 r (1.609,1.609,1.609) | NP 3.7645 floor 0.905 | pie 5.730 Rshare 0.84 | N offered 0.022 N in deal 0.014 pointflipN 0.057 | mode MDE
+sN=0.3000: deal 0.955 | f 0.871 r (1.617,1.617,1.617) | NP 3.6849 floor 0.871 | pie 5.723 Rshare 0.85 | N offered 0.018 N in deal 0.011 pointflipN 0.045 | mode MDE
+sN=0.1000: deal 0.988 | f 0.393 r (1.845,1.845,1.845) | NP 2.4693 floor 0.393 | pie 5.928 Rshare 0.93 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MDE
+sN=0.0949: deal 0.987 | f 0.375 r (1.848,1.848,1.848) | NP 2.3668 floor 0.375 | pie 5.919 Rshare 0.94 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MDE
+sN=0.0316: deal 0.997 | f 0.151 r (1.943,1.943,1.943) | NP 1.1071 floor 0.151 | pie 5.979 Rshare 0.97 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MDE
+
+=== T-b bloc TIOLI, arbitrary=True
+sN=1.0000: deal 0.621 | f 0.628 r (0.768,0.768,0.768) | NP 0.2843 floor 0.628 | pie 2.931 Rshare 0.79 | N offered 0.237 N in deal 0.082 pointflipN 0.318 | mode MD
+sN=0.3162: deal 0.932 | f 0.659 r (1.314,1.314,1.314) | NP 1.4959 floor 0.659 | pie 4.602 Rshare 0.86 | N offered 0.017 N in deal 0.008 pointflipN 0.057 | mode MD
+sN=0.3000: deal 0.938 | f 0.638 r (1.333,1.333,1.333) | NP 1.5097 floor 0.638 | pie 4.636 Rshare 0.86 | N offered 0.014 N in deal 0.008 pointflipN 0.047 | mode MD
+sN=0.1000: deal 0.988 | f 0.322 r (1.539,1.539,1.539) | NP 1.1736 floor 0.322 | pie 4.940 Rshare 0.93 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MD
+sN=0.0949: deal 0.989 | f 0.307 r (1.546,1.546,1.546) | NP 1.1351 floor 0.307 | pie 4.946 Rshare 0.94 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MD
+sN=0.0316: deal 0.997 | f 0.123 r (1.620,1.620,1.620) | NP 0.5233 floor 0.123 | pie 4.984 Rshare 0.98 | N offered 0.000 N in deal 0.000 pointflipN 0.000 | mode MD

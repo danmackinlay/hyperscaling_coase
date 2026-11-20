@@ -28,7 +28,8 @@ The grouping below goes by file name; the descriptions were not checked against 
 | `_constitutional_complexity_1.qmd` | First constitutional-complexity draft; rounds 2 and 3 are `_notes/constitutional_complexity_2/` and `_3/` |
 | `_surveillance*` | Surveillance article, its claims ledger, five critiques and red-team |
 
-## Not moved
+## Scratch
 
-Several notes cite run records under `_tmp/` in livingthing (`_tmp/hyperscaling_coase_*`, `_tmp/coase_*`).
-That scratch is not under version control and was left where it was.
+`_tmp/` holds the working scratch the notes cite as run records: agent scripts, logs, raw workflow outputs and collations.
+It sat at `_tmp/<same name>` in livingthing, outside version control, so a reference to `_tmp/hyperscaling_coase_<x>` or `_tmp/coase_<x>` means `_notes/_archived/_tmp/<same name>` here.
+The downloaded PDFs of source papers were taken out before the move, to go into Zotero; a path in these notes that ends in `.pdf` will not resolve.

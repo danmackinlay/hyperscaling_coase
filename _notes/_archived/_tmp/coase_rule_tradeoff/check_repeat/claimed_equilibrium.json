@@ -1,0 +1,98 @@
+{
+ "note": "m = 1, sigma = inf. Households in order Alice, Bob, Carol; slots in order M, D, E, N. kinds: 'cut' = accepts in round one when sensitivity <= cutoff; 'all' = asked at the top of the support, every type accepts; 'none' = not asked.",
+ "round_one": {
+  "named_slots": [
+   "M",
+   "D"
+  ],
+  "kinds": [
+   "cut",
+   "cut",
+   "all"
+  ],
+  "cutoffs": [
+   0.8,
+   2.44,
+   null
+  ],
+  "rates": [
+   0.8,
+   2.498041602569697,
+   2.5
+  ]
+ },
+ "round_two": [
+  {
+   "round_one_answers": [
+    "refuse",
+    "refuse",
+    "accept"
+   ],
+   "rates": [
+    0.0,
+    2.5,
+    2.5
+   ],
+   "named_slots": [
+    "M",
+    "D",
+    "E"
+   ],
+   "comment": "a rate of 0 means the household is not asked"
+  },
+  {
+   "round_one_answers": [
+    "refuse",
+    "accept",
+    "accept"
+   ],
+   "rates": [
+    0.0,
+    2.3920000000000003,
+    2.5
+   ],
+   "named_slots": [
+    "M",
+    "D",
+    "E"
+   ],
+   "comment": "a rate of 0 means the household is not asked"
+  },
+  {
+   "round_one_answers": [
+    "accept",
+    "refuse",
+    "accept"
+   ],
+   "rates": [
+    0.8,
+    2.5,
+    1.9000000000000001
+   ],
+   "named_slots": [
+    "M",
+    "D",
+    "E"
+   ],
+   "comment": "a rate of 0 means the household is not asked"
+  },
+  {
+   "round_one_answers": [
+    "accept",
+    "accept",
+    "accept"
+   ],
+   "rates": [
+    0.8,
+    1.858,
+    2.3
+   ],
+   "named_slots": [
+    "M",
+    "D",
+    "E"
+   ],
+   "comment": "a rate of 0 means the household is not asked"
+  }
+ ]
+}

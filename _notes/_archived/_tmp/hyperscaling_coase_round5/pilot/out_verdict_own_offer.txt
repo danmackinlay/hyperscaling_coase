@@ -1,0 +1,116 @@
+== scoring reading own_offer; LHS seed 1; run seeds [1,r]; degenerate (expected play + bandit) points: [2, 3, 7, 8, 9, 10, 12, 26, 28, 32, 34, 37]
+
+== H profile per point (P by H; paired P(Hmax)-P(1); adjacent-step signs; sign of P-1.5 at each H)
+pt 0 1:0.688 3:0.687 10:0.686 50:0.685 T:0.683 | d=-0.005±0.006 flat steps 0000 | sign -----
+pt 1 1:1.213 3:1.236 10:1.257 50:1.272 T:1.273 | d=+0.060±0.023 up   steps 0+00 | sign -----
+pt 2 1:1.996 3:1.996 10:1.996 50:1.996 T:1.996 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt 3 1:2.000 3:2.000 10:2.000 50:2.000 T:1.987 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt 4 1:0.754 3:0.745 10:0.762 50:0.740 | d=-0.014±0.053 flat steps 000 | sign ----
+pt 5 1:0.808 3:0.811 10:0.841 50:0.877 | d=+0.068±0.037 up   steps 000 | sign ----
+pt 6 1:2.087 3:2.087 10:2.087 50:2.087 T:2.087 | d=+0.000±0.000 flat steps 0000 | sign +++++
+pt 7 1:1.997 3:1.997 10:1.997 50:1.997 T:1.997 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt 8 1:2.000 3:2.000 10:2.000 50:2.000 | d=+0.000±0.000 flat steps 000 | sign ++++ [degenerate]
+pt 9 1:1.999 3:1.999 10:1.999 50:1.999 T:1.999 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt10 1:2.005 3:2.005 10:2.005 50:2.005 | d=+0.000±0.000 flat steps 000 | sign ++++ [degenerate]
+pt11 1:1.587 3:1.608 10:1.678 50:1.739 T:1.760 | d=+0.173±0.021 up   steps 0+++ | sign +++++
+pt12 1:1.997 3:1.997 10:1.997 50:1.997 T:1.997 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt13 1:0.844 3:0.834 10:0.840 50:0.848 T:0.794 | d=-0.028±0.097 flat steps 0000 | sign -----
+pt14 1:2.152 3:2.152 10:2.152 50:2.152 T:2.125 | d=+0.000±0.000 flat steps 0000 | sign +++++
+pt15 1:2.311 3:2.311 10:2.311 50:2.311 | d=+0.000±0.000 flat steps 000 | sign ++++
+pt16 1:1.457 3:1.467 10:1.522 50:1.572 T:1.573 | d=+0.116±0.024 up   steps 0++0 | sign --0++
+pt17 1:1.624 3:1.624 10:1.624 50:1.624 | d=-0.000±0.000 flat steps 000 | sign ++++
+pt18 1:2.260 3:2.260 10:2.260 50:2.260 T:2.260 | d=+0.000±0.000 flat steps 0000 | sign +++++
+pt19 1:0.849 3:0.836 10:0.849 50:0.849 T:0.828 | d=-0.021±0.037 flat steps 0000 | sign -----
+pt20 1:1.163 3:1.141 10:1.143 50:1.126 | d=-0.038±0.043 flat steps 000 | sign ----
+pt21 1:1.026 3:1.034 10:1.059 50:1.068 T:1.079 | d=+0.053±0.012 up   steps 0+0+ | sign -----
+pt22 1:2.007 3:2.007 10:2.007 50:2.007 | d=+0.000±0.000 flat steps 000 | sign ++++
+pt23 1:1.427 3:1.468 10:1.529 50:1.606 T:1.628 | d=+0.200±0.046 up   steps +++0 | sign -00++
+pt24 1:2.051 3:2.051 10:2.051 50:2.051 T:2.027 | d=+0.000±0.000 flat steps 0000 | sign +++++
+pt25 1:0.743 3:0.745 10:0.743 50:0.745 T:0.745 | d=+0.002±0.025 flat steps 0000 | sign -----
+pt26 1:1.998 3:1.998 10:1.998 50:1.998 | d=+0.000±0.000 flat steps 000 | sign ++++ [degenerate]
+pt27 1:1.141 3:1.142 10:1.165 50:1.213 T:1.214 | d=+0.073±0.016 up   steps 0++0 | sign -----
+pt28 1:2.004 3:2.004 10:2.004 50:2.004 T:2.004 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt29 1:1.101 3:1.103 10:1.103 50:1.108 T:1.113 | d=+0.012±0.014 flat steps 0000 | sign -----
+pt30 1:0.859 3:0.868 10:0.870 50:0.867 T:0.868 | d=+0.009±0.012 flat steps 0000 | sign -----
+pt31 1:0.635 3:0.623 10:0.622 50:0.636 T:0.632 | d=-0.003±0.033 flat steps 0000 | sign -----
+pt32 1:2.004 3:2.004 10:2.004 50:2.004 T:2.004 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt33 1:0.690 3:0.690 10:0.689 50:0.687 T:0.686 | d=-0.004±0.002 flat steps 0000 | sign -----
+pt34 1:1.997 3:1.997 10:1.997 50:1.997 T:1.997 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt35 1:2.286 3:2.286 10:2.286 50:2.286 T:2.286 | d=+0.000±0.000 flat steps 0000 | sign +++++
+pt36 1:0.773 3:0.769 10:0.782 50:0.794 T:0.795 | d=+0.022±0.018 up   steps 0+00 | sign -----
+pt37 1:2.004 3:2.004 10:2.004 50:2.004 T:2.004 | d=+0.000±0.000 flat steps 0000 | sign +++++ [degenerate]
+pt38 1:1.386 3:1.397 10:1.443 50:1.531 T:1.544 | d=+0.158±0.014 up   steps ++++ | sign ---++
+pt39 1:1.990 3:1.990 10:1.990 50:1.990 T:1.990 | d=+0.000±0.000 flat steps 0000 | sign +++++
+
+== compact OLS on all 40: n=40, dof=27, R2(P)=0.93, R2(sign)=0.81
+regressor | coef on P (se) | change over the screened range | coef on 1[P>1.5] (se)
+log2 eta | +0.057 (0.019) | +0.265 | +0.060 (0.028)
+log2 step | +0.038 (0.040) | +0.075 | +0.019 (0.057)
+log2 scale | -0.024 (0.043) | -0.047 | +0.021 (0.061)
+log2 H | -0.005 (0.010) | -0.054 | -0.003 (0.015)
+log2 T | +0.040 (0.024) | +0.132 | +0.032 (0.034)
+window/100 | +0.104 (0.041) | +0.208 | +0.039 (0.059)
+margins small | +0.276 (0.088) | +0.276 | +0.098 (0.125)
+margins line | +0.083 (0.079) | +0.083 | -0.073 (0.112)
+bandit | -0.380 (0.066) | -0.380 | -0.175 (0.093)
+expected play | +1.119 (0.073) | +1.119 | +0.900 (0.104)
+dyn roll1 | +0.152 (0.081) | +0.152 | +0.108 (0.116)
+dyn roll5 | +0.128 (0.086) | +0.128 | +0.091 (0.122)
+
+== compact OLS on excluding the degenerate expected+bandit points: n=28, dof=15, R2(P)=0.92, R2(sign)=0.77
+regressor | coef on P (se) | change over the screened range | coef on 1[P>1.5] (se)
+log2 eta | +0.053 (0.034) | +0.246 | +0.081 (0.048)
+log2 step | +0.034 (0.070) | +0.069 | +0.042 (0.100)
+log2 scale | -0.006 (0.078) | -0.012 | +0.031 (0.111)
+log2 H | -0.004 (0.021) | -0.045 | +0.017 (0.030)
+log2 T | +0.054 (0.037) | +0.178 | +0.048 (0.053)
+window/100 | +0.132 (0.083) | +0.264 | +0.008 (0.119)
+margins small | +0.263 (0.145) | +0.263 | +0.014 (0.206)
+margins line | +0.038 (0.151) | +0.038 | -0.051 (0.215)
+bandit | -0.478 (0.114) | -0.478 | -0.330 (0.163)
+expected play | +1.034 (0.179) | +1.034 | +0.662 (0.255)
+dyn roll1 | +0.161 (0.127) | +0.161 | +0.039 (0.181)
+dyn roll5 | +0.113 (0.155) | +0.113 | -0.065 (0.221)
+
+== OLS of P(Hmax)-P(1) on the other parameters (non-degenerate points with a profile): n=28, dof=15, R2=0.83
+log2 eta | +0.007 (0.005) | +0.031
+log2 step | -0.001 (0.011) | -0.002
+log2 scale | -0.022 (0.012) | -0.044
+log2 T | +0.006 (0.006) | +0.020
+window/100 | +0.037 (0.013) | +0.074
+margins small | +0.001 (0.022) | +0.001
+margins line | -0.015 (0.023) | -0.015
+bandit | -0.080 (0.017) | -0.080
+expected play | -0.065 (0.027) | -0.065
+dyn roll1 | +0.059 (0.019) | +0.059
+dyn roll5 | +0.050 (0.024) | +0.050
+ordering by eta: 0.02: n=6 up/flat/down=0/6/0 mean d=+0.002; 0.05: n=5 up/flat/down=3/2/0 mean d=+0.040; 0.1: n=8 up/flat/down=3/5/0 mean d=+0.029; 0.2: n=5 up/flat/down=1/4/0 mean d=+0.002; 0.5: n=4 up/flat/down=2/2/0 mean d=+0.093
+ordering by step: 0.25: n=8 up/flat/down=3/5/0 mean d=+0.041; 0.5: n=11 up/flat/down=5/6/0 mean d=+0.050; 1.0: n=9 up/flat/down=1/8/0 mean d=-0.004
+ordering by scale: 4.0: n=10 up/flat/down=3/7/0 mean d=+0.040; 8.0: n=9 up/flat/down=3/6/0 mean d=+0.041; 16.0: n=9 up/flat/down=3/6/0 mean d=+0.007
+ordering by T: 200: n=9 up/flat/down=4/5/0 mean d=+0.022; 500: n=10 up/flat/down=4/6/0 mean d=+0.064; 2000: n=9 up/flat/down=1/8/0 mean d=-0.001
+ordering by window: 50: n=9 up/flat/down=2/7/0 mean d=+0.009; 100: n=11 up/flat/down=3/8/0 mean d=+0.018; 250: n=8 up/flat/down=4/4/0 mean d=+0.069
+ordering by margins: std: n=10 up/flat/down=1/9/0 mean d=+0.014; small: n=11 up/flat/down=4/7/0 mean d=+0.036; line: n=7 up/flat/down=4/3/0 mean d=+0.042
+ordering by feedback: full: n=20 up/flat/down=8/12/0 mean d=+0.044; bandit: n=8 up/flat/down=1/7/0 mean d=-0.005
+ordering by play: sampled: n=20 up/flat/down=9/11/0 mean d=+0.042; expected: n=8 up/flat/down=0/8/0 mean d=+0.000
+ordering by dyn: expected: n=11 up/flat/down=1/10/0 mean d=+0.014; roll1: n=9 up/flat/down=5/4/0 mean d=+0.048; roll5: n=8 up/flat/down=3/5/0 mean d=+0.031
+
+== one factor at a time from the stated cell (seed 1, paired runs). P at H=1 / 10 / T; sign of P-1.5; P(T)-P(1) paired
+stated                 P 1.700 / 1.715 / 1.693 | sign +++ | P(T)-P(1) -0.007±0.016 | deal 0.875 | cpu s/run 0.1 / 0.5 / 15.2
+T=200                  P 1.242 / 1.247 / 1.277 | sign --- | P(T)-P(1) +0.036±0.013 | deal 0.635 | cpu s/run 0.0 / 0.2 / 2.3
+T=2000                 P 1.845 / 1.856 / 1.830 | sign +++ | P(T)-P(1) -0.028±0.031 (n=20) | deal 0.984 | cpu s/run 0.3 / 2.4 / 197.6
+dyn=roll1              P 1.458 / 1.506 / 1.554 | sign -0+ | P(T)-P(1) +0.096±0.022 | deal 0.809 | cpu s/run 0.1 / 0.5 / 8.9
+dyn=roll5              P 1.534 / 1.594 / 1.631 | sign +++ | P(T)-P(1) +0.097±0.022 | deal 0.853 | cpu s/run 0.2 / 1.4 / 36.3
+eta=0.02               P 1.064 / 1.073 / 1.088 | sign --- | P(T)-P(1) +0.024±0.009 | deal 0.528 | cpu s/run 0.1 / 0.6 / 15.1
+eta=0.05               P 1.500 / 1.506 / 1.519 | sign 000 | P(T)-P(1) +0.020±0.010 | deal 0.746 | cpu s/run 0.1 / 0.6 / 14.9
+eta=0.2                P 1.764 / 1.758 / 1.723 | sign +++ | P(T)-P(1) -0.041±0.017 | deal 0.934 | cpu s/run 0.1 / 0.6 / 14.9
+eta=0.5                P 1.800 / 1.773 / 1.779 | sign +++ | P(T)-P(1) -0.021±0.018 | deal 0.989 | cpu s/run 0.1 / 0.6 / 14.6
+feedback=bandit        P 0.703 / 0.688 / 0.696 | sign --- | P(T)-P(1) -0.007±0.034 | deal 0.362 | cpu s/run 0.1 / 0.6 / 14.5
+margins=line           P 1.755 / 1.758 / 1.781 | sign +++ | P(T)-P(1) +0.026±0.011 | deal 0.904 | cpu s/run 0.1 / 1.6 / 42.5
+margins=small          P 1.706 / 1.707 / 1.692 | sign +++ | P(T)-P(1) -0.013±0.015 | deal 0.876 | cpu s/run 0.1 / 0.3 / 6.1
+play=expected          P 2.226 / 2.226 / 2.226 | sign +++ | P(T)-P(1) +0.000±0.000 | deal 1.000 | cpu s/run 0.1 / 0.6 / 15.4
+scale=16.0             P 1.500 / 1.506 / 1.519 | sign 000 | P(T)-P(1) +0.020±0.010 | deal 0.746 | cpu s/run 0.1 / 0.6 / 14.6
+scale=4.0              P 1.764 / 1.758 / 1.723 | sign +++ | P(T)-P(1) -0.041±0.017 | deal 0.934 | cpu s/run 0.1 / 0.6 / 14.7
+step=0.5               P 1.684 / 1.685 / 1.695 | sign +++ | P(T)-P(1) +0.011±0.013 | deal 0.877 | cpu s/run 0.1 / 0.4 / 10.1
+step=1.0               P 1.815 / 1.818 / 1.833 | sign +++ | P(T)-P(1) +0.018±0.006 | deal 0.928 | cpu s/run 0.1 / 0.4 / 8.2
+window=250             P 1.656 / 1.667 / 1.662 | sign +++ | P(T)-P(1) +0.007±0.010 | deal 0.850 | cpu s/run 0.1 / 0.6 / 14.5
+window=50              P 1.703 / 1.727 / 1.706 | sign +++ | P(T)-P(1) +0.002±0.023 | deal 0.882 | cpu s/run 0.1 / 0.6 / 14.6

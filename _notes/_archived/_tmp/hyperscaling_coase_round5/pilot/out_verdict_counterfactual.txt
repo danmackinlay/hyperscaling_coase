@@ -1,0 +1,33 @@
+== scoring reading counterfactual; LHS seed 1; run seeds [1,r]; degenerate (expected play + bandit) points: [2, 3, 7, 8, 9, 10, 12, 26, 28, 32, 34, 37]
+
+== H profile per point (P by H; paired P(Hmax)-P(1); adjacent-step signs; sign of P-1.5 at each H)
+
+== compact OLS on all 40: n=40, dof=27, R2(P)=0.93, R2(sign)=0.87
+regressor | coef on P (se) | change over the screened range | coef on 1[P>1.5] (se)
+log2 eta | +0.059 (0.020) | +0.276 | +0.054 (0.023)
+log2 step | +0.047 (0.041) | +0.094 | +0.045 (0.047)
+log2 scale | -0.023 (0.044) | -0.046 | +0.006 (0.050)
+log2 H | -0.007 (0.010) | -0.073 | -0.010 (0.012)
+log2 T | +0.053 (0.025) | +0.177 | +0.028 (0.028)
+window/100 | +0.100 (0.042) | +0.201 | +0.017 (0.048)
+margins small | +0.214 (0.089) | +0.214 | -0.009 (0.102)
+margins line | +0.043 (0.080) | +0.043 | -0.094 (0.092)
+bandit | -0.286 (0.067) | -0.286 | -0.121 (0.076)
+expected play | +1.192 (0.074) | +1.192 | +0.909 (0.085)
+dyn roll1 | +0.120 (0.083) | +0.120 | +0.027 (0.095)
+dyn roll5 | +0.084 (0.087) | +0.084 | +0.110 (0.100)
+
+== compact OLS on excluding the degenerate expected+bandit points: n=28, dof=15, R2(P)=0.92, R2(sign)=0.86
+regressor | coef on P (se) | change over the screened range | coef on 1[P>1.5] (se)
+log2 eta | +0.062 (0.035) | +0.288 | +0.078 (0.036)
+log2 step | +0.045 (0.074) | +0.091 | +0.127 (0.076)
+log2 scale | +0.017 (0.081) | +0.034 | -0.040 (0.084)
+log2 H | -0.009 (0.022) | -0.101 | -0.003 (0.023)
+log2 T | +0.062 (0.039) | +0.207 | +0.048 (0.040)
+window/100 | +0.141 (0.087) | +0.282 | -0.041 (0.090)
+margins small | +0.214 (0.151) | +0.214 | -0.211 (0.156)
+margins line | -0.000 (0.158) | -0.000 | -0.105 (0.162)
+bandit | -0.320 (0.119) | -0.320 | -0.279 (0.123)
+expected play | +1.204 (0.187) | +1.204 | +0.602 (0.192)
+dyn roll1 | +0.137 (0.132) | +0.137 | -0.058 (0.136)
+dyn roll5 | +0.073 (0.162) | +0.073 | +0.049 (0.167)

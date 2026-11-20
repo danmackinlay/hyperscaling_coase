@@ -1,0 +1,81 @@
+[nash arb=True miss] level 1.0 ratio 1:1: sf=1.000 sN=1.000
+  L0/L0      deal 0.288 | f 0.306 r (0.304,0.304,0.304) | NP 0.0086 floor 0.304 | pie 1.219 Rshare 0.75
+  ORCf/L0    deal 0.449 | f 0.431 r (0.489,0.489,0.489) | NP 0.0503 floor 0.431 | pie 1.897 Rshare 0.77
+  L0/ORCr    deal 0.510 | f 0.497 r (0.585,0.585,0.585) | NP 0.0997 floor 0.497 | pie 2.253 Rshare 0.78
+  MEQ        deal 0.354 | f 0.345 r (0.376,0.376,0.376) | NP 0.0183 floor 0.345 | pie 1.472 Rshare 0.77
+    margins fleet 0.110 resident 0.054; mean L0 demands fleet 1.649 resident 1.396
+  L1f/L0     deal 0.300 | f 0.402 r (0.306,0.306,0.306) | NP 0.0115 floor 0.306 | pie 1.321 Rshare 0.70
+  L0/L1r     deal 0.147 | f 0.120 r (0.184,0.184,0.184) | NP 0.0008 floor 0.120 | pie 0.673 Rshare 0.82
+  L1/L1      deal 0.115 | f 0.132 r (0.135,0.135,0.135) | NP 0.0003 floor 0.132 | pie 0.537 Rshare 0.75
+[nash arb=True miss] level 1.0 ratio 10:1: sf=0.316 sN=1.000
+  L0/L0      deal 0.261 | f 0.372 r (0.256,0.256,0.256) | NP 0.0062 floor 0.256 | pie 1.139 Rshare 0.67
+  ORCf/L0    deal 0.449 | f 0.431 r (0.489,0.489,0.489) | NP 0.0503 floor 0.431 | pie 1.897 Rshare 0.77
+  L0/ORCr    deal 0.788 | f 1.117 r (0.856,0.856,0.856) | NP 0.7016 floor 0.856 | pie 3.686 Rshare 0.70
+  MEQ        deal 0.466 | f 0.573 r (0.461,0.461,0.461) | NP 0.0563 floor 0.461 | pie 1.957 Rshare 0.71
+    margins fleet 0.227 resident 0.127; mean L0 demands fleet 1.533 resident 1.396
+  L1f/L0     deal 0.260 | f 0.382 r (0.255,0.255,0.255) | NP 0.0063 floor 0.255 | pie 1.147 Rshare 0.67
+  L0/L1r     deal 0.142 | f 0.199 r (0.155,0.155,0.155) | NP 0.0007 floor 0.155 | pie 0.663 Rshare 0.70
+  L1/L1      deal 0.152 | f 0.218 r (0.165,0.165,0.165) | NP 0.0010 floor 0.165 | pie 0.712 Rshare 0.69
+[nash arb=True miss] level 1.0 ratio 1:10: sf=1.000 sN=0.316
+  L0/L0      deal 0.365 | f 0.313 r (0.444,0.444,0.444) | NP 0.0274 floor 0.313 | pie 1.645 Rshare 0.81
+  ORCf/L0    deal 0.789 | f 0.770 r (0.961,0.961,0.961) | NP 0.6836 floor 0.770 | pie 3.653 Rshare 0.79
+  L0/ORCr    deal 0.510 | f 0.497 r (0.585,0.585,0.585) | NP 0.0997 floor 0.497 | pie 2.253 Rshare 0.78
+  MEQ        deal 0.514 | f 0.387 r (0.618,0.618,0.618) | NP 0.0913 floor 0.387 | pie 2.241 Rshare 0.83
+    margins fleet 0.247 resident 0.028; mean L0 demands fleet 1.649 resident 1.259
+  L1f/L0     deal 0.555 | f 0.518 r (0.673,0.673,0.673) | NP 0.1582 floor 0.518 | pie 2.538 Rshare 0.80
+  L0/L1r     deal 0.405 | f 0.373 r (0.472,0.472,0.472) | NP 0.0391 floor 0.373 | pie 1.788 Rshare 0.79
+  L1/L1      deal 0.720 | f 0.724 r (0.838,0.838,0.838) | NP 0.4257 floor 0.724 | pie 3.237 Rshare 0.78
+[nash arb=True miss] level 0.3 ratio 1:1: sf=0.300 sN=0.300
+  L0/L0      deal 0.245 | f 0.320 r (0.282,0.282,0.282) | NP 0.0072 floor 0.282 | pie 1.167 Rshare 0.73
+  ORCf/L0    deal 0.802 | f 0.783 r (0.979,0.979,0.979) | NP 0.7357 floor 0.783 | pie 3.721 Rshare 0.79
+  L0/ORCr    deal 0.846 | f 1.222 r (0.903,0.903,0.903) | NP 0.9000 floor 0.903 | pie 3.931 Rshare 0.69
+  MEQ        deal 0.812 | f 0.874 r (0.925,0.925,0.925) | NP 0.6923 floor 0.874 | pie 3.650 Rshare 0.76
+    margins fleet 0.377 resident 0.095; mean L0 demands fleet 1.530 resident 1.257
+  L1f/L0     deal 0.560 | f 0.614 r (0.672,0.672,0.672) | NP 0.1862 floor 0.614 | pie 2.629 Rshare 0.77
+  L0/L1r     deal 0.700 | f 1.011 r (0.741,0.741,0.741) | NP 0.4107 floor 0.741 | pie 3.233 Rshare 0.69
+  L1/L1      deal 0.950 | f 1.117 r (1.026,1.026,1.026) | NP 1.2074 floor 1.026 | pie 4.196 Rshare 0.73
+[nash arb=True miss] level 0.3 ratio 10:1: sf=0.095 sN=0.300
+  L0/L0      deal 0.202 | f 0.298 r (0.226,0.226,0.226) | NP 0.0034 floor 0.226 | pie 0.975 Rshare 0.69
+  ORCf/L0    deal 0.802 | f 0.783 r (0.979,0.979,0.979) | NP 0.7357 floor 0.783 | pie 3.721 Rshare 0.79
+  L0/ORCr    deal 0.959 | f 1.433 r (1.076,1.076,1.076) | NP 1.7833 floor 1.076 | pie 4.660 Rshare 0.69
+  MEQ        deal 0.867 | f 1.150 r (0.936,0.936,0.936) | NP 0.9439 floor 0.936 | pie 3.959 Rshare 0.71
+    margins fleet 0.168 resident 0.153; mean L0 demands fleet 1.502 resident 1.257
+  L1f/L0     deal 0.615 | f 0.707 r (0.734,0.734,0.734) | NP 0.2801 floor 0.707 | pie 2.910 Rshare 0.76
+  L0/L1r     deal 0.815 | f 1.222 r (0.864,0.864,0.864) | NP 0.7883 floor 0.864 | pie 3.814 Rshare 0.68
+  L1/L1      deal 0.983 | f 1.137 r (1.065,1.065,1.065) | NP 1.3734 floor 1.065 | pie 4.332 Rshare 0.74
+[nash arb=True miss] level 0.3 ratio 1:10: sf=0.300 sN=0.095
+  L0/L0      deal 0.167 | f 0.194 r (0.206,0.206,0.206) | NP 0.0017 floor 0.194 | pie 0.812 Rshare 0.76
+  ORCf/L0    deal 0.943 | f 1.039 r (1.175,1.175,1.175) | NP 1.6846 floor 1.039 | pie 4.563 Rshare 0.77
+  L0/ORCr    deal 0.846 | f 1.222 r (0.903,0.903,0.903) | NP 0.9000 floor 0.903 | pie 3.931 Rshare 0.69
+  MEQ        deal 0.853 | f 0.884 r (1.015,1.015,1.015) | NP 0.9236 floor 0.884 | pie 3.928 Rshare 0.78
+    margins fleet 0.409 resident 0.058; mean L0 demands fleet 1.530 resident 1.249
+  L1f/L0     deal 0.585 | f 0.633 r (0.724,0.724,0.724) | NP 0.2407 floor 0.633 | pie 2.806 Rshare 0.77
+  L0/L1r     deal 0.807 | f 1.175 r (0.861,0.861,0.861) | NP 0.7515 floor 0.861 | pie 3.760 Rshare 0.69
+  L1/L1      deal 0.980 | f 1.178 r (1.048,1.048,1.048) | NP 1.3567 floor 1.048 | pie 4.323 Rshare 0.73
+[nash arb=True miss] level 0.1 ratio 1:1: sf=0.100 sN=0.100
+  L0/L0      deal 0.030 | f 0.042 r (0.036,0.036,0.036) | NP 0.0000 floor 0.036 | pie 0.149 Rshare 0.72
+  ORCf/L0    deal 0.943 | f 1.032 r (1.174,1.174,1.174) | NP 1.6713 floor 1.032 | pie 4.555 Rshare 0.77
+  L0/ORCr    deal 0.959 | f 1.433 r (1.073,1.073,1.073) | NP 1.7713 floor 1.073 | pie 4.653 Rshare 0.69
+  MEQ        deal 0.949 | f 1.294 r (1.076,1.076,1.076) | NP 1.6120 floor 1.076 | pie 4.522 Rshare 0.71
+    margins fleet 0.132 resident 0.113; mean L0 demands fleet 1.502 resident 1.249
+  L1f/L0     deal 0.497 | f 0.611 r (0.610,0.610,0.610) | NP 0.1388 floor 0.610 | pie 2.442 Rshare 0.75
+  L0/L1r     deal 0.945 | f 1.420 r (1.031,1.031,1.031) | NP 1.5562 floor 1.031 | pie 4.513 Rshare 0.69
+  L1/L1      deal 1.000 | f 1.264 r (1.094,1.094,1.094) | NP 1.6547 floor 1.094 | pie 4.546 Rshare 0.72
+[nash arb=True miss] level 0.1 ratio 10:1: sf=0.032 sN=0.100
+  L0/L0      deal 0.009 | f 0.013 r (0.010,0.010,0.010) | NP 0.0000 floor 0.010 | pie 0.043 Rshare 0.70
+  ORCf/L0    deal 0.943 | f 1.032 r (1.174,1.174,1.174) | NP 1.6713 floor 1.032 | pie 4.555 Rshare 0.77
+  L0/ORCr    deal 0.995 | f 1.492 r (1.139,1.139,1.139) | NP 2.2036 floor 1.139 | pie 4.908 Rshare 0.70
+  MEQ        deal 0.951 | f 1.320 r (1.084,1.084,1.084) | NP 1.6822 floor 1.084 | pie 4.573 Rshare 0.71
+    margins fleet 0.111 resident 0.106; mean L0 demands fleet 1.500 resident 1.249
+  L1f/L0     deal 0.407 | f 0.520 r (0.496,0.496,0.496) | NP 0.0635 floor 0.496 | pie 2.008 Rshare 0.74
+  L0/L1r     deal 0.973 | f 1.461 r (1.071,1.071,1.071) | NP 1.7931 floor 1.071 | pie 4.673 Rshare 0.69
+  L1/L1      deal 1.000 | f 1.283 r (1.103,1.103,1.103) | NP 1.7215 floor 1.103 | pie 4.592 Rshare 0.72
+[nash arb=True miss] level 0.1 ratio 1:10: sf=0.100 sN=0.032
+  L0/L0      deal 0.001 | f 0.001 r (0.001,0.001,0.001) | NP 0.0000 floor 0.001 | pie 0.003 Rshare 0.74
+  ORCf/L0    deal 0.990 | f 1.162 r (1.237,1.237,1.237) | NP 2.1994 floor 1.162 | pie 4.873 Rshare 0.76
+  L0/ORCr    deal 0.959 | f 1.433 r (1.073,1.073,1.073) | NP 1.7713 floor 1.073 | pie 4.653 Rshare 0.69
+  MEQ        deal 0.970 | f 1.340 r (1.113,1.113,1.113) | NP 1.8454 floor 1.113 | pie 4.678 Rshare 0.71
+    margins fleet 0.112 resident 0.102; mean L0 demands fleet 1.502 resident 1.250
+  L1f/L0     deal 0.150 | f 0.184 r (0.186,0.186,0.186) | NP 0.0012 floor 0.184 | pie 0.743 Rshare 0.75
+  L0/L1r     deal 0.958 | f 1.437 r (1.064,1.064,1.064) | NP 1.7336 floor 1.064 | pie 4.631 Rshare 0.69
+  L1/L1      deal 1.000 | f 1.335 r (1.112,1.112,1.112) | NP 1.8355 floor 1.112 | pie 4.671 Rshare 0.71

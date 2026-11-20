@@ -1,0 +1,120 @@
+
+=== Arm T, fleet proposes, k=3, parametric, fleet model=param ===
+limit eps_f->0: (6; 0,0,0), NP 0, floor 0, deal 1, pie 6 (param) / 5 (arb, right model)
+eps_f= 1.0: gains (1.10; 0.01,0.48,0.38) tot 1.98 NP 0.002 floor 0.01 resS 0.44 uNP 6.98e-08 | deal 0.550 pieE 1.98 N:chosen 0.110 dealt 0.000 eff 0.153 top[D 0.61, MDE 0.15, MD 0.13, MDEN 0.10]
+eps_f= 0.3: gains (2.87; 0.31,0.73,0.52) tot 4.43 NP 0.332 floor 0.31 resS 0.35 uNP 1.28e-05 | deal 0.831 pieE 4.43 N:chosen 0.001 dealt 0.000 eff 0.566 top[MDE 0.57, MD 0.34, D 0.09, MDEN 0.00]
+eps_f= 0.1: gains (4.60; 0.23,0.50,0.42) tot 5.75 NP 0.224 floor 0.23 resS 0.20 uNP 9.33e-06 | deal 0.959 pieE 5.75 N:chosen 0.000 dealt 0.000 eff 1.000 top[MDE 1.00]
+
+=== Arm T, bloc proposes (equal split), parametric ===
+limit eps_N->0: (0; 2,2,2) param / (0; 1.67x3) arb, NP 0, floor 0
+eps_N= 1.0: gains (0.87; 1.01,1.01,1.01) tot 3.89 NP 0.889 floor 0.87 resS 0.78 uNP 2.86e-05 | deal 0.702 pieE 3.89 N:chosen 0.242 dealt 0.112 eff 0.523 top[MDE 0.52, MDEN 0.18, MD 0.16, DE 0.06]
+eps_N= 0.3: gains (0.87; 1.62,1.62,1.62) tot 5.74 NP 3.729 floor 0.87 resS 0.85 uNP 1.14e-04 | deal 0.959 pieE 5.74 N:chosen 0.017 dealt 0.012 eff 0.981 top[MDE 0.98, MDEN 0.02, MD 0.00, MDN 0.00]
+eps_N= 0.1: gains (0.40; 1.85,1.85,1.85) tot 5.94 NP 2.496 floor 0.40 resS 0.93 uNP 7.39e-05 | deal 0.990 pieE 5.94 N:chosen 0.000 dealt 0.000 eff 1.000 top[MDE 1.00]
+
+=== Arm T, fleet proposes, k=2 (fleet buys two of three), parametric ===
+eps_f= 1.0: gains (5.30; 1.37,0.90,-3.95) tot 3.62 NP nan floor -3.95 resS -0.46 uNP nan | deal 0.673 pieE 3.62 N:chosen 0.794 dealt 0.513 eff 0.091 top[MDEN 0.79, MDE 0.09, MD 0.09, D 0.03] excluded freq (r1,r2,r3)=[0.015 0.246 0.739]
+eps_f= 0.3: gains (10.07; 1.16,1.58,-7.59) tot 5.22 NP nan floor -7.59 resS -0.93 uNP nan | deal 0.949 pieE 5.22 N:chosen 1.000 dealt 0.949 eff 0.000 top[MDEN 1.00] excluded freq (r1,r2,r3)=[0. 0. 1.]
+eps_f= 0.1: gains (12.11; 0.50,0.71,-7.89) tot 5.43 NP nan floor -7.89 resS -1.23 uNP nan | deal 0.987 pieE 5.43 N:chosen 1.000 dealt 0.987 eff 0.000 top[MDEN 1.00] excluded freq (r1,r2,r3)=[0. 0. 1.]
+
+=== Arm H one round, random proposer (fleet w=0.5), parametric, fleet model=param ===
+limit: fleet 3.00, residents 1.00 each, NP 3.000
+eps_f= 1.0 eps_N= 1.0 (c_f:c_N=   1.0:1): gains (0.99; 0.51,0.76,0.70) tot 2.97 NP 0.272 floor 0.51 resS 0.67 uNP 9.06e-06 | deal f 0.557 b 0.708; fleet-as-proposer takes 1.12, bloc-as-proposer total 3.06
+eps_f= 1.0 eps_N= 0.3 (c_f:c_N=   0.1:1): gains (0.99; 0.82,1.06,1.01) tot 3.87 NP 0.859 floor 0.82 resS 0.74 uNP 2.72e-05 | deal f 0.557 b 0.958; fleet-as-proposer takes 1.12, bloc-as-proposer total 4.87
+eps_f= 1.0 eps_N= 0.1 (c_f:c_N=   0.0:1): gains (0.75; 0.93,1.17,1.12) tot 3.97 NP 0.917 floor 0.75 resS 0.81 uNP 2.80e-05 | deal f 0.557 b 0.990; fleet-as-proposer takes 1.12, bloc-as-proposer total 5.55
+eps_f= 0.3 eps_N= 1.0 (c_f:c_N=  11.1:1): gains (1.88; 0.66,0.87,0.77) tot 4.19 NP 0.839 floor 0.66 resS 0.55 uNP 2.86e-05 | deal f 0.833 b 0.703; fleet-as-proposer takes 2.88, bloc-as-proposer total 3.05
+eps_f= 0.3 eps_N= 0.3 (c_f:c_N=   1.0:1): gains (1.88; 0.96,1.17,1.07) tot 5.08 NP 2.261 floor 0.96 resS 0.63 uNP 7.29e-05 | deal f 0.833 b 0.955; fleet-as-proposer takes 2.88, bloc-as-proposer total 4.86
+eps_f= 0.3 eps_N= 0.1 (c_f:c_N=   0.1:1): gains (1.64; 1.08,1.29,1.19) tot 5.20 NP 2.712 floor 1.08 resS 0.68 uNP 8.44e-05 | deal f 0.833 b 0.990; fleet-as-proposer takes 2.88, bloc-as-proposer total 5.55
+eps_f= 0.1 eps_N= 1.0 (c_f:c_N= 100.0:1): gains (2.73; 0.62,0.76,0.72) tot 4.83 NP 0.923 floor 0.62 resS 0.43 uNP 3.17e-05 | deal f 0.957 b 0.709; fleet-as-proposer takes 4.60, bloc-as-proposer total 3.07
+eps_f= 0.1 eps_N= 0.3 (c_f:c_N=   9.0:1): gains (2.73; 0.93,1.06,1.02) tot 5.74 NP 2.741 floor 0.93 resS 0.52 uNP 8.85e-05 | deal f 0.957 b 0.957; fleet-as-proposer takes 4.60, bloc-as-proposer total 4.87
+eps_f= 0.1 eps_N= 0.1 (c_f:c_N=   1.0:1): gains (2.49; 1.04,1.17,1.13) tot 5.84 NP 3.440 floor 1.04 resS 0.57 uNP 1.07e-04 | deal f 0.957 b 0.989; fleet-as-proposer takes 4.60, bloc-as-proposer total 5.54
+
+=== Arm H one round, random proposer (fleet w=0.25), parametric, fleet model=param ===
+limit: fleet 1.50, residents 1.50 each, NP 5.062
+eps_f= 1.0 eps_N= 1.0 (c_f:c_N=   1.0:1): gains (0.94; 0.76,0.89,0.86) tot 3.44 NP 0.541 floor 0.76 resS 0.73 uNP 1.77e-05 | deal f 0.559 b 0.704; fleet-as-proposer takes 1.12, bloc-as-proposer total 3.05
+eps_f= 1.0 eps_N= 0.3 (c_f:c_N=   0.1:1): gains (0.94; 1.22,1.34,1.31) tot 4.81 NP 2.003 floor 0.94 resS 0.81 uNP 6.21e-05 | deal f 0.559 b 0.955; fleet-as-proposer takes 1.12, bloc-as-proposer total 4.86
+eps_f= 1.0 eps_N= 0.1 (c_f:c_N=   0.0:1): gains (0.58; 1.39,1.51,1.48) tot 4.97 NP 1.823 floor 0.58 resS 0.88 uNP 5.45e-05 | deal f 0.559 b 0.990; fleet-as-proposer takes 1.12, bloc-as-proposer total 5.54
+eps_f= 0.3 eps_N= 1.0 (c_f:c_N=  11.1:1): gains (1.39; 0.84,0.95,0.90) tot 4.08 NP 0.996 floor 0.84 resS 0.66 uNP 3.28e-05 | deal f 0.836 b 0.703; fleet-as-proposer takes 2.89, bloc-as-proposer total 3.05
+eps_f= 0.3 eps_N= 0.3 (c_f:c_N=   1.0:1): gains (1.38; 1.30,1.41,1.35) tot 5.44 NP 3.410 floor 1.30 resS 0.75 uNP 1.06e-04 | deal f 0.836 b 0.959; fleet-as-proposer takes 2.89, bloc-as-proposer total 4.88
+eps_f= 0.3 eps_N= 0.1 (c_f:c_N=   0.1:1): gains (1.03; 1.46,1.57,1.52) tot 5.58 NP 3.585 floor 1.03 resS 0.82 uNP 1.08e-04 | deal f 0.836 b 0.990; fleet-as-proposer takes 2.89, bloc-as-proposer total 5.54
+eps_f= 0.1 eps_N= 1.0 (c_f:c_N= 100.0:1): gains (1.81; 0.83,0.89,0.87) tot 4.40 NP 1.162 floor 0.83 resS 0.59 uNP 3.82e-05 | deal f 0.958 b 0.708; fleet-as-proposer takes 4.61, bloc-as-proposer total 3.06
+eps_f= 0.1 eps_N= 0.3 (c_f:c_N=   9.0:1): gains (1.81; 1.28,1.34,1.32) tot 5.75 NP 4.089 floor 1.28 resS 0.69 uNP 1.27e-04 | deal f 0.958 b 0.957; fleet-as-proposer takes 4.61, bloc-as-proposer total 4.87
+eps_f= 0.1 eps_N= 0.1 (c_f:c_N=   1.0:1): gains (1.45; 1.44,1.51,1.49) tot 5.89 NP 4.710 floor 1.44 resS 0.75 uNP 1.41e-04 | deal f 0.958 b 0.989; fleet-as-proposer takes 4.61, bloc-as-proposer total 5.54
+
+=== Arm T, fleet proposes, k=3, arbitrary, fleet model=param ===
+limit eps_f->0: (6; 0,0,0), NP 0, floor 0, deal 1, pie 6 (param) / 5 (arb, right model)
+eps_f= 1.0: gains (1.04; 0.00,0.48,0.37) tot 1.90 NP 0.000 floor 0.00 resS 0.45 uNP 1.04e-08 | deal 0.539 pieE 1.90 N:chosen 0.112 dealt 0.000 eff 0.125 top[D 0.61, MDE 0.15, MD 0.12, MDEN 0.10]
+eps_f= 0.3: gains (1.23; 0.11,0.35,0.27) tot 1.96 NP 0.013 floor 0.11 resS 0.38 uNP 5.23e-07 | deal 0.421 pieE 1.96 N:chosen 0.001 dealt 0.000 eff 0.346 top[MDE 0.56, MD 0.35, D 0.10, MDEN 0.00]
+eps_f= 0.1: gains (0.00; 0.00,0.00,0.00) tot 0.00 NP 0.000 floor 0.00 resS nan uNP 0.00e+00 | deal 0.000 pieE 0.00 N:chosen 0.000 dealt 0.000 eff 0.000 top[MDE 1.00]
+
+=== Arm T, bloc proposes (equal split), arbitrary ===
+limit eps_N->0: (0; 2,2,2) param / (0; 1.67x3) arb, NP 0, floor 0
+eps_N= 1.0: gains (0.63; 0.78,0.78,0.78) tot 2.97 NP 0.299 floor 0.63 resS 0.79 uNP 1.01e-05 | deal 0.628 pieE 2.97 N:chosen 0.225 dealt 0.076 eff 0.444 top[MD 0.44, DE 0.25, MDN 0.13, DEN 0.07]
+eps_N= 0.3: gains (0.64; 1.33,1.33,1.33) tot 4.64 NP 1.510 floor 0.64 resS 0.86 uNP 4.96e-05 | deal 0.938 pieE 4.64 N:chosen 0.016 dealt 0.009 eff 0.865 top[MD 0.86, DE 0.11, MDN 0.01, MDE 0.00]
+eps_N= 0.1: gains (0.32; 1.54,1.54,1.54) tot 4.95 NP 1.184 floor 0.32 resS 0.93 uNP 3.77e-05 | deal 0.990 pieE 4.95 N:chosen 0.000 dealt 0.000 eff 1.000 top[MD 1.00, DE 0.00]
+
+=== Arm T, fleet proposes, arbitrary, fleet model=two ===
+eps_f= 1.0: gains (0.96; 0.01,0.42,0.40) tot 1.79 NP 0.001 floor 0.01 resS 0.46 uNP 4.04e-08 | deal 0.502 pieE 1.79 N:chosen 0.211 dealt 0.000 eff 0.176 top[D 0.58, MD 0.18, DEN 0.12, MDEN 0.09]
+eps_f= 0.3: gains (2.67; 0.21,0.65,0.53) tot 4.07 NP 0.198 floor 0.21 resS 0.34 uNP 7.75e-06 | deal 0.858 pieE 4.07 N:chosen 0.004 dealt 0.000 eff 0.838 top[MD 0.84, D 0.15, DE 0.01, DEN 0.00]
+eps_f= 0.1: gains (3.98; 0.13,0.41,0.31) tot 4.83 NP 0.064 floor 0.13 resS 0.17 uNP 2.78e-06 | deal 0.965 pieE 4.83 N:chosen 0.000 dealt 0.000 eff 1.000 top[MD 1.00]
+
+=== Arm T, fleet proposes, arbitrary, fleet model=table ===
+eps_f= 1.0: gains (0.00; 0.00,0.00,0.00) tot 0.00 NP 0.000 floor 0.00 resS nan uNP 0.00e+00 | deal 0.000 pieE 0.00 N:chosen 0.281 dealt 0.000 eff 0.156 top[D 0.20, MD 0.16, DE 0.15, MDE 0.08]
+eps_f= 0.3: gains (0.94; 0.09,0.21,0.12) tot 1.37 NP 0.002 floor 0.09 resS 0.31 uNP 8.86e-08 | deal 0.293 pieE 1.37 N:chosen 0.163 dealt 0.007 eff 0.331 top[MD 0.33, DE 0.24, D 0.16, MDE 0.10]
+eps_f= 0.1: gains (3.23; 0.12,0.34,0.41) tot 4.09 NP 0.052 floor 0.12 resS 0.21 uNP 2.15e-06 | deal 0.841 pieE 4.09 N:chosen 0.045 dealt 0.017 eff 0.675 top[MD 0.68, DE 0.21, MDE 0.06, MDN 0.04]
+
+=== Arm H one round, random proposer (fleet w=0.25), arbitrary, fleet model=param ===
+limit: fleet 1.25, residents 1.25 each, NP 2.441
+eps_f= 1.0 eps_N= 1.0 (c_f:c_N=   1.0:1): gains (0.73; 0.58,0.70,0.68) tot 2.70 NP 0.204 floor 0.58 resS 0.73 uNP 7.01e-06 | deal f 0.541 b 0.628; fleet-as-proposer takes 1.04, bloc-as-proposer total 2.34
+eps_f= 1.0 eps_N= 0.3 (c_f:c_N=   0.1:1): gains (0.74; 0.99,1.11,1.09) tot 3.93 NP 0.884 floor 0.74 resS 0.81 uNP 2.93e-05 | deal f 0.541 b 0.934; fleet-as-proposer takes 1.04, bloc-as-proposer total 3.98
+eps_f= 1.0 eps_N= 0.1 (c_f:c_N=   0.0:1): gains (0.50; 1.16,1.28,1.25) tot 4.18 NP 0.918 floor 0.50 resS 0.88 uNP 2.95e-05 | deal f 0.541 b 0.989; fleet-as-proposer takes 1.04, bloc-as-proposer total 4.62
+eps_f= 0.3 eps_N= 1.0 (c_f:c_N=  11.1:1): gains (0.78; 0.61,0.67,0.65) tot 2.71 NP 0.207 floor 0.61 resS 0.71 uNP 7.13e-06 | deal f 0.421 b 0.624; fleet-as-proposer takes 1.23, bloc-as-proposer total 2.33
+eps_f= 0.3 eps_N= 0.3 (c_f:c_N=   1.0:1): gains (0.78; 1.02,1.08,1.07) tot 3.96 NP 0.927 floor 0.78 resS 0.80 uNP 3.07e-05 | deal f 0.421 b 0.935; fleet-as-proposer takes 1.23, bloc-as-proposer total 3.99
+eps_f= 0.3 eps_N= 0.1 (c_f:c_N=   0.1:1): gains (0.55; 1.19,1.24,1.23) tot 4.21 NP 0.999 floor 0.55 resS 0.87 uNP 3.20e-05 | deal f 0.421 b 0.990; fleet-as-proposer takes 1.23, bloc-as-proposer total 4.63
+eps_f= 0.1 eps_N= 1.0 (c_f:c_N= 100.0:1): gains (0.47; 0.58,0.58,0.58) tot 2.21 NP 0.091 floor 0.47 resS 0.79 uNP 3.11e-06 | deal f 0.000 b 0.626; fleet-as-proposer takes 0.00, bloc-as-proposer total 2.33
+eps_f= 0.1 eps_N= 0.3 (c_f:c_N=   9.0:1): gains (0.48; 1.00,1.00,1.00) tot 3.47 NP 0.475 floor 0.48 resS 0.86 uNP 1.56e-05 | deal f 0.000 b 0.933; fleet-as-proposer takes 0.00, bloc-as-proposer total 3.98
+eps_f= 0.1 eps_N= 0.1 (c_f:c_N=   1.0:1): gains (0.24; 1.16,1.16,1.16) tot 3.71 NP 0.375 floor 0.24 resS 0.93 uNP 1.19e-05 | deal f 0.000 b 0.990; fleet-as-proposer takes 0.00, bloc-as-proposer total 4.63
+
+=== Arm H one round, random proposer (fleet w=0.25), arbitrary, fleet model=two ===
+limit: fleet 1.25, residents 1.25 each, NP 2.441
+eps_f= 1.0 eps_N= 1.0 (c_f:c_N=   1.0:1): gains (0.72; 0.58,0.68,0.68) tot 2.67 NP 0.196 floor 0.58 resS 0.73 uNP 6.72e-06 | deal f 0.503 b 0.626; fleet-as-proposer takes 0.97, bloc-as-proposer total 2.33
+eps_f= 1.0 eps_N= 0.3 (c_f:c_N=   0.1:1): gains (0.72; 1.00,1.10,1.10) tot 3.92 NP 0.869 floor 0.72 resS 0.82 uNP 2.87e-05 | deal f 0.503 b 0.935; fleet-as-proposer takes 0.97, bloc-as-proposer total 3.99
+eps_f= 1.0 eps_N= 0.1 (c_f:c_N=   0.0:1): gains (0.48; 1.16,1.26,1.26) tot 4.16 NP 0.889 floor 0.48 resS 0.88 uNP 2.85e-05 | deal f 0.503 b 0.990; fleet-as-proposer takes 0.97, bloc-as-proposer total 4.63
+eps_f= 0.3 eps_N= 1.0 (c_f:c_N=  11.1:1): gains (1.15; 0.64,0.75,0.72) tot 3.27 NP 0.401 floor 0.64 resS 0.65 uNP 1.39e-05 | deal f 0.862 b 0.629; fleet-as-proposer takes 2.68, bloc-as-proposer total 2.34
+eps_f= 0.3 eps_N= 0.3 (c_f:c_N=   1.0:1): gains (1.15; 1.05,1.16,1.13) tot 4.49 NP 1.576 floor 1.05 resS 0.74 uNP 5.24e-05 | deal f 0.862 b 0.935; fleet-as-proposer takes 2.68, bloc-as-proposer total 3.99
+eps_f= 0.3 eps_N= 0.1 (c_f:c_N=   0.1:1): gains (0.92; 1.21,1.32,1.29) tot 4.73 NP 1.877 floor 0.92 resS 0.81 uNP 6.05e-05 | deal f 0.862 b 0.989; fleet-as-proposer takes 2.68, bloc-as-proposer total 4.62
+eps_f= 0.1 eps_N= 1.0 (c_f:c_N= 100.0:1): gains (1.47; 0.62,0.69,0.67) tot 3.46 NP 0.426 floor 0.62 resS 0.57 uNP 1.48e-05 | deal f 0.965 b 0.630; fleet-as-proposer takes 3.98, bloc-as-proposer total 2.35
+eps_f= 0.1 eps_N= 0.3 (c_f:c_N=   9.0:1): gains (1.47; 1.03,1.10,1.07) tot 4.67 NP 1.774 floor 1.03 resS 0.68 uNP 5.88e-05 | deal f 0.965 b 0.934; fleet-as-proposer takes 3.98, bloc-as-proposer total 3.98
+eps_f= 0.1 eps_N= 0.1 (c_f:c_N=   1.0:1): gains (1.24; 1.19,1.26,1.23) tot 4.92 NP 2.285 floor 1.19 resS 0.75 uNP 7.32e-05 | deal f 0.965 b 0.990; fleet-as-proposer takes 3.98, bloc-as-proposer total 4.63
+
+=== Arm H stationary multi-round, delta=0.5, fleet proposes w=0.25, parametric ===
+eps_f= 1.0 eps_N= 1.0: v=(0.91; 0.87,0.88,0.89) tot 3.55 NP 0.619 floor 0.87 | per-round deal f 0.148 b 0.575; its 40
+eps_f= 1.0 eps_N= 0.3: v=(1.08; 1.28,1.28,1.28) tot 4.93 NP 2.279 floor 1.08 | per-round deal f 0.044 b 0.919; its 12
+eps_f= 1.0 eps_N= 0.1: v=(0.56; 1.52,1.52,1.52) tot 5.12 NP 1.956 floor 0.56 | per-round deal f 0.036 b 0.981; its 14
+eps_f= 0.3 eps_N= 1.0: v=(1.37; 0.90,0.98,0.95) tot 4.19 NP 1.141 floor 0.90 | per-round deal f 0.665 b 0.547; its 13
+eps_f= 0.3 eps_N= 0.3: v=(1.47; 1.30,1.34,1.33) tot 5.43 NP 3.383 floor 1.30 | per-round deal f 0.588 b 0.912; its 40
+eps_f= 0.3 eps_N= 0.1: v=(0.97; 1.52,1.56,1.55) tot 5.60 NP 3.562 floor 0.97 | per-round deal f 0.571 b 0.980; its 13
+eps_f= 0.1 eps_N= 1.0: v=(1.91; 0.82,0.89,0.87) tot 4.49 NP 1.211 floor 0.82 | per-round deal f 0.924 b 0.528; its 14
+eps_f= 0.1 eps_N= 0.3: v=(1.95; 1.22,1.27,1.26) tot 5.70 NP 3.813 floor 1.22 | per-round deal f 0.909 b 0.906; its 12
+eps_f= 0.1 eps_N= 0.1: v=(1.45; 1.44,1.50,1.48) tot 5.88 NP 4.654 floor 1.44 | per-round deal f 0.904 b 0.978; its 8
+
+=== Arm H stationary multi-round, delta=0.8, fleet proposes w=0.25, parametric ===
+eps_f= 1.0 eps_N= 1.0: v=(0.95; 1.01,1.01,1.01) tot 3.97 NP 0.972 floor 0.95 | per-round deal f 0.015 b 0.397; its 21
+eps_f= 1.0 eps_N= 0.3: v=(1.51; 1.27,1.27,1.27) tot 5.33 NP 3.114 floor 1.27 | per-round deal f 0.001 b 0.820; its 28
+eps_f= 1.0 eps_N= 0.1: v=(1.01; 1.51,1.51,1.51) tot 5.55 NP 3.495 floor 1.01 | per-round deal f 0.000 b 0.949; its 32
+eps_f= 0.3 eps_N= 1.0: v=(1.35; 0.98,1.01,1.01) tot 4.35 NP 1.354 floor 0.98 | per-round deal f 0.431 b 0.337; its 33
+eps_f= 0.3 eps_N= 0.3: v=(1.63; 1.26,1.26,1.26) tot 5.42 NP 3.294 floor 1.26 | per-round deal f 0.189 b 0.811; its 30
+eps_f= 0.3 eps_N= 0.1: v=(1.13; 1.50,1.50,1.50) tot 5.62 NP 3.784 floor 1.13 | per-round deal f 0.143 b 0.948; its 30
+eps_f= 0.1 eps_N= 1.0: v=(1.96; 0.85,0.95,0.93) tot 4.69 NP 1.479 floor 0.85 | per-round deal f 0.842 b 0.290; its 38
+eps_f= 0.1 eps_N= 0.3: v=(1.97; 1.21,1.24,1.23) tot 5.65 NP 3.640 floor 1.21 | per-round deal f 0.721 b 0.781; its 33
+eps_f= 0.1 eps_N= 0.1: v=(1.52; 1.42,1.45,1.44) tot 5.83 NP 4.502 floor 1.42 | per-round deal f 0.672 b 0.938; its 23
+
+=== Arm H stationary multi-round, delta=0.95, fleet proposes w=0.25, parametric ===
+eps_f= 1.0 eps_N= 1.0: v=(0.93; 1.19,1.19,1.19) tot 4.51 NP 1.580 floor 0.93 | per-round deal f 0.001 b 0.177; its 40
+eps_f= 1.0 eps_N= 0.3: v=(1.46; 1.37,1.37,1.37) tot 5.56 NP 3.738 floor 1.37 | per-round deal f 0.000 b 0.519; its 40
+eps_f= 1.0 eps_N= 0.1: v=(1.67; 1.38,1.38,1.38) tot 5.81 NP 4.378 floor 1.38 | per-round deal f 0.000 b 0.799; its 40
+eps_f= 0.3 eps_N= 1.0: v=(1.26; 1.13,1.13,1.14) tot 4.67 NP 1.846 floor 1.13 | per-round deal f 0.162 b 0.146; its 40
+eps_f= 0.3 eps_N= 0.3: v=(1.46; 1.37,1.37,1.37) tot 5.57 NP 3.741 floor 1.37 | per-round deal f 0.006 b 0.518; its 40
+eps_f= 0.3 eps_N= 0.1: v=(1.67; 1.38,1.38,1.38) tot 5.81 NP 4.378 floor 1.38 | per-round deal f 0.001 b 0.799; its 40
+eps_f= 0.1 eps_N= 1.0: v=(2.00; 0.94,1.07,1.05) tot 5.05 NP 2.096 floor 0.94 | per-round deal f 0.631 b 0.070; its 40
+eps_f= 0.1 eps_N= 0.3: v=(1.61; 1.34,1.34,1.34) tot 5.63 NP 3.866 floor 1.34 | per-round deal f 0.277 b 0.481; its 40
+eps_f= 0.1 eps_N= 0.1: v=(1.73; 1.36,1.36,1.36) tot 5.82 NP 4.393 floor 1.36 | per-round deal f 0.118 b 0.790; its 40

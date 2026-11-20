@@ -1,0 +1,89 @@
+{
+ "n_draws": 320,
+ "first_best": 2.0826254166666667,
+ "cut_offers_valid_share": 1.0,
+ "forget": {
+  "total": 1.8923983333333332,
+  "total_se": 0.07667815639993718,
+  "company": 1.440784270833333,
+  "households": 0.4516140625,
+  "households_se": 0.014361618230976418,
+  "alice": 0.0,
+  "bob": 0.0,
+  "carol": 0.4516140625
+ },
+ "myopic": {
+  "total": 1.8968049305555557,
+  "total_se": 0.07676600794003433,
+  "company": 1.4908223611111109,
+  "households": 0.4059825694444445,
+  "households_se": 0.012816386826811712,
+  "alice": 0.0,
+  "bob": 0.0,
+  "carol": 0.4059825694444445,
+  "share_cut": 0.3145833333333333,
+  "share_all": 0.00625,
+  "share_none": 0.6791666666666667,
+  "slots_named_round1": 0.9625,
+  "hiding_rate": 0.0
+ },
+ "strategic": {
+  "total": 1.9030181249999998,
+  "total_se": 0.07683608384335142,
+  "company": 1.375839895833333,
+  "households": 0.5271782291666667,
+  "households_se": 0.016678671843245143,
+  "alice": 0.0,
+  "bob": 0.0,
+  "carol": 0.5271782291666667,
+  "share_cut": 0.31145833333333334,
+  "share_all": 0.009375,
+  "share_none": 0.6791666666666667,
+  "slots_named_round1": 0.9625,
+  "hiding_rate": 0.031510416666666666
+ },
+ "unchecked": {
+  "total": 1.9030181249999998,
+  "total_se": 0.07683608384335142,
+  "company": 1.375839895833333,
+  "households": 0.5271782291666667,
+  "households_se": 0.016678671843245143,
+  "alice": 0.0,
+  "bob": 0.0,
+  "carol": 0.5271782291666667,
+  "share_cut": 0.31145833333333334,
+  "share_all": 0.009375,
+  "share_none": 0.6791666666666667,
+  "slots_named_round1": 0.9625,
+  "hiding_rate": 0.031510416666666666
+ },
+ "strategic-myopic": {
+  "households": 0.12119565972222221,
+  "households_se": 0.004177734712732711,
+  "total": 0.006213194444444449,
+  "total_se": 0.0015636848635408366
+ },
+ "strategic-forget": {
+  "households": 0.07556416666666665,
+  "households_se": 0.002673778379011875,
+  "total": 0.01061979166666672,
+  "total_se": 0.0023343624261852915
+ },
+ "myopic-forget": {
+  "households": -0.04563149305555556,
+  "households_se": 0.001832197397133148,
+  "total": 0.004406597222222271,
+  "total_se": 0.002347142605586852
+ },
+ "unchecked-forget": {
+  "households": 0.07556416666666665,
+  "households_se": 0.002673778379011875,
+  "total": 0.01061979166666672,
+  "total_se": 0.0023343624261852915
+ },
+ "kind": "solo",
+ "sigma": 0.3,
+ "prior": "uniform",
+ "delta": 0.5,
+ "seconds": 0.3655891418457031
+}

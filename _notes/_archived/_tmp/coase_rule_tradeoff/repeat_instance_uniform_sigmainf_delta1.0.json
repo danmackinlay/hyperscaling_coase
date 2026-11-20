@@ -1,0 +1,89 @@
+{
+ "n_draws": 1,
+ "first_best": 6.0,
+ "cut_offers_valid_share": 0.2161095349697792,
+ "forget": {
+  "total": 3.5,
+  "total_se": 0.0,
+  "company": 1.9900000000000002,
+  "households": 1.5099999999999998,
+  "households_se": 0.0,
+  "alice": 0.0,
+  "bob": 1.2599999999999998,
+  "carol": 0.25
+ },
+ "myopic": {
+  "total": 3.0,
+  "total_se": 0.0,
+  "company": 1.575,
+  "households": 1.425,
+  "households_se": 0.0,
+  "alice": 0.050000000000000044,
+  "bob": 0.875,
+  "carol": 0.5,
+  "share_cut": 1.0,
+  "share_all": 0.0,
+  "share_none": 0.0,
+  "slots_named_round1": 3.0,
+  "hiding_rate": 0.0
+ },
+ "strategic": {
+  "total": 5.5,
+  "total_se": 0.0,
+  "company": 2.4878904688701,
+  "households": 3.0121095311299,
+  "households_se": 0.0,
+  "alice": 0.09950000000000003,
+  "bob": 2.4626095311299,
+  "carol": 0.4500000000000002,
+  "share_cut": 0.6666666666666666,
+  "share_all": 0.3333333333333333,
+  "share_none": 0.0,
+  "slots_named_round1": 2.0,
+  "hiding_rate": 0.0
+ },
+ "unchecked": {
+  "total": 5.5,
+  "total_se": 0.0,
+  "company": 2.4878904688701,
+  "households": 3.0121095311299,
+  "households_se": 0.0,
+  "alice": 0.09950000000000003,
+  "bob": 2.4626095311299,
+  "carol": 0.4500000000000002,
+  "share_cut": 0.6666666666666666,
+  "share_all": 0.3333333333333333,
+  "share_none": 0.0,
+  "slots_named_round1": 2.0,
+  "hiding_rate": 0.0
+ },
+ "strategic-myopic": {
+  "households": 1.5871095311299002,
+  "households_se": 0.0,
+  "total": 2.5,
+  "total_se": 0.0
+ },
+ "strategic-forget": {
+  "households": 1.5021095311299004,
+  "households_se": 0.0,
+  "total": 2.0,
+  "total_se": 0.0
+ },
+ "myopic-forget": {
+  "households": -0.08499999999999974,
+  "households_se": 0.0,
+  "total": -0.5,
+  "total_se": 0.0
+ },
+ "unchecked-forget": {
+  "households": 1.5021095311299004,
+  "households_se": 0.0,
+  "total": 2.0,
+  "total_se": 0.0
+ },
+ "kind": "instance",
+ "sigma": Infinity,
+ "prior": "uniform",
+ "delta": 1.0,
+ "seconds": 3.5874509811401367
+}

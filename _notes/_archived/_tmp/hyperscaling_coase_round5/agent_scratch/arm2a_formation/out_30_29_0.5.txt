@@ -1,0 +1,29 @@
+### n=30 k=29 q=0.5 gmax=4.0 strict=True
+t=0: MDE profit=30.000 A[H10 L0 Z0] B[H9 L0 Z1] C[H10 L0 Z0]
+  c=0.01 proposer A s=1: g=4.0 sig=(1, 0, 3) -> MDE profit=17.000 A*[H1 L0 Z0] A[H9 L0 Z0] B[H10 L0 Z0] C*[H2 L0 Z1] C[H7 L0 Z0]
+  c=0.01 proposer A s=2: g=4.0 sig=(1, 0, 3) -> MDE profit=17.000 A*[H1 L0 Z0] A[H9 L0 Z0] B[H10 L0 Z0] C*[H2 L0 Z1] C[H7 L0 Z0]
+  c=0.01 proposer B s=1: g=4.0 sig=(0, 7, 0) -> MDE profit=6.000 A[H10 L0 Z0] B*[H6 L0 Z1] B[H3 L0 Z0] C[H10 L0 Z0]
+  c=0.01 proposer B s=2: g=4.0 sig=(0, 7, 0) -> MDE profit=6.000 A[H10 L0 Z0] B*[H6 L0 Z1] B[H3 L0 Z0] C[H10 L0 Z0]
+  c=0.01 proposer C s=1: g=4.0 sig=(0, 3, 1) -> MDE profit=18.000 A[H10 L0 Z0] B*[H2 L0 Z1] B[H7 L0 Z0] C*[H1 L0 Z0] C[H9 L0 Z0]
+  c=0.01 proposer C s=2: g=4.0 sig=(0, 3, 1) -> MDE profit=18.000 A[H10 L0 Z0] B*[H2 L0 Z1] B[H7 L0 Z0] C*[H1 L0 Z0] C[H9 L0 Z0]
+  PACT c=0.01 s=prior seed=1: {"principal": 13.657, "A": 0.631, "B": 1.979, "C": 1.265, "floor": 0.62, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 1.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0013, "gm_pos": 1.261, "n_pos": 31, "crit": 0.746, "pie": 52.446}
+  PACT c=0.01 s=prior seed=2: {"principal": 13.663, "A": 0.633, "B": 1.983, "C": 1.265, "floor": 0.625, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 1.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0013, "gm_pos": 1.263, "n_pos": 31, "crit": 0.746, "pie": 52.508}
+  c=0.1 proposer A s=1: g=4.0 sig=(1, 0, 3) -> MDE profit=17.000 A*[H1 L0 Z0] A[H9 L0 Z0] B[H10 L0 Z0] C*[H2 L0 Z1] C[H7 L0 Z0]
+  c=0.1 proposer A s=2: g=4.0 sig=(1, 0, 3) -> MDE profit=17.000 A*[H1 L0 Z0] A[H9 L0 Z0] B[H10 L0 Z0] C*[H2 L0 Z1] C[H7 L0 Z0]
+  c=0.1 proposer B s=1: g=4.0 sig=(0, 7, 0) -> MDE profit=6.000 A[H10 L0 Z0] B*[H6 L0 Z1] B[H3 L0 Z0] C[H10 L0 Z0]
+  c=0.1 proposer B s=2: g=4.0 sig=(0, 7, 0) -> MDE profit=6.000 A[H10 L0 Z0] B*[H6 L0 Z1] B[H3 L0 Z0] C[H10 L0 Z0]
+  c=0.1 proposer C s=1: g=4.0 sig=(0, 3, 1) -> MDE profit=18.000 A[H10 L0 Z0] B*[H2 L0 Z1] B[H7 L0 Z0] C*[H1 L0 Z0] C[H9 L0 Z0]
+  c=0.1 proposer C s=2: g=4.0 sig=(0, 3, 1) -> MDE profit=18.000 A[H10 L0 Z0] B*[H2 L0 Z1] B[H7 L0 Z0] C*[H1 L0 Z0] C[H9 L0 Z0]
+  PACT c=0.1 s=prior seed=1: {"principal": 13.657, "A": 0.622, "B": 1.961, "C": 1.256, "floor": 0.611, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 1.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0133, "gm_pos": 1.248, "n_pos": 31, "crit": 0.744, "pie": 52.446}
+  PACT c=0.1 s=prior seed=2: {"principal": 13.663, "A": 0.624, "B": 1.965, "C": 1.256, "floor": 0.616, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 1.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0133, "gm_pos": 1.25, "n_pos": 31, "crit": 0.744, "pie": 52.508}
+  NOPACT s=prior: {"principal": 30.0, "A": 0.5, "B": 0.75, "C": 1.0, "floor": 0.495, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 1.0, "holds": 0.0, "divided": 0.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 0.813, "n_pos": 31, "crit": 0.48, "pie": 52.5} ordinance: [np.float64(-1.5), np.float64(-3.75), np.float64(-3.0)]
+  ORG objective=total: g=0.75 -> MDE profit=8.250 A*[H10 L0 Z0] B*[H9 L0 Z1] C*[H10 L0 Z0]
+  ORG total F=0.5 s=prior seed=1: {"principal": 8.25, "A": 1.234, "B": 1.406, "C": 1.732, "floor": 1.231, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.526, "n_pos": 31, "crit": 0.911, "pie": 52.465}
+  ORG total F=0.5 s=prior seed=2: {"principal": 8.25, "A": 1.234, "B": 1.404, "C": 1.732, "floor": 1.226, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.526, "n_pos": 31, "crit": 0.91, "pie": 52.448}
+  ORG total F=2 s=prior seed=1: {"principal": 8.25, "A": 1.184, "B": 1.356, "C": 1.682, "floor": 1.181, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.475, "n_pos": 31, "crit": 0.906, "pie": 52.465}
+  ORG total F=2 s=prior seed=2: {"principal": 8.25, "A": 1.184, "B": 1.354, "C": 1.682, "floor": 1.176, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.474, "n_pos": 31, "crit": 0.906, "pie": 52.448}
+  ORG objective=min: g=0.75 -> MDE profit=8.250 A*[H10 L0 Z0] B*[H9 L0 Z1] C*[H10 L0 Z0]
+  ORG min F=0.5 s=prior seed=1: {"principal": 8.25, "A": 1.234, "B": 1.406, "C": 1.732, "floor": 1.231, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.526, "n_pos": 31, "crit": 0.911, "pie": 52.465}
+  ORG min F=0.5 s=prior seed=2: {"principal": 8.25, "A": 1.234, "B": 1.404, "C": 1.732, "floor": 1.226, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.526, "n_pos": 31, "crit": 0.91, "pie": 52.448}
+  ORG min F=2 s=prior seed=1: {"principal": 8.25, "A": 1.184, "B": 1.356, "C": 1.682, "floor": 1.181, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.475, "n_pos": 31, "crit": 0.906, "pie": 52.465}
+  ORG min F=2 s=prior seed=2: {"principal": 8.25, "A": 1.184, "B": 1.354, "C": 1.682, "floor": 1.176, "frac_below": 0.0333, "deal_rate": 1.0, "formed": 0.0, "kinds": {"none": 0.0, "holds": 0.0, "divided": 1.0, "blocked": 0.0}, "msg_per_res": 0.0, "gm_pos": 1.474, "n_pos": 31, "crit": 0.906, "pie": 52.448}
