@@ -23,32 +23,51 @@ Cheap compute makes it cheap to take part in a bargain.
 Finding the counterparty, reading the terms and stating a price all cost compute in fixed quantities, so their dollar cost falls with the price of compute.
 This is the cost Krier has in mind, and on it he is right in every model here.
 
-Cheap compute does not make it cheap to divide a surplus once one exists.
+Cheap compute need not make it cheap to divide a surplus once one exists.
 When two loyal agents contest the split of a sum at issue between their principals, each buys compute until the last dollar stops paying for itself.
 In the contest model that economists use for lobbying and litigation, the total they spend is a fixed fraction of the sum at issue, whatever compute costs.
 A fall in the price of compute buys more computation for the same dollars.
 
-What a principal gets is set by its budget relative to everything it has at issue.
+Whether that spending ever stops depends on the matter being bargained over.
+In some matters the effect of extra compute fades to nothing as both sides use more of it, in the simplest case because there is a level of compute beyond which more changes nothing; we call these *saturating*.
+Once compute is cheap enough both sides reach that level, the dollars spent fall with the price of compute, and the split no longer depends on who has more compute.
+In other matters the ratio of the two sides' compute goes on moving the split however much both use; we call these *non-saturating*, and in them spending does not fall.
+Extra compute can have diminishing returns and still be non-saturating.
+In a model in which agents search for the best argument or clause, a matter saturates only if a best answer exists and whoever decides the matter treats small differences between the two sides' answers as ties.
+We carry three cases through the article.
+In the *saturating world* every matter saturates, and Krier is right about cost and also about how the surplus is divided.
+In the *non-saturating world* no matter saturates; this is our main case, and the findings below are for it unless we say otherwise.
+In the *mixed world* a fraction of a principal's stakes, which can differ from one principal to the next, is in non-saturating matters, and those findings hold for that fraction.
+
+What a principal gets is set by its budget relative to everything it has at issue in non-saturating matters.
 Our central case is a contest in which a side's chance of prevailing is proportional to the compute it spends, between a household whose budget runs out and firms whose budgets do not.
-In it, a nurse with \$400 a year for agent compute and \$25,000 a year of surplus at issue, mostly with such firms, gets about an eighth of that surplus.
+In it, a nurse with \$400 a year for agent compute and \$25,000 a year of surplus at issue, mostly with such firms, gets about an eighth of that surplus, about \$3,200, if none of her matters saturates.
+If a fifth of her stakes never saturates and the rest saturates, she gets about \$11,400, because she takes half of everything that saturates and concentrates her budget on the rest.
+That figure supposes that which of her matters saturate is fixed by the matters themselves or by a protocol, and is not chosen by the firms she faces.
 She is better off than with no bargaining at all, as Krier argues.
-The Coasean programme multiplies the bargains she is party to without raising her budget, so her share of each one falls.
+The Coasean programme multiplies the bargains she is party to without raising her budget, so her share of each non-saturating one falls.
 
 Even shares and low waste trade off against each other.
 In the central case the fraction of the sum at issue that is spent on compute equals the weaker side's share of it.
 Krier proposes a publicly funded compute voucher for people who cannot afford a good agent.
-In the central case a voucher large enough to give a household an even split with the firms it faces costs a quarter of everything the household has at issue, a sum that does not shrink as compute gets cheaper, and it raises spending on compute as fast as it raises the household's share.
+In the central case a voucher large enough to give a household an even split with the firms it faces has to bring its budget up to a quarter of everything the household has at issue, a sum that does not shrink as compute gets cheaper, and it raises spending on compute as fast as it raises the household's share.
 
 Where Krier's assumptions hold in full, the models support him on the main point.
 If property is perfectly secure and bargains are over new surplus, nobody ends up worse off than without bargaining.
-If in addition winnings are paid in cash and reinvested, a household's shortage of budget cures itself within a few years.
+If in addition winnings are paid in cash and reinvested in full, and nothing else drains the budget, a household's shortage of budget cures itself within a few years.
 
 The assumption of secure property carries a great deal.
 If cheap search also makes it cheap to find ambiguities in existing entitlements, and nothing but a fee stands in the way of challenging them, then an entitlement is safe only up to a multiple of that fee.
 Cash-poor holders then lose holdings to challengers, and can end up worse off than with no bargaining.
 
-Krier's picture survives more generally if extra compute moves the split of a bargain only weakly, or if the returns to compute in bargaining run out.
-Neither has been measured, and we describe at the end the experiment that would measure them.
+Which world a principal is in may itself be chosen.
+If the stronger side can make a matter non-saturating at no cost, for example by adding clauses, a firm gains by doing so against a household whose budget is small relative to its non-saturating stakes, and gains by letting the matter saturate against a well-funded one.
+On that assumption well-funded households end up in the saturating world and poorly funded ones in the non-saturating world.
+A household with the nurse's budget is then in the non-saturating world, and the \$11,400 above is not available to her.
+
+Krier's picture comes closer to holding the more weakly extra compute moves the split of a bargain, since spending and the inequality of shares both shrink with it.
+It holds on cost if the returns to compute in bargaining run out in the matters that carry most of each principal's stakes.
+Neither how strongly extra compute moves the split as both sides use more of it, nor the fraction of stakes that is in non-saturating matters, has been measured, and we describe at the end the experiment that would measure them.
 
 ## Krier's proposal
 
@@ -99,7 +118,7 @@ The third is liquidity: whether a principal can pay for compute out of winnings 
 
 A *principal* is a household, firm or state with one loyal agent.
 A *matter* is one bargain between two principals $i$ and $j$, and its *stake* $V_{ij}$ is the dollars of surplus, or of contested entitlement, at issue in it.
-The surplus is measured over what each side could get elsewhere, so competition among employers or landlords for Asha shows up as a smaller stake and not as a different rule for dividing it.
+The surplus is measured over what each side could get elsewhere, so competition among employers for a worker or among landlords for a tenant shows up as a smaller stake and not as a different rule for dividing it.
 A principal's *total stakes* $S_i=\sum_j V_{ij}$ are everything it has at issue in a period, spread over $m_i$ matters.
 Compute costs $p$ dollars per unit.
 Principal $i$'s *spend* $x_{ij}$ is the dollars of compute it puts into its matter with $j$, and its *budget* $B_i$ is the dollars it can spend on bargaining compute in a period, which rises with wealth.
@@ -157,14 +176,73 @@ A stronger model is not the same thing as more compute, but it is what a larger 
 [Davidson et al. (2024)](https://arxiv.org/abs/2401.04536) find that even the strongest models sometimes lose to weaker ones, so the outcome is noisy and $r$ is not infinite.
 [Imas and Misra (2026)](https://www.chicagobooth.edu/research/center-for-applied-artificial-intelligence/research/our-faculty-research/2026/agentic-interactions) find that outcomes also track the skill of the person who wrote the agent's instructions, and [Sharp et al. (2025)](https://arxiv.org/abs/2510.16853) discuss unequal agent quality and quantity as a source of stratification.
 
-### Saturation
+### Saturation {#saturation}
 
-Suppose every bargaining problem had a finite depth $\bar q$ of compute beyond which more thinking adds nothing.
-Then once compute is cheap enough both sides reach $\bar q$, split evenly, and together spend $2p\bar q$ dollars, which goes to zero with $p$.
+Suppose a bargaining problem had a finite *depth* $\bar q$, a number of units of compute beyond which more thinking adds nothing.
+Then once compute is cheap enough both sides reach $\bar q$ and together spend $2p\bar q$ dollars, which goes to zero with $p$.
+We assume they then split the stake evenly; more carefully stated, the split is whatever the merits and the two sides' outside options give, and compute no longer moves it.
 Call this saturation.
-If bargaining saturates, Krier is simply right about cost, and most of what follows does not apply.
+A fixed finite depth is its simplest form, and below we widen the definition to any matter in which the effect of extra compute fades to nothing as both sides use more of it; a matter of either kind is a *saturating matter*.
+If every matter saturates, Krier is simply right about cost, and most of what follows does not apply.
 
-We doubt saturation for one reason, which is an argument and not a theorem.
+Saturation is not the same thing as diminishing returns.
+For any $r\le1$ the contest above already has diminishing returns to a side's own spend, and yet, as the [first result](#claiming) shows, dissipation in a matter is $rV/2$ whatever compute costs.
+What makes dissipation independent of the price $p$ is that only the ratio of the two sides' spends matters.
+Saturation is a different property, the existence of an absolute level of compute beyond which nothing changes.
+So the question to ask of a matter is whether it has an absolute scale or only a relative one.
+A *non-saturating matter* is one in which the ratio of the two sides' compute goes on moving the split however much compute both use.
+The contest above, in which only the ratio matters at every scale, is the leading case.
+
+The search story above gives a test for which matters saturate.
+Each unit of compute buys one independent draw of a candidate argument, clause or counter-proposal, and a side uses its best draw.
+If whoever holds the single best draw prevails, the chance of prevailing is $q_i/(q_i+q_j)$ whatever the distribution of candidate quality, as we saw.
+That is $r=1$ at every scale, with no saturation, even if quality is bounded.
+Now suppose instead that whoever decides the matter, whether a court, an arbitration protocol or the other side's own assessment, compares the two best draws with an error of fixed size, so that a small enough gap between them is as good as a tie.
+Then what happens as both sides' compute grows depends on the upper tail of the distribution of candidate quality, which is to say on how fast the best of many draws improves as the number of draws rises.
+
+To describe this we let decisiveness depend on the level of compute.
+We write $r(q)$ for the decisiveness measured when both sides use $q$ units of compute, that is, the slope of the log-odds of prevailing on the log of the compute ratio, defined above, taken at equal compute $q$.
+A fixed depth is the extreme case, in which $r(q)$ is zero beyond $\bar q$.
+More generally we say a matter saturates if $r(q)$ falls to zero as $q$ grows over the range of compute the parties will use.
+Between two unconstrained sides each side's equilibrium spend is $Vr(q)/4$, which then goes to zero with the price of compute.
+A matter is non-saturating if $r(q)$ stays away from zero over that range.
+The table gives $r(q)$ for four kinds of upper tail, when the decider's error has a logistic distribution whose scale parameter, which we write $\varsigma$, equals one standard deviation of a single draw.
+We derived it for this article and checked it numerically with the script described in the [appendix](#app-script); it is not a published result.
+
+| Upper tail of candidate quality | $r(10)$ | $r(100)$ | $r(1{,}000)$ | $r(10{,}000)$ | $r(10^6)$ | Reason |
+|---|---|---|---|---|---|---|
+| bounded (uniform), so a best answer exists | 0.27 | 0.034 | 0.0035 | 0.0003 | 0.0000 | the gap between the two bests shrinks like $1/q$, and $r(q)\approx 1/(\varsigma q)$ for large $q$ |
+| exponential | 0.65 | 0.66 | 0.67 | 0.67 | 0.67 | the gap depends only on $\log(q_i/q_j)$, so $r$ is constant, and the matter is the contest of this article with $r=2/3$ |
+| Gaussian | 0.44 | 0.33 | 0.27 | 0.24 | 0.19 | the gap shrinks like $1/\sqrt{2\ln q}$, so $r$ falls, but slowly |
+| power law (index 3) | 0.62 | 0.83 | 0.94 | 0.99 | 1.00 | the gap grows with $q$, the decider's error stops mattering, and $r\to1$ |
+
+The same calculation gives each side's equilibrium spend on a \$10,000 stake as the price of a draw falls from \$1 to 1 cent to a hundredth of a cent.
+With a bounded tail the spend falls from \$92 to \$9.30 to \$0.93, in proportion to $\sqrt p$.
+With an exponential tail it is \$1,667 at every price.
+With a Gaussian tail it falls from \$698 to \$542 to \$457, so a ten-thousandfold fall in price cuts spend by about a third.
+
+Saturation therefore needs two things together, a best answer that exists and a decider that ignores small gaps.
+Bounded quality alone is not enough.
+High-frequency trading is an example of bounded quality without saturation.
+The speed differences between traders are tiny and bounded below by physics, but a trade goes to whoever is ahead by any margin.
+[Budish, Cramton and Shim (2015)](https://ideas.repec.org/a/oup/qjecon/v130y2015i4p1547-1621.html) find that competition did not change the size or frequency of the arbitrage opportunities and only raised how fast a trader must be to capture them.
+Their remedy, frequent batch auctions, works by making time discrete, so that tiny speed advantages stop mattering.
+
+The Gaussian row shows that returns which diminish on average can still fail to saturate over any range of compute that will be observed.
+Between $q=10$ and $q=10^6$ its $r(q)$ falls only from 0.44 to 0.19.
+Its $r(q)$ does reach zero in the limit, but so slowly that by our definition a matter of this kind is non-saturating, with decisiveness that drifts down as compute grows.
+The bounded, exponential and power-law rows are the three kinds of limit that the best of many independent draws can approach, a standard result of extreme value theory (the Fisher–Tippett–Gnedenko theorem).
+The Gaussian tail approaches the same kind of limit as the exponential one.
+Its row differs because the spread of its best draw narrows as the number of draws grows.
+We know of no published version of this table; the nearest published result we know of is the derivation by [Jia (2008)](https://doi.org/10.1007/s11127-007-9242-1), cited above, of the ratio form from random shocks to performance.
+
+We carry three cases through the rest of the article.
+In the *saturating world* every matter is a saturating matter.
+In the *non-saturating world* every matter is non-saturating; this is our main case, and most of the results are derived for it.
+In the *mixed world* a fraction $\phi$ of a principal's total stakes $S_i$ is in non-saturating matters, and the rest is in saturating ones.
+The fraction can differ between principals, and we write $\phi$ for whichever principal is under discussion.
+
+We doubt that every matter saturates for one further reason, which is an argument and not a theorem.
 The complexity of a contract is chosen by the parties.
 Checking a contract with $K$ interacting clauses means checking $K(K-1)/2$ pairwise interactions, a number that grows as $K^2$, and a contract conditioned on $C$ yes-or-no contingencies has $2^C$ states to consider.
 The side with more compute can add clauses until the other side cannot verify them.
@@ -172,8 +250,9 @@ The weaker side may refuse what it cannot verify, but then it forgoes the deal o
 Deliberate complexity of this kind survives competition in consumer markets: [Carlin (2009)](https://ideas.repec.org/a/eee/jfinec/v91y2009i3p278-287.html) shows firms adding price complexity to keep some consumers uninformed, with prices that may rise as firms enter, and [Gabaix and Laibson (2006)](https://ideas.repec.org/a/oup/qjecon/v121y2006i2p505-540..html) show shrouded add-on prices persisting in highly competitive markets.
 [Bakos, Marotta-Wurgler and Trossen (2014)](https://doi.org/10.1086/674424) found that only one or two shoppers in a thousand open the licence agreement they accept.
 If complexity rises as compute gets cheaper, the depth $\bar q$ is not fixed and saturation does not arrive.
+The [section on the three worlds](#three-worlds) works out when the stronger side gains by doing this.
 Computation as part of bargaining strategy has a literature of its own: [Larson and Sandholm (2001)](https://www.sciencedirect.com/science/article/pii/S0004370201001321) find that equilibria of bargaining with limited computation can be inefficient, in the sense that another outcome would leave one side better off and neither worse off, and [Halpern and Pass (2015)](https://arxiv.org/abs/1412.2993) build game theory with costly computation from the ground up.
-Whether bargaining between agents saturates is an empirical question, and the experiment that measures $r$ would answer it: saturation shows up as $r$ falling towards zero as both sides' compute grows.
+Which matters between agents saturate is an empirical question, and the experiment that measures $r$ would answer it, matter type by matter type: saturation shows up as $r(q)$ falling towards zero as both sides' compute $q$ grows.
 
 ### Symbols and the people in the stories
 
@@ -194,6 +273,8 @@ She can spend \$400 a year on agent compute.
 | $x_{ij}$ | spend | dollars of compute $i$ puts into its matter with $j$ | what Asha's agent spends on her lease; what Meridian spends against her |
 | $p$ | price of compute | dollars per unit of compute | falls over time in every story |
 | $r$ | decisiveness | how strongly outspending the other side moves the split | how much Meridian gains by out-computing Asha |
+| $\bar q$ | depth | units of compute in a matter beyond which more adds nothing; a non-saturating matter has none, or has one too large to be reached at current prices | the compute beyond which more argument about Asha's lease would change nothing, if her lease saturates |
+| $\phi$ | fraction of stakes in non-saturating matters | the part of $S_i$ in matters that never saturate | 100% of Asha's \$25,000 in the non-saturating world; a fifth of it in one mixed-world example |
 | $\sigma_{ij}$ | share | the fraction of the stake that $i$ gets | the fraction of the lease surplus that ends up with Asha |
 | $\lambda_i$ | value of a budget dollar | surplus $i$ gains from one more dollar of spend; at least 1 | nearly 7 for Asha |
 | $s_i$ | strength | $1/\lambda_i$; equal to 1 when the budget does not bind | 1 for Meridian; about 0.14 for Asha |
@@ -210,6 +291,10 @@ The strength $s_i$, the defender advantage $\theta$ and the safe stake $V^\ast$ 
 Symbols that appear in only one section are defined there.
 
 ## Results
+
+Every section of the results except one is derived for non-saturating matters, which is to say for the non-saturating world.
+A few of those sections add one sentence on what changes in the mixed world.
+The exception is the [section on the three worlds](#three-worlds), which follows the section on more matters; it works out what changes in the saturating and mixed worlds, and asks who chooses whether a matter saturates.
 
 ### Cheap compute does not make claiming cheap {#claiming}
 
@@ -270,7 +355,7 @@ The script described in the [appendix](#app-script) computes the strengths by it
 We checked with it, on random networks mixing constrained and unconstrained principals and for $r\in\{0.25,0.5,1\}$, that no principal can gain by deviating from the computed equilibrium (the largest relative gain found was $2\times10^{-12}$), and that the iteration reaches the same strengths from 20 random starting points.
 
 The case that carries most of this article is Asha's: one constrained principal whose counterparties are all unconstrained.
-This ignores the \$4,000 she has at issue with neighbours of her own strength, which changes the figures little, and it assumes Meridian's agent works on her matters alone, an assumption the [section on repeat players](#repeat-players) removes.
+This treats the \$4,000 she has at issue with neighbours of her own strength as if it too were at issue with unconstrained counterparties, which changes the figures little, and it assumes Meridian's agent works on her matters alone, an assumption the [section on repeat players](#repeat-players) removes.
 With $s_j=1$ for every counterparty and $r=1$, and with $B_i<S_i/4$, Asha's share in every matter is $\sigma_i=\sqrt{B_i/S_i}$.
 She takes $\sqrt{B_iS_i}$ in total.
 Her counterparties together spend $\sqrt{B_iS_i}-B_i$ against her and net $\bigl(\sqrt{S_i}-\sqrt{B_i}\bigr)^2$.
@@ -304,7 +389,7 @@ To see the formula at work across a population we ran a numerical experiment, to
 It has 3,000 households with log-normal budgets of median \$400 (10th percentile \$58, 90th \$2,675, 99th \$12,906).
 Each household has \$20,000 a year at issue with unconstrained firms and about 20 matters of \$250 each with randomly chosen other households.
 At $r=1$, 96% of the households are constrained.
-A household in the bottom tenth by budget gets about 3% of the surplus in its matters with firms, the median household about 12% and a household in the top tenth about 44%.
+Households in the bottom tenth by budget get on average about 3% of the surplus in their matters with firms, those in the middle tenth about 12% and those in the top tenth about 44%.
 Households as a group keep about a fifth of all surplus after paying for their compute, firms keep about two thirds, and the rest is dissipated.
 
 ### More matters stretch the budget thinner {#more-matters}
@@ -312,6 +397,7 @@ Households as a group keep about a fifth of all surplus after paying for their c
 Krier's world multiplies the matters each principal is party to.
 With $n$ principals there can be up to $n-1$ bilateral matters per principal and $n(n-1)/2$ overall, which is $O(n^2)$ in $n$, before counting matters with more than two parties.
 Every potential bargain with a stake above the showing-up cost becomes worth opening to any principal with budget to spare.
+In the mixed world only the non-saturating matters count towards $S_i$ in what follows, because a saturating matter is split evenly at negligible cost once compute is cheap, and so takes next to nothing from the budget; the [next section](#three-worlds) works this out.
 
 If Asha's stakes double to \$50,000 and her budget stays at \$400, her share falls from about 13% to about 9% while her take rises from about \$3,200 to about \$4,500.
 With $B_i$ fixed and $r=1$ her share falls as $S_i^{-1/2}$ in total stakes $S_i$.
@@ -325,11 +411,111 @@ The household gains more than that on the new matters, as long as they are new s
 The showing-up cost sets how many matters a principal can attend at all.
 Suppose each matter costs $c_0$ to attend and has stake $V$, and a constrained principal faces unconstrained counterparties.
 It attends $k^\ast=\min(m,B/(2c_0))$ matters, spending half its budget on turning up and half on contesting, and takes $(B/2)\sqrt{V/c_0}$ in total.
-The number of bargains a principal can attend is proportional to its budget $B$, and on the rest it gets whatever the default gives it.
+The number of bargains a principal can attend is proportional to its budget $B$, and on the rest it gets whatever it would get with no bargain at all.
 
 If stakes are heavy-tailed, so that $M(v/v_0)^{-\alpha}$ matters have stake above $v$, with $\alpha>1$ (many small matters, few large ones), the best fraction of the budget to spend on showing up is $(\alpha-1)/(2\alpha-1)$, and the stakes in play grow without bound as $c_0\to0$.
 With $\alpha=1.5$, $M=50$ matters above $v_0=\$250$, the same power law continuing down to smaller stakes, and a \$400 budget, as $c_0$ falls from \$20 to \$0.02, the matters attended rise from 5 to 5,000, the stakes in play from about \$17,000 to about \$174,000, the share falls from 13% to 4% and the take rises from about \$2,300 to about \$7,200.
 Cheap compute does to $c_0$ what Krier says it does, and the consequence is a larger $S_i$ set against the same $B_i$.
+
+### Saturating, non-saturating and mixed worlds {#three-worlds}
+
+The sections so far assume that no matter saturates.
+Here we take Asha through each of the three worlds defined in the [section on saturation](#saturation), keeping $r=1$, her total stakes $S=\$25{,}000$ and her budget $B=\$400$.
+
+#### The saturating world
+
+Take one matter with stake $V$ and depth $\bar q$ between two unconstrained sides.
+Neither side gains from compute beyond $\bar q$, so each side's spend is capped at $p\bar q$, and together they spend $\min(rV/2,\;2p\bar q)$ dollars (derivation in the [appendix](#app-saturation)).
+While the cap is above what each would spend without it, the [first result](#claiming) stands; once the price of compute falls far enough, spending falls in proportion to $p$.
+
+A fixed depth is saturation in its simplest form.
+In the bounded row of the table in the [section on saturation](#saturation) saturation is gradual, and spend falls as $\sqrt p$ and not in proportion to $p$.
+We work the budget-limited case for a fixed depth only.
+For gradual saturation we expect the same direction of change, since there decisiveness itself falls as compute grows and lower decisiveness evens shares, as Asha's table in the [section on strength](#strength) shows; we have not computed it.
+
+For Asha we take the depth of each of her matters to be proportional to its stake, so that each side's total spend over all her matters is capped at $c$ dollars, and we let $c$ fall with the price of compute.
+
+| cap $c$ on each side's spend | Asha spends | firms spend | Asha's share | dissipated fraction of $S$ |
+|---|---|---|---|---|
+| \$2,762 or more (the cap does not bind) | \$400 | \$2,762 | 12.6% | 12.6% |
+| \$1,600 | \$400 | \$1,600 | 20% | 8.0% |
+| \$800 | \$400 | \$800 | 33% | 4.8% |
+| \$400 | \$400 | \$400 | 50% | 3.2% |
+| \$100 | \$100 | \$100 | 50% | 0.8% |
+| \$10 | \$10 | \$10 | 50% | 0.08% |
+
+While $B<c<\sqrt{BS}-B$ the cap binds the firms but not Asha, and her share is $B/(B+c)$.
+Once $c\le B$ both sides are at the cap and split evenly.
+The cap binds the stronger side first, so falling compute prices first raise Asha's share and only then cut her own bill.
+In this world Krier is right about cost and also about distribution, because the split stops depending on compute.
+That the two sides split a saturated matter evenly is the assumption we made in the [section on saturation](#saturation); more carefully stated, the split is whatever the merits and the two sides' outside options give, and compute no longer moves it.
+
+#### The non-saturating world
+
+The non-saturating world is the one every other section of these results describes.
+In it Asha gets about an eighth of her surplus.
+
+#### The mixed world
+
+Now suppose a fraction $\phi$ of Asha's stakes is in non-saturating matters, and the rest saturates at negligible cost and is split evenly.
+She then puts her whole budget into the non-saturating part, so every formula of the [section on strength](#strength) and the [section on more matters](#more-matters) holds there with $S$ replaced by $\phi S$.
+For $r=1$ and $B<\phi S/4$, her share in non-saturating matters is $\sqrt{B/(\phi S)}$, her overall share of $S$ is $(1-\phi)/2+\sqrt{\phi B/S}$, and the dissipated fraction of $S$ is $\sqrt{\phi B/S}$.
+If $\phi\le 4B/S$, which is 6.4% for Asha, her budget covers an even fight over all of the non-saturating part and she gets half of everything.
+
+| $\phi$ | share in non-saturating matters | Asha takes | overall share | dissipated fraction of $S$ |
+|---|---|---|---|---|
+| 100% (non-saturating world) | 12.6% | \$3,162 | 12.6% | 12.6% |
+| 50% | 17.9% | \$8,486 | 33.9% | 8.9% |
+| 20% | 28.3% | \$11,414 | 45.7% | 5.7% |
+| 6.4% | 50% | \$12,500 | 50% | 3.2% |
+| 2% | 50% | \$12,500 | 50% | 1.0% |
+
+We also checked this directly with her actual matters.
+If only the lease, \$6,000 of surplus, is non-saturating, and each of her other four groups of matters (job, insurer, platforms, and the small matters with neighbours taken as one) saturates at \$5 a side, the computed equilibrium gives her 25.2% of the lease surplus and \$11,010 in all.
+That matches the closed form $\sqrt{380/6000}$ for her lease share, \$380 being what is left of her \$400 after \$5 on each of the other four.
+
+The mixed world is much better for Asha in total than the non-saturating world, because she gets half of everything that saturates.
+Within the non-saturating part nothing in the results changes in kind.
+Her share there still falls as non-saturating stakes multiply, the voucher that buys her parity there costs $r\phi S/4$ (see the [section on dissipation](#dissipation)), and even shares there still come at the cost of more dissipation.
+So in the mixed world what matters for every result is the stake-weighted fraction $\phi$, and not the number of matters that saturate.
+
+Stakes are plausibly heavy-tailed, and then a few matters hold a large part of the total stake, so whether those few saturate has a large effect on $\phi$.
+With stakes following the power law of index $\alpha$ in the [section on more matters](#more-matters), the largest 1% of matters hold a fraction $0.01^{1-1/\alpha}$ of total stake, about 10% at $\alpha=2$ and about 21% at $\alpha=1.5$; a simulation in the script agrees.
+The formula $\min(rV/2,\;2p\bar q)$ also says which matters saturate as compute gets cheaper.
+With a common depth, the matters with the largest stakes saturate first as $p$ falls.
+A matter with a fixed depth behaves as a non-saturating one until the price of compute falls far enough for its cap to bind, and it goes on doing so as $p$ falls only if its depth grows at least as fast as $1/p$.
+A matter that stays non-saturating however cheap compute becomes is therefore one whose depth is unbounded, or one whose depth some party chooses.
+
+#### Who chooses the world
+
+The [section on saturation](#saturation) argued that the stronger side can add clauses until the weaker side cannot verify them, so that depth can be chosen.
+Suppose a firm can choose whether its matter with a household saturates or does not.
+If the matter saturates, the split is even by our assumption, spending is negligible, and the firm nets $V/2$.
+At $r=1$, against a household of strength $s$, the firm nets $V/(1+s)^2$ on a non-saturating matter ([appendix](#app-saturation)).
+So it prefers the non-saturating matter when the household's share there would be below $1-1/\sqrt2$, about 29%, which is when the household's budget is below $(1-1/\sqrt2)^2$, about 8.6%, of its non-saturating stakes.
+For $r=0.5$ the thresholds are a share of 38% and a budget of 4.5% of those stakes, and for $r=0.25$ they are 44% and 2.3%.
+Against an unconstrained opponent the firm nets $V/4$, less than $V/2$, and prefers the matter to saturate.
+So in this model, where raising the depth of a matter costs the firm nothing, complexity is chosen against counterparties who cannot afford the contest, and not against equals.
+
+The choice reinforces itself across firms, because every additional non-saturating matter spreads the household's budget over more stakes and lowers its share in all of them.
+We took Asha's matters with firms (\$12,000 with her employer, \$6,000 with her landlord, \$2,000 with her insurer and \$1,000 with platforms, \$21,000 in all), left aside her small matters with neighbours, and let the firms revise their choices in turn until none wanted to change.
+
+| household budget | starting with every matter saturating | starting with none saturating |
+|---|---|---|
+| \$400 (Asha) | all four end non-saturating | all four stay non-saturating |
+| \$1,500 | all four stay saturating | all four stay non-saturating |
+| \$3,000 | all four stay saturating | all four end saturating |
+
+Every matter saturating is an equilibrium when the household's budget is at least 8.6% of its largest single stake with a firm, \$1,030 here.
+No matter saturating is an equilibrium when the budget is below 8.6% of all its stakes with firms, \$1,800 here.
+Between the two, both are equilibria, and which one the household ends up in depends on where it starts.
+Asha's \$400 is below 8.6% of her job stake alone, so her employer makes that matter non-saturating whatever the others do, and the other firms follow.
+
+These conclusions assume that the depth of a matter is the stronger side's choice and costs nothing to raise.
+On that assumption, the mixed world does not last within one household's dealings with firms; as the firms revise their choices it ends with every matter saturating or with none.
+Across the population the outcome is then a division by budget, which is not the mixed world as we defined it: well-funded households are in the saturating world and poorly funded ones in the non-saturating world.
+A household's own mixed world survives where depth is fixed by the nature of the matter or by a protocol the firm cannot alter.
+So neither the saturating world nor the non-saturating world is the right assumption for everyone, and which one holds for a given principal depends on its budget and on who sets the depth.
 
 ### At $r=1$ the weaker side's share equals the fraction dissipated {#dissipation}
 
@@ -354,6 +540,7 @@ At lower $r$ dissipation still rises as the weaker side gains strength, but it r
 This identity puts a price on Krier's voucher.
 To give a household an even split the voucher must raise its budget to $rS_i/4$, which at $r=1$ is a quarter of its stakes.
 That is a fraction of stakes, fixed in dollars, and it does not fall when compute gets cheaper.
+In the mixed world only the non-saturating stakes need contesting, so the voucher that gives parity costs $r\phi S_i/4$, still a fixed fraction of stakes.
 Firms answer the voucher by spending more, since a firm's spend against household $i$ rises as $s_i$ rises towards 1.
 
 The table takes the population experiment of the [section on strength](#strength) through four scenarios: the baseline, two sizes of voucher, and lower decisiveness with no voucher.
@@ -455,6 +642,8 @@ $$
 
 where $x_D$ and $x_A$ are the defender's and challenger's spends.
 Here $\theta$ plays a role like that of the merits of the case in Hirshleifer and Osborne's litigation contest: it multiplies the effect of one side's spending.
+Like the rest of the results, this contest is non-saturating, since only the ratio of the two sides' weighted spends matters at every scale.
+We do not model what would be different if a challenge were a saturating matter.
 
 If both sides are unconstrained, each spends $\theta V/(1+\theta)^2$, the defender keeps $\theta/(1+\theta)$ of the stake and the challenger nets $V/(1+\theta)^2-f$.
 Before the fee this is positive for every $\theta$.
@@ -494,7 +683,7 @@ Take two unconstrained principals with one matter of new surplus $V^+$ between t
 Each challenge is individually profitable, so both happen.
 The pair's net gain is $V^+/2-4\theta V^-/(1+\theta)^2$.
 The pair is worse off than with no bargaining at all when $V^-/V^+>(1+\theta)^2/(8\theta)$, a ratio of one half at $\theta=1$, two thirds at $\theta=3$ and about 1.4 at $\theta=9$.
-The stock of existing entitlements is many times the annual flow of new Coasean surplus, so a small $\kappa$ is enough to cross that line.
+The stock of existing entitlements is plausibly many times the annual flow of new Coasean surplus, and if so a small $\kappa$ is enough to cross that line.
 As back-of-envelope arithmetic only, with both inputs assumed for illustration: if each principal's entitlements are worth six years of its output, and the new surplus the pair gets from Coasean bargaining were a generous 10% of their combined output a year, then at $\theta=3$ the pair loses in any year in which the challenges brought against each of them put more than about 2% of its entitlement value at issue.
 
 [Medema (2020)](https://ideas.repec.org/a/aea/jeclit/v58y2020i4p1045-1128.html) surveys the extortion objection to the Coase theorem, in which a party threatens harm in order to be paid to stop, and the standard reply that it matters only if resources are spent seeking the payment.
@@ -515,6 +704,7 @@ So we conjecture that the long-run pattern is peace among the unconstrained and 
 Suppose Asha's winnings are paid in cash, she spends all of them on next year's compute, and nothing else drains her budget.
 Her \$400 becomes about \$3,200 the next year and about \$8,900 the year after, which is above the \$6,250 she needs to be unconstrained.
 Within two years she bargains with Meridian as an equal.
+On this path she spends her whole take on compute each year and keeps none of it until her budget passes the threshold, so it is the fastest the constraint can cure itself.
 
 Formally, if stakes are new surplus paid in cash and nothing drains the budget, a constrained principal's budget follows $B_{t+1}=\sqrt{B_tS}$, so $B_t=S^{1-2^{-t}}B_0^{2^{-t}}$ and the gap closes doubly exponentially in $t$.
 The constrained earn the highest return on compute, so they catch up.
@@ -575,7 +765,8 @@ The side that can compute more can steer an approximate mechanism.
 |---|---|---|
 | Compute voucher $\underline B$ (Krier) | raises the floor on shares to about $\sqrt{\underline B/S_i}$ | priced in stakes ($rS_i/4$ for parity), not in compute; raises dissipation, one point for each point of share at $r=1$ |
 | Credit or third-party funding | removes the budget limit | maximum dissipation, $r/2$ of every stake; funders take a cut |
-| Lower decisiveness $r$: fixed protocols, standard forms, arbitration rules that do not reward cleverness | flattens shares and cuts dissipation together (last row of the population table) | gives up bespoke terms, which are the point of hyper-granular contracting; no protocol makes honesty the best strategy while also being efficient and needing no subsidy |
+| Lower decisiveness $r$: fixed protocols, standard forms, arbitration rules that do not reward cleverness | flattens shares and cuts dissipation together (last row of the population table) | gives up bespoke terms, which are the point of hyper-granular contracting; no voluntary protocol makes honesty the best strategy while also being efficient and needing no subsidy |
+| Make matters saturate: fixed-depth protocols, standard forms that bound a contract's complexity, deciders that treat small gaps as ties (Budish, Cramton and Shim's batch auction is the model) | lowers $\phi$; a household gets half of what saturates and a larger share of the rest | gives up bespoke terms; a firm facing a poorly funded household prefers the matter not to saturate, so the protocol has to be imposed and cannot be left to the stronger side |
 | Coalitions | cancel the repeat player's $N^{-1/2}$ advantage | only for common stakes; each coalition's internal split is another matter |
 | Caps on bargaining compute | would cut dissipation and keep shares even | compute spent in private cannot be observed, so enforcing a cap means inspecting every agent; in an all-pay auction, a different contest in which the highest spender wins outright and everyone pays what they spent, a rigid cap can even raise total spending ([Che and Gale (1998)](https://www.jstor.org/stable/116854)) |
 | Take matters off the table (inalienable rights, bright-line rules) | lowers $S_i$ and $\kappa$; for a constrained principal a smaller $S_i$ raises its share of what remains | forgoes surplus on the excluded matters |
@@ -587,7 +778,7 @@ Mateo Petel's critique of Krier, [Price what you can, protect what you must](htt
 Our section on contestable entitlements and the inalienability row reach a neighbouring conclusion by a different route.
 We found no published critique of Krier that models unequal compute as a contest.
 
-Coalitions aside, which Krier proposes himself, the remedies that work in the model are the blunt instruments his essay hopes agents will make unnecessary: standard forms in place of bespoke terms, bright-line rules in place of prices, and a cost of going to court that is kept on purpose.
+Coalitions aside, which Krier proposes himself, the remedies that work in the model are the blunt instruments his essay hopes agents will make unnecessary: standard forms and fixed-depth protocols in place of bespoke terms, bright-line rules in place of prices, and a cost of going to court that is kept on purpose.
 [Glaeser and Shleifer (2003)](https://doi.org/10.1257/002205103765762725) argue along similar lines that private litigation can be subverted by the strong, more so as enterprises grow, and that the regulatory state arose in response.
 
 The parties cannot simply agree to stop out-computing each other.
@@ -595,7 +786,20 @@ Compute spent in private cannot be observed, so the agreement could not be verif
 
 ## Verdict
 
-The table sorts the results by the three questions the constitution left open.
+The first table puts the three worlds side by side, with Asha's figures from the [section on the three worlds](#three-worlds) at $r=1$.
+
+| | saturating world | mixed world | non-saturating world |
+|---|---|---|---|
+| dollars spent claiming a matter | $\min(rV/2,\;2p\bar q)$, falling with $p$ once the cap binds | as in the non-saturating world for the fraction $\phi$, negligible for the rest | $rV/2$ between unconstrained sides, whatever $p$ |
+| what sets Asha's share | the merits and outside options, not compute | $\phi$ and her budget relative to $\phi S$ | her budget relative to $S$ |
+| Asha's take | half of everything once the cap is at or below her budget | about \$11,400 with $\phi$ at a fifth, which requires that the firms do not set depth | about \$3,200 |
+| where it holds, if the stronger side sets depth at no cost | an equilibrium for households with budgets of at least 8.6% of their largest single stake with a firm ($r=1$) | only where depth is fixed by the matter or by a protocol | an equilibrium for households with budgets below 8.6% of their stakes with firms ($r=1$) |
+
+Between the two budget thresholds in the last row, either world can be the equilibrium, depending on where the household starts.
+We do not say which world holds for most real stakes, because that depends on two things nobody has measured: how decisiveness changes with compute in each type of matter, and who sets the depth of a matter.
+The second table and the findings after it are derived for non-saturating matters; in the mixed world they apply to the fraction $\phi$ of stakes, with $S_i$ replaced by $\phi S_i$.
+
+The second table sorts the results by the three questions the constitution left open.
 Rows are decisiveness and whether gains are liquid; columns are whether entitlements are secure, meaning every contestable stake $\kappa E$ lies below the safe stake $V^\ast$.
 
 | | entitlements secure ($\kappa E\le V^\ast$) | entitlements contestable, fee low |
@@ -604,27 +808,30 @@ Rows are decisiveness and whether gains are liquid; columns are whether entitlem
 | decisiveness near 1, cash gains, no drain | unequal at first, curing itself within a few periods; converges to equal shares with up to half of every stake dissipated | peace among the strong (conjectured), transfers from the constrained |
 | decisiveness near 1, in-kind gains or a drain | a persistent hierarchy of strength; everyone gains something, and the constrained get $\sqrt{B/S}$ of each surplus, falling as matters multiply | holdings shrink towards what each holder can defend; constrained principals can be worse off than with no bargaining |
 
+The right-hand column was derived for a non-saturating contest between challenger and defender; what would be different if a challenge were a saturating matter is not modelled.
+
 Under Krier's own constitution with perfectly secure entitlements, bargaining over new surplus makes nobody worse off in absolute terms.
 The suspicion that this world is simply bad is not supported in that column.
 
-Krier's cost claim fails in the part of bargaining that decides distribution.
-Spending on negotiation is set by stakes and decisiveness, not by the price of compute, so neither transaction costs in the claiming part of a bargain nor the cost of a voucher that gives parity tends to zero.
+In non-saturating matters, Krier's cost claim fails in the part of bargaining that decides distribution.
+Spending on negotiation there is set by stakes and decisiveness, not by the price of compute, so neither transaction costs in the claiming part of a bargain nor the cost of a voucher that gives parity tends to zero.
+In saturating matters his cost claim holds, and so does his expectation that compute stops deciding the split.
 
-Shares are set by budget relative to stakes, and the Coasean programme raises the stakes each principal has at issue while nothing in it raises budgets in step, apart from the voucher.
-Asha's share falls as $S_i^{-1/2}$ as her matters multiply.
+Shares in non-saturating matters are set by budget relative to non-saturating stakes, and the Coasean programme raises the stakes each principal has at issue while nothing in it raises budgets in step, apart from the voucher and, where winnings are cash and can be reinvested, the winnings themselves.
+Asha's share falls as $S_i^{-1/2}$ as her non-saturating matters multiply.
 
-Even shares and low dissipation trade off against each other, one for one at $r=1$, so a remedy that equalizes shares by funding the weak side raises waste as it does so.
+Even shares and low dissipation trade off against each other, one for one at $r=1$ against unconstrained counterparties, so a remedy that equalizes shares by funding the weak side raises waste as it does so.
 
 Whether the exercise helps or harms constrained principals depends on whether entitlements stay secure when challenging them becomes cheap.
 The essay wants baselines to be contestable and does not ask who can afford the contest.
 
 Three kinds of evidence would change these conclusions.
-If $r$ falls towards zero as agents become more capable, bargaining saturates and Krier's cost claim holds.
-If entitlements can be defined completely enough that $\kappa$ is close to zero, the right-hand column of the map empties.
+If $r(q)$, measured matter type by matter type, falls towards zero as both sides' compute $q$ grows over the range agents will use, those types of matter saturate and Krier's cost claim holds for them; how much of the rest of these conclusions survives then depends on $\phi$, the fraction of stakes in the types of matter whose $r(q)$ does not fall.
+If entitlements can be defined completely enough that $\kappa$ is close to zero, the right-hand column of the second table empties.
 If a technology for verifying compute use made caps enforceable, dissipation could be cut without giving up even shares.
 
 Three measurements would settle much of this.
-The first is $r$ itself, estimated from agent-versus-agent negotiations with controlled compute ratios, and its trend as the compute on both sides grows.
+The first is $r$ itself, estimated from agent-versus-agent negotiations with controlled compute ratios, and its trend $r(q)$ as the compute on both sides grows, for each type of matter; weighted by the stakes in each type, this also gives $\phi$.
 The second is the fraction of realized surplus spent on agent compute as agent prices fall.
 The third is the rate of challenges to existing entitlements, broken down by the wealth of the holder challenged.
 
@@ -728,6 +935,40 @@ Writing $u=\sqrt{B}$, fixed points satisfy $u^2-u\sqrt S+d=0$, so $u=\bigl(\sqrt
 The smaller root $B_-=\bigl((\sqrt S-\sqrt{S-4d})/2\bigr)^2$ is unstable: below it $\sqrt{B_tS}-d<B_t$ and the budget falls to zero.
 For small $d/S$, $\sqrt{S-4d}\approx\sqrt S-2d/\sqrt S$, so $B_-\approx d^2/S$.
 
+### Saturation and the three worlds {#app-saturation}
+
+*Capped pair.*
+In one matter with stake $V$ between two unconstrained sides, depth $\bar q$ caps each side's spend at $c=p\bar q$.
+At $x=y=c$ each side's marginal return is $rV/(4c)$, which is at least 1 if and only if $c\le rV/4$.
+So when $c\le rV/4$ both sides spend $c$, and otherwise each spends its uncapped $rV/4$; total spend is $\min(rV/2,\;2p\bar q)$.
+
+*Asha against a cap.*
+With depth proportional to stake, the firms' total spend against Asha is capped at $c$ and spread in proportion to stakes, as is her budget, so at $r=1$ her share in every matter is her total spend over the sum of the two totals.
+Uncapped, the firms spend $\sqrt{BS}-B$ against her, so for $B<c<\sqrt{BS}-B$ the cap binds them, she spends all of $B$, and her share is $B/(B+c)$.
+For $c\le B$ both sides spend $c$ and the split is even.
+
+*Mixed world.*
+The saturating part, $(1-\phi)S$, is split evenly at negligible cost, and Asha's whole budget goes to the non-saturating part.
+The [special case](#app-special) with $\phi S$ in place of $S_i$ gives, for $B<\phi S/4$, a share $\sqrt{B/(\phi S)}$ there and a take of $\sqrt{B\phi S}$, so her overall share is $(1-\phi)/2+\sqrt{\phi B/S}$.
+Her spend $B$ and the firms' $\sqrt{B\phi S}-B$ sum to $\sqrt{B\phi S}$, a fraction $\sqrt{\phi B/S}$ of $S$.
+
+*The firm's choice.*
+With household strength $s$ and $r=1$ the firm's share is $1/(1+s)$ and its spend $Vs/(1+s)^2$, so it nets $V/(1+s)^2$.
+This exceeds $V/2$ if and only if $s<\sqrt2-1$, that is, if the household's share $s/(1+s)$ is below $1-1/\sqrt2$.
+Since the household's share is $\sqrt{B/S}$ in its non-saturating stakes $S$, this is $B/S<(1-1/\sqrt2)^2$.
+
+*Bounded tail.*
+The best of $q$ uniform draws is about $1-E/q$ with $E$ exponential, so near equal compute the expected gap between the two bests moves by about $1/q$ per unit change in $\ln q_i$.
+With a logistic error of scale $\varsigma$, the chance of prevailing moves by $1/(4\varsigma)$ per unit of gap near a tie.
+At equal compute the log-odds of prevailing change four times as fast as the chance itself, so $r(q)=4\,\partial P/\partial\ln q_i\approx1/(\varsigma q)$, where $P$ is the chance of prevailing.
+The first-order condition for each side's spend, $Vr(q)/(4pq)=1$, then gives spend $pq=\sqrt{Vp/(4\varsigma)}$, which falls as $\sqrt p$.
+
+*Exponential tail.*
+The best of $q$ exponential draws is $\ln q$ plus a Gumbel-distributed variable, so the gap between the two bests is $\ln(q_i/q_j)$ plus noise that does not depend on $q$, and $r$ is constant.
+
+*Gaussian tail.*
+The best of $q$ Gaussian draws is about $\sqrt{2\ln q}$ plus a Gumbel-distributed variable divided by $\sqrt{2\ln q}$, so $r(q)\approx1/(\varsigma\sqrt{2\ln q})$ for large $q$.
+
 ### What the script checks {#app-script}
 
 Every closed form and number above was checked against direct numerical computation in `check_budget_contests.py`, which sits beside this draft.
@@ -736,7 +977,15 @@ It checks by constrained optimization that no principal can gain by deviating, a
 It reproduces Asha's table, the share as the number of matters grows, and the population experiment with 3,000 households under each voucher and decisiveness scenario.
 It compares the challenger's numerically optimal profit with the closed forms for contested entitlements, and tabulates the safe stake, the profit per challenger as challengers pile on, and the break-even ratio between equals.
 It iterates the budget dynamics with and without a drain, finds the best number of matters to attend with a showing-up cost for equal and heavy-tailed stakes, and solves the repeat player's problem numerically.
-The closed forms agree with the numerical equilibria to about $10^{-12}$.
+For all of these the closed forms agree with the numerical equilibria to about $10^{-12}$.
+Section H of the script checks the results on saturation and the three worlds.
+Its closed forms for spends and shares agree with the computed equilibria to the figures shown in the tables.
+The formulas for $r(q)$ in the tail derivations are approximations for large $q$; for $q$ of 100 or more they are within about 2% of the computed values.
+It computes the capped pair's total spend against $\min(rV/2,\;2p\bar q)$ (H1) and Asha's spends and share as the cap $c$ falls (H2).
+It computes the mixed-world shares for each $\phi$ in the table, and the direct equilibrium with only her lease non-saturating (H3).
+It computes $r(q)$ for the four kinds of tail and each side's equilibrium spend as the price of a draw falls (H4).
+It finds the firm's thresholds for $r\in\{0.25,0.5,1\}$ and lets firms revise their choices in turn over Asha's matters (H5).
+It compares the fraction of total stake in the largest 1% of matters under power-law stakes with a simulation (H6).
 To run it:
 
 ```bash
