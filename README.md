@@ -100,11 +100,25 @@ no bibliography file is edited by hand.
   `_notes/` has no frontmatter, so pass the flag. The group has to be synced
   into the running Zotero. `zot_coll_copy.py` (below) is now needed only to move
   a collection that already exists from one library to another.
-  **This repository's references live in the group
-  `pibbss_x_acs_fellowship_26`** (decided 2026-11-20), so add
-  `--library group:pibbss_x_acs_fellowship_26` to the `ref-cite` commands above
-  and put `zotlibrary: group:pibbss_x_acs_fellowship_26` in each top-level
-  post. Writes through both the local and the web API were tested against it.
+  **This repository's references live in the group `hyperscaling_coase`
+  (groupID 6771791)** (decided 2026-11-20, replacing the earlier choice of
+  `pibbss_x_acs_fellowship_26`), so add `--library group:6771791` to the
+  `ref-cite` commands above and put `zotlibrary: group:6771791` in each
+  top-level post. Writes were tested against the earlier group, not yet against
+  this one.
+- **`zotero-cli` has no `--library` flag; set the library per command.** Its
+  default is the personal library. Prefix each command with the group's
+  environment variables, which override the stored config:
+
+  ```sh
+  direnv exec ~/Source/livingthing env ZOTERO_LIBRARY_ID=6771791 ZOTERO_LIBRARY_TYPE=group zotero-cli search "…"
+  ```
+
+  This is valid in both fish and POSIX shells. For a longer session in fish,
+  `set -x ZOTERO_LIBRARY_ID 6771791; set -x ZOTERO_LIBRARY_TYPE group` scopes
+  that shell instead. Don't use `zotero-cli library switch`: it lasts only for
+  the command that runs it, so the next command is back on the personal
+  library. Check which library a command will use with `zotero-cli config`.
 - **One Zotero collection per essay,** named after the essay's slug unless the
   frontmatter says otherwise with `zotcollpath`.
 - **Bibliographies will be per-document YAML, exported from Zotero.** When a
