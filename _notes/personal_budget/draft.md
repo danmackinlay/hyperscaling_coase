@@ -193,48 +193,12 @@ So the question to ask of a matter is whether it has an absolute scale or only a
 A *non-saturating matter* is one in which the ratio of the two sides' compute goes on moving the split however much compute both use.
 The contest above, in which only the ratio matters at every scale, is the leading case.
 
-The search story above gives a test for which matters saturate.
-Each unit of compute buys one independent draw of a candidate argument, clause or counter-proposal, and a side uses its best draw.
-If whoever holds the single best draw prevails, the chance of prevailing is $q_i/(q_i+q_j)$ whatever the distribution of candidate quality, as we saw.
-That is $r=1$ at every scale, with no saturation, even if quality is bounded.
-Now suppose instead that whoever decides the matter, whether a court, an arbitration protocol or the other side's own assessment, compares the two best draws with an error of fixed size, so that a small enough gap between them is as good as a tie.
-Then what happens as both sides' compute grows depends on the upper tail of the distribution of candidate quality, which is to say on how fast the best of many draws improves as the number of draws rises.
-
-To describe this we let decisiveness depend on the level of compute.
+To make this precise we let decisiveness depend on the level of compute.
 We write $r(q)$ for the decisiveness measured when both sides use $q$ units of compute, that is, the slope of the log-odds of prevailing on the log of the compute ratio, defined above, taken at equal compute $q$.
 A fixed depth is the extreme case, in which $r(q)$ is zero beyond $\bar q$.
 More generally we say a matter saturates if $r(q)$ falls to zero as $q$ grows over the range of compute the parties will use.
-Between two unconstrained sides each side's equilibrium spend is $Vr(q)/4$, which then goes to zero with the price of compute.
+Between two unconstrained sides each side's equilibrium spend is $Vr(q)/4$, by the [first result](#claiming) with $r(q)$ in place of $r$, and it then goes to zero with the price of compute.
 A matter is non-saturating if $r(q)$ stays away from zero over that range.
-The table gives $r(q)$ for four kinds of upper tail, when the decider's error has a logistic distribution whose scale parameter, which we write $\varsigma$, equals one standard deviation of a single draw.
-We derived it for this article and checked it numerically with the script described in the [appendix](#app-script); it is not a published result.
-
-| Upper tail of candidate quality | $r(10)$ | $r(100)$ | $r(1{,}000)$ | $r(10{,}000)$ | $r(10^6)$ | Reason |
-|---|---|---|---|---|---|---|
-| bounded (uniform), so a best answer exists | 0.27 | 0.034 | 0.0035 | 0.0003 | 0.0000 | the gap between the two bests shrinks like $1/q$, and $r(q)\approx 1/(\varsigma q)$ for large $q$ |
-| exponential | 0.65 | 0.66 | 0.67 | 0.67 | 0.67 | the gap depends only on $\log(q_i/q_j)$, so $r$ is constant, and the matter is the contest of this article with $r=2/3$ |
-| Gaussian | 0.44 | 0.33 | 0.27 | 0.24 | 0.19 | the gap shrinks like $1/\sqrt{2\ln q}$, so $r$ falls, but slowly |
-| power law (index 3) | 0.62 | 0.83 | 0.94 | 0.99 | 1.00 | the gap grows with $q$, the decider's error stops mattering, and $r\to1$ |
-
-The same calculation gives each side's equilibrium spend on a \$10,000 stake as the price of a draw falls from \$1 to 1 cent to a hundredth of a cent.
-With a bounded tail the spend falls from \$92 to \$9.30 to \$0.93, in proportion to $\sqrt p$.
-With an exponential tail it is \$1,667 at every price.
-With a Gaussian tail it falls from \$698 to \$542 to \$457, so a ten-thousandfold fall in price cuts spend by about a third.
-
-Saturation therefore needs two things together, a best answer that exists and a decider that ignores small gaps.
-Bounded quality alone is not enough.
-High-frequency trading is an example of bounded quality without saturation.
-The speed differences between traders are tiny and bounded below by physics, but a trade goes to whoever is ahead by any margin.
-[Budish, Cramton and Shim (2015)](https://ideas.repec.org/a/oup/qjecon/v130y2015i4p1547-1621.html) find that competition did not change the size or frequency of the arbitrage opportunities and only raised how fast a trader must be to capture them.
-Their remedy, frequent batch auctions, works by making time discrete, so that tiny speed advantages stop mattering.
-
-The Gaussian row shows that returns which diminish on average can still fail to saturate over any range of compute that will be observed.
-Between $q=10$ and $q=10^6$ its $r(q)$ falls only from 0.44 to 0.19.
-Its $r(q)$ does reach zero in the limit, but so slowly that by our definition a matter of this kind is non-saturating, with decisiveness that drifts down as compute grows.
-The bounded, exponential and power-law rows are the three kinds of limit that the best of many independent draws can approach, a standard result of extreme value theory (the Fisher–Tippett–Gnedenko theorem).
-The Gaussian tail approaches the same kind of limit as the exponential one.
-Its row differs because the spread of its best draw narrows as the number of draws grows.
-We know of no published version of this table; the nearest published result we know of is the derivation by [Jia (2008)](https://doi.org/10.1007/s11127-007-9242-1), cited above, of the ratio form from random shocks to performance.
 
 We carry three cases through the rest of the article.
 In the *saturating world* every matter is a saturating matter.
@@ -242,17 +206,7 @@ In the *non-saturating world* every matter is non-saturating; this is our main c
 In the *mixed world* a fraction $\phi$ of a principal's total stakes $S_i$ is in non-saturating matters, and the rest is in saturating ones.
 The fraction can differ between principals, and we write $\phi$ for whichever principal is under discussion.
 
-We doubt that every matter saturates for one further reason, which is an argument and not a theorem.
-The complexity of a contract is chosen by the parties.
-Checking a contract with $K$ interacting clauses means checking $K(K-1)/2$ pairwise interactions, a number that grows as $K^2$, and a contract conditioned on $C$ yes-or-no contingencies has $2^C$ states to consider.
-The side with more compute can add clauses until the other side cannot verify them.
-The weaker side may refuse what it cannot verify, but then it forgoes the deal or settles for a simpler and less valuable one, so the difference in what the two sides can verify still moves the split.
-Deliberate complexity of this kind survives competition in consumer markets: [Carlin (2009)](https://ideas.repec.org/a/eee/jfinec/v91y2009i3p278-287.html) shows firms adding price complexity to keep some consumers uninformed, with prices that may rise as firms enter, and [Gabaix and Laibson (2006)](https://ideas.repec.org/a/oup/qjecon/v121y2006i2p505-540..html) show shrouded add-on prices persisting in highly competitive markets.
-[Bakos, Marotta-Wurgler and Trossen (2014)](https://doi.org/10.1086/674424) found that only one or two shoppers in a thousand open the licence agreement they accept.
-If complexity rises as compute gets cheaper, the depth $\bar q$ is not fixed and saturation does not arrive.
-The [section on the three worlds](#three-worlds) works out when the stronger side gains by doing this.
-Computation as part of bargaining strategy has a literature of its own: [Larson and Sandholm (2001)](https://www.sciencedirect.com/science/article/pii/S0004370201001321) find that equilibria of bargaining with limited computation can be inefficient, in the sense that another outcome would leave one side better off and neither worse off, and [Halpern and Pass (2015)](https://arxiv.org/abs/1412.2993) build game theory with costly computation from the ground up.
-Which matters between agents saturate is an empirical question, and the experiment that measures $r$ would answer it, matter type by matter type: saturation shows up as $r(q)$ falling towards zero as both sides' compute $q$ grows.
+Which matters saturate, and who decides whether they do, are questions we take up in the [section on the three worlds](#three-worlds), after the results that show why the answer matters.
 
 ### Symbols and the people in the stories
 
@@ -294,7 +248,7 @@ Symbols that appear in only one section are defined there.
 
 Every section of the results except one is derived for non-saturating matters, which is to say for the non-saturating world.
 A few of those sections add one sentence on what changes in the mixed world.
-The exception is the [section on the three worlds](#three-worlds), which follows the section on more matters; it works out what changes in the saturating and mixed worlds, and asks who chooses whether a matter saturates.
+The exception is the [section on the three worlds](#three-worlds), which follows the section on more matters; it works out what changes in the saturating and mixed worlds, gives a test for which matters saturate, and asks who chooses whether a matter saturates.
 
 ### Cheap compute does not make claiming cheap {#claiming}
 
@@ -421,17 +375,13 @@ Cheap compute does to $c_0$ what Krier says it does, and the consequence is a la
 
 The sections so far assume that no matter saturates.
 Here we take Asha through each of the three worlds defined in the [section on saturation](#saturation), keeping $r=1$, her total stakes $S=\$25{,}000$ and her budget $B=\$400$.
+We then ask which matters saturate and who chooses whether they do.
 
 #### The saturating world
 
 Take one matter with stake $V$ and depth $\bar q$ between two unconstrained sides.
 Neither side gains from compute beyond $\bar q$, so each side's spend is capped at $p\bar q$, and together they spend $\min(rV/2,\;2p\bar q)$ dollars (derivation in the [appendix](#app-saturation)).
 While the cap is above what each would spend without it, the [first result](#claiming) stands; once the price of compute falls far enough, spending falls in proportion to $p$.
-
-A fixed depth is saturation in its simplest form.
-In the bounded row of the table in the [section on saturation](#saturation) saturation is gradual, and spend falls as $\sqrt p$ and not in proportion to $p$.
-We work the budget-limited case for a fixed depth only.
-For gradual saturation we expect the same direction of change, since there decisiveness itself falls as compute grows and lower decisiveness evens shares, as Asha's table in the [section on strength](#strength) shows; we have not computed it.
 
 For Asha we take the depth of each of her matters to be proportional to its stake, so that each side's total spend over all her matters is capped at $c$ dollars, and we let $c$ fall with the price of compute.
 
@@ -486,9 +436,63 @@ With a common depth, the matters with the largest stakes saturate first as $p$ f
 A matter with a fixed depth behaves as a non-saturating one until the price of compute falls far enough for its cap to bind, and it goes on doing so as $p$ falls only if its depth grows at least as fast as $1/p$.
 A matter that stays non-saturating however cheap compute becomes is therefore one whose depth is unbounded, or one whose depth some party chooses.
 
+#### Which matters saturate {#which-saturate}
+
+The search story in the section on the two uses of compute gives a test for which matters saturate.
+Each unit of compute buys one independent draw of a candidate argument, clause or counter-proposal, and a side uses its best draw.
+If whoever holds the single best draw prevails, the chance of prevailing is $q_i/(q_i+q_j)$ whatever the distribution of candidate quality, as the section on the two uses of compute showed.
+That is $r=1$ at every scale, with no saturation, even if quality is bounded.
+Now suppose instead that whoever decides the matter, whether a court, an arbitration protocol or the other side's own assessment, compares the two best draws with an error of fixed size, so that a small enough gap between them is as good as a tie.
+Then what happens as both sides' compute grows depends on the upper tail of the distribution of candidate quality, which is to say on how fast the best of many draws improves as the number of draws rises.
+
+The table gives the decisiveness $r(q)$, defined in the [section on saturation](#saturation), for four kinds of upper tail, when the decider's error has a logistic distribution whose scale parameter, which we write $\varsigma$, equals one standard deviation of a single draw.
+We derived it for this article and checked it numerically with the script described in the [appendix](#app-script); it is not a published result.
+
+| Upper tail of candidate quality | $r(10)$ | $r(100)$ | $r(1{,}000)$ | $r(10{,}000)$ | $r(10^6)$ | Reason |
+|---|---|---|---|---|---|---|
+| bounded (uniform), so a best answer exists | 0.27 | 0.034 | 0.0035 | 0.0003 | 0.0000 | the gap between the two bests shrinks like $1/q$, and $r(q)\approx 1/(\varsigma q)$ for large $q$ |
+| exponential | 0.65 | 0.66 | 0.67 | 0.67 | 0.67 | the gap depends only on $\log(q_i/q_j)$, so $r$ is constant, and the matter is the contest of this article with $r=2/3$ |
+| Gaussian | 0.44 | 0.33 | 0.27 | 0.24 | 0.19 | the gap shrinks like $1/\sqrt{2\ln q}$, so $r$ falls, but slowly |
+| power law (index 3) | 0.62 | 0.83 | 0.94 | 0.99 | 1.00 | the gap grows with $q$, the decider's error stops mattering, and $r\to1$ |
+
+The same calculation gives each side's equilibrium spend on a \$10,000 stake as the price of a draw falls from \$1 to 1 cent to a hundredth of a cent.
+With a bounded tail the spend falls from \$92 to \$9.30 to \$0.93, in proportion to $\sqrt p$.
+With an exponential tail it is \$1,667 at every price.
+With a Gaussian tail it falls from \$698 to \$542 to \$457, so a ten-thousandfold fall in price cuts spend by about a third.
+
+Saturation therefore needs two things together, a best answer that exists and a decider that ignores small gaps.
+Bounded quality alone is not enough.
+High-frequency trading is an example of bounded quality without saturation.
+The speed differences between traders are tiny and bounded below by physics, but a trade goes to whoever is ahead by any margin.
+[Budish, Cramton and Shim (2015)](https://ideas.repec.org/a/oup/qjecon/v130y2015i4p1547-1621.html) find that competition did not change the size or frequency of the arbitrage opportunities and only raised how fast a trader must be to capture them.
+Their remedy, frequent batch auctions, works by making time discrete, so that tiny speed advantages stop mattering.
+
+The Gaussian row shows that returns which diminish on average can still fail to saturate over any range of compute that will be observed.
+Between $q=10$ and $q=10^6$ its $r(q)$ falls only from 0.44 to 0.19.
+Its $r(q)$ does reach zero in the limit, but so slowly that by our definition a matter of this kind is non-saturating, with decisiveness that drifts down as compute grows.
+The bounded, exponential and power-law rows are the three kinds of limit that the best of many independent draws can approach, a standard result of extreme value theory (the Fisher–Tippett–Gnedenko theorem).
+The Gaussian tail approaches the same kind of limit as the exponential one.
+Its row differs because the spread of its best draw narrows as the number of draws grows.
+We know of no published version of this table; the nearest published result we know of is the derivation by [Jia (2008)](https://doi.org/10.1007/s11127-007-9242-1), cited above, of the ratio form from random shocks to performance.
+
+The saturating world above was worked out for a fixed depth, which is saturation in its simplest form.
+In the bounded row of the table saturation is gradual, and spend falls as $\sqrt p$ and not in proportion to $p$.
+We have not computed the budget-limited case for gradual saturation.
+We expect the same direction of change as with a fixed depth, since there decisiveness itself falls as compute grows and lower decisiveness evens shares, as Asha's table in the [section on strength](#strength) shows.
+
 #### Who chooses the world
 
-The [section on saturation](#saturation) argued that the stronger side can add clauses until the weaker side cannot verify them, so that depth can be chosen.
+We doubt that every matter saturates for one further reason, which is an argument and not a theorem.
+The complexity of a contract is chosen by the parties.
+Checking a contract with $K$ interacting clauses means checking $K(K-1)/2$ pairwise interactions, a number that grows as $K^2$, and a contract conditioned on $C$ yes-or-no contingencies has $2^C$ states to consider.
+The side with more compute can add clauses until the other side cannot verify them.
+The weaker side may refuse what it cannot verify, but then it forgoes the deal or settles for a simpler and less valuable one, so the difference in what the two sides can verify still moves the split.
+Deliberate complexity of this kind survives competition in consumer markets: [Carlin (2009)](https://ideas.repec.org/a/eee/jfinec/v91y2009i3p278-287.html) shows firms adding price complexity to keep some consumers uninformed, with prices that may rise as firms enter, and [Gabaix and Laibson (2006)](https://ideas.repec.org/a/oup/qjecon/v121y2006i2p505-540..html) show shrouded add-on prices persisting in highly competitive markets.
+[Bakos, Marotta-Wurgler and Trossen (2014)](https://doi.org/10.1086/674424) found that only one or two shoppers in a thousand open the licence agreement they accept.
+If complexity rises as compute gets cheaper, the depth $\bar q$ is not fixed and saturation does not arrive.
+Computation as part of bargaining strategy has a literature of its own: [Larson and Sandholm (2001)](https://www.sciencedirect.com/science/article/pii/S0004370201001321) find that equilibria of bargaining with limited computation can be inefficient, in the sense that another outcome would leave one side better off and neither worse off, and [Halpern and Pass (2015)](https://arxiv.org/abs/1412.2993) build game theory with costly computation from the ground up.
+
+The rest of this section works out when the stronger side gains by adding complexity.
 Suppose a firm can choose whether its matter with a household saturates or does not.
 If the matter saturates, the split is even by our assumption, spending is negligible, and the firm nets $V/2$.
 At $r=1$, against a household of strength $s$, the firm nets $V/(1+s)^2$ on a non-saturating matter ([appendix](#app-saturation)).
@@ -516,6 +520,7 @@ On that assumption, the mixed world does not last within one household's dealing
 Across the population the outcome is then a division by budget, which is not the mixed world as we defined it: well-funded households are in the saturating world and poorly funded ones in the non-saturating world.
 A household's own mixed world survives where depth is fixed by the nature of the matter or by a protocol the firm cannot alter.
 So neither the saturating world nor the non-saturating world is the right assumption for everyone, and which one holds for a given principal depends on its budget and on who sets the depth.
+Which matters between agents saturate is an empirical question, and the experiment that measures $r$ would answer it, matter type by matter type: saturation shows up as $r(q)$ falling towards zero as both sides' compute $q$ grows.
 
 ### At $r=1$ the weaker side's share equals the fraction dissipated {#dissipation}
 

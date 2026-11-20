@@ -32,7 +32,7 @@ In substance:
 
 The briefs are as used and still name the old paths.
 None of these files was ever tracked in livingthing.
-Here, the first commit holds the draft as Dan first read it and the second holds the three-worlds revision, so `git diff` between them shows exactly what the revision changed.
+Here, the first commit holds the draft as Dan first read it, the second holds the three-worlds revision, and the third moves the saturation test beside the three-worlds results, so `git diff` between them shows exactly what each step changed.
 
 Run the script from the repository root:
 
@@ -98,7 +98,7 @@ From round two and its cold read, not yet acted on:
 - The draft does not say which world most real stakes are in. It says why not (nobody has measured $r(q)$ by type of matter, or who sets depth), and a reader may still want a view.
 - "Who chooses" assumes raising depth costs the firm nothing, assumes an even split on saturated matters, sets aside Asha's matters with neighbours, and its worked example is $r=1$.
 - The budget-limited case is computed for a fixed depth only. For gradual saturation the draft states an expectation, not a result.
-- Structure. The saturation section sits in "The model", before any result makes the question matter, and the cast is introduced after its first use. The cold reader thought most of that section belongs beside the three-worlds results. Left alone because it is Dan's call.
+- Structure. The cold reader thought the saturation test sat too early, in "The model". At Dan's request the test (the tail-of-quality table) and the argument that complexity is chosen were moved into the three-worlds section, as "Which matters saturate" and the opening of "Who chooses the world"; "The model" keeps only the definitions. No cold read has been run since that move, so the order of definitions around it is unchecked.
 - A few first-round sentences the cold reader called slogans or figurative ("puts everything else on sale", "blunt instruments", "does real work") were left as they are.
 - Smaller claims the cold reader thought outrun their support: Wallis and North as evidence for the mechanism; the Mailath–Postlewaite reading of Krier's bargaining club; "the side that can compute more can steer an approximate mechanism".
 - The approximation $d^2/S$ for the drain threshold is rough for the larger drain (360 against an exact 486).
@@ -114,6 +114,7 @@ From round two and its cold read, not yet acted on:
 
   That is the origin of the three worlds. Nothing was to be cut, and nothing was.
 - He chose to have the revision done before the move ("Revise here first"), then asked for the files to be moved here and committed.
+- Asked whether to move the saturation test next to the three-worlds results: "Yes, move it". Done in the third commit.
 - He has not yet read the revised draft, and has seen the "who chooses" result only as a short chat summary.
 
 ## How Dan wants this done
@@ -135,8 +136,8 @@ The voice and slop references the writer agents read are in livingthing: `/Users
 
 ## Next steps
 
-1. Dan reads the revised draft, or the diff between the two commits here.
-2. Decide the structural question above: whether the saturation material moves next to the three-worlds results.
+1. Have a contextless reader check the draft from "The model" to the end of the three-worlds section for terms used before they are defined and references that point the wrong way after the move. Fix what it finds.
+2. Dan reads the revised draft, or the diffs between the commits here.
 3. If the draft is to become the essay, it becomes a top-level `<slug>.qmd`, and its citations move from hyperlinks to `[@Key]` through Zotero, as this repository's `CLAUDE.md` requires.
 
 The original conversation is on Dan's machine at `/Users/dan/.claude/projects/-Users-dan-Source-livingthing/d630c307-1ca3-4346-95b6-df2f3f07beff.jsonl`.
