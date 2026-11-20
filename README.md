@@ -62,17 +62,23 @@ argument. Their working material lives under `_notes/`, apart from the site.
 
 ## References and Zotero
 
-Decisions as of 2026-11-20. Zotero is the only source of bibliographic data;
-no bibliography file is edited by hand.
+Zotero is the only source of bibliographic data; no bibliography file is edited
+by hand.
 
+- **This repository's references live in the Zotero group `hyperscaling_coase`
+  (groupID 6771791).** Every command below passes it explicitly, because the
+  tools default to the personal library. Writes have not yet been tested
+  against this group.
+- **One Zotero collection per essay,** named after the essay's slug unless the
+  frontmatter says otherwise with `zotcollpath`.
 - **The reference tools are run from the livingthing checkout, not copied
-  here.** `ref-cite` and `zotero-export-bibs` live in `~/Source/livingthing`
-  (the blog). Together with the modules they import they come to about 5,000
-  lines, and a copy would have to be kept in step by hand. Both work on files
-  outside the blog, which was tested on this repository before deciding. If
-  someone without a livingthing checkout needs them, the move is to extract them
-  into a package of their own that both repositories depend on; copying the
-  code here, or declaring the blog as a dependency, are both ruled out.
+  here.** `ref-cite` and `zotero-export-bibs` live in `~/Source/livingthing`.
+  With the modules they import they come to about 5,000 lines, which a copy
+  would have to keep in step by hand. If someone without a livingthing checkout
+  needs them, extract them into a package both repositories depend on; don't
+  copy the code here or declare the blog as a dependency.
+  `direnv exec ~/Source/livingthing` supplies the blog's credentials and
+  translation-server settings; this repository's own `.env` is not used.
 - **Notes cite by inline link.** A draft under `_notes/` cites each source as a
   hyperlink to its DOI or arXiv page, with citation-shaped link text such as
   `[Segal (1999)](https://doi.org/…)`. That is the form `ref-cite` reads.
@@ -81,34 +87,34 @@ no bibliography file is edited by hand.
   `[@citekey]`. It reads `.md` and `.qmd` alike. Dry-run first:
 
   ```sh
-  direnv exec ~/Source/livingthing uv run --project ~/Source/livingthing ref-cite _notes/<slug>/draft.md -c <collection> --dry-run --unresolved-report ""
+  direnv exec ~/Source/livingthing uv run --project ~/Source/livingthing ref-cite _notes/<slug>/draft.md -c <collection> --library group:6771791 --dry-run --unresolved-report ""
   ```
 
   Drop `--dry-run` to write to Zotero; add `-i` to rewrite the links, which
-  needs Zotero running with Better BibTeX. `direnv exec ~/Source/livingthing`
-  supplies the blog's credentials and translation-server settings; this
-  repository's own `.env` is not used. Check the dry-run listing for wrong
+  needs Zotero running with Better BibTeX. Check the dry-run listing for wrong
   metadata (a reprint's editors in place of the author, a revision date in place
   of the publication date) and fix those items in Zotero afterwards.
-- **Items go into the personal library unless `--library` names a group.**
-  Both tools address "My Library" by default and take
-  `--library group:<id-or-name>`, the group's numeric id or its exact name, to
-  read from and write to a group library instead. A top-level `<slug>.qmd` can
-  say it once in its frontmatter with `zotlibrary: group:<id-or-name>`, beside
-  `zotcollpath`: `zotero-export-bibs <slug>.qmd` and `ref-cite -f <slug>.qmd`
-  then use that group, and the flag overrides the frontmatter. A draft under
-  `_notes/` has no frontmatter, so pass the flag. The group has to be synced
-  into the running Zotero. `zot_coll_copy.py` (below) is now needed only to move
-  a collection that already exists from one library to another.
-  **This repository's references live in the group `hyperscaling_coase`
-  (groupID 6771791)** (decided 2026-11-20, replacing the earlier choice of
-  `pibbss_x_acs_fellowship_26`), so add `--library group:6771791` to the
-  `ref-cite` commands above and put `zotlibrary: group:6771791` in each
-  top-level post. Writes were tested against the earlier group, not yet against
-  this one.
-- **`zotero-cli` has no `--library` flag; set the library per command.** Its
-  default is the personal library. Prefix each command with the group's
-  environment variables, which override the stored config:
+- **Bibliographies are per-document YAML, exported from Zotero.** When a draft
+  is written up as a top-level `<slug>.qmd`, put `zotlibrary: group:6771791` in
+  its frontmatter (beside `zotcollpath`, if any) so that both
+  `zotero-export-bibs <slug>.qmd` and `ref-cite -f <slug>.qmd` use the group
+  without a flag. Then, from the repository root:
+
+  ```sh
+  uv run --project ~/Source/livingthing zotero-export-bibs <slug>.qmd
+  ```
+
+  This needs Zotero running with Better BibTeX, with the group synced, and no
+  credentials. It writes `<slug>.yaml` beside the post, sets `bibliography`,
+  `csl: minimalist.csl`, `link-citations`, `nocite: '@*'` and
+  `reference-section-title` in the frontmatter, and appends a `## References`
+  section if there is none. With `nocite: '@*'` the reference list shows the
+  whole collection, cited or not.
+  **Always name the file.** Run bare, it globs every `.qmd` in the tree, and for
+  a post whose collection does not exist it strips the bibliography keys from
+  the frontmatter. It skips `_`-prefixed folders, so it never touches `_notes/`.
+- **`zotero-cli` has no `--library` flag; set the library per command** with
+  the group's environment variables, which override the stored config:
 
   ```sh
   direnv exec ~/Source/livingthing env ZOTERO_LIBRARY_ID=6771791 ZOTERO_LIBRARY_TYPE=group zotero-cli search "…"
@@ -117,34 +123,13 @@ no bibliography file is edited by hand.
   This is valid in both fish and POSIX shells. For a longer session in fish,
   `set -x ZOTERO_LIBRARY_ID 6771791; set -x ZOTERO_LIBRARY_TYPE group` scopes
   that shell instead. Don't use `zotero-cli library switch`: it lasts only for
-  the command that runs it, so the next command is back on the personal
-  library. Check which library a command will use with `zotero-cli config`.
-- **One Zotero collection per essay,** named after the essay's slug unless the
-  frontmatter says otherwise with `zotcollpath`.
-- **Bibliographies will be per-document YAML, exported from Zotero.** When a
-  draft is written up as a top-level `<slug>.qmd`, run from the repository root:
-
-  ```sh
-  uv run --project ~/Source/livingthing zotero-export-bibs <slug>.qmd
-  ```
-
-  This needs Zotero running with Better BibTeX and no credentials. It writes
-  `<slug>.yaml` beside the post, sets `bibliography`, `csl: minimalist.csl`,
-  `link-citations`, `nocite: '@*'` and `reference-section-title` in the
-  frontmatter, and appends a `## References` section if there is none. With
-  `nocite: '@*'` the reference list shows the whole collection, cited or not.
-  **Always name the file.** Run bare, it globs every `.qmd` in the tree, and for
-  a post whose collection does not exist it strips the bibliography keys from
-  the frontmatter. It handles `.qmd` only and skips `_`-prefixed folders, so it
-  never touches `_notes/`.
+  the command that runs it. Check which library a command will use with
+  `zotero-cli config`.
+- **`zot_coll_copy.py`** copies an existing collection between the personal
+  library and a group, in either direction. See
+  `direnv exec . uv run zot_coll_copy.py --help`.
 - **`references.bib` is a leftover.** The `bibliography: references.bib` line in
   `_quarto.yml` belongs to an earlier plan; the file no longer exists. It comes
   out when the first essay moves to per-document YAML.
 - **The `dan-lit-search` skill is not installed here.** It lives in the blog's
-  `.claude/skills/`. The two commands above are what it would run.
-
-The repository also contains a small standalone utility,
-`zot_coll_copy.py` (a Zotero collection copier between personal and group
-libraries, in any direction); its
-documentation is in the command `--help` output, e.g.
-`direnv exec . uv run zot_coll_copy.py --help`.
+  `.claude/skills/`. The commands above are what it would run.
