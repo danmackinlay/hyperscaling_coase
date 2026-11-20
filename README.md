@@ -100,6 +100,11 @@ no bibliography file is edited by hand.
   `_notes/` has no frontmatter, so pass the flag. The group has to be synced
   into the running Zotero. `zot_coll_copy.py` (below) is now needed only to move
   a collection that already exists from one library to another.
+  **This repository's references live in the group
+  `pibbss_x_acs_fellowship_26`** (decided 2026-11-20), so add
+  `--library group:pibbss_x_acs_fellowship_26` to the `ref-cite` commands above
+  and put `zotlibrary: group:pibbss_x_acs_fellowship_26` in each top-level
+  post. Writes through both the local and the web API were tested against it.
 - **One Zotero collection per essay,** named after the essay's slug unless the
   frontmatter says otherwise with `zotcollpath`.
 - **Bibliographies will be per-document YAML, exported from Zotero.** When a
