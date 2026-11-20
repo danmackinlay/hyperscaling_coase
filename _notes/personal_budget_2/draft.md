@@ -170,6 +170,9 @@ This is the ratio form of the Tullock contest, a standard model of competition f
 [Skaperdas (1996)](https://doi.org/10.1007/BF01213906) lists a small set of axioms a contest success function might satisfy, among them that each side's share rises in its own effort and falls in the other's, and that the comparison between two contestants does not depend on a third.
 He shows that the ratio form is the only one satisfying them in which the outcome depends only on the ratio of efforts, so that doubling both sides' effort changes nothing.
 [Hirshleifer and Osborne (2001)](https://doi.org/10.1023/A:1017520505573) use this form for litigation, with $\theta$ standing for the true degree of fault: at equal effort the court gets it right, and unequal effort bends the result.
+Both papers take effort as given, in whatever unit it is measured, and neither says that compute is that unit.
+Skaperdas also shows that if the outcome depends on the difference of efforts and not on their ratio, the function is logistic in that difference, and a given gap in spending would then buy a larger advantage as compute gets cheaper.
+That the ratio form holds with compute as the measure of effort is an assumption of this article, and the evidence for it is Jones's measurement, described in the next paragraph.
 One identity does most of the algebra below,
 
 $$\frac{\partial s_{im}}{\partial c_{im}}=\frac{r\,s_{im}(1-s_{im})}{c_{im}},$$

@@ -124,7 +124,7 @@ None has been through a drafter or a cold reader.
    A direct test, separate from measuring $r$: hold the compute ratio fixed, scale both sides up, and see whether the split moves.
 
    **Where it goes in the draft, to disturb least.** No new section and no new coined term.
-   (a) In "Compute in games against an opponent", reword the two Skaperdas sentences in place so they claim only that the ratio form follows once the unit of effort is chosen, and add one sentence saying the Elo evidence in the next paragraph is what chooses compute as that unit.
+   (a) **Done 2026-11-20, at Dan's request, by the lead agent directly (no drafter, no cold read).** In "Compute in games against an opponent", three sentences added after the Hirshleifer and Osborne sentence: the two papers take effort as given; Skaperdas's difference form and what it would imply; compute as the measure of effort is an assumption resting on Jones. The existing Skaperdas sentences are unchanged. The difference-form claim about Skaperdas is from memory, like the other claims about that paper.
    (b) In "Cruxes", one new item in the first group (which world a matter is in), with the scaling test.
    (c) In "Limitations and tests", one sentence on the range of the log-linear fit.
    Do (b) in the same revision as item 1, which rewrites that group of cruxes anyway; doing it separately means editing the same list twice.
