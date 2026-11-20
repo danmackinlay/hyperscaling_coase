@@ -56,11 +56,12 @@ The article ends with a "Cruxes" section listing the quantities that decide whic
 - **No word limits during ideation.** Do not cut for length and do not give drafters length targets; delete only what is wrong or impairs reasoning.
 - **Citations as links are fine for now.**
 - **Kelly-style optimum: pinned**, not to be pursued yet (see below).
-- **He has not yet answered** whether to go ahead with the extensions below. He asked whether each is worth doing; my answer was yes to all of them.
+- **He has not yet answered** whether to go ahead with extensions 1 to 3 below. He asked whether each is worth doing; my answer was yes to all of them.
+- **The mapping from compute to effort (item 5 below): wanted in the article**, but without disturbing the narrative (2026-11-20). Item 5 says where it goes.
 
 ## Derived but not written up
 
-Items 1 to 3 are checked numerically in `check_pending_derivations.py`, at $r=1$ and $R=1$; item 4 is an unverified argument.
+Items 1 to 3 are checked numerically in `check_pending_derivations.py`, at $r=1$ and $R=1$; item 4 is an unverified argument; item 5 is algebra with no numerical check.
 None has been through a drafter or a cold reader.
 
 1. **A family that nests both worlds (Dan's question: under what conditions does a compute advantage shift the deal?).**
@@ -107,6 +108,26 @@ None has been through a drafter or a cold reader.
    With win/lose outcomes and log utility the constrained principal would spend less than everything.
    By scale invariance (the share depends on the ratio of dollars spent, and CRRA utility is homogeneous), the parity threshold should remain a fixed fraction of stakes, independent of $p$, but a larger fraction than $r/4$.
    That argument is unverified. The article records the question in "Limitations and tests".
+
+5. **The mapping from compute to effort (Dan, 2026-11-20: "we have to choose a mapping from 'compute' to 'effort' in their sense?").**
+   Skaperdas's axioms are about effort in some unit; they say the outcome does not depend on the unit, not which physical quantity is the effort.
+   Write effort as $e=g(c)$ and apply the ratio form to $e$.
+   If $g(c)=c^a$ the share is the ratio form in compute with exponent $ra$, the price of compute cancels, and every result in the article stands.
+   If $g(c)=\exp(kc)$ the share depends on the difference $c_A-c_L$, which is $(x_A-x_L)/p$ in dollars, so cheaper compute makes a dollar gap more decisive.
+   If $g(c)=\log c$ the share tends to the merit share as $p\to0$ at any fixed dollar ratio, so cheaper compute makes money less decisive.
+   $g(c)=\min\{c,G\}$ is item 1.
+   The parity threshold does not need the Tullock form: for any share $f(x_A/x_L)$ with $f(1)=\tfrac12$, unconstrained symmetric spending is $x=S\,f'(1)$, and $f'(1)=r/4$ for Tullock.
+   The square-root law does need it, at $r=1$.
+   So the assumption carrying "parity costs a fixed fraction of stakes at any $p$" is that the share depends on the compute ratio alone.
+   The article's support for that is the Elo evidence (rating linear in log compute gives win odds $(c_A/c_L)^r$), not the axioms; the draft presents the two as parallel supports.
+   Two weaknesses to state: the log-linear fit holds over the range tested (Elo per doubling is said to fall at long time controls; from memory, unverified), and it is a win probability in board games read as a share of a bargaining surplus (the same gap as item 4).
+   A direct test, separate from measuring $r$: hold the compute ratio fixed, scale both sides up, and see whether the split moves.
+
+   **Where it goes in the draft, to disturb least.** No new section and no new coined term.
+   (a) In "Compute in games against an opponent", reword the two Skaperdas sentences in place so they claim only that the ratio form follows once the unit of effort is chosen, and add one sentence saying the Elo evidence in the next paragraph is what chooses compute as that unit.
+   (b) In "Cruxes", one new item in the first group (which world a matter is in), with the scaling test.
+   (c) In "Limitations and tests", one sentence on the range of the log-linear fit.
+   Do (b) in the same revision as item 1, which rewrites that group of cruxes anyway; doing it separately means editing the same list twice.
 
 ## Other open items
 
