@@ -1,0 +1,572 @@
+---
+title: "Delegated agent constitutional negotiation implies a commitment to total surveillance"
+date: 2026-11-18
+abstract: |
+  A recent proposal holds that personal AI agents can remove the transaction costs that block Coasean bargaining, so that externalities are priced by negotiation between delegates and the state shrinks to a guarantor of the framework.
+  The proposal extends the bargaining to the baseline entitlements themselves, which makes it constitutional in scope, and it promises its users full privacy.
+  We argue that these commitments are jointly unsatisfiable.
+  A contract can condition only on what its enforcer can verify, so each feature of the proposal carries an observability requirement: sensing of conduct, attestation of private circumstances, recorded preference reports, persistent unique identity, inspectable agents, and retained records that can be linked on demand.
+  When the set of contractible matters is itself an outcome of the negotiation, no domain is exempt from these requirements by any rule the negotiators cannot change.
+  Zero-knowledge proofs and differential privacy narrow who reads the record without reducing what must be sensed, and differential privacy bounds the personalization of prices that the proposal counts as its main benefit.
+  The result is a three-way trade-off between granular coverage, automatic enforcement and privacy.
+---
+
+## Introduction
+
+Seb Krier's essay [*Coasean Bargaining at Scale*](https://blog.cosmos-institute.org/p/coasean-bargaining-at-scale) proposes that capable AI agents, one per person, can do what Coase's bargainers could not.
+The agents find the affected parties, state terms, settle payments and verify performance at negligible cost.
+Externalities that are now handled by bans and zoning boards become prices discovered between delegates.
+The state remains, but only to enforce contracts, define basic rights and prohibit catastrophic acts.
+
+The essay is careful in several places where proposals of this kind usually are not.
+It concedes that the initial allocation of entitlements determines who ends up richer, that holdouts must be handled by designed mechanisms, that the sovereign cannot credibly bind itself, and that some risks cannot be priced at all.
+It also makes a promise about privacy: the agent will learn a detailed model of its principal, and the principal, in the essay's words, "should also have complete privacy and control over their 'cognitive profile'".
+Privacy concerns are acknowledged and assigned to cryptography, namely zero-knowledge proofs and differential privacy.
+
+This article examines that assignment.
+Our claim is that the proposal's enforcement machinery and its privacy promise cannot both be delivered, and that the proposal's constitutional scope turns the conflict from a local engineering trade-off into a standing commitment.
+The argument does not depend on agents being misaligned, on providers being malicious, or on the state being predatory.
+It depends on a property of contracts that the incomplete-contracts literature has treated as elementary since [Holmström (1979)](https://doi.org/10.2307/3003320) and [Hart and Moore (1988)](https://doi.org/10.2307/1912698): a term that cannot be verified cannot be enforced.
+
+We proceed as follows.
+We first restate the proposal and define the two terms in our title.
+We then derive six observability requirements from six features of the proposal.
+We argue that constitutional scope removes any exogenous limit on the domain over which those requirements apply.
+We take up the cryptographic reply at length, since it is the essay's own defence, and then four further objections.
+We close with what the authorities cited in the essay have to say about monitoring, and with the conditions under which the implication fails.
+
+## The proposal
+
+We summarize the parts of the essay that our argument uses.
+
+Each person has an advocate agent that acts as a fiduciary.
+Through continuing interaction it builds a model of its principal's preferences, circumstances, values and resources.
+It broadcasts those preferences to other agents with fine conditional structure, such as tolerance for noise on one day of the week and not another.
+The essay calls the result hyper-granular contracting.
+
+The worked examples share a form.
+A household with an asthmatic child causes a higher price to appear for diesel vehicles entering its street, and a delivery vehicle's agent pays or reroutes.
+A neighbour in labour causes the price to fall to zero or below along her route, once the emergency is verified.
+Taxis pay a discovered fee to cut through a low-traffic neighbourhood.
+A health insurer's agent inspects a customer's diet and offers a premium discount in exchange for the customer's agent discouraging sugar purchases.
+Airline passengers negotiate masking and allergen policies with each person's strength of need conveyed faithfully and paid for.
+A developer's agent must find the price at which every affected homeowner consents.
+
+Enforcement is to be automatic.
+Escrow and reputation systems replace litigation where the stakes are small, and the essay describes enforcement as becoming a computation that completes almost at once.
+Courts remain as the backstop.
+
+Strategic behaviour is handled by a second layer of institutions.
+Homeowners pool into a bargaining club that aggregates privately submitted reservation prices into one offer.
+Persistent overbidders lose voting weight or pay a Harberger-style tax on their claimed valuation.
+Diffuse losers from a veto, who do not know what they are losing, are given a voice by agents that quantify their loss, and a vetoing coalition must reimburse it.
+
+The proposal then moves from exchange to rules.
+The initial assignment of entitlements is described as a constitutional choice.
+Inherited jurisprudence supplies the starting point, democratic procedures revise it, and agents make the baseline visible, open to challenge and inexpensive to revise.
+Agents take part in continuous liquid democracy, constructing their principals' positions on new issues as they arise.
+The system has an economic mode weighted by willingness to pay and a democratic mode with equal weight per person, and agents switch between them by issue.
+Which rules stay fixed and which stay open is itself priced and settled by mutual agreement.
+
+Finally, the agent answers to three nested authorities: the law, the terms of its provider, and its principal.
+The state defines and polices the outer boundary, including the prohibition of acts that create unpriceable catastrophic risk.
+
+## Definitions
+
+By *delegated agent constitutional negotiation* (DACN) we mean a regime with three properties.
+
+Delegation
+: Each person is represented by a software agent that holds a model of the person's preferences and circumstances and has authority to bind the person to agreements.
+
+Enforced exchange
+: Agents trade entitlements over externalities through contracts whose performance is verified and settled automatically, with courts as the last resort.
+
+Constitutional scope
+: The same agents negotiate the rules of the exchange: the baseline assignment of entitlements, the choice of decision procedure for each issue, and the boundary between rules that are fixed and rules that remain open.
+
+The third property is the one that distinguishes DACN from agent-assisted bargaining inside a fixed constitution.
+We use *constitutional* in the sense of Buchanan and Tullock's *The Calculus of Consent* (1962), who separate the choice of rules from choices made within rules.
+Krier's essay proposes all three properties, as summarized above.
+
+By *surveillance with coverage $D$* we mean an arrangement in which, for conduct and circumstances in a domain $D$, four conditions hold for nearly every person.
+
+Sensing
+: Conduct and circumstances in $D$ are recorded as they occur by devices or parties that the person does not control.
+
+Attribution
+: The records are bound to a persistent identifier that is unique to the person.
+
+Retention
+: The records persist at least as long as a dispute can be raised or a reputation computed.
+
+Linkability
+: Some party or protocol can join the records attached to one identifier across contexts, under conditions that the person does not set.
+
+Surveillance is *total* when no domain of conduct that affects other people is excluded from $D$ by a rule that the surveilling parties are unable to change.
+
+Three things are absent from this definition.
+It does not require a single watcher, and the arrangement we derive below is distributed across counterparties, providers, auditors and courts.
+It does not require publication.
+It does not require that any human being reads the records.
+The definition concerns what is collected and what can be linked, and so it is closer to Bentham's inspection house than to a state that reads everyone's mail.
+
+We define surveillance by collection because collection is infrastructure and access is policy.
+Who may read a record is determined by key custody and by legal process, both of which can be changed after the record exists, by parties other than its subject.
+The essay supplies the reason this matters when it grants Acemoglu's point that a sovereign cannot commit to refrain from using its power tomorrow.
+
+By *commitment* we mean two things.
+The first is entailment: a polity that adopts DACN has thereby adopted its preconditions.
+The second is irreversibility: once adopted, the preconditions are costly to withdraw.
+We argue for both.
+
+## Observability requirements
+
+Let persons $i \in N$ have private types $\theta_i$ (preferences and circumstances) and choose conduct $a_i$.
+An enforcement mechanism observes a signal $s = \sigma(a, \theta)$ and executes transfers $t(s)$.
+
+**Remark 1.**
+If two profiles $(a, \theta)$ and $(a', \theta')$ produce the same signal, every enforceable contract pays the same in both.
+The set of enforceable contracts is the set of transfer rules measurable with respect to $\sigma$.
+
+This is immediate, and it carries the whole of the first half of our argument.
+The fineness of contracting is bounded by the fineness of the enforcer's information.
+Hyper-granular contracting is a refinement of $\sigma$ under another name.
+Each feature of the proposal that we now examine refines $\sigma$ along a different dimension.
+
+### Conduct
+
+The delivery vehicle owes a fee if and only if it enters the street.
+For the escrow to settle without a human dispute, a record must exist that this vehicle entered this street at this time, in a form the settlement mechanism accepts.
+The record must be produced whether or not the vehicle's operator wants it produced, since otherwise the operator's agent would decline to produce it when a fee is due.
+The same holds for a smoker in a bar, a passenger without a mask, a cut-through taxi, and a purchase of a sugared drink.
+
+The sensing must be as wide as the contracting.
+A street without sensors is a street on which the clean-air fee cannot be collected, and the essay's aim is that no such gaps remain, since each gap is an unpriced externality.
+
+The essay opens by citing [Greenwald and Stiglitz (1986)](https://doi.org/10.2307/1891114) for the claim that externalities are pervasive.
+Their result is that competitive equilibria are generically inefficient *when information is imperfect and markets are incomplete*.
+The externalities in question arise from hidden action and hidden type.
+A programme to price them by contract is therefore a programme to observe the hidden actions and hidden types that produce them.
+The sugar example shows this plainly.
+Diet-related insurance cost is a textbook moral hazard, and the proposed remedy is that the insurer's agent inspects what the customer eats.
+
+Holmström's informativeness principle sharpens the point.
+In the standard moral hazard model, any signal that is informative about the hidden action has positive value to the contracting parties and will be used in the optimal contract.
+Parties who bargain efficiently over an externality will therefore bargain their way to every informative signal that can be had at a cost below its contractual value.
+As sensing becomes cheap, and each person's own agent is already a sensor of that person, the demand for monitoring that emerges from voluntary contracting has no interior stopping point.
+
+Payments are themselves records of conduct.
+A micro-payment from a vehicle's agent to a resident's agent, timestamped, tells the resident that the vehicle passed and tells the vehicle's payment provider where it went.
+A ledger of a million background transfers per person per day is a trace of that person's movements, purchases and exposures.
+
+### Circumstances
+
+Several of the examples condition on a private circumstance of the entitled party: asthma, labour, a life-threatening allergy.
+The essay's diagnosis of the airline case is that the carrier cannot tell a severe allergy from a mild preference and so refuses all accommodation.
+The proposed remedy is that negotiation conveys each passenger's strength of need faithfully and pays for it.
+
+There are two ways to make a report of private circumstances credible.
+The claimant can pay, in which case willingness to pay screens the claim and no verification is needed.
+Or the claim can be attested by a party the counterparties trust.
+
+In Krier's scheme the claimant is usually the recipient of the transfer.
+The household is paid the clean-air fee, and the allergic passenger is compensated.
+When a transfer flows towards the party who reports a harm, an unverified report is an invitation to inflate it, and screening by willingness to pay is unavailable.
+The essay recognizes this for homeowners and answers with a tax on claimed valuations.
+Applied to circumstances, that answer charges people in proportion to their declared vulnerability, so that the family of the asthmatic child pays the largest levy on the street.
+The alternative is to exempt verified conditions, which is attestation.
+
+The emergency case makes the timing demand explicit.
+For every agent along a route to clear the way for a woman in labour, her condition must be verified to them, or to a verifier they trust, within seconds.
+False emergencies must be deterred, which requires that claims be auditable afterwards against medical fact.
+
+Where attestation is available and cheap, declining to attest is informative.
+[Grossman (1981)](https://doi.org/10.1086/466995) and [Milgrom (1981)](https://doi.org/10.2307/3003562) showed that when disclosure is verifiable and costless, the only equilibrium is full disclosure, because silence is read as the worst case.
+[Peppet (2011)](https://scholarlycommons.law.northwestern.edu/nulr/vol105/iss3/4) applied the result to personal data under the name of unravelling.
+A customer who withholds dietary records from the insurer's agent is priced as if the records were bad.
+The essay says of such cases that the decision still belongs to the individual.
+That is true of the choice set and false of the equilibrium.
+
+### Preferences
+
+The Coase theorem assumes that the parties know each other's valuations.
+With private valuations, [Myerson and Satterthwaite (1983)](https://doi.org/10.1016/0022-0531%2883%2990048-0) showed that no bilateral trading mechanism is at once incentive compatible, individually rational, budget balanced and efficient.
+[Farrell (1987)](https://doi.org/10.1257/jep.1.2.113) drew the consequence for the Coase theorem directly.
+[Rob (1989)](https://doi.org/10.1016/0022-0531%2889%2990022-7) studied a firm compensating many residents for pollution, and [Mailath and Postlewaite (1990)](https://doi.org/10.2307/2298018) studied projects that need the consent of many parties.
+Both found that the probability of reaching the efficient outcome falls as the number of parties grows, and in the second case it tends to zero.
+The developer who must obtain the agreement of every homeowner is the Mailath–Postlewaite problem.
+
+These theorems assume costless communication and fully rational parties.
+They are not statements about the frictions that agents remove.
+They describe the world that ideal agents bring about, in which each party's delegate computes and plays the optimal misreport.
+A faithful advocate makes its principal a better strategic bargainer.
+
+There are known ways out, and each has a cost.
+Individual rationality can be dropped, which is coercion and returns the planner.
+Budget balance can be dropped, which needs an outside subsidy raised by taxation.
+Entitlements can be assigned in shares, as in [Cramton, Gibbons and Klemperer (1987)](https://doi.org/10.2307/1913602) and [Segal and Whinston (2016)](https://doi.org/10.1111/jeea.12185), which permits efficient bargaining for some initial allocations and is a reason to take the essay's remarks on default positions seriously.
+Or the private information can be removed by making valuations verifiable.
+
+The proposal's own patches go the last way.
+The bargaining club collects each member's reservation price.
+The fading of overbidders' voting weight requires a history of each person's bids, attributed to that person across negotiations.
+A Harberger-style levy requires a register of claimed valuations against which the levy is assessed.
+Quantifying the loss of diffuse parties who are unaware of it requires that some system hold a model of each such person's interests detailed enough to compute what they would have gained from a project they never heard of.
+That last requirement is the strongest in the essay.
+It asks for a preference model of every person that is consulted without the person's initiative, for every proposal that might affect them.
+
+By the revelation principle, any mechanism of this kind is equivalent to one in which each agent reports its principal's type to a mediator.
+Whether the mediator is a firm, a public body or a multi-party computation, the reports are inputs to it, and the outcome is a function of them.
+We return below to how much the outcome discloses.
+
+The agent's model of its principal is the object on which this all turns.
+If the model can be attested to counterparties, private information is removed and the impossibility theorems lose their force, at the cost of making the principal's preferences verifiable to others.
+If it cannot be attested, the agent is a strategic bargainer with private information and the theorems apply in full.
+The efficiency gain that the proposal promises over the present is available to the degree that the first branch is taken.
+
+Preference privacy is the weakest of our six links, because shared entitlements and subsidized mechanisms can relax it.
+The other five do not depend on it.
+
+### Persons
+
+The democratic mode gives each person equal weight.
+Coalitions of ten thousand residents are to form in an instant.
+Compute credits and agent vouchers are allocated per head.
+Reputation is to discipline agents that renege.
+
+Each of these requires that one person correspond to one persistent identity.
+[Douceur (2002)](https://doi.org/10.1007/3-540-45748-8_24) showed that without a logically central authority that certifies the correspondence between entities and identities, a participant can always present many identities.
+[Friedman and Resnick (2001)](https://doi.org/10.1111/j.1430-9134.2001.00173.x) showed that where identities are cheap to replace, reputation cannot sanction, and newcomers must be distrusted.
+A coalition of ten thousand residents is worth bargaining with only if it has been established that there are ten thousand of them and that they are residents.
+
+Entitlement to compensation adds a further binding.
+To be paid for fumes on a street, an agent must show that its principal lives there or was there.
+Membership of each affected class is a fact about a person's location, property or body, attested against the same identifier that carries the person's reputation.
+
+Reputation requires linkage across interactions by construction.
+A reputation that cannot be joined to an agent's earlier conduct is not a reputation.
+Even where identifiers are pseudonymous, sparse behavioural traces identify their subjects with little side information, as [Narayanan and Shmatikov (2008)](https://doi.org/10.1109/SP.2008.33) demonstrated on far thinner data than a full transaction history.
+
+### Agents
+
+The essay describes agents as a coordination device that lets parties condition their actions on shared signals and contracts and so reach correlated equilibria.
+Conditional commitments of this kind are valuable only when they can be observed.
+[Bagwell (1995)](https://doi.org/10.1016/S0899-8256%2805%2980001-6) showed that in pure strategies the value of commitment disappears when the other party observes the commitment with even slight noise.
+The constructive results on cooperation between programs, beginning with [Tennenholtz (2004)](https://doi.org/10.1016/j.geb.2004.02.002) and continued by [Critch, Dennis and Russell (2022)](https://arxiv.org/abs/2208.07006), assume that each program can read the other's source.
+
+An agent's policy is a compression of its principal.
+The essay's term for it is a cognitive profile grown through long interaction.
+To make the agent's commitments credible to strangers, something about that policy must be verifiable by them or by an attesting third party.
+What is verified about the agent is thereby disclosed about the person.
+
+The agent's fidelity to its principal must also be evidenced.
+The essay asks how an agent's alignment with its user can be designed and shown, and leaves the question to markets and institutions.
+Any answer compares the agent's conduct with the principal's wishes, and whoever performs the comparison sees both.
+In the democratic mode this has a specific consequence.
+An election audit can check the count without inspecting any voter's mind, because the voter marks the ballot.
+Under continuous delegated voting the agent constructs the ballot from its model of the voter.
+Auditing the vote then means auditing the model against the person.
+
+The two modes create a policing problem between them.
+The secret ballot is a deliberately unverifiable institution.
+Receipt-freeness, in the sense of [Benaloh and Tuinstra (1994)](https://doi.org/10.1145/195058.195407), means that a voter cannot prove how they voted, and its purpose is to make vote buying unenforceable.
+An agent that can make verifiable commitments in the economic mode can also prove how it will vote in the democratic mode, and can sell that vote.
+Keeping the modes apart requires detecting side payments between agents that are, by design, exchanging millions of small payments in the background.
+That detection requires inspecting the payments.
+
+Competition among agents needs supervision of the same kind.
+The essay notes that many agents will descend from a few foundation models.
+[Calvano, Calzolari, Denicolò and Pastorello (2020)](https://doi.org/10.1257/aer.20190623) found that independent pricing algorithms learn to sustain collusive prices without communicating.
+An authority charged with keeping agent markets competitive must examine agent behaviour at scale.
+
+Finally, the outermost of the three nested authorities is the law.
+The essay states that an agent must not help its principal commit fraud or acquire the materials for a weapon.
+To honour that constraint the agent must assess the legality of its principal's instructions in the light of everything it knows about the principal.
+This is client-side scanning in the sense analyzed by [Abelson et al. (2024)](https://doi.org/10.1093/cybsec/tyad020), performed by a system with full context on its subject.
+Whether such an agent refuses silently or reports is a configuration choice that sits with the provider and the legislature, not with the principal.
+
+### Disputes and prohibitions
+
+The essay holds that a court with power to enforce agreements is a role for the state that cannot be negotiated away.
+A court decides on evidence.
+For agreements formed and performed between agents in milliseconds, the evidence is the retained record of what each agent offered, accepted, sensed and paid, attributable to the parties.
+Whatever privacy the protocol gave at the time of the transaction must be reversible on judicial demand, or the court cannot do the job the essay assigns it.
+
+The treatment of catastrophic risk asks for more.
+The essay borrows the case of easily made weapons of mass destruction and assigns its prevention to the state as a boundary that agents may not cross.
+The source of that case, [Bostrom (2019)](https://doi.org/10.1111/1758-5899.12718), follows the premise to a conclusion that the essay does not report.
+Bostrom argues that stabilizing a world in which small actors can cause mass harm may require preventive policing supported by ubiquitous, continuous surveillance.
+Prevention differs from enforcement in that it must act before the conduct occurs, on signals drawn from the whole population, since the dangerous actor is not known in advance.
+A state that owes this duty, in a society where every person's instructions pass through an agent bound by law, has an evident place to look.
+
+### Summary
+
+| Feature of the proposal | Requirement | Supporting result |
+|---|---|---|
+| Automatic settlement of externality contracts | Sensing of conduct in every contracted domain | Measurability (Remark 1); Holmström (1979) |
+| Prices conditioned on need, verified emergencies | Attestation of private circumstances | Grossman (1981); Milgrom (1981) |
+| Bargaining clubs, valuation levies, a voice for diffuse losers | Recorded, attributed preference reports and standing preference models | Myerson and Satterthwaite (1983); Mailath and Postlewaite (1990) |
+| Equal votes, instant coalitions, reputation | Persistent unique identity with linked history | Douceur (2002); Friedman and Resnick (2001) |
+| Credible commitment, fidelity, legality, separation of modes | Inspectable agent policies and inter-agent payments | Bagwell (1995); Tennenholtz (2004); Benaloh and Tuinstra (1994) |
+| Courts as backstop, prevention of catastrophic acts | Retention and linkage on demand | Bostrom (2019) |
+
+: Observability requirements of the proposal {#tbl-requirements}
+
+The six requirements together satisfy the four conditions of our definition of surveillance, with coverage equal to the set of domains in which contracts are enforced.
+
+## Constitutional closure
+
+So far the argument shows that surveillance coverage must be at least as wide as contracting coverage.
+A regime of agent-assisted bargaining inside a fixed constitution could stop there.
+The constitution could declare some domains outside contract and some entitlements inalienable in the sense of [Calabresi and Melamed (1972)](https://doi.org/10.2307/1340059), and the sensing would end where the contracting ended.
+
+Constitutional scope removes that stopping point, for four reasons.
+
+*The boundary of the contractible is an outcome of the negotiation.*
+Under DACN, which matters are priced, which are voted on and which are left alone is settled by the agents, and the essay proposes that the settlement be cheap to revisit.
+The sensing infrastructure must therefore be able to extend to any domain that the negotiation may open.
+A domain is opened whenever the reported harms in it exceed the cost of monitoring it.
+With an agent already attending each person, that cost is small and falling.
+
+*An unobserved domain is a ceded entitlement.*
+By Remark 1, a contract over conduct that the enforcer cannot observe is void in effect.
+To exempt a domain from sensing is therefore to assign every entitlement in that domain to whoever acts there.
+A right to be unobserved in the home is, mechanically, a right to impose unpriced externalities from the home.
+In a regime whose organizing principle is that externalities should be priced, privacy is a baseline allocation like any other, favouring one party, and it is open to renegotiation on the same terms.
+
+*Privacy, once alienable, is sold cheaply.*
+Three results point the same way.
+The first is unravelling, described above.
+The second is wealth effects, which the essay itself illustrates with a poor farmer who sells pollution rights cheaply because cash is needed now.
+The third is the externality in data.
+[Choi, Jeon and Kim (2019)](https://doi.org/10.1016/j.jpubeco.2019.02.001), [Acemoglu, Makhdoumi, Malekian and Ozdaglar (2022)](https://doi.org/10.1257/mic.20200200) and [Bergemann, Bonatti and Gan (2022)](https://doi.org/10.1111/1756-2171.12407) show that because one person's data is informative about others, each person's data is nearly worthless at the margin once others have sold theirs.
+The equilibrium price of privacy falls towards zero even when every person values it highly, and Acemoglu and coauthors show that closing the data market can raise welfare.
+This is a Coasean market that fails for Coasean reasons.
+To repair it by the essay's method, the data externality would have to be priced, which would require tracing what each disclosure reveals about third parties.
+That is a further layer of monitoring.
+
+The essay's rule for vetoes makes the position of a privacy holdout worse.
+A coalition that blocks a project must reimburse the quantified loss of those who would have gained.
+Nothing in the mechanism distinguishes a homeowner who blocks a building from a resident who declines sensors and so blocks the fee income of neighbours, or a customer who withholds records and so raises the insurer's pooled cost.
+We extend the essay's rule here beyond its stated use, but the extension follows from applying it uniformly.
+Under it, the person who keeps a domain private pays those who would have profited from its disclosure.
+
+*The settlement must itself be verified.*
+A constitutional outcome produced by agents is legitimate only if the agents represented their principals, each principal counted once, and no votes were bought.
+These are the identity, fidelity and separation requirements already derived.
+They apply to the entire population, since everyone is a party to the constitution.
+
+This establishes commitment in the sense of entailment.
+For irreversibility there are three considerations.
+
+Once clean-air fees and premium discounts are paid, they are income.
+Withdrawing the sensors on a street ends a payment stream to identifiable households, each with a tireless advocate to object.
+Monitoring becomes a vested interest of the monitored.
+
+The essay proposes that some rules harden by mutual agreement so that investment can rely on them.
+Every hardened rule that is enforced automatically presupposes the sensing that enforces it.
+The monitoring layer is therefore the first thing to become fixed and the last that could be reopened.
+
+The third consideration is the sovereign.
+The essay answers the political Coase problem of [Acemoglu (2003)](https://doi.org/10.1016/j.jce.2003.09.003) with more transparency: automated auditing, continuous monitoring for capture, public records of what is priced.
+The apparatus built to watch officials is the same apparatus that records citizens, and the party with final authority over it is the one that cannot commit.
+The essay describes the resulting state as leaner.
+That is accurate about the number of substantive rules the state writes.
+It is the opposite of accurate about the state's evidentiary reach, which extends to every contracted act of every person.
+
+## Cryptographic privacy
+
+The essay's response to privacy concerns is that the system could be built on zero-knowledge proofs and differential privacy, so that preferences are communicated and aggregated without exposing the underlying data.
+This is a serious reply.
+Cryptographic mediators can replace trusted ones for the computation of a correlated equilibrium, as [Dodis, Halevi and Rabin (2000)](https://doi.org/10.1007/3-540-44598-6_7) showed, and privacy-preserving mechanism design is an established field, surveyed by [Pai and Roth (2013)](https://doi.org/10.1145/2509013.2509016).
+We give four reasons why the reply does not rescue the promise.
+
+### Proofs concern commitments
+
+A zero-knowledge proof establishes that committed data satisfy a predicate.
+It does not establish that the committed data describe the world.
+To prove in zero knowledge that a child has asthma, the household needs a credential signed by an issuer that counterparties trust, which presupposes a medical registry that issues such credentials.
+To prove that a vehicle did not enter a street, there must be tamper-resistant sensors whose attestations cover the street.
+
+Zero-knowledge techniques therefore narrow who reads a record.
+They leave unchanged what must be sensed, attributed and retained.
+In the terms of our definition they address publication, which the definition never required, and leave sensing, attribution and retention in place.
+Linkability becomes a question of who holds the keys that open the commitments, and the essay's own requirement of a court with enforcement power settles that some authority must.
+
+### Prices disclose
+
+The proposal's outputs are prices that other agents must see in order to act.
+A price that responds to a person's circumstances is a statistic of those circumstances.
+
+Consider a street of $k$ households whose posted entry fee for diesel vehicles is the sum of the households' reservation prices.
+An observer who sees the fee before and after one household arrives learns that household's reservation price by subtraction.
+An unusually high fee on a short street tells every routing agent in the city that someone there has a strong reason to avoid fumes.
+A fee that falls to zero along a path to a hospital at three in the morning announces a medical emergency at its origin.
+
+Vehicles' agents query these prices continuously, by time of day and vehicle type.
+Each answer is an accurate statistic of the residents' private types.
+[Dinur and Nissim (2003)](https://doi.org/10.1145/773153.773173) showed that sufficiently many sufficiently accurate statistics allow the underlying records to be reconstructed.
+The essay's selling point is that prices are personal, contextual and continuously updated.
+That is the regime in which reconstruction succeeds.
+
+Hayek's account of the price system in [*The Use of Knowledge in Society*](https://www.jstor.org/stable/1809376) praised it for economy of information: a participant needs to know only the price, and the particulars behind it stay with those who hold them.
+That economy depends on prices being low-dimensional summaries formed in thick markets.
+Arrow observed in 1969, in "The organization of economic activity", that a market for each externality has one buyer and one seller, so that nothing forces price-taking.
+A system of personal prices for every externality between every pair of affected parties has as many dimensions as the preference profile it summarizes.
+At that resolution the price vector is a public encoding of the preferences.
+
+### Differential privacy bounds personalization
+
+Differential privacy, due to [Dwork, McSherry, Nissim and Smith (2006)](https://doi.org/10.1007/11681878_14), guarantees that a mechanism's output distribution changes by at most a factor $e^{\varepsilon}$ when one person's input changes.
+The guarantee has a direct consequence for prices.
+
+**Remark 2.**
+Let $M$ be an $\varepsilon$-differentially private mechanism that maps a profile of reports to a price in $[0, \bar{p}]$.
+For any two profiles $\theta, \theta'$ that differ in one person's report,
+$$
+e^{-\varepsilon}\, \mathbb{E}[M(\theta')] \;\le\; \mathbb{E}[M(\theta)] \;\le\; e^{\varepsilon}\, \mathbb{E}[M(\theta')].
+$$
+
+The proof is one line: $\mathbb{E}[M(\theta)] = \int_0^{\bar{p}} \Pr[M(\theta) > x]\,dx \le e^{\varepsilon} \int_0^{\bar{p}} \Pr[M(\theta') > x]\,dx$, and symmetrically.
+
+With $\varepsilon = 0.1$, which is a meaningful level of protection, the expected price can move by about ten per cent in response to anything one household reports.
+The asthma example needs the price to move from negligible to prohibitive on one household's report.
+The emergency example needs it to fall to zero.
+Neither is compatible with any useful $\varepsilon$.
+
+The relaxation used in mechanism design does not help.
+[Kearns, Pai, Roth and Ullman (2014)](https://doi.org/10.1145/2554797.2554834) show that a mediator can implement correlated equilibria under *joint* differential privacy, in which each person's own outcome may depend on their own data while the outcomes of all others are protected.
+Their result holds for large games, in which no single player's action much affects any other player's payoff.
+The price facing the delivery vehicle is the vehicle's outcome and depends on the household's data, so joint privacy for the household bounds it as in Remark 2.
+The large-game condition is the negation of the proposal's premise.
+Coasean bargaining over local externalities concerns the cases in which particular people matter a great deal to particular others.
+
+Continuous repricing compounds the difficulty.
+Privacy loss accumulates across releases, linearly under basic composition and with the square root of the number of releases under advanced composition (see [Dwork and Roth 2014](https://doi.org/10.1561/0400000042)).
+[Dwork, Naor, Pitassi and Rothblum (2010)](https://doi.org/10.1145/1806689.1806787) give the favourable case, a single running count released continually with error polylogarithmic in the number of releases.
+A governance system that reprices every externality within seconds, indefinitely, must either spend an unbounded privacy budget or add noise that grows until the prices no longer track the conditions they were meant to track.
+
+Differential privacy works well where outputs are aggregates over many people, each of whom matters little.
+A congestion charge for a city can be computed privately.
+A fee for one street on behalf of one child cannot.
+The privacy-preserving version of the proposal is one with coarse, slowly changing, population-level prices, which is close to a description of the uniform rules the proposal sets out to replace.
+
+### Auditability is claimed as a benefit
+
+The essay counts transparency among the system's virtues.
+The billionaire who wants a beach must make an open offer, subject to audit, to each person affected.
+Expropriation is harder because what is priced is publicly recorded.
+Corruption is caught by pattern detection over transactions.
+
+These benefits require that offers, prices and payments be legible to parties other than those who made them.
+Pattern detection needs data in a form that an analyst, human or automated, can compute over.
+Selective disclosure schemes can serve some of these purposes, and the design space is large.
+But the essay cannot claim both that the record is public enough to deter the powerful and that it is private enough to protect everyone else, without specifying who decides which persons count as powerful.
+That decision is an access policy, held by an authority, and we are back to the governance of keys.
+
+## Objections
+
+### Participation is voluntary
+
+The essay stresses that the second layer of institutions can be voluntary, and that users can leave a provider they dislike.
+
+Exit from a provider is not exit from the regime.
+Under any provider the agent must sense, attest and retain, or its principal cannot contract.
+Declining to have an agent, or declining to disclose, has the consequences already described: silence is priced as the worst case, and unmonitored domains are ceded.
+The essay anticipates this when it proposes a right to an agent and public provision for those who cannot pay.
+An institution that requires subsidy to ensure universal enrolment is one in which non-enrolment has been judged untenable.
+
+### Surveillance already exists
+
+Commercial and state data collection is already extensive, and the proposal at least pays people for what is taken.
+
+This objection has force, and it identifies what would change.
+Present commercial collection is partial, probabilistic and largely without legal standing.
+An advertising profile is not evidence of an entitlement.
+Under DACN the record is complete over contracted domains, attributed with certainty, and constitutive of legal rights and obligations.
+Being absent from the record has a cost that no one bears today.
+The proposal converts collection from something firms do opportunistically into something the legal order requires in order to function.
+
+### The system can stay small
+
+The essay expects adoption to begin with office thermostats and household chores.
+
+At that scale the argument loses most of its weight, and we regard this as a limit on our claim.
+Our implication is graded: surveillance coverage is at least contracting coverage.
+A bounded club with voluntary membership, mutual visibility and free exit has monitoring that its members control.
+The essay does not propose to stay there.
+It proposes that the same mechanisms extend to urban planning, public goods and the baseline entitlements.
+
+### Symmetric transparency is acceptable
+
+One may accept the conclusion and defend it.
+Brin's *The Transparent Society* (1998) argued that since surveillance technology cannot be stopped, the tolerable outcome is one in which everyone can watch everyone, the powerful included.
+
+This is a coherent position, and a version of the proposal that adopted it would escape our argument by conceding it.
+The essay takes the other course and promises privacy.
+We note only that symmetry is a property that must be enforced, and that the enforcer's own transparency is the political Coase problem again.
+
+## The authorities the proposal cites
+
+The essay grounds itself in Coase, Hayek, Ostrom and Scott.
+Each of them wrote about monitoring, and their views are relevant to how the proposal should be read.
+
+[Coase (1960)](https://doi.org/10.1086/466560) listed among the costs of market transactions the cost of inspection needed to make sure that the terms of a contract are observed.
+The reduction of transaction costs to zero includes the reduction of the cost of inspection to zero.
+On Coase's own accounting, a world of costless bargaining is a world of costless inspection.
+
+[Ostrom (1990)](https://doi.org/10.1017/CBO9780511807763) found that long-lived commons institutions share a set of design principles.
+One is clearly defined boundaries.
+Another is monitoring, by monitors who are the users themselves or are accountable to them.
+A third is graduated sanctions.
+Ostrom's communities governed themselves by watching each other, inside a boundary, with the watchers answerable to the watched.
+The proposal keeps the monitoring and the sanctions and removes the boundary.
+
+Hayek's argument, discussed above, was that the price system spares participants from needing to know each other's particulars.
+The essay cites Hayek for the claim that tacit knowledge is revealed only through choices, and then proposes that tacit desires be turned into prices that machines can read.
+A system that extracts tacit knowledge into explicit form and transmits it is performing the function Hayek said the planner could not perform.
+Whether it is performed by one planner or by a protocol does not change what has been made explicit.
+
+Scott's *Seeing Like a State* (1998) is cited for the proposition that central authorities work with crude categories and miss local knowledge, a defect that agent networks would cure by giving governments a high-resolution, continuous view of citizens' preferences.
+Scott's thesis was that legibility is the precondition of large-scale intervention, and that the opacity of local practice to the centre was a protection for those who lived by it.
+The cure the essay offers for the state's poor eyesight is the condition Scott identified as dangerous.
+
+## Discussion
+
+We have argued that DACN requires sensing of conduct, attestation of circumstances, recorded preferences, persistent identity, inspectable agents and retained, linkable records, over a domain that the regime's own constitutional scope leaves unbounded.
+Cryptography limits readership and does not limit collection, and where it limits disclosure through prices it limits by the same measure the personalization that the proposal offers.
+
+The result can be stated as a trade-off among three properties.
+
+1. *Granular coverage*: any externality, at the resolution of persons and moments, is contractible, and the list of contractible matters is open.
+2. *Automatic enforcement*: contracts settle by verification, without reliance on trust or discretionary judgment.
+3. *Privacy*: there are domains of conduct and circumstance that are not sensed, attributed, retained and linkable.
+
+Any two can be had.
+Granular coverage with privacy leaves enforcement to trust, which works in small groups with exit and is Ostrom's case.
+Automatic enforcement with privacy requires coarse, aggregate instruments, which is the congestion charge and the uniform rule.
+Granular coverage with automatic enforcement is the proposal, and it is the option without privacy.
+
+The implication fails under identifiable conditions, and they indicate what a repaired proposal would look like.
+
+It fails if some entitlements are placed beyond the agents' reach by a rule that they cannot renegotiate.
+A privacy floor of this kind would have to be enforced as the secret ballot is, by making certain facts deliberately unverifiable, and it would leave the externalities behind the floor unpriced.
+This contradicts the essay's aim that baselines be cheap to revisit, and we think the essay should give up that aim.
+
+It fails by degrees if prices are restricted to aggregates over populations large enough for differential privacy to hold.
+The cost is the loss of the examples that motivate the essay.
+
+It fails if enforcement in small bounded groups is left to the members.
+
+Several questions remain open that we have not been able to settle.
+
+We do not have an estimate of how fast personal circumstances leak through street-level prices under realistic query patterns, and the reconstruction bounds we cite are worst-case.
+An empirical or simulation study would show whether the leak is a practical concern at the resolution of a street or only at that of a household.
+
+We do not know whether threshold custody of decryption keys, spread across independent parties, can be made robust against a sovereign that controls the courts those parties answer to.
+The political Coase literature suggests not, but the question has not been posed in that form.
+
+Mechanism design under joint differential privacy has been developed for large games.
+The small-game case, in which a few parties impose large externalities on each other, is the Coasean case, and the achievable frontier between allocative efficiency and privacy loss there is, as far as we can find, uncharacterized.
+Remark 2 gives one crude bound on it.
+A sharper characterization would say how much externality pricing can be bought per unit of privacy, which is the quantity a constitutional negotiation over privacy would need to know before it began.

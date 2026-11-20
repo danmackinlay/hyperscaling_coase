@@ -1,0 +1,63 @@
+*Simulated reading by an AI critic in the manner of Elinor Ostrom; these are not the words of the person.*
+
+# Referee letter on "Coasean street stories"
+
+I read Krier first, and I should say at the outset what I think he gets wrong about my side of the family before I say what the sketches get wrong about him. Krier places the commons communities I studied next to Coase, as though both showed that private parties will strike efficient deals once transaction costs fall. That is not what the fishers of Alanya or the irrigators of the Spanish huertas were doing. They were not bargaining over priced externalities. They were crafting rules: who may enter, who takes what and when, who watches, what happens to someone caught cheating the first time and the third time, and where a dispute goes. Those rules were written by the people bound by them, adjusted over decades, and they worked because the users talked to each other, could see each other, and had a long future together. Cheaper bargaining is no substitute for that, and I would expect a world of cheap bargaining agents to crowd some of it out.
+
+So I came to the sketches sympathetic to their scepticism. My complaint is with where they send the reader for a remedy. Nearly every story ends with a council, a court, a legislature, a registry, or Brussels. In other words, when the market fails, the sketches reach for the state, which is the same dichotomy Krier reaches for in the other direction. My working life was spent showing that this is a false choice. Most of the rules that keep a resource system alive are neither prices nor statutes; they are rules-in-use made and enforced by nested, overlapping bodies of users. The sketches seldom imagine that the street could itself be one of those bodies.
+
+## 1. The honeymoon
+
+This is a good story, and the opening scene, where the protocol is written by whoever turned up to the consultation, is the best observation in the collection. In my terms it says that whoever sets the collective-choice rules decides the operational outcomes, and that the users excluded from setting them will be governed by them all the same. The second of my design principles, congruence between rules and local conditions, and the third, that most of those affected by the rules can take part in changing them, are both broken in the first paragraph. I would make more of this.
+
+But I object to the claim that "none of the agents would have proposed" the rotating lottery and that most people would find it odd. Rotation by lot is among the commonest rules that resource users devise for themselves. The Alanya fishers drew lots each September for named fishing spots and then rotated through them daily, precisely so that no one held the best site permanently; I described the arrangement in *Governing the Commons* (1990). Rotating access to water by turn is ancient in irrigation. The precondition is right, but it is a rule users have invented over and over again without any planner, and the sketch should say so rather than presenting it as an exotic imposition.
+
+## 2. Seventy-five percent
+
+The structural point is sound: under a two-of-three rule, Carol's harm leaves every pair's accounts, so no division of the pact's proceeds keeps every member in. That is a real empty-core result and worth stating. I distrust the narrative wrapped around it, though. The neighbours in the model form a pact and it collapses "within weeks", and the sketch says repetition cannot rescue it. In the laboratory, communication changes common-pool games dramatically. Ostrom, Walker and Gardner (1992, "Covenants with and without a sword") found that face-to-face communication alone raised cooperation substantially, and that letting subjects choose their own sanctioning arrangement raised it further. Real neighbours are linked by many relationships beyond the vans; a defector against Carol meets her at the school gate. The model's neighbours cannot talk, cannot see who signed, and cannot impose any sanction except refusal in this one game. That is a model of strangers, not of a street.
+
+The sketch also leaps from "someone must enforce the pact" to "in practice a platform". Why not the residents' association with its own monitor, accountable to members, and graduated sanctions short of expulsion? That is my fourth and fifth design principle. I do not say it would certainly hold against a company with a thousand streets' memory, but the sketch owes the reader that option and an argument for why it fails, rather than a jump from trust alone to an outside platform.
+
+## 3. The form that cannot say "but not both"
+
+This is the strongest sketch in the set from my standpoint. It shows, precisely, that a description language written by an industry consortium fixes which harms can exist in the bargain, and that better computation inside a poor language makes things worse. The disability-assessment comparison is apt. The double-glazing finding is also good, and fair to Krier, since it shows the optimists' picture working once the language is adequate. I would only add that the people who know which combinations matter are the residents, and the remedy, a preference language "written by someone answerable" to them, is better served by letting user groups write their own clauses than by appointing a regulator of schemas. The point about the table doubling with each slot is the right note of humility: no language carries everything, and someone chooses what it leaves out.
+
+## 4. Everybody's child has asthma
+
+The analysis of the club is correct and fair: Krier's one-price club pays the mildly bothered as if they minded like Carol, and so it transfers to whoever minds least. But the remedy is framed as a choice between a bureaucracy that "sees inside households" and an insurance contract signed under a veil. That leaves out the most ordinary verifier there is: the neighbours. On a real street, people know whose child has asthma. In the communities I studied, monitoring was done mostly by the users themselves, because they had both the local knowledge and the motive. This is Hayek's dispersed knowledge actually being used, inside a small group, without a central assessor. It fails at scale, among strangers, and where privacy is prized, and the sketch could say exactly that. As written, it makes Krier's Hayekian argument look as though it forces the state back in, when the more interesting point is that agents built for strangers discard knowledge that communities already hold.
+
+## 5. Two towns, one depot
+
+Bidding wars among jurisdictions for mobile capital are well documented and the sketch is credible. But calling a regional compact "a planner of the kind the Coasean programme was meant to retire" is wrong. A compact among towns is the textbook case of polycentric order: Vincent Ostrom, Tiebout and Warren (1961) described metropolitan areas as many overlapping jurisdictions that bargain, contract and form special districts among themselves. My eighth design principle, nested enterprises, is exactly a compact sitting above local units without replacing them. The EU's state-aid rules are such a nesting too. The sketch's real finding, that mobility held by one side alone tilts the bargain, needs no planner to remedy it; it needs a level of organisation matching the scale of the firm's option.
+
+## 6. The boundary road
+
+This is the second-strongest sketch, and the one where my own literature is most uncomfortable. Clearly defined boundaries is my first design principle, and it has a dark side: a well-bounded group can govern its own commons beautifully while exporting harm to non-members. In irrigation it is the head-enders and tail-enders problem; Wai Fung Lam's study of Nepal's irrigation systems (1998) treats the conflict between upstream and downstream users as central to institutional performance. The sketch's insight, that the parties to a deal have every reason not to invite the people it dumps on, is stated cleanly and is a direct answer to Krier's claim that agents give the "unconscious blob" a voice. I agree the precondition needs an answer to who counts as affected, set by someone without a stake. I would not concede that only a court can supply it; overlapping associations whose boundaries follow the harm rather than the street can, if they exist, but they must exist first.
+
+## 7. Branch stacking
+
+The mechanism is credible and the Australian analogy is vivid. The sketch overstates when it says an identity registry "is a state function". Membership rolls for water-user associations, cooperative share registers and parish lists have been kept by the users themselves for centuries. The genuine difficulty, rightly named, is the political choice of who counts: renters, children, trusts. That is a boundary rule again, which ties this sketch to the previous one; I would merge or cross-reference them.
+
+## 8. On commission
+
+A plain and convincing principal-agent story. Levitt and Syverson (2008) is apt, and the point that the client never sees the counterfactual answers Krier's faith in switching well. I have little to add, except that the remedy list could include outcome comparisons pooled by the clients themselves, a cooperative of principals, alongside fiduciary law.
+
+## 9. Repeat players
+
+Galanter (1974) is the right ancestor, and the asymmetry in memory is the deepest structural point in the set. I would sharpen one part. When the platform scores households for refusals and the score follows them into insurance and leases, a sanction has been imposed by an outsider on users who never agreed to it, with no graduation, no appeal, and no local forum to resolve the dispute. That inverts my fifth and sixth design principles, and it is why it is so corrosive. The ending ("Legislatures write them") is again the state reflex. Consumer cooperatives and tenant unions have also pooled memory against repeat players; the sketch should ask whether the neighbours' agents could pool theirs.
+
+## 10. The poor street
+
+Credible, sobering, and fair to Krier, who concedes the point about initial allocation himself. The commons literature agrees that heterogeneity in wealth complicates self-governance; Baland and Platteau (1999) argued its effect on local resource management is ambiguous rather than uniformly harmful, which the sketch's certainty could take note of. The essential point stands: no capability gained by agents decides whose units count. That is a constitutional-choice question in the proper sense, and I am glad the sketch says so without pretending agents dissolve it.
+
+## The set as a whole
+
+The strongest sketches are 3, 6 and 9. Each finds a mechanism by which cheap bargaining among unequal parties defines away someone's harm, and each is fair to what Krier actually wrote. The weakest are 2 as argued, because the pact's collapse rests on neighbours who cannot talk, watch or sanction, and 4's remedy, which forgets that neighbours hold the very knowledge whose absence it laments.
+
+The story I miss is a street that governs itself. Let the residents meet, write their own clause language, rotate the final offer by lot, keep their own membership list and monitor one another, and then let the company's agent with a thousand streets' memory arrive. Does the self-governing street hold? If it does, Krier is more right than the sketches allow, though for reasons he did not give: what matters is not that bargaining is cheap but that users can make and change their own rules. If it does not, the essay has its strongest finding, that cheap bilateral bargaining at scale erodes the conditions for self-governance itself, and that would be a sharper reply to Krier's appeal to my work than any appeal to a legislature.
+
+As it stands, the set convinces me that Krier's preconditions are fragile. It does not yet convince me that the state is the only place the missing rules can come from, and the essay will be weaker if it ends where Krier begins, choosing between markets and states.
+
+## Three changes I would ask for
+
+Replace the reflexive "a council, court or legislature supplies the rule" endings with an explicit comparison, for each precondition, between rules made by the affected users, by nested associations, and by the state, saying which can supply it and why. Rerun or at least re-narrate story 2 with neighbours who can communicate and impose graduated sanctions on one another, and report whether the pact survives. Add the missing eleventh story of a self-governing street meeting a repeat player, since it is the test that would decide whether Krier's use of Ostrom is a misreading or a prophecy.

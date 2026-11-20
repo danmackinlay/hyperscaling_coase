@@ -1,0 +1,582 @@
+---
+title: "Delegated agent constitutional negotiation favours the incumbents"
+date: 2026-11-18
+number-sections: true
+abstract: |
+  Krier (2025) proposes that personal AI agents, by cutting the cost of bargaining, could replace much regulation with Coasean exchange.
+  He grants that such exchange presupposes rules about who holds which entitlement, and proposes that agents also help to negotiate those rules.
+  This article argues that when the rules are negotiated by agents acting for principals, influence over them shifts toward incumbents, meaning the parties whom the existing rules have left with entitlements, liquid wealth or control of the negotiating infrastructure.
+  Six mechanisms produce the shift.
+  Consent-based change pays incumbents the full value of their position or leaves the status quo in place.
+  Precise, short-lived rules remove the uncertainty about future positions on which impartial constitutional choice depends.
+  Advocacy over rules is a contest, so cheaper cognition is spent on escalation, and as more rules are opened at once the outcome moves from what each side would gain or lose to what each side can spend.
+  Whoever drafts a complex package of rules has an advantage that cheap cognition does not remove.
+  Rules that are complex and cheap to renegotiate leave decisions with whoever holds residual control, and principals cannot assess how well an agent represents them on rules.
+  The argument is comparative and conditional, and it takes the gains from agent bargaining under fixed rules as given.
+  It implies that constitutional rules should be few, general and durable, that budgets and not technology should be equalized, and that constitutional choice should not be delegated to agents supplied by interested parties.
+---
+
+<!-- TODO citations are hyperlinks; ingest with: uv run ref-cite -c <collection> -i _plans/hyperscaling_coase_constitutional_complexity_1.qmd -->
+
+## Introduction {#sec-intro}
+
+[Krier (2025)](https://blog.cosmos-institute.org/p/coasean-bargaining-at-scale) argues that AI agents acting for individuals could cut the cost of finding counterparties, negotiating and enforcing agreements by orders of magnitude.
+Much of what statute now regulates could then be settled by exchange among the affected parties, in the manner of [Coase (1960)](https://doi.org/10.1086/466560).
+His examples include delivery trucks that pay residents for access to a street, developers who buy the consent of neighbours, and insurers who pay policyholders to change their diet.
+
+The essay is careful about its limits.
+It grants that bargaining needs a starting allocation of entitlements, that the allocation affects who ends up richer and which outcome counts as efficient, and that the allocation is "a constitutional choice, not a technicality".
+Its answer has three parts.
+Existing law supplies the starting allocation.
+Democratic politics revises it.
+Agents can improve democratic politics as well, by learning each citizen's policy preferences, deliberating on the citizen's behalf, delegating votes to trusted parties issue by issue, and making the rules cheap to renegotiate.
+
+This article is about the third part.
+I separate two layers of the proposal.
+The *operational layer* is bargaining under given rules, as when the truck's agent and the residents' agents agree a price.
+The *constitutional layer* is the set of rules that such a bargain presupposes, and @sec-layer lists them.
+I call the setting of constitutional rules by agents acting for principals *delegated constitutional negotiation*, where a principal is the person or firm an agent acts for.
+The thesis is that delegated constitutional negotiation favours incumbents.
+
+The claim is comparative and conditional.
+It compares delegated constitutional negotiation with the outcome the essay expects from it, which is a counterweight to concentrated wealth, and with coarser and slower rule-making under the same distribution of resources.
+It does not say that present institutions treat challengers fairly, and it does not say that operational bargaining by agents is undesirable.
+I take the operational gains as given.
+
+Most published criticism of the Coase theorem concerns the operational layer: private information, wealth effects, the gap between willingness to pay and willingness to accept.
+Krier's essay reviews that criticism and answers it with mechanism design and subsidized access.
+Among later assessments, [Shahidi et al. (2025)](https://doi.org/10.3386/w34468) survey how agents change search, negotiation and contracting costs and note new frictions such as congestion and price obfuscation, and [Tomašev et al. (2025)](https://arxiv.org/abs/2509.10147) discuss the design of markets in which agents transact.
+[Ngo (2026)](https://www.mindthefuture.info/p/economic-efficiency-often-undermines) objects on different grounds, that pricing everything erodes the ability of individuals and groups to remain independent of market pressure.
+None of these examines the layer at which the rules themselves are bargained.
+
+The components of the argument are standard results in public choice, bargaining theory, contest theory and contract theory.
+The contribution is to assemble them for this setting, to identify *constitutional complexity* as the parameter through which the proposal's main virtue, granularity, works against its distributive aim, and to state one proposition (@prp-scope) that makes the dependence explicit.
+
+@sec-layer defines the terms and shows why granular contracting raises constitutional complexity.
+@sec-consent to @sec-agency set out six mechanisms, one per section.
+@sec-objections answers objections, @sec-implications gives predictions and design constraints, and @sec-conclusion states the limits of the argument.
+
+## The constitutional layer of the proposal {#sec-layer}
+
+### Two layers
+
+The distinction between choosing within rules and choosing the rules is the founding distinction of constitutional political economy (Buchanan and Tullock 1962; Brennan and Buchanan 1985).
+Ostrom (1990), whom Krier cites for bottom-up governance, draws the same line when she separates operational rules from the collective-choice and constitutional-choice rules that determine how operational rules are made.
+
+Krier's essay describes the operational layer in detail and the constitutional layer in outline.
+The outline contains the following commitments.
+The starting allocation of entitlements comes from existing jurisprudence.
+Changes to it are made democratically, with agents representing citizens continuously and not only at elections.
+Two modes of negotiation coexist, one weighted by willingness to pay and one that gives each person equal weight, and agents choose between them according to the issue.
+Voluntary institutions sit on top of the agents to deal with holdouts: pooled offers, a self-assessed tax on stated valuations, and a reduction in the weight of persistent high bidders.
+Some rules are fixed by mutual agreement and others stay open to renegotiation.
+Each of these is a rule about rules, and each has to be set by someone.
+
+### Constitutional complexity
+
+Consider the essay's delivery truck.
+Before the truck's agent can be quoted a price for entering a street, at least the following must be fixed.
+
+1. The entitlement: whether residents may charge for entry or the haulier may enter freely.
+2. The protection: whether residents can refuse at any price or must accept a set compensation, which is the choice between a property rule and a liability rule in the terms of [Calabresi and Melamed (1972)](https://doi.org/10.2307/1340059).
+3. Standing: which residents count as affected, over what distance and for which pollutants.
+4. Aggregation: whether the price is a sum of individual bids, a pooled offer, or the result of an equal-weight vote.
+5. Verification: what evidence establishes a child's asthma, and what establishes the emergency that waives the fee.
+6. Anti-holdout terms: the rate of any self-assessed tax and the rule by which high bidders lose weight.
+7. Revision: how often each of the above may be reopened, and on whose initiative.
+
+I define *constitutional complexity* as the number $K$ of such parameters that can be set independently.
+A general rule that settles many cases at once counts once.
+A rule that can be tuned street by street and hour by hour counts once for each setting.
+
+Statute keeps $K$ small by bundling.
+A clean-air zone fixes items 1 to 7 for a whole city with a handful of numbers.
+Krier's objection to statute is this bluntness, and his proposal removes it.
+Two features of the proposal raise $K$.
+The first is granularity: the proposal's value comes from fitting terms to the street, the hour and the household, and each fitted term rests on its own setting of the items above.
+The second is scope: the proposal brings under bargaining many matters that no rule now prices, such as cabin air, weekend noise and diet, and each needs an entitlement where today there is none.
+
+The second feature bears on the essay's choice of default.
+For most of the fine-grained externalities in its examples, existing law gives neither side an enforceable entitlement.
+The practical default is whatever the acting party now does unchallenged, so the truck uses the street for free.
+Taking existing jurisprudence as the starting point therefore assigns most new entitlements to the parties already acting.
+
+### Incumbents
+
+By *incumbents* I mean the parties whom the rules in force when negotiation begins have left best placed to contest those rules.
+Incumbency has three sources.
+The first is entitlement, which fixes what a party keeps if no agreement is reached.
+The second is liquid wealth, which pays for agents and advocacy.
+The third is control of negotiating infrastructure: the firms that supply agents, and the operators of the protocols, marketplaces, escrow and reputation systems through which agents deal.
+A *challenger* is a party seeking to move a constitutional parameter away from the status quo.
+
+The three sources usually coincide, because wealth is in large part the capitalized value of entitlements.
+Where they separate, as with a cash-poor holder of a valuable right, the argument below implies that liquid wealth and infrastructure prevail over bare entitlement, because the form in which an entitlement is protected is itself a constitutional parameter.
+@sec-objections returns to this case.
+
+## Consent preserves the incumbents' position {#sec-consent}
+
+The essay stresses that its institutions can be voluntary.
+Suppose first that constitutional parameters change only by the consent of those affected.
+
+Consent makes the status quo the outcome of disagreement.
+Every change must then leave each party at least as well off as the existing rules do.
+Buchanan and Tullock (1962) defend unanimity as the benchmark for constitutional choice on these grounds.
+[Rae (1975)](https://doi.org/10.2307/1955287) gives the standard objection: unanimity treats inaction as neutral and hands every beneficiary of the existing rules a veto.
+
+Lower transaction costs do not alter this.
+They make it cheaper to buy incumbents out, and they do nothing to reduce what incumbents must be paid.
+[Tullock (1975)](https://doi.org/10.2307/3003249) observed that the value of a legal privilege is capitalized in the hands of its current holders, so that removing it by agreement requires paying them that value in full.
+In the best case for the proposal, agents make such payments feasible where they were not before.
+The efficient reform then happens, and the incumbent keeps the whole value of the old rule plus a share of the gain.
+
+The best case requires few parties and public valuations.
+With private valuations, [Myerson and Satterthwaite (1983)](https://doi.org/10.1016/0022-0531(83)90048-0) show that no voluntary mechanism achieves efficient trade between a single owner and a single buyer without an outside subsidy, when it is uncertain which of them values the good more.
+With many parties the result is stronger.
+[Mailath and Postlewaite (1990)](https://doi.org/10.2307/2298018) consider a collective decision that requires voluntary participation and whose cost grows in proportion to the number of participants, and show that the probability that the decision is taken falls to zero as that number grows, under any mechanism.
+[Rob (1989)](https://doi.org/10.1016/0022-0531(89)90022-7) studies the essay's own case of a firm that must compensate many residents whose damages are private, and finds that the inefficiency grows with the number of residents, so that a large project can fail although it is efficient.
+These are limits set by incentives, as [Farrell (1987)](https://doi.org/10.1257/jep.1.2.113) emphasized, and cheaper communication does not relax them.
+An agent's detailed knowledge of its principal does not help either.
+The knowledge is private to the principal and the agent, and an agent that is loyal in the essay's sense will use it as the principal would, which includes overstating a reservation price when that pays.
+
+The speed of agents does not change the division of gains.
+In the alternating-offers model of [Rubinstein (1982)](https://doi.org/10.2307/1912531), as the interval between offers shrinks, each side's share converges to a value fixed by the two sides' discount rates and stops depending on how fast offers are made.
+The more patient side takes more.
+The side that receives the status quo payoff while talks continue, and has no pressing need for cash, is the more patient side.
+
+Krier's remedies for holdout confirm the point.
+A pooled take-it-or-leave-it offer binds only those who join the pool.
+A self-assessed tax and a reduction in the weight of high bidders override refusal, which turns a property rule into a liability rule.
+They are settings of items 2 and 6 in the list above, and they cannot themselves be adopted by the consent of the holders they are designed to overrule.
+
+Consent therefore has two outcomes.
+With many holders it leaves the status quo in place.
+With few it pays incumbents the full value of their position.
+Any other outcome requires a procedure that does not depend on consent, and the essay supplies one in its democratic mode.
+The remaining mechanisms concern that procedure.
+
+## Precision removes the veil of uncertainty {#sec-veil}
+
+Constitutional political economy has an account of why people with conflicting interests can nevertheless agree on fair rules.
+A rule that is general and long-lived will apply to its author in many future positions that the author cannot foresee.
+Behind this veil of uncertainty the author's interest lies in rules that work tolerably from every position (Buchanan and Tullock 1962; Brennan and Buchanan 1985).
+The veil turns a distributive conflict into something closer to a shared problem.
+
+The account depends on three conditions, and the proposal weakens each.
+
+The first is generality.
+A rule about streets in general has unidentified winners and losers.
+A rule about one street at one hour has named ones.
+Granularity is the proposal's main virtue at the operational layer, and at the constitutional layer it identifies who gains from each parameter.
+
+The second is duration.
+The veil is thick when a rule will outlast anyone's ability to forecast their own circumstances.
+The essay values rules that adjust continuously and are cheap to renegotiate.
+A rule expected to last a month is chosen by parties who know where they will stand that month.
+
+The third is ignorance of one's own position.
+An agent that models its principal's circumstances, preferences and prospects in detail exists to compute how each option affects that principal.
+The better the agent, the thinner the veil.
+
+When the veil is gone, each agent negotiates each parameter as a question of who gets what.
+The outcome of such bargaining follows bargaining strength, and the next section models what determines bargaining strength when the stakes are rules.
+
+## A contest model of constitutional scope {#sec-model}
+
+### Why a contest
+
+In the essay's democratic mode, each person has equal weight and agents deliberate and vote on rules for their principals.
+A vote on a rule requires a view of what the rule will do.
+[Vanberg and Buchanan (1989)](https://doi.org/10.1177/0951692889001001004) distinguish a person's constitutional interests from their constitutional theories, the latter being beliefs about how alternative rules will work out.
+Few principals hold theories about parameters such as items 3 to 7, so an agent must construct its principal's position, as the essay acknowledges when it speaks of constructing preferences on new issues.
+The effect of a rule on one principal depends on how every other agent will behave under it, and before adoption there are no data on that.
+The agent must rely on analysis and argument, and the parties with most at stake have reason to supply both.
+
+I therefore model the setting of each parameter as a contest: the probability that a parameter is reformed rises with the effort spent advocating reform and falls with the effort spent defending the status quo.
+This is a reduced form.
+It is meant to cover persuasion of voting agents, drafting and promotion of proposals, and argument before an adjudicator.
+
+### Setup
+
+There are $K$ constitutional parameters, each with two settings, the status quo and a reform.
+An incumbent $I$ loses $v_I > 0$ for each parameter reformed, and a challenger $C$ gains $v_C > 0$.
+Party $j \in \{I, C\}$ spends $x_{jk} \ge 0$ on parameter $k$.
+Spending buys cognition at unit price $c$, so effort is $e_{jk} = x_{jk}/c$.
+Parameter $k$ is reformed with probability
+$$
+p_k = \frac{e_{Ck}}{e_{Ck} + e_{Ik}} = \frac{x_{Ck}}{x_{Ck} + x_{Ik}},
+$$
+and stays at the status quo if neither side spends.
+This is the contest of Tullock (1980).
+[Skaperdas (1996)](https://doi.org/10.1007/BF01213906) shows that the ratio family to which this function belongs consists of the success functions under which multiplying both efforts by the same factor leaves the odds unchanged.
+That property is the substantive assumption: an equal improvement in both sides' advocates does not change who wins.
+
+Each party has a liquid budget, $\sum_k x_{jk} \le B_j$, and keeps what it does not spend.
+Payoffs are
+$$
+U_C = \sum_k \left( v_C\, p_k - x_{Ck} \right), \qquad
+U_I = \sum_k \left( v_I\, (1 - p_k) - x_{Ik} \right).
+$$
+Write $p_v = v_C/(v_C + v_I)$ for the challenger's share of the combined valuations and $p_B = B_C/(B_C + B_I)$ for the challenger's share of the combined budgets.
+
+### Results
+
+::: {#prp-price}
+
+## Price invariance
+
+Equilibrium spending and reform probabilities do not depend on the price of cognition $c$.
+
+:::
+
+The proof is immediate, since $c$ cancels from $p_k$ and so does not appear in either payoff.
+With one parameter and slack budgets, the equilibrium is $p = p_v$ with total spending $v_C v_I/(v_C + v_I)$.
+When the two valuations are equal, half the contested value is spent on advocacy at any price of cognition.
+A fall in $c$ raises effort on both sides in proportion and leaves the bill where it was.
+
+::: {#prp-scope}
+
+## Scope
+
+Suppose $p_B < p_v$.
+In the pure-strategy equilibrium every parameter is reformed with the same probability $p(K)$, where
+$$
+p(K) =
+\begin{cases}
+p_v & K \le K_1, \\
+\sqrt{B_C / (K v_I)} & K_1 < K < K_2, \\
+p_B & K \ge K_2,
+\end{cases}
+\qquad
+K_1 = \frac{B_C}{v_I\, p_v^2}, \quad K_2 = \frac{B_C}{v_I\, p_B^2}.
+$$
+If $p_B > p_v$ the roles of the parties are exchanged and $p(K)$ rises from $p_v$ to $p_B$.
+
+:::
+
+*Sketch of proof.*
+Each party's payoff is concave in its own spending, so first-order conditions with a multiplier $\lambda_j \ge 0$ on each budget characterize the equilibrium.
+Writing $s_k = x_{Ck} + x_{Ik}$, the conditions are $v_C x_{Ik}/s_k^2 = 1 + \lambda_C$ and $v_I x_{Ck}/s_k^2 = 1 + \lambda_I$.
+Their ratio makes $x_{Ik}/x_{Ck}$, and hence $p_k$, the same for every $k$, and the second condition then makes $s_k$ the same for every $k$.
+With both budgets slack, $\lambda_C = \lambda_I = 0$ gives $p = p_v$ and challenger spending $v_I p_v^2$ per parameter, which is affordable while $K \le K_1$.
+Beyond $K_1$ the challenger spends $B_C/K$ per parameter and the incumbent's unconstrained best response gives $s = v_I p$ and $p = \sqrt{B_C/(K v_I)}$.
+The incumbent's total spending $K v_I\, p(1-p)$ reaches $B_I$ when $p = p_B$, which is at $K = K_2$.
+Beyond $K_2$ both parties divide their budgets equally and $p = p_B$. $\square$
+
+The proposition joins two textbook cases.
+For small $K$ it is the Tullock contest, where the odds follow valuations.
+For large $K$ it is the budget-constrained allocation game of [Friedman (1958)](https://doi.org/10.1287/opre.6.5.699), a member of the Colonel Blotto family ([Roberson 2006](https://doi.org/10.1007/s00199-005-0071-5)), where the odds follow budgets.
+Constitutional complexity moves the system from the first case to the second.
+
+An example fixes magnitudes.
+Let reform be worth twice as much to the challenger as the status quo is to the incumbent, $v_C = 2$ and $v_I = 1$, and let the incumbent have nine times the challenger's liquid budget, $B_C = 1$ and $B_I = 9$.
+Then $p_v = 2/3$ and $p_B = 1/10$.
+With one or two parameters open, each is reformed with probability $2/3$.
+With 25 open, the probability is $1/5$.
+With 100 or more, it is $1/10$, whatever the valuations.
+Reform is efficient for every parameter in this example, so the expected loss per parameter rises as more are opened.
+
+### Interpretation
+
+Three points follow.
+
+First, $K$ here measures scope: the number of rule questions open at once, each carrying a stake of its own.
+If a fixed stake is merely subdivided into more parameters, valuations per parameter fall in proportion and the odds do not change.
+The proposition applies to the proposal because the proposal extends bargaining to matters that were not previously contested, as @sec-layer described.
+
+Second, the result does not require the incumbent to be the richer party in general.
+It says that as scope grows, outcomes stop tracking valuations and start tracking liquid budgets.
+Incumbents are favoured because liquid budgets are what the existing rules have given them.
+
+Third, the proposition separates equal technology from equal budgets.
+Krier remarks that a billionaire's phone is no more capable than anyone else's, and proposes subsidized baseline agents and compute credits for those who cannot pay.
+These measures equalize $c$, which by @prp-price is irrelevant, or add a small amount to $B_C$.
+A grant of $s$ to each party moves the limiting share to $(B_C + s)/(B_C + B_I + 2s)$, which approaches one half only when $s$ is large relative to $B_I$.
+To neutralize the incumbent's advantage, public funding must be comparable to what incumbents are willing to spend, and by the proposition that amount grows with $K$.
+The essay expects the cost of subsidy to approach zero as agent technology becomes a commodity.
+The model implies that it grows with the scope of what is contested and is independent of the price of the technology.
+
+## Drafting, agenda control and verification {#sec-drafting}
+
+The contest model treats each parameter separately.
+Parameters interact, and the interaction gives a further advantage to whoever writes the proposals.
+
+In the equal-weight mode, rules are chosen by something like majority voting over a space with $K$ dimensions.
+[McKelvey (1976)](https://doi.org/10.1016/0022-0531(76)90040-5) shows that in such spaces majority preference generally has no stable outcome, and that a party controlling the sequence of votes can lead the electorate from any starting point to any other.
+[Romer and Rosenthal (1978)](https://doi.org/10.1007/BF03187594) show that an agenda setter facing voters whose alternative is the status quo obtains the outcome it most prefers among those the voters will accept, and obtains more the worse the status quo is for the voters.
+[Baron and Ferejohn (1989)](https://doi.org/10.2307/1961664) find a proposer's advantage in legislative bargaining even when the right to propose is assigned at random.
+Higher $K$ enlarges the space in which these results apply.
+Under the proposal, the agenda belongs to whoever operates the deliberative protocol and to whoever can produce well-formed proposals fastest, which is a matter of spending.
+
+The essay holds that agents remove the cost of reading and comparing terms, and for terms whose effect is cheap to compute this is correct.
+A package of interacting rules is a different object.
+[Arora et al. (2011)](https://doi.org/10.1145/1941487.1941511) show that the designer of a structured financial product can place low-quality assets in it so that detection is computationally intractable for the buyer under standard hardness assumptions, although the designer placed them at negligible cost.
+The asymmetry is between designing and verifying.
+It scales with the size of the object and does not shrink when cognition becomes cheaper for both sides.
+A constitutional package with large $K$ is a combinatorial object of this kind, and the side that drafts it holds the designer's position.
+
+The essay's remedy for capture is transparency: recorded offers, automated audit, detection of corrupt patterns.
+These make trades observable.
+The advantage described here lies in the effects of rules, which stay hard to compute when every clause is public.
+
+## Incompleteness and residual control {#sec-residual}
+
+A constitution with large $K$ will still omit most contingencies.
+The usual explanation is the cost of writing, and agents reduce that cost.
+Contract theory identifies a second cause that agents do not reduce.
+
+[Maskin and Tirole (1999)](https://doi.org/10.1111/1467-937X.00079) show that an inability to describe contingencies in advance does not by itself limit what a contract can achieve, provided the parties can foresee their payoffs.
+[Segal (1999)](https://doi.org/10.1111/1467-937X.00078) and [Hart and Moore (1999)](https://doi.org/10.1111/1467-937X.00080) show where the limit returns.
+In a bilateral trade model in which only one of $n$ possible trades will turn out to be efficient and the parties cannot commit not to renegotiate, the value of any long-term contract converges, as $n$ grows, to the value of writing no contract and settling the trade after the fact.
+Complexity and renegotiation together empty the contract.
+
+The constitutional setting is not Segal's model, and the application is by analogy.
+The analogy is close on the two conditions that matter.
+The proposal multiplies the number of possible arrangements, and it treats cheap renegotiation as a merit.
+Under those conditions, commitments made in advance about future rules carry little weight, and outcomes are settled by bargaining after circumstances are known.
+
+In such bargaining, payoffs depend on residual control, the right to decide whatever the agreement leaves open, which [Grossman and Hart (1986)](https://doi.org/10.1086/261404) identify with ownership.
+The proposal locates residual control in three places.
+For entitlements it lies with current holders.
+For dealings among agents it lies with the operators of the protocols, escrow and reputation systems that the essay relies on for enforcement.
+For the behaviour of each agent in unforeseen cases it lies with the provider, whose terms of service the essay treats as the second of its nested layers of governance.
+All three are incumbents in the sense defined above.
+
+Rules that are costly to change serve a purpose that the proposal's emphasis on flexibility understates.
+[North and Weingast (1989)](https://doi.org/10.1017/S0022050700009451) attribute the growth of English public credit after 1688 to constraints that made it hard for the Crown to revise its commitments.
+[Acemoglu (2003)](https://doi.org/10.1016/j.jce.2003.09.003), whom Krier cites, argues that efficient political bargains fail because those who hold power cannot commit to how they will use it later.
+Krier applies the point to the sovereign.
+It applies equally to the parties in a constitutional negotiation: a rule that can be reopened cheaply protects a party only for as long as that party is strong enough not to need it.
+
+The essay suggests that agents will let basic rules settle by mutual agreement while others stay negotiable.
+Which rules are settled is then decided at the outset, by consent, with the consequences described in @sec-consent.
+
+## The agency relation {#sec-agency}
+
+The preceding mechanisms hold even if every agent serves its principal faithfully.
+A further mechanism concerns whether faithful service can be secured on constitutional questions.
+
+[Hadfield-Menell and Hadfield (2019)](https://doi.org/10.1145/3306618.3314250) describe the instructions given to an AI system as an incomplete contract, whose gaps are filled by whatever the system was built to do in their absence.
+The gaps are widest on constitutional parameters, because the principal has no worked-out position to communicate, as @sec-model noted.
+The position the agent takes is then largely supplied by the agent's design, which is to say by its provider.
+
+Providers have their own stake in constitutional parameters.
+Liability for agents' conduct, portability of the profiles agents accumulate, protocol fees and the standing of agents in disputes are all rules of the kind the agents would be negotiating.
+[Galanter (1974)](https://doi.org/10.2307/3053023) explained the advantage of repeat players in litigation by the fact that they play for the rules while occasional litigants play for the result of the case.
+Agents might seem to make every citizen a repeat player.
+What they do is place a small number of providers in the repeat player's seat, each on both sides of many negotiations at once.
+That arrangement is common agency in the sense of [Bernheim and Whinston (1986)](https://doi.org/10.2307/1912844), and [Calvano et al. (2020)](https://doi.org/10.1257/aer.20190623) show that independently trained pricing algorithms can settle on coordinated outcomes that no one instructed them to seek.
+
+The essay relies on competition to discipline providers: an agent that serves its principal badly will be noticed and abandoned.
+This works for services whose quality the buyer can judge.
+Constitutional representation is a credence good in the sense of [Darby and Karni (1973)](https://doi.org/10.1086/466756), one whose quality the buyer cannot judge even after receiving it, and for which competition does not ensure honest supply ([Dulleck and Kerschbamer 2006](https://doi.org/10.1257/002205106776162717)).
+The effect of a rule appears over years, with no view of what a different rule would have done.
+A principal able to check the agent's position on $m$ parameters out of $K$ examines any given one with probability $m/K$, which goes to zero as constitutional complexity grows.
+
+The available evidence concerns the operational layer, where judging quality should be easiest.
+[Zhu et al. (2025)](https://arxiv.org/abs/2506.00073) find that when agents negotiate consumer purchases against each other, more capable models obtain consistently better terms for their users.
+[Anthropic (2026)](https://www.anthropic.com/features/project-deal) ran a week-long marketplace among 69 employees represented by agents.
+Participants represented by the stronger model did about \$2.50 better per item on a median price of \$12, and participants rated the fairness of deals struck by the weaker and the stronger model almost identically.
+The study was a small pilot at low stakes.
+Its result is nonetheless the opposite of what discipline by competition requires: the principals could not see a disadvantage that was measured in prices.
+At the constitutional layer there is no price to compare.
+
+## Objections {#sec-objections}
+
+### Agents let diffuse interests form coalitions instantly
+
+The essay expects ten thousand residents' agents to combine in an instant and name a collective price.
+This is plausible when the coalition is selling something its members already hold, because each member is paid.
+A coalition that must fund a contest to obtain a rule faces the problem of Olson (1965): the rule benefits members whether or not they contributed.
+Conditional pledges of the kind proposed by [Tabarrok (1998)](https://doi.org/10.1023/A:1004957109535) solve this when valuations are known.
+When valuations are private, the result of [Mailath and Postlewaite (1990)](https://doi.org/10.2307/2298018) covers every mechanism, and a loyal agent under-contributes for its principal as the principal would.
+Coalitions therefore raise $B_C$ by less than the members' combined stake, and by proportionately less as membership grows.
+
+### Agents can be built to be verifiably honest
+
+Programs that can inspect each other can sustain cooperation that opaque parties cannot ([Tennenholtz 2004](https://doi.org/10.1016/j.geb.2004.02.002)), and agents might be required to reveal valuations truthfully.
+A principal who chooses an agent will not choose one that reveals what the principal would conceal, so verifiable honesty has to be imposed.
+The requirement is then a constitutional parameter, adopted through the process whose bias is at issue.
+
+### The equal-weight mode keeps money out
+
+Equal voting weight removes wealth from the count of votes.
+It does not remove it from the formation of positions, the drafting of proposals or the control of the agenda, which are where @sec-model and @sec-drafting locate the advantage.
+The essay's version adds issue-by-issue delegation of votes.
+On the largest platform then running that system, [Kling et al. (2015)](https://arxiv.org/abs/1503.07723) found that delegation concentrated potential voting power in a few heavily delegated members, although those members mostly voted with the majority.
+Concentrated delegation reduces the number of parties an interested advocate needs to persuade.
+
+### Present institutions favour incumbents as well
+
+They do, and lobbying under present institutions is an instance of the large-$K$ case in @prp-scope.
+The thesis is that the proposal extends that case.
+It raises $K$, shortens the life of rules, identifies beneficiaries, and moves residual control to private operators, and each of these strengthens the mechanisms above while budgets are held fixed.
+
+### Entitlement holders are sometimes poor
+
+The essay's example is a farmer who sells a right cheaply because of a need for cash.
+A cash-poor homeowner facing a wealthy developer is another.
+Under a property rule with many holders, the holders prevail by default (@sec-consent).
+Under a self-assessed tax of the kind proposed by [Posner and Weyl (2017)](https://doi.org/10.1093/jla/lax001), the holder must pay each period in proportion to the value claimed, which favours the party with cash, a point that [Ngo (2026)](https://www.mindthefuture.info/p/economic-efficiency-often-undermines) makes about land taxes generally.
+Which rule applies is a constitutional parameter set in the contest, and the contest follows liquid budgets.
+Entitlement without liquidity is therefore the weakest of the three sources of incumbency.
+
+### Summary of the remedies
+
+The table sets each remedy in the essay against the quantity it changes and the quantity that the corresponding mechanism depends on.
+
+| Remedy in the essay | What it changes | What the outcome depends on |
+|---|---|---|
+| Cheaper cognition | Unit price $c$ | Nothing that $c$ affects (@prp-price) |
+| Subsidized agents, compute credits | $c$ for the poor, a little of $B_C$ | Budget share $p_B$ at large $K$ (@prp-scope) |
+| Instant coalitions | Pooling of members' budgets | Contributions to a public good under private valuations |
+| Transparency and automated audit | Observability of trades | Computability of the effects of rules |
+| Competition among providers | Quality the user can judge | Quality the user cannot judge |
+| Cheap renegotiation | Lifetime of rules | The veil of uncertainty, and residual control |
+
+## Predictions and design constraints {#sec-implications}
+
+### Predictions
+
+The argument yields predictions that can be tested in agent negotiation testbeds of the kind used by Zhu et al. (2025).
+
+1. When agents contest a rule, total spending on advocacy does not fall as the price of inference falls, holding stakes fixed.
+2. The share of contested parameters won by the better-funded side rises with the number of parameters open at once, and approaches that side's share of total budget.
+3. Under a consent requirement with privately known valuations, the frequency with which the status quo survives rises with the number of holders, with or without agents.
+4. Principals cannot rank agents by the quality of their representation on rules, including when they can rank them on operational outcomes.
+
+A finding against the first two would undercut @sec-model, and a finding against the fourth would undercut @sec-agency.
+
+### Design constraints
+
+If the argument holds, it constrains how a constitutional layer for agent bargaining should be built.
+It does not rule out the operational layer.
+
+*Keep constitutional complexity low.*
+Constitutional parameters should be few and general even where operational terms are fine-grained.
+A general rule for assigning new entitlements settles many cases with one parameter.
+
+*Make constitutional parameters durable.*
+Long-lived rules restore part of the veil of uncertainty and limit the reach of residual control.
+The essay's distinction between settled and negotiable rules is right in principle, and the settled set should be decided by a procedure other than the consent of current holders.
+
+*Equalize budgets and not technology.*
+By @prp-scope the relevant quantity is spending per contested parameter.
+Caps on spending and public funding matched to the number of open parameters address it.
+Access to capable agents does not.
+
+*Assign new entitlements in equal shares.*
+[Cramton, Gibbons and Klemperer (1987)](https://doi.org/10.2307/1913602) show that efficient voluntary reallocation, which is impossible when one party owns everything, becomes possible when initial ownership is sufficiently dispersed.
+Giving each affected person an equal share of a newly created entitlement is therefore both the fairer default and the one under which Coasean bargaining can succeed.
+Assigning it to whoever is already acting is neither.
+
+*Do not delegate constitutional choice to interested suppliers.*
+Agents can inform constitutional choice without making it.
+Bodies whose members cannot be selected or lobbied in advance, advised by agents from providers with no stake in the parameter at issue, keep the principal's judgement in the loop at the layer where it cannot be audited afterwards.
+
+## Limits and conclusion {#sec-conclusion}
+
+The argument has limits that should be stated.
+The contest model is a reduced form with symmetric binary parameters and exogenous budgets, and it does not represent how deliberation among agents would work in detail.
+The application of the incomplete-contracts results is by analogy.
+The evidence on principals' inability to judge their agents comes from small studies of operational bargaining.
+Nothing here shows that people would be worse off in absolute terms than they are now, since operational gains may be large enough to benefit everyone while the division of those gains tilts toward incumbents.
+
+Within those limits the conclusion is as follows.
+Krier's proposal lowers the cost of bargaining under given rules, and it correctly identifies the giving of the rules as a separate, constitutional matter.
+It then applies the same instrument to that matter.
+The features that make the instrument valuable under given rules (precision, speed, continuous revision, loyal personal advocacy) are the features that, applied to the rules themselves, identify the winners in advance, turn deliberation into a contest of budgets, favour the drafter, and leave open questions to whoever controls the infrastructure.
+Each of these effects grows with constitutional complexity, and granular contracting raises constitutional complexity.
+A system of agent bargaining that is to serve as a counterweight to concentrated wealth needs a constitutional layer that is coarse, durable, funded equally and decided by principals themselves.
+
+## References {.unnumbered}
+
+Acemoglu, D. (2003). Why not a political Coase theorem? Social conflict, commitment, and politics. *Journal of Comparative Economics*, 31(4), 620–652.
+
+Anthropic (2026). Project Deal: our Claude-run marketplace experiment. <https://www.anthropic.com/features/project-deal>
+
+Arora, S., Barak, B., Brunnermeier, M., and Ge, R. (2011). Computational complexity and information asymmetry in financial products. *Communications of the ACM*, 54(5), 101–107.
+
+Baron, D. P., and Ferejohn, J. A. (1989). Bargaining in legislatures. *American Political Science Review*, 83(4), 1181–1206.
+
+Bernheim, B. D., and Whinston, M. D. (1986). Common agency. *Econometrica*, 54(4), 923–942.
+
+Brennan, G., and Buchanan, J. M. (1985). *The Reason of Rules: Constitutional Political Economy*. Cambridge University Press.
+
+Buchanan, J. M., and Tullock, G. (1962). *The Calculus of Consent: Logical Foundations of Constitutional Democracy*. University of Michigan Press.
+
+Calabresi, G., and Melamed, A. D. (1972). Property rules, liability rules, and inalienability: one view of the cathedral. *Harvard Law Review*, 85(6), 1089–1128.
+
+Calvano, E., Calzolari, G., Denicolò, V., and Pastorello, S. (2020). Artificial intelligence, algorithmic pricing, and collusion. *American Economic Review*, 110(10), 3267–3297.
+
+Coase, R. H. (1960). The problem of social cost. *Journal of Law and Economics*, 3, 1–44.
+
+Cramton, P., Gibbons, R., and Klemperer, P. (1987). Dissolving a partnership efficiently. *Econometrica*, 55(3), 615–632.
+
+Darby, M. R., and Karni, E. (1973). Free competition and the optimal amount of fraud. *Journal of Law and Economics*, 16(1), 67–88.
+
+Dulleck, U., and Kerschbamer, R. (2006). On doctors, mechanics, and computer specialists: the economics of credence goods. *Journal of Economic Literature*, 44(1), 5–42.
+
+Farrell, J. (1987). Information and the Coase theorem. *Journal of Economic Perspectives*, 1(2), 113–129.
+
+Friedman, L. (1958). Game-theory models in the allocation of advertising expenditures. *Operations Research*, 6(5), 699–709.
+
+Galanter, M. (1974). Why the "haves" come out ahead: speculations on the limits of legal change. *Law & Society Review*, 9(1), 95–160.
+
+Grossman, S. J., and Hart, O. D. (1986). The costs and benefits of ownership: a theory of vertical and lateral integration. *Journal of Political Economy*, 94(4), 691–719.
+
+Hadfield-Menell, D., and Hadfield, G. K. (2019). Incomplete contracting and AI alignment. *Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society*, 417–422.
+
+Hart, O., and Moore, J. (1999). Foundations of incomplete contracts. *Review of Economic Studies*, 66(1), 115–138.
+
+Kling, C. C., Kunegis, J., Hartmann, H., Strohmaier, M., and Staab, S. (2015). Voting behaviour and power in online democracy: a study of LiquidFeedback in Germany's Pirate Party. *Proceedings of ICWSM 2015*. arXiv:1503.07723.
+
+Krier, S. (2025). Coasean bargaining at scale. Cosmos Institute, 26 September 2025. <https://blog.cosmos-institute.org/p/coasean-bargaining-at-scale>
+
+Mailath, G. J., and Postlewaite, A. (1990). Asymmetric information bargaining problems with many agents. *Review of Economic Studies*, 57(3), 351–367.
+
+Maskin, E., and Tirole, J. (1999). Unforeseen contingencies and incomplete contracts. *Review of Economic Studies*, 66(1), 83–114.
+
+McKelvey, R. D. (1976). Intransitivities in multidimensional voting models and some implications for agenda control. *Journal of Economic Theory*, 12(3), 472–482.
+
+Myerson, R. B., and Satterthwaite, M. A. (1983). Efficient mechanisms for bilateral trading. *Journal of Economic Theory*, 29(2), 265–281.
+
+Ngo, R. (2026). Economic efficiency often undermines sociopolitical autonomy. 10 March 2026. <https://www.mindthefuture.info/p/economic-efficiency-often-undermines>
+
+North, D. C., and Weingast, B. R. (1989). Constitutions and commitment: the evolution of institutions governing public choice in seventeenth-century England. *Journal of Economic History*, 49(4), 803–832.
+
+Olson, M. (1965). *The Logic of Collective Action: Public Goods and the Theory of Groups*. Harvard University Press.
+
+Ostrom, E. (1990). *Governing the Commons: The Evolution of Institutions for Collective Action*. Cambridge University Press.
+
+Posner, E. A., and Weyl, E. G. (2017). Property is only another name for monopoly. *Journal of Legal Analysis*, 9(1), 51–123.
+
+Rae, D. W. (1975). The limits of consensual decision. *American Political Science Review*, 69(4), 1270–1294.
+
+Rob, R. (1989). Pollution claim settlements under private information. *Journal of Economic Theory*, 47(2), 307–333.
+
+Roberson, B. (2006). The Colonel Blotto game. *Economic Theory*, 29(1), 1–24.
+
+Romer, T., and Rosenthal, H. (1978). Political resource allocation, controlled agendas, and the status quo. *Public Choice*, 33(4), 27–43.
+
+Rubinstein, A. (1982). Perfect equilibrium in a bargaining model. *Econometrica*, 50(1), 97–109.
+
+Segal, I. (1999). Complexity and renegotiation: a foundation for incomplete contracts. *Review of Economic Studies*, 66(1), 57–82.
+
+Shahidi, P., Rusak, G., Manning, B. S., Fradkin, A., and Horton, J. J. (2025). The Coasean singularity? Demand, supply, and market design with AI agents. NBER Working Paper 34468.
+
+Skaperdas, S. (1996). Contest success functions. *Economic Theory*, 7(2), 283–290.
+
+Tabarrok, A. (1998). The private provision of public goods via dominant assurance contracts. *Public Choice*, 96(3–4), 345–362.
+
+Tennenholtz, M. (2004). Program equilibrium. *Games and Economic Behavior*, 49(2), 363–373.
+
+Tomašev, N., Franklin, M., et al. (2025). Virtual agent economies. arXiv:2509.10147.
+
+Tullock, G. (1975). The transitional gains trap. *Bell Journal of Economics*, 6(2), 671–678.
+
+Tullock, G. (1980). Efficient rent seeking. In J. M. Buchanan, R. D. Tollison and G. Tullock (eds), *Toward a Theory of the Rent-Seeking Society*. Texas A&M University Press.
+
+Vanberg, V., and Buchanan, J. M. (1989). Interests and theories in constitutional choice. *Journal of Theoretical Politics*, 1(1), 49–62.
+
+Zhu, S., Sun, J., Nian, Y., South, T., Pentland, A., and Pei, J. (2025). The automated but risky game: modeling and benchmarking agent-to-agent negotiations and transactions in consumer markets. arXiv:2506.00073.
