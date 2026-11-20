@@ -90,9 +90,16 @@ no bibliography file is edited by hand.
   repository's own `.env` is not used. Check the dry-run listing for wrong
   metadata (a reprint's editors in place of the author, a revision date in place
   of the publication date) and fix those items in Zotero afterwards.
-- **Items go into the personal library.** Both tools address "My Library"; the
-  library type is fixed in their code. Getting a collection into a group library
-  is a second step with `zot_coll_copy.py` (below).
+- **Items go into the personal library unless `--library` names a group.**
+  Both tools address "My Library" by default and take
+  `--library group:<id-or-name>`, the group's numeric id or its exact name, to
+  read from and write to a group library instead. A top-level `<slug>.qmd` can
+  say it once in its frontmatter with `zotlibrary: group:<id-or-name>`, beside
+  `zotcollpath`: `zotero-export-bibs <slug>.qmd` and `ref-cite -f <slug>.qmd`
+  then use that group, and the flag overrides the frontmatter. A draft under
+  `_notes/` has no frontmatter, so pass the flag. The group has to be synced
+  into the running Zotero. `zot_coll_copy.py` (below) is now needed only to move
+  a collection that already exists from one library to another.
 - **One Zotero collection per essay,** named after the essay's slug unless the
   frontmatter says otherwise with `zotcollpath`.
 - **Bibliographies will be per-document YAML, exported from Zotero.** When a
