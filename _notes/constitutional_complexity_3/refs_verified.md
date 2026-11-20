@@ -1,0 +1,116 @@
+- Acemoglu, D. (2003). [Why not a political Coase theorem? Social conflict, commitment, and politics](https://doi.org/10.1016/j.jce.2003.09.003). *Journal of Comparative Economics* 31(4): 620-652.
+- Aghion, P., & Bolton, P. (2003). [Incomplete social contracts](https://doi.org/10.1162/154247603322256765). *Journal of the European Economic Association* 1(1): 38-67.
+- Aivazian, V. A., & Callen, J. L. (1981). [The Coase theorem and the empty core](https://doi.org/10.1086/466979). *Journal of Law and Economics* 24(1): 175-181.
+- Al-Najjar, N. I., & Smorodinsky, R. (2000). [Pivotal players and the characterization of influence](https://doi.org/10.1006/jeth.2000.2605). *Journal of Economic Theory* 92(2): 318-342.
+- Anderlini, L., & Felli, L. (1994). [Incomplete written contracts: undescribable states of nature](https://doi.org/10.2307/2118357). *Quarterly Journal of Economics* 109(4): 1085-1124.
+- Arrow, K. J. (1969). The organization of economic activity: issues pertinent to the choice of market versus nonmarket allocation. In *The Analysis and Evaluation of Public Expenditures: The PPB System*, Joint Economic Committee, US Congress. UNVERIFIED
+- Arrow, K. J. (1979). [The property rights doctrine and demand revelation under incomplete information](https://doi.org/10.1016/b978-0-12-118850-4.50007-2). In Boskin, M. J. (ed.), *Economics and Human Welfare*. Academic Press: 23-39.
+- Aumann, R. J. (1974). [Subjectivity and correlation in randomized strategies](https://doi.org/10.1016/0304-4068(74)90037-8). *Journal of Mathematical Economics* 1(1): 67-96.
+- Bartholdi, J. J., Tovey, C. A., & Trick, M. A. (1989). [The computational difficulty of manipulating an election](https://doi.org/10.1007/bf00295861). *Social Choice and Welfare* 6(3): 227-241.
+- Bergemann, D., & Morris, S. (2005). [Robust mechanism design](https://doi.org/10.1111/j.1468-0262.2005.00638.x). *Econometrica* 73(6): 1771-1813.
+- Brennan, G., & Buchanan, J. M. (1980). The Power to Tax: Analytical Foundations of a Fiscal Constitution. Cambridge University Press. (no DOI)
+- Buchanan, J. M., & Tullock, G. (1962). [The Calculus of Consent](https://doi.org/10.3998/mpub.7687). University of Michigan Press.
+- Buchanan, J. M., & Yoon, Y. J. (2000). [Symmetric tragedies: commons and anticommons](https://doi.org/10.1086/467445). *Journal of Law and Economics* 43(1): 1-14.
+- Calabresi, G., & Melamed, A. D. (1972). [Property rules, liability rules, and inalienability: one view of the cathedral](https://doi.org/10.2307/1340059). *Harvard Law Review* 85(6): 1089.
+- Calsamiglia, X. (1977). [Decentralized resource allocation and increasing returns](https://doi.org/10.1016/0022-0531(77)90130-2). *Journal of Economic Theory* 14(2): 263-283.
+- Chatterjee, K., & Samuelson, W. (1983). [Bargaining under incomplete information](https://doi.org/10.1287/opre.31.5.835). *Operations Research* 31(5): 835-851.
+- Chen, X., Deng, X., & Teng, S.-H. (2009). [Settling the complexity of computing two-player Nash equilibria](https://doi.org/10.1145/1516512.1516516). *Journal of the ACM* 56(3): 1-57.
+- Coase, R. H. (1960). [The problem of social cost](https://doi.org/10.1086/466560). *Journal of Law and Economics* 3: 1-44.
+- Conitzer, V., & Sandholm, T. (2002). [Complexity of mechanism design](https://arxiv.org/abs/cs/0205075). *Proceedings of UAI 2002* (arXiv:cs/0205075; no DOI).
+- Conitzer, V., & Sandholm, T. (2006). [Complexity of constructing solutions in the core based on synergies among coalitions](https://doi.org/10.1016/j.artint.2006.01.005). *Artificial Intelligence* 170(6-7): 607-619.
+- Cournot, A. A. (1838). Recherches sur les principes mathématiques de la théorie des richesses. Hachette. (no DOI)
+- Cramton, P., Gibbons, R., & Klemperer, P. (1987). [Dissolving a partnership efficiently](https://doi.org/10.2307/1913602). *Econometrica* 55(3): 615.
+- Crémer, J., & McLean, R. P. (1988). [Full extraction of the surplus in Bayesian and dominant strategy auctions](https://doi.org/10.2307/1913096). *Econometrica* 56(6): 1247.
+- d'Aspremont, C., & Gérard-Varet, L.-A. (1979). [Incentives and incomplete information](https://doi.org/10.1016/0047-2727(79)90043-4). *Journal of Public Economics* 11(1): 25-45.
+- Daskalakis, C., Goldberg, P. W., & Papadimitriou, C. H. (2009). [The complexity of computing a Nash equilibrium](https://doi.org/10.1137/070699652). *SIAM Journal on Computing* 39(1): 195-259.
+- Deng, X., & Papadimitriou, C. H. (1994). [On the complexity of cooperative solution concepts](https://doi.org/10.1287/moor.19.2.257). *Mathematics of Operations Research* 19(2): 257-266.
+- Dixit, A., & Olson, M. (2000). [Does voluntary participation undermine the Coase theorem?](https://doi.org/10.1016/s0047-2727(99)00089-4). *Journal of Public Economics* 76(3): 309-335.
+- Dobzinski, S. (2011). [An impossibility result for truthful combinatorial auctions with submodular valuations](https://doi.org/10.1145/1993636.1993656). *Proceedings of STOC 2011*: 139-148.
+- Dobzinski, S., & Vondrák, J. (2012). [The computational complexity of truthfulness in combinatorial auctions](https://doi.org/10.1145/2229012.2229044). *Proceedings of ACM EC 2012*: 405-422.
+- Dodis, Y., Halevi, S., & Rabin, T. (2000). [A cryptographic solution to a game theoretic problem](https://doi.org/10.1007/3-540-44598-6_7). *Proceedings of CRYPTO 2000* (Lecture Notes in Computer Science): 112-130.
+- Ellingsen, T., & Miettinen, T. (2008). [Commitment and conflict in bilateral bargaining](https://doi.org/10.1257/aer.98.4.1629). *American Economic Review* 98(4): 1629-1635.
+- Ellingsen, T., & Paltseva, E. (2016). [Confining the Coase theorem: contracting, ownership, and free-riding](https://doi.org/10.1093/restud/rdw001). *Review of Economic Studies* 83(2): 547-586.
+- Farrell, J. (1987). [Information and the Coase theorem](https://doi.org/10.1257/jep.1.2.113). *Journal of Economic Perspectives* 1(2): 113-129.
+- Gibbard, A. (1973). [Manipulation of voting schemes: a general result](https://doi.org/10.2307/1914083). *Econometrica* 41(4): 587.
+- Green, J. R., & Laffont, J.-J. (1979). Incentives in Public Decision-Making. North-Holland. (no DOI)
+- Grossman, S. J., & Hart, O. D. (1986). [The costs and benefits of ownership: a theory of vertical and lateral integration](https://doi.org/10.1086/261404). *Journal of Political Economy* 94(4): 691-719.
+- Gul, F., & Stacchetti, E. (1999). [Walrasian equilibrium with gross substitutes](https://doi.org/10.1006/jeth.1999.2531). *Journal of Economic Theory* 87(1): 95-124.
+- Hadfield-Menell, D., & Hadfield, G. K. (2019). [Incomplete contracting and AI alignment](https://doi.org/10.1145/3306618.3314250). *Proceedings of AIES 2019*: 417-422. (arXiv:1804.04268, https://arxiv.org/abs/1804.04268)
+- Hart, O., & Moore, J. (1988). [Incomplete contracts and renegotiation](https://doi.org/10.2307/1912698). *Econometrica* 56(4): 755.
+- Hart, O., & Moore, J. (1999). [Foundations of incomplete contracts](https://doi.org/10.1111/1467-937x.00080). *Review of Economic Studies* 66(1): 115-138.
+- Håstad, J. (1999). [Clique is hard to approximate within n^(1−ε)](https://doi.org/10.1007/bf02392825). *Acta Mathematica* 182(1): 105-142.
+- Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review* 35(4). UNVERIFIED
+- Hirshleifer, J. (1971). The private and social value of information and the reward to inventive activity. *American Economic Review* 61(4). UNVERIFIED
+- Holmström, B. (1979). [Groves' scheme on restricted domains](https://doi.org/10.2307/1911954). *Econometrica* 47(5): 1137.
+- Holmström, B. (1982). [Moral hazard in teams](https://doi.org/10.2307/3003457). *Bell Journal of Economics* 13(2): 324.
+- Hurwicz, L. (1960). Optimality and informational efficiency in resource allocation processes. In Arrow, K. J., Karlin, S., & Suppes, P. (eds.), *Mathematical Methods in the Social Sciences*. Stanford University Press. UNVERIFIED
+- Hurwicz, L. (2008). [But who will guard the guardians?](https://doi.org/10.1257/aer.98.3.577). *American Economic Review* 98(3): 577-585.
+- Jackson, M. O., & Wilkie, S. (2005). [Endogenous games and mechanisms: side payments among players](https://doi.org/10.1111/j.1467-937x.2005.00342.x). *Review of Economic Studies* 72(2): 543-566.
+- Jehiel, P., & Moldovanu, B. (2001). [Efficient design with interdependent valuations](https://doi.org/10.1111/1468-0262.00240). *Econometrica* 69(5): 1237-1259.
+- Kahng, A., Mackenzie, S., & Procaccia, A. D. (2021). [Liquid democracy: an algorithmic perspective](https://doi.org/10.1613/jair.1.12261). *Journal of Artificial Intelligence Research* 70: 1223-1252.
+- Kelso, A. S., & Crawford, V. P. (1982). [Job matching, coalition formation, and gross substitutes](https://doi.org/10.2307/1913392). *Econometrica* 50(6): 1483.
+- Krier, S. (2025). [Coasean bargaining at scale: decentralization, coordination, and co-existence with AGI](https://blog.cosmos-institute.org/p/coasean-bargaining-at-scale). Cosmos Institute (web; page title "Coasean Bargaining at Scale", published 2025-09-26). (no DOI)
+- Lehmann, D., O'Callaghan, L. I., & Shoham, Y. (2002). [Truth revelation in approximately efficient combinatorial auctions](https://doi.org/10.1145/585265.585266). *Journal of the ACM* 49(5): 577-602.
+- Mailath, G. J., & Postlewaite, A. (1990). [Asymmetric information bargaining problems with many agents](https://doi.org/10.2307/2298018). *Review of Economic Studies* 57(3): 351.
+- Maskin, E., & Tirole, J. (1999). [Unforeseen contingencies and incomplete contracts](https://doi.org/10.1111/1467-937x.00079). *Review of Economic Studies* 66(1): 83-114.
+- Mount, K., & Reiter, S. (1974). [The informational size of message spaces](https://doi.org/10.1016/0022-0531(74)90012-x). *Journal of Economic Theory* 8(2): 161-192.
+- Myerson, R. B. (1981). [Optimal auction design](https://doi.org/10.1287/moor.6.1.58). *Mathematics of Operations Research* 6(1): 58-73.
+- Myerson, R. B., & Satterthwaite, M. A. (1983). [Efficient mechanisms for bilateral trading](https://doi.org/10.1016/0022-0531(83)90048-0). *Journal of Economic Theory* 29(2): 265-281.
+- Ngo, R. (2026). [Economic efficiency often undermines sociopolitical autonomy](https://www.mindthefuture.info/p/economic-efficiency-often-undermines). Mind the Future (web; published 2026-03-10). (no DOI)
+- Nisan, N., & Ronen, A. (2007). [Computationally feasible VCG mechanisms](https://doi.org/10.1613/jair.2046). *Journal of Artificial Intelligence Research* 29: 19-47.
+- Nisan, N., & Segal, I. (2006). [The communication requirements of efficient allocations and supporting prices](https://doi.org/10.1016/j.jet.2004.10.007). *Journal of Economic Theory* 129(1): 192-224.
+- Papadimitriou, C. H., & Roughgarden, T. (2008). [Computing correlated equilibria in multi-player games](https://doi.org/10.1145/1379759.1379762). *Journal of the ACM* 55(3): 1-29.
+- Petel, M. H. (2025). [Price what you can, protect what you must](https://mateopetel.substack.com/p/price-what-you-can-protect-what-you). Critical Systems (Substack; page title "Price What You Can, Protect What You Must", published 2025-09-28). (no DOI)
+- Posner, E. A., & Weyl, E. G. (2017). [Property is only another name for monopoly](https://doi.org/10.1093/jla/lax001). *Journal of Legal Analysis* 9(1): 51-123.
+- Rice, H. G. (1953). [Classes of recursively enumerable sets and their decision problems](https://doi.org/10.1090/s0002-9947-1953-0053041-6). *Transactions of the American Mathematical Society* 74(2): 358-366.
+- Rob, R. (1989). [Pollution claim settlements under private information](https://doi.org/10.1016/0022-0531(89)90022-7). *Journal of Economic Theory* 47(2): 307-333.
+- Rothkopf, M. H., Pekeč, A., & Harstad, R. M. (1998). [Computationally manageable combinational auctions](https://doi.org/10.1287/mnsc.44.8.1131). *Management Science* 44(8): 1131-1147.
+- Rustichini, A., Satterthwaite, M. A., & Williams, S. R. (1994). [Convergence to efficiency in a simple market with incomplete information](https://doi.org/10.2307/2951506). *Econometrica* 62(5): 1041.
+- Sajja, B., Kleiman-Weiner, M., Zimmermann, R., et al. (2026). [Evaluating rational contracting in natural language](https://arxiv.org/abs/2608.10475). arXiv:2608.10475.
+- Sandholm, T. (2002). [Algorithm for optimal winner determination in combinatorial auctions](https://doi.org/10.1016/s0004-3702(01)00159-x). *Artificial Intelligence* 135(1-2): 1-54.
+- Sandholm, T., Larson, K., Andersson, M., Shehory, O., & Tohmé, F. (1999). [Coalition structure generation with worst case guarantees](https://doi.org/10.1016/s0004-3702(99)00036-3). *Artificial Intelligence* 111(1-2): 209-238.
+- Satterthwaite, M. A. (1975). [Strategy-proofness and Arrow's conditions: existence and correspondence theorems for voting procedures and social welfare functions](https://doi.org/10.1016/0022-0531(75)90050-2). *Journal of Economic Theory* 10(2): 187-217.
+- Schelling, T. C. (1960). The Strategy of Conflict. Harvard University Press. (no DOI)
+- Segal, I. (1999). [Complexity and renegotiation: a foundation for incomplete contracts](https://doi.org/10.1111/1467-937x.00078). *Review of Economic Studies* 66(1): 57-82.
+- Segal, I., & Whinston, M. D. (2011). [A simple status quo that ensures participation (with application to efficient bargaining)](https://doi.org/10.3982/te591). *Theoretical Economics* 6(1): 109-125.
+- Segal, I., & Whinston, M. D. (2016). [Property rights and the efficiency of bargaining](https://doi.org/10.1111/jeea.12185). *Journal of the European Economic Association* 14(6): 1287-1328.
+- Shahidi, P., Rusak, G., Manning, B., Fradkin, A., & Horton, J. (2025). [The Coasean singularity? Demand, supply, and market design with AI agents](https://www.nber.org/papers/w34468). NBER Working Paper 34468.
+- Shannon, C. E. (1949). [The synthesis of two-terminal switching circuits](https://doi.org/10.1002/j.1538-7305.1949.tb03624.x). *Bell System Technical Journal* 28(1): 59-98.
+- Sharp, M., Bilgin, O., Gabriel, I., et al. (2025). [Agentic inequality](https://arxiv.org/abs/2510.16853). arXiv:2510.16853.
+- Starrett, D. A. (1972). [Fundamental nonconvexities in the theory of externalities](https://doi.org/10.1016/0022-0531(72)90148-2). *Journal of Economic Theory* 4(2): 180-199.
+- Tennenholtz, M. (2004). [Program equilibrium](https://doi.org/10.1016/j.geb.2004.02.002). *Games and Economic Behavior* 49(2): 363-373.
+- Tirole, J. (2009). [Cognition and incomplete contracts](https://doi.org/10.1257/aer.99.1.265). *American Economic Review* 99(1): 265-294.
+- Tomašev, N., Franklin, M., Leibo, J. Z., et al. (2025). [Virtual agent economies](https://arxiv.org/abs/2509.10147). arXiv:2509.10147.
+- Tullock, G. (1980). Efficient rent seeking. In Buchanan, J. M., Tollison, R. D., & Tullock, G. (eds.), *Toward a Theory of the Rent-Seeking Society*. Texas A&M University Press. (no DOI)
+- Vaccaro, M., Caosun, M., Ju, H., et al. (2025). [Advancing AI negotiations: a large-scale autonomous negotiation competition](https://arxiv.org/abs/2503.06416). arXiv:2503.06416.
+- Vondrák, J. (2008). [Optimal approximation for the submodular welfare problem in the value oracle model](https://doi.org/10.1145/1374376.1374389). *Proceedings of STOC 2008*: 67-74.
+- Zhu, S., Sun, J., Nian, Y., et al. (2025). [The automated but risky game: modeling and benchmarking agent-to-agent negotiations and transactions in consumer markets](https://arxiv.org/abs/2506.00073). arXiv:2506.00073.
+- Zuckerman, D. (2007). [Linear degree extractors and the inapproximability of max clique and chromatic number](https://doi.org/10.4086/toc.2007.v003a006). *Theory of Computing* 3(1): 103-128.
+
+## Discrepancies
+
+UNVERIFIED (4):
+- Arrow (1969): no Crossref record found (government report; only Arrow's 1985 and other items returned).
+- Hayek (1945), AER 35(4): Crossref returns only later reprints (1996, 2009), no DOI for the AER original.
+- Hirshleifer (1971), AER 61(4): Crossref returns only the 1978 reprint in *Uncertainty in Economics*; no DOI for the AER original.
+- Hurwicz (1960): Crossref returns only the 1977 Cambridge reprint (*Studies in Resource Allocation Processes*, 10.1017/cbo9780511752940.014, pp. 393-460); the 1960 Stanford chapter itself is not indexed.
+
+Corrections and notes:
+- Conitzer & Sandholm (2002): no DOI; arXiv cs/0205075 matches title and authors (a second arXiv repost, 1408.1486, also exists). The UAI 2002 venue is from the list, not confirmed by the arXiv record.
+- Zuckerman (2007): Crossref record 10.4086/toc.2007.v003a006 has an empty title field; matched on author, journal, volume 3 and pages 103-128. The 2006 STOC version (10.1145/1132516.1132612) is a different record.
+- Buchanan & Tullock: the DOI is for the University of Michigan (Ann Arbor Paperbacks) edition, which Crossref dates 1960; the list's 1962 was kept as the original publication year.
+- Hadfield-Menell & Hadfield: the AIES 2019 paper has DOI 10.1145/3306618.3314250 (pp. 417-422); arXiv:1804.04268 confirmed (v1 2018).
+- Sandholm et al. (1999): Crossref lists only four authors (Sandholm, Larson, Andersson, Shehory); Tohmé was kept from the input and not confirmed.
+- Shahidi et al. (2025): NBER link used as instructed (Crossref DOI 10.3386/w34468 also exists); Crossref lists four authors, Horton from the input not confirmed.
+- Sharp et al. (arXiv 2510.16853): first author is Matthew Sharp (4 authors: Sharp, Bilgin, Gabriel, et al.); title matches.
+- Tomašev et al. (2509.10147): first author Nenad Tomasev, 7 authors; title matches.
+- Vaccaro et al. (2503.06416): Michelle Vaccaro, Michael Caosun, Harang Ju et al. (5 authors); title matches.
+- Zhu et al. (2506.00073): Shenzhe Zhu, Jiao Sun, Yi Nian et al. (6 authors); title matches.
+- Sajja et al. (2608.10475): Bhavyesh Sajja, Max Kleiman-Weiner, Roger Zimmermann et al. (4 authors); title matches; posted 2026-08-11.
+- Pages: Crossref gives only a start page for these JSTOR-era items, so only the start page is listed: Calabresi & Melamed (1089), Cramton et al. (615), Crémer & McLean (1247), Gibbard (587), Hart & Moore 1988 (755), Holmström 1979 (1137), Holmström 1982 (324), Kelso & Crawford (1483), Mailath & Postlewaite (351), Rustichini et al. (1041).
+- Dobzinski & Vondrák (2012) and Dobzinski (2011), Vondrák (2008) are proceedings; Vondrák STOC 2008 is the 40th symposium (Crossref).
+- Krier: byline not shown in page metadata (the site author tag reads "Cosmos Institute"); the text refers to "Krier", so the input author was kept. Page published 2025-09-26.
+- Ngo: page title confirmed, publication date 2026-03-10; byline Richard Ngo (site Mind the Future).
+- Petel: page title "Price What You Can, Protect What You Must", published 2025-09-28; byline Mateo H. Petel.
+- Books with no DOI (existence not checked via Crossref beyond reviews of: Brennan & Buchanan, Green & Laffont, Schelling, Cournot; Tullock 1980 chapter seen only as a 2001 reprint): Brennan & Buchanan, Green & Laffont, Schelling, Cournot, Tullock.
+- No other discrepancies in year, venue, volume or issue were found.
