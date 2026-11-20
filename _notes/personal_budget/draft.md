@@ -182,22 +182,22 @@ Suppose a bargaining problem had a finite *depth* $\bar q$, a number of units of
 Then once compute is cheap enough both sides reach $\bar q$ and together spend $2p\bar q$ dollars, which goes to zero with $p$.
 We assume they then split the stake evenly; more carefully stated, the split is whatever the merits and the two sides' outside options give, and compute no longer moves it.
 Call this saturation.
-A fixed finite depth is its simplest form, and below we widen the definition to any matter in which the effect of extra compute fades to nothing as both sides use more of it; a matter of either kind is a *saturating matter*.
+A fixed finite depth is its simplest form, and below we widen the definition to any matter in which the effect of extra compute fades to nothing as both sides use more of it, within the range of compute the parties will use; a matter of either kind is a *saturating matter*.
 If every matter saturates, Krier is simply right about cost, and most of what follows does not apply.
 
 Saturation is not the same thing as diminishing returns.
-For any $r\le1$ the contest above already has diminishing returns to a side's own spend, and yet, as the [first result](#claiming) shows, dissipation in a matter is $rV/2$ whatever compute costs.
+For any $r\le1$ the contest above already has diminishing returns to a side's own spend, and yet, as the [first of the results](#claiming) below shows, dissipation in a matter is $rV/2$ whatever compute costs.
 What makes dissipation independent of the price $p$ is that only the ratio of the two sides' spends matters.
 Saturation is a different property, the existence of an absolute level of compute beyond which nothing changes.
 So the question to ask of a matter is whether it has an absolute scale or only a relative one.
-A *non-saturating matter* is one in which the ratio of the two sides' compute goes on moving the split however much compute both use.
+A *non-saturating matter* is one in which the ratio of the two sides' compute goes on moving the split however much compute both use within the range the parties will use.
 The contest above, in which only the ratio matters at every scale, is the leading case.
 
 To make this precise we let decisiveness depend on the level of compute.
 We write $r(q)$ for the decisiveness measured when both sides use $q$ units of compute, that is, the slope of the log-odds of prevailing on the log of the compute ratio, defined above, taken at equal compute $q$.
 A fixed depth is the extreme case, in which $r(q)$ is zero beyond $\bar q$.
 More generally we say a matter saturates if $r(q)$ falls to zero as $q$ grows over the range of compute the parties will use.
-Between two unconstrained sides each side's equilibrium spend is $Vr(q)/4$, by the [first result](#claiming) with $r(q)$ in place of $r$, and it then goes to zero with the price of compute.
+Between two sides with no budget limit each side's equilibrium spend is $Vr(q)/4$, by the same [first result](#claiming) with $r(q)$ in place of $r$, and it then goes to zero with the price of compute.
 A matter is non-saturating if $r(q)$ stays away from zero over that range.
 
 We carry three cases through the rest of the article.
@@ -206,7 +206,7 @@ In the *non-saturating world* every matter is non-saturating; this is our main c
 In the *mixed world* a fraction $\phi$ of a principal's total stakes $S_i$ is in non-saturating matters, and the rest is in saturating ones.
 The fraction can differ between principals, and we write $\phi$ for whichever principal is under discussion.
 
-Which matters saturate, and who decides whether they do, are questions we take up in the [section on the three worlds](#three-worlds), after the results that show why the answer matters.
+Which matters saturate, and who decides whether they do, are questions we take up in the [section on the three worlds](#three-worlds), which comes after the first three results, the ones that show why the answer matters.
 
 ### Symbols and the people in the stories
 
@@ -398,7 +398,7 @@ While $B<c<\sqrt{BS}-B$ the cap binds the firms but not Asha, and her share is $
 Once $c\le B$ both sides are at the cap and split evenly.
 The cap binds the stronger side first, so falling compute prices first raise Asha's share and only then cut her own bill.
 In this world Krier is right about cost and also about distribution, because the split stops depending on compute.
-That the two sides split a saturated matter evenly is the assumption we made in the [section on saturation](#saturation); more carefully stated, the split is whatever the merits and the two sides' outside options give, and compute no longer moves it.
+That the two sides split a saturated matter evenly is the assumption we made in the [section on saturation](#saturation); as we said there, more carefully stated, the split is whatever the merits and the two sides' outside options give, and compute no longer moves it.
 
 #### The non-saturating world
 
@@ -438,8 +438,9 @@ A matter that stays non-saturating however cheap compute becomes is therefore on
 
 #### Which matters saturate {#which-saturate}
 
-The search story in the section on the two uses of compute gives a test for which matters saturate.
-Each unit of compute buys one independent draw of a candidate argument, clause or counter-proposal, and a side uses its best draw.
+The formula just used takes the depth of a matter as known.
+The search story in the section on the two uses of compute gives a test for which matters saturate in the first place.
+In that story each unit of compute buys one independent draw of a candidate argument, clause or counter-proposal, and a side uses its best draw.
 If whoever holds the single best draw prevails, the chance of prevailing is $q_i/(q_i+q_j)$ whatever the distribution of candidate quality, as the section on the two uses of compute showed.
 That is $r=1$ at every scale, with no saturation, even if quality is bounded.
 Now suppose instead that whoever decides the matter, whether a court, an arbitration protocol or the other side's own assessment, compares the two best draws with an error of fixed size, so that a small enough gap between them is as good as a tie.
@@ -482,7 +483,9 @@ We expect the same direction of change as with a fixed depth, since there decisi
 
 #### Who chooses the world
 
+The test above gives one reason to doubt that every matter saturates, which is that saturation needs both a best answer and a decider that ignores small gaps.
 We doubt that every matter saturates for one further reason, which is an argument and not a theorem.
+It concerns the matters whose depth some party chooses, the case on which the discussion of the mixed world ended.
 The complexity of a contract is chosen by the parties.
 Checking a contract with $K$ interacting clauses means checking $K(K-1)/2$ pairwise interactions, a number that grows as $K^2$, and a contract conditioned on $C$ yes-or-no contingencies has $2^C$ states to consider.
 The side with more compute can add clauses until the other side cannot verify them.
@@ -520,7 +523,8 @@ On that assumption, the mixed world does not last within one household's dealing
 Across the population the outcome is then a division by budget, which is not the mixed world as we defined it: well-funded households are in the saturating world and poorly funded ones in the non-saturating world.
 A household's own mixed world survives where depth is fixed by the nature of the matter or by a protocol the firm cannot alter.
 So neither the saturating world nor the non-saturating world is the right assumption for everyone, and which one holds for a given principal depends on its budget and on who sets the depth.
-Which matters between agents saturate is an empirical question, and the experiment that measures $r$ would answer it, matter type by matter type: saturation shows up as $r(q)$ falling towards zero as both sides' compute $q$ grows.
+The test above says what would make a matter saturate.
+Which matters between agents in fact saturate is an empirical question, and the experiment that measures $r$, described in the section on decisiveness, would answer it, matter type by matter type: by the definition in the [section on saturation](#saturation), saturation shows up as $r(q)$ falling towards zero as both sides' compute $q$ grows.
 
 ### At $r=1$ the weaker side's share equals the fraction dissipated {#dissipation}
 
