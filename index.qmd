@@ -1,0 +1,15 @@
+---
+title: "Hyperscaling Coase"
+subtitle: "Working notes on mechanised causal graphs, decision theory, and agency."
+listing:
+  contents:
+    - "*.qmd"
+    - "!index.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---

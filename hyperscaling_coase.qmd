@@ -1,0 +1,799 @@
+---
+title: Hyperscaling Coase
+subtitle: Normcore market design for computationally abundant societies
+date: '2026-08-19T12:00:00+10:00'
+date-modified: '2026-09-10T05:53:45+10:00'
+categories:
+- AI safety
+- bounded compute
+- compsci
+- cooperation
+- economics
+- game theory
+- incentive mechanisms
+- institutions
+- markets
+- wonk
+link-citations: true
+slug: hyperscaling_coase
+reference-section-title: References
+polish: 0
+novelty: 2
+certainty: 1
+usefulness: 1
+automation: 1
+draft: true
+bibliography: hyperscaling_coase.yaml
+csl: minimalist.csl
+image: /generated_thumbnails/site_previews/images/pap_pax_works_RP-P-OB-84.223.thumbnail.avif
+open-graph:
+  image: /generated_thumbnails/opengraph_previews/images/pap_pax_works_RP-P-OB-84.223.og.jpg
+  image-width: 1200
+  image-height: 630
+date-ai-edit: '2026-09-16T04:26:25+00:00'
+description: "Wherein the Promise of Coasean Bargaining via Tireless AI Agents Is Measured Against the Computational Complexity of Coalition Search, the Exponential Blow-Up of Granular Contracts Is Restrained by Standard Forms, and the Myth of Frictionless Equilibrium Is Confronted by the Hard Limits of Strategic Floors and Pivotality Contests."
+date-ai-summary: '2026-10-09T03:53:03+00:00'
+quality: 8.9
+date-ai-quality: '2026-09-01T00:46:17+00:00'
+nocite:
+- '@*'
+---
+
+![](/images/pap_pax_works_RP-P-OB-84.223.avif){#fig-pap-pax-works .full .figure .illustration}
+
+Might we accidentally stumble into Utopia if we all have ubiquitous personalised AI assistants that, on our behalf, negotiate away the frictions of the world?
+
+A recent body of work argues that the paths to utopia might be short and easy thanks to high efficiency navigation provided by AI assistants.
+_Coasean bargaining_ has become shorthand for this idea, especially for the idea of parties settling political or economic disputes by by such means.
+Think: polluter paying neighbours, or neighbours paying polluter.
+The opposite might be something like having a regulator settle it for them, or banning the harm etc [@Coase1960Problem].
+The “Coasean” outcome can plausibly be welfare-maximizing if the transaction costs (finding each other, agreeing terms, enforcing deals etc) are sufficiently low.
+This is particularly pertinent right now, when ubiquitous AI looks like it has a chance of making things like “transaction costs” cheap.
+Some recent classics in this school include
+
+* Seb Krier’s [Coasean Bargaining at Scale](https://blog.cosmos-institute.org/c/coasean-bargaining-at-scale) [@Krier2025Coasean], who argues that AI agents, acting as tireless personal negotiators, will drive the transaction costs of bargaining toward zero, and thereby let private deals do much of the work we currently assign to the regulatory state.
+* @Shahidi2025Coasean relatedly claim that agents cheap at searching, negotiating, and contracting will move the boundaries of institutions and enable market designs that were hitherto only attractive on paper.
+
+I keep sympathetic notes on the programme in [Delegation and coordination using AI](ai_institutions.qmd).
+
+
+Here I want to examine the claim in terms of computational scaling.
+The question I ask is not whether agents make it cheaper to negotiate an agreement of a a certain level of sophistication — plausibly they make it enormously cheaper.
+Rather, I wish to know, when does cheaper negotiation actually help us?
+What institutions make the best use of cognitive abundance?
+The study of the computational complexity of negotiation is a useful tool for such reasoning, and that is what we deploy here.
+It turns out, upon examination, that there are some problems that are not at all helped by computed scale, and perhaps surprisingly, that many are made worse.
+
+<!-- new: NEW-1 -->
+
+How cheap, then, does bargaining need to be?
+Part of the bill comes from complexity, a count of operations and messages, and cheaper compute lowers their price but not their number.
+Part is a contest, in which cheaper compute lets both sides burn more of the surplus trying to beat each other.
+And part is a floor, surplus lost even with messaging free and nobody computing, which no price of compute touches.
+Working out which is which, we find that the arrangements that make cheap cognition pay look a lot like the institutions we already have.
+
+<!--
+Interesting idea: The $k=1$ setting is the “training the algorithms to replace my profession” scenario.
+-->
+
+<!--
+The standard objections, roughly in order of severity:
+
+* **Private information.** Myerson--Satterthwaite: with independent private valuations no mechanism is simultaneously efficient, individually rational and budget-balanced. Bargaining fails even at zero communication cost. This is your Cooter-style strategic cost, and it is a theorem in the other direction.
+* **Numbers.** Two parties bargain; $n$ parties hold out and free-ride, each the monopolist of their own consent.
+* **Endowment effects.** Empirically, WTA ≫ WTP, so invariance fails even where efficiency roughly holds.
+* **Rights aren't exogenous.** If entitlements are worth money, effort goes into acquiring them rather than using them.
+-->
+
+You and I, as regular schlubs, might concede that we are collectively in utopia if we end up better off, and, more strongly, that _everyone_—or at least _the vast majority of people_—ends up better off as well.
+It would be a good indication of economic paradise if there are more tissue-cultured, low-carbon synth chickens in every pot, or whatever it is that indicates prosperity.
+That is, we want both sufficient prosperity and the distribution of the proceeds of that prosperity to more than a tiny minority of society.
+In economic terms, the former is *efficient* action, and the latter is equitable *division*.
+Putting them together, if a scenario delivers on both, you and I might end up better off under that scenario.
+
+We operationalize these notions as economic *efficiency*.
+Let an action be called *efficient* if it maximizes total welfare^[the _Kaldor-Hicks_ criterion] $W$ where for now $W$ means “the total number of dollars in society is maximized^[This cashes out in people having “quasilinear” utility, which means that their utility is linear in money, so maximizing total dollars also maximizes total welfare. More on that soon].
+This cashes out in _picking the $x$ that maximizes total welfare_ $W$.
+We can choose a fairness criterion to taste—say we are satisfied that the division of such an efficient action is equitable if the _median_ member of society is better off under it, or, even better, say 99% of people are better off under it.
+The utopian variant of Coasean bargaining aims to do both—increase social welfare by creating a bigger surplus, and ensuring a substantial portion of society’s actual people get some share of it.
+
+Let us see how that looks in practice with an example.
+
+## Someone pollutes our hypothetical river
+
+We start with the classic: imagine we live in a river catchment, and the river that flows through it provides our drinking water.
+Upstream from us is the BigCorp™️ factory.^[You can, if you would prefer, imagine that you own BigCorp™️ instead.] BigCorp™️ would really like to minimize its waste disposal costs by dumping waste in the river.
+That waste is somewhat toxic and will impair our health if we drink water from the river.
+So you and I, and all our neighbours, need to negotiate with the factory to control how good or bad the water is, to control whether the factory can pollute at all, and how much it might compensate us if it does so.
+
+Imagine there are $N$ of us residents, $N=\{1,\dots,n\}$, who live downstream.
+BigCorp™️ chooses $x\in\{0,1\}$, pollute or not.^[Continuous emissions are an easy extension.] Its gross profit is $\pi x$ and it pays transfers $t_i$ to each resident $i$.
+Each resident $i$ who lives downstream drinks the water and suffers harm $h_i x$.
+So my welfare $w_i=t_i - h_i x$ is money minus harm from pollution.
+
+Aside: this linear welfare is not realistic (most people are not as hungry for the millionth dollar as the first).
+Krier notes that a poor farmer sells pollution rights cheaply “not because it’s efficient, but because they need cash now”, which is the kind of wealth effect we just assumed away.
+Nevertheless, the simplification makes the mathematics easier, because we get to decouple the question of efficiency (“how much money there is”) from distribution (“who gets that money”).
+It is also a generous assumption for the let-her-rip libertarian-flavour of Coasean bargaining.
+
+With transfers $t_i$ from BigCorp™️ to resident $i$,
+
+$$
+u_f = \pi x - \sum_{i\in N} t_i, \qquad u_i = t_i - h_i x.
+$$
+
+Total surplus is
+
+$$
+W(x) = \Bigl(\pi - \sum_{i\in N}h_i\Bigr)\, x,
+$$
+
+The efficient (in the sense of maximising social welfare) rule is: _pollute if_ $\pi > \sum_i h_i$, otherwise don’t.
+Hold for a moment the question about who gets to benefit from that surplus.
+
+Now we need to invent some institutions so that we can work out how to resolve this.^[We can imagine a world without property rights, but in that world, the residents and BigCorp™️ will solve their disputes by seeing who can assemble the most effective militia to impose their will upon the other.
+That would be the world of the “Hobbes theorem” [@Cooter1982Cost], which feels out of the scope of a model which wants to understand something so cozy as personalized LLM negotiators.]
+
+We vary two things, the ownership rights (*entitlement* [@Calabresi1972Property]) and the information structure.
+
+For the first, the entitlements have many possible structures.
+Let’s go for something simple for concreteness.
+Suppose the current rights attached to the catchment stipulate that BigCorp™️ may pollute (set $x=1$) if it obtains consent from at least $k$ of the $n$ residents, and then it distributes whatever kickbacks and side payments it has negotiated.
+Everyone downstream jointly suffers the harm of pollution, if it happens.
+This leaves the parameter $k$ free to sweep in order to explore a range of different entitlement regimes.
+
+It is also interesting to consider that second property, how the transparency of information affects the bargaining outcomes.
+In the *transparent* setting, everyone knows everything.
+BigCorp™️’s profit $\pi$ and every resident’s harm $h_i$ are common knowledge.
+In the *private* setting, we contrariwise assume that each resident’s harm is drawn from some commonly-known distribution $F$, each resident knows their own $h_i$ and nobody else does, so they can be strategic about disclosing it.
+BigCorp™️ still knows its own profit $\pi$, but the residents do not.
+
+Finally, to keep things simple, we let every other part of the negotiation process be free; in particular, nothing is compute-bound.
+Messages are instant, the arithmetic is simple.
+
+First, consider $k=n$.
+Every resident holds a veto: BigCorp™️ cannot pollute without all $n$ signatures — in economics terms, the consents are perfect _complements_.
+That is to say, the last signature is worth as much as the other $n-1$ together, and every resident can demand compensation up to the value of the whole surplus.
+This is the classic _holdout_ regime [@Rob1989Pollution; @Mailath1990Asymmetric].
+By contrast, at $k=1$ BigCorp™️ needs a single signature to get clearance and consents are perfect _substitutes_, which is the _divide-and-conquer_ regime [@Segal1999Contracting].
+At $k=0$ BigCorp™️ can pollute per default, but the residents can pay it to abate, so abatement is a subscription public good, which is the _free-rider_ regime.
+Intermediate $k$ is a local referendum.
+A set of residents whose consents together satisfy the rule is a [winning coalition](./coalition_games.qmd).
+Under the $k$-of-$n$ rule that is any set of at least $k$ residents: at $k=1$ every resident is a winning coalition on their own, and at $k=n$ the only winning coalition is all of us.
+
+Suppose the catchment has three residents whose respective harms-from-the-pollution would be $h=(2,3,9)$ and a factory whose profit-from-pollution would be $\pi=10$.
+Since $\sum_i h_i = 14 > 10$, the efficient action is not to pollute.
+With everything (harms, profit) common knowledge and $k=3$, BigCorp™️ must, in order to pollute, buy all three consents.
+The residents together will ask at least $14$ (and know they should) which is more than it is worth to BigCorp™️, who walks away, and the river stays clean.
+A win for Coasean bargaining, and the last one for a while.
+
+At $k=1$ BigCorp™️ needs one signature and plays us off against each other in the race to be that one.
+If some other resident is going to sign anyway, my refusal fails to stop anything, BigCorp™️ pollutes, and I suffer $h_i$ regardless.
+In such a case, if I can get any payment at all it is better than nothing, so I may as well accept a token amount.
+Every resident reasons the same way, of course so at negotiation time, we all undercut one another, and the price of a signature falls to nearly nothing.
+BigCorp™️ pollutes, remunerating one of us a token amount and the rest nothing in compensation for the $14$ of harm we suffer to win them a $10$ profit: welfare $-4$.
+This is a failure of coordination.
+We residents could have refused together but could not refuse apart, and the net result is not efficient, nor would it feel equitable.
+
+<!-- new: NEW-2 -->
+
+That we could refuse together but not apart is a theorem: the *core*, the set of divisions no coalition would walk out of, is empty.
+Refusing together guarantees us $0$, which is all the four parties are worth combined, so any division we accept leaves BigCorp™️ nothing.
+But BigCorp™️ and any one of us can pollute on one signature and keep $10-h_i$ between them, so each of us needs that much to stay: $8$, $7$ and $1$, which is $16$ from a pot of $0$.
+@Aivazian1981Coase pointed out that an empty core breaks Coasean bargaining.
+
+At $k=0$ BigCorp™️ holds the right to pollute and we must pay it not to.
+A deal can be struck, since our harms sum to $14$ against a profit of $10$.
+Let us pay, say, $1+2+7 = 10$ so that the river stays clean, and we are better off than the counterfactual.
+Even this is fragile: since abatement is non-excludable, a resident who pays nothing drinks the same clean water as one who paid, so each of us would rather the others covered the $10$.
+Residents $1$ and $2$ could each individually free-ride, because the other two suffer enough harm between them to fund a deal.
+But if _both_ do, the deal falls apart: resident $3$ can raise at most $9$ against an asking price of $10$.
+The deal fails, and overall welfare $W$ falls to $-4$.
+A fight over the division of the spoils removes the spoils.
+
+<!-- new: NEW-3 -->
+
+At $k=0$ the core is not empty: paying $1$, $2$ and $7$ is in it, and so is either low-harm resident paying nothing.
+The collapse is the contribution game landing on none of them, for want of a club or a tax to bind us to one [@Olson2009Logic].
+
+Now bump $\pi$ to $20$, so pollution is efficient^[Well, the fish might think otherwise, but we did not include them in the welfare function, so — sucks to be them.], and set $k=3$.
+There is a surplus of $6$ to divide among four parties, every resident is pivotal, and each can hold out for the whole $6$; if all three do, there is no deal even here.
+With harms common knowledge that is only a fight over the division: each possible division of the $6$ leaves everyone better off than no deal, and complete-information bargaining lands on one of them.
+
+Now make the harms private.
+The division still exists, but BigCorp™️ must ask each of us what our harm is, and at $k=n$ the answer that pays is a bigger number, since nobody can be dropped for overclaiming.
+No voluntary, budget-balanced, honesty-respecting procedure reaches the efficient action for certain [@Myerson1983Efficient], and in the $k=n$ river the odds of reaching it fall toward zero as $n$ grows [@Rob1989Pollution; @Mailath1990Asymmetric].
+These are theorems about who knows what, stated with computation already free; the price of a FLOP does not appear in them anywhere.
+
+That is one failure per regime, and two of the three happen with every $h_i$ common knowledge.
+Those two are failures of incentive: nothing was left to learn and nothing was left to compute, the outcome was each resident’s best reply to the others, and what would change it is a different $k$ or a way for us to bind one another.
+The third is a failure of information, and not one that cheaper messaging repairs, because each of us is the only source of our own $h_i$ and is paid to misreport it.
+Underneath all three is the difference between substitutes and complements: at $k=1$ any consent will do and we undercut each other, at $k=n$ every consent is needed and each of us can hold the deal hostage.
+A single posted price per signature, the same for every resident, clears the market in the first regime and cannot exist in the second, where every deal has to be a cheque with a name on it; that is the subject of a later section.
+And none of this cost anybody a calculation, so the river is the baseline the rest of the essay measures compute against.
+
+One question we passed over: who chose $k$?
+Krier calls such set-before-the-game parameters a constitutional choice.
+A second one arrives when we come to cap the size of a contract.
+Who chooses them, and how, is contested by the same parties who then bargain beneath them, and we defer that question to the end.
+
+## What makes up transaction costs
+
+The Coasean optimist argument goes as follows: transaction costs are what blocked the Coasean deals; AI agents demolish transaction costs; therefore deals happen, and ultimately more deals leads to more efficiency, and that leads to more equity.
+It seems reasonable that some types of transaction costs may be reduced.
+The question, of course, is: since we already know that transaction costs are very diverse, we might wonder which components of the transaction costs will, in fact, be made cheaper by compute.
+
+Resource costs
+: The unit price of each thing a bargain has to do, $p_a$.
+@Dahlman1979Problem catalogued the activities: search and information, bargaining and decision, policing and enforcement.
+On the river they are locating residents, drafting contracts, and monitoring the outfall, and each is bought by the unit, whether the unit is an hour of a lawyer, a survey, a message or a machine operation.
+This is the category Krier’s agents cut: what costs ten thousand dollars in legal fees may well cost pennies in compute, and a message between two agents is priced in tokens rather than in anybody’s afternoon.
+One unit price stays human, the price of telling our own agent what we want, and it matters once contracts are allowed to grow long; the next section takes it up.
+
+Strategic costs
+: Surplus destroyed by the game itself rather than spent on inputs, $L$.
+@Cooter1982Cost observed that the phrase covers this categorically different thing: the surplus lost when rational parties gamble over its division.
+The river showed it under the Coasean premises, every $h_i$ common knowledge and messaging free and instant.
+With no way to bind one another, nothing stopped the two low-harm residents at $k=0$ from both holding back, and when they did the deal failed and the catchment lost $4$.
+At $k=1$ the residents could have refused the factory together and could not refuse it apart, so the signature sold for nothing and the factory polluted, earning $10$ against $14$ of harm.
+Common knowledge does not prevent these failures.
+What would is a way for the residents to bind one another, and that is an institution, not information.
+Add private information and a second member of the category appears.
+At $k=n$ each resident is the only source of their own $h_i$ and is paid to overstate it, and no mechanism makes honesty, efficiency, voluntary participation and budget balance compatible at once, so some overstatement survives whatever procedure is used and free communication does not remove it [@Farrell1987Information].^[The entitlement $k$ fixes the direction of the misreport. At $k=0$ I understate my harm so my share of the payment falls; at $k=n$ I overstate it so my compensation rises — in effect, I have a monopoly on the supply of information about my private harm.]
+This loss is not bought by the unit, so a cheaper unit does not shrink it directly.
+Whether cheaper cognition changes the game itself is a question for the section called The rulebook, and the answer there is that it can, including by funding a contest that burns surplus.
+
+Computational costs
+: The number of units the problem demands, $D_a$, which is the factor of the bill that hardware does not touch.
+A bargain has to do two things: move information between the parties and settle a division.
+Each has a count that the problem sets.
+Locating an efficient deal over many clauses needs a number of bits to cross between the holders of private information that grows exponentially in the clauses [@Nisan2006Communication], and settling a division fairly by computation is hard in the technical sense [@Deng1994Complexity].
+These are lower bounds in the worst case: on the hardest instances no procedure gets by with fewer, whatever runs it.^[The communication bound is unconditional for the class of protocols it covers; the hardness result is conditional on the usual complexity assumptions.]
+A cleverer agent gets past a worst-case bound only by not facing the worst case, by approximating, or by asking for less, and each of those changes the problem rather than the procedure.
+Whether the instance in front of us is a hard one is partly the counterparty’s choice, since the factory picks which clauses to propose and which offers to tailor.
+The entitlement $k$ takes part of that choice away, and caps take the rest, meaning limits fixed in advance on how many parties one bargain may admit and how many clauses one contract may carry; they arrive in the section called The rulebook.
+
+Put together, what it takes to be sure of the efficient deal, spend plus the surplus lost anyway, is at least
+
+$$
+\mathrm{Cost} \;\ge\; \underbrace{\sum_{a} p_a\, D_a(n, m, k)}_{\text{price}\,\times\,\text{count, per activity}} \;+\; \underbrace{L(k, F)}_{\text{strategic floor}},
+$$
+
+where $F$ is the distribution the private harms are drawn from.
+Both terms are floors, which is why the sign points the way it does.
+$D_a$ is the count no procedure gets under on the hardest instances of size $n$ and $m$, so any budget that guarantees the deal covers it.
+$L$ is the loss no procedure avoids: zero while harms are common knowledge, positive once they are private, and the common-knowledge failures above sit over the floor rather than on it, permitted but not forced.
+Every claim about compute in the rest of this post is a claim about one symbol.
+Cheaper cognition lowers $p_a$, for every activity but the human one.
+The next section sizes $D_a$.
+Caps and standard forms lower $D_a$ by changing $n$ and $m$, and nothing lowers $L$ except changing the game.
+And $k$ sits in both terms, because the entitlement fixes both which game the residents play and which instances they face.
+That is why the count and the loss are less separate than the sum makes them look: the instance is chosen inside the game, and the rules are what pull the two apart.
+
+<!-- phase two: cut candidate, scholarly positioning. -->
+
+The activities are Dahlman’s, and the loss, in both its common-knowledge and its private-information forms, is Cooter’s.
+The split of an activity’s cost into a price and a count is this post’s, and we don’t usually make it because the count never appears on a bill: search is a computation and monitoring is a computation, but both are invoiced as however many hours they took, so the count is folded into the price and never itemized.
+The nearest thing to the split in the literature is Williamson’s pair of behavioural assumptions, opportunism and bounded rationality [@Williamson1985Economic].
+Opportunism is $L$ and bounded rationality is $D$, but bounded rationality [@Simon1955Behavioral] entered transaction-cost economics as a background condition, the assumption that agents cannot compute everything, and it has mostly stayed a condition rather than becoming a quantity.
+This post asks how big the quantity is, because whether cheaper cognition helps depends on how $D$ grows against $p$.
+
+Unit prices will fall, and the fall may be large.
+The optimist’s argument takes a fall in $p$ for a fall in the bill, and that is its first gap: $p$ is one factor of one term.
+There is a second gap, and it organizes the rest of this post.
+Bargaining was never the only way to handle a harm, even in the tradition the argument invokes.
+When Coase turned to the case where transactions cost something, he set the market beside three alternatives—the firm, regulation, and leaving the harm alone—and asked which was cheapest in the case at hand, with no presumption that any one of them wins [@Coase1960Problem, sec. VI].
+The firm is the one he had already worked out: inside it an administrative decision does the work the bargains among the cooperating parties would have done [@Coase1937Nature].
+He treated regulation as the same move made by a body that can decline the market altogether, and reading him that way I put the four options on one axis, from spot bargaining to decree.
+Krier’s programme is a case for the first option, with the state kept on as enforcer; the firm, the second option, is where a later section goes.
+So there are two questions in front of us rather than one.
+Whether $D$ grows faster than $p$ falls is arithmetic, and it is next.
+Which of the four options the arithmetic then favours is where this post ends.
+
+<!-- new: NEW-4 -->
+
+The three parts of the bill named at the start now have symbols.
+The *floor* is the surplus lost at a fixed unit price, on $L$ or over it, and it is what the river showed: three failures with messaging free and nothing computed.
+*Complexity* is the count $D$, what must be computed or communicated in a decision problem, where nobody is fighting.
+The *contest* is what compute buys when the other side is spending too, and it is the cross-term between the decomposition’s two terms: the loss growing as $p$ falls.
+In a decision problem the returns to compute have a knee, past which more buys nothing; in a contest there is a prize, and the marginal value of compute is set by the prize and the opponent rather than by any production function [@Tullock1980Efficient; @Hirshleifer1989Conflict].
+The clauses, $m$, bring complexity and contest both, and come next; the parties, $n$, bring contest alone, which comes after the section on prices.
+
+## How big is a contract?
+
+<!-- placeholder title; was "How big is the bargaining problem?" plus the clause half of "Cheap is not free". -->
+
+<!-- phase two: trim; 401 words. -->
+
+Suppose every agent is truthful, every preference is known to its owner free of charge, and nobody plays games — the strategic ledger cleared to zero by fiat.
+What remains is counting.
+Two size parameters run through everything that follows: $n$, the number of residents the water touches, and $m$, the number of separately priceable clauses a contract can carry.
+On the river the clauses are specific permissions; say $m=4$, with (1) *discharge at night*, (2) *discharge in summer*, (3) *exceed the odour threshold*, (4) *skip third-party monitoring*.
+A contract configuration is a subset of these permissions granted — $\{\text{night},\text{summer}\}$ is one deal, $\{\text{night},\text{monitoring waived}\}$ another — so $m$ clauses give $2^m$ expressible deals, sixteen already in this small case, with the transfer riding along as a single number.
+The reason a resident’s preferences take $2^m$ numbers rather than $m$ is that clause values interact: summer discharge harms me more when monitoring is also waived, so the value of a bundle is not the sum of the values of its clauses.
+$m$ is the *dimension* of the deal space; prices contribute nothing to the blow-up.
+Keeping track of which quantity grows in which parameter turns out to be most of the argument.
+One more decision to make explicit: whether $m$ and $n$ move together.
+In our model they do not — the clauses describe the one outfall, so a new resident brings a new $h_i$ but no new clause, and the valuations below total $n \cdot 2^m$ numbers rather than $2^{mn}$.
+That is again the friendly assumption.
+In the full programme the two couple: every new participant brings new contractable surfaces — their street, their driveway, their working hours — so the system-wide clause count grows with the population, $m$ is more nearly a function $m(n)$ than a constant, and the $2^m$ objects inherit the $n$-race.
+We hold $m$ fixed because the argument goes through without the coupling; where the coupling would make things worse, I flag it.^[In measure-theoretic dress: the $m$ clauses are generating events, the deal space is the $2^m$ atoms of the algebra they generate, and a contract-relevant preference is one number per atom. So $m$ counts *generators* — the yes/no questions a contract is able to ask — not the sets of the algebra (of which there are $2^{2^m}$), and not prices. The contract coarsens the world, and preferences enter the bargaining only through that coarsening.]
+
+*The preference object.* Our model keeps the bargaining domain deliberately spare: one binary decision, harms that add up, consents that are interchangeable, so the worth of any bloc $S$ is pinned down by $|S|$ and $\sum_{i\in S}h_i$ — which is what let us do $n=3$ on the back of an envelope.
+Krier’s vision runs the other way: bargaining over rich domains, “hyper-granular” contracts priced by route, hour, decibel, and diesel particulate.
+Each independently priceable clause doubles the space of contract configurations, so a resident’s preferences over them are $2^m$ numbers before anyone has negotiated anything.
+Compression is possible exactly when the preferences have structure — additivity, separability, a small set of interacting clauses [@Ieong2005Marginal] — which is to say, exactly to the degree that the domain stays as spare as our toy.
+The granularity is the promise, and the granularity is the blow-up; hyper-granular and compactly-representable can only coexist if the preferences were simple all along.
+
+*The division.* However many residents there are, choosing the action needs only a sum, $\pi$ against $\sum_i h_i$; what remains is dividing the surplus.
+This is the *division* named earlier: with the action settled, who gets how much of the surplus $W$ — how much BigCorp™️ keeps, how much reaches each of us.
+Our symmetric consent game has closed forms, but the smallest step toward realism — unequal standing, a quota counted in dollars or hectares rather than heads — lands in the weighted voting games for which the Shapley value is #P-complete [@Deng1994Complexity], and testing whether a proposed division is safe against defection is no easier [@Conitzer2006Complexity].
+#P is the counting analogue of NP: the exact Shapley value asks not *whether* a resident can be pivotal but in *how many* of the possible arrival orders.
+The exhaustive count costs $O(2^n\,\mathrm{poly}(n))$, and nothing faster is known.^[I would like to say the exponent is *conditionally* tight — that the counting analogue of the exponential-time hypothesis forbids $2^{o(n)}$ here, the way it does for counting satisfying assignments to a 3-CNF. I have not found that result stated for weighted voting games, so the $2^n$ below is unbeaten rather than proved necessary.] The escape hatch is more instructive than the wall: with integer weights and quota $q$ there is a dynamic programme running in $O(n^2 q)$ [@Matsui2000Survey] — *pseudo-polynomial*, hard only when the stakes are finely measured, because $q$ counts the distinguishable weight levels.
+Pivotality is cheap to compute on a river surveyed in whole hectares and #P-complete on one surveyed in cents; the fine granularity that was the programme’s promise is, once again, the price.
+Sampling gets us estimates with error bars [@Castro2009Polynomial]; the error bars then become the next thing bargained over.
+Of the counts in this section, the $2^n$ is the only one that grows exponentially in the parties, and it matters as the precondition for the contest two sections on: an exact answer nobody can afford is what keeps the division open to dispute.
+
+*The bits.* @Nisan2006Communication showed that computing an efficient allocation over combinatorial preferences requires total *communication* exponential in $m$, the number of things being priced — and the supporting price list is an exponential object too, one price per bundle rather than per clause.
+This bound is indifferent to hardware and to honesty; it counts bits that must pass between the parties, because the inputs begin distributed across them.
+A datacentre accelerates what happens inside one mind.
+It does nothing to the number of bits that must cross between minds, and the residents’ preferences start in the residents.
+
+Now we consider how rapidly the cost grows as we let each parameter grow.
+Costs are exponential in the number of contract configurations, $C=\mathcal{O} (e^m)$.
+We could imagine this being controlled by capping the number of contract variants available, and this controls the scaling.
+This is not entirely satisfying: capping the language is the sort of blunt one-size-fits-all rule the programme set out to abolish.
+Also, who gets to choose which variants of the contract are included in the capped set?
+Now, we consider how serious must be the AI price ratio to keep this under control.
+
+The question we set at the top was how cheap bargaining needs to be, so we put numbers on cheap.
+Suppose the price of computation halves every couple of years, as it has, roughly, for decades.^[Recent estimates of GPU price-performance put the halving time somewhere near two and a half years. Use whatever figure we like; it shifts the dates below, not the shape.] A fixed spend then buys exponentially more operations over time, which sounds decisive.
+
+The $m$-race reads differently, because $m$ is a parameter someone chooses.
+The $2^m$ blow-up dies if the contract language stays small — but smallness cannot be left to individual good taste, because contract complexity is strategic: a clause one side adds is a contingency the other side must price, so the cost of drafting lands on the reader’s evaluation budget, and the side with the bigger budget gains by expanding the language precisely when the other side cannot afford to read what it signs.
+A short contract is only safe if both sides are barred from lengthening it, and the bar — the standard form, the fixed menu of permit classes, the schedule of allowable clauses — has to stand outside the bargain it disciplines.
+With the bar in place the $m$-race is not so much won as *called off*: $2^m$ becomes a constant small enough to sit inside every party’s budget, and nobody beats anybody on contract complexity because there is none left to spend on.
+The calling-off is performed by the standard form — the blunt uniformity the programme promised to make unnecessary.
+
+It is worth asking what the proposed technology does to that particular parameter, since we are not writing about compute in the abstract but about language models specifically.
+An agent whose native medium is unbounded natural language is, by construction, an instrument for enlarging $m$.
+Proposing a term nobody had thought to propose, and pricing a term nobody had thought to price, is the thing such an agent is distinctively good at; “hyper-granular” contracting is not an incidental feature of the proposal but the technology’s comparative advantage, aimed at the one parameter that has to stay small.
+A standard form is exactly the kind of constraint a fluent negotiator is built to dissolve, and it will dissolve it in the register of helpfulness — surfacing the clause we had not considered, tailoring the schedule to our situation, finding the accommodation the blunt rule denied us.
+Every one of those is a small gain and an increment to $m$.
+
+And one component of the bill does not respond to $p$ at all.
+The elicitation bottleneck, the one $p_a$ that stays human: the residents’ preferences have to come out of the residents, whose bandwidth for articulating them is fixed biological hardware.
+The bits that must cross between minds, counted earlier, have to originate somewhere, and they originate here, at the slowest link in the whole system.
+<!-- Dan: placeholder draft of the human-to-agent elicitation aside, forward-pointed from the resource-cost entry in the decomposition section. -->
+This is the one unit price the agents leave where it was.
+A bit between two agents costs a token; a bit from me to my agent costs my attention, and the number of those bits is the number of clauses I have a view on, $2^m$ numbers per bargain when the clauses interact.
+That price could be amortized if the same clauses came up bargain after bargain, and for a standing preference over a fixed menu it would be.
+But the fluent negotiator of the paragraph before is in the business of surfacing clauses that were on no menu, and each clause it surfaces is a question it has to put back to me.
+So the instrument for enlarging $m$ is also the instrument for enlarging the one bill it cannot pay on my behalf.
+The hope is that my agent, having lived with me, simply *knows* my $h_i$ and bargains from it.
+But the agent’s model of me has a residual — the part of my harm it has not elicited and cannot verify — and that residual sits on my side of the table exactly as $h_i$ did: payoff-relevant, and asymmetrically held.
+The Myerson–Satterthwaite machinery does not care whether the private information is carried by a person or by the person’s fiduciary; the rent is charged on the asymmetry, whoever holds the briefcase.^[There is a principal-agent wrinkle underneath this as well: once my agent’s belief about my harm becomes my bargaining posture, I acquire an incentive to perform an inflated harm to my own fiduciary. Alignment to the principal does not remove the principal’s incentive to strike poses.] Better agents shrink the wedge; no agent zeroes it, because zeroing it is what the bandwidth bound forbids; and the rent is charged on whatever wedge remains.
+The two floors are one floor, described twice: the human $p_a$ and $L$ meet at the residual, because what the agent could not elicit is what the theorems charge rent on.
+
+<!-- new: NEW-5 -->
+
+So the answer to “how cheap” splits three ways.
+For the parts of the bill that grow in $m$, cheap plus a capped contract language is enough.
+For the parts that grow in $n$, a lower price only lets both sides spend more, because what grows in $n$ is not a count anybody pays but a contest over the division, which the section after the one on prices takes up.
+And for the floors, price was never the operative variable.
+The price per operation approaches zero and the bill does not, and at the population of a real river the gap between them is most of the problem.
+
+## Can prices save us?
+
+The obvious rejoinder to the last two sections is that nobody solves an economy either, and yet bread arrives in the shops.
+Markets coordinate millions without any party computing the whole; prices compress what matters into a few public numbers; this is Hayek’s marvel, and Krier invokes it by name.
+The rejoinder deserves its strongest form, which is a theorem.
+In classical convex economies the price system is not merely *a* way to coordinate but provably the cheapest: @Mount1974Informational built the yardstick for how much a mechanism must communicate, and @Jordan1982Competitive showed that the Walrasian mechanism realizes efficient allocations with the smallest message space possible — and, modulo regularity conditions I won’t rehearse, is essentially alone in doing so.
+One low-dimensional public signal, no minds read, no coalition spaces searched.
+If that machinery extended to the river, everything above would be bookkeeping for a problem nobody needs to solve.
+
+What do prices need, to perform the marvel?
+In the textbook world the answer is *convexity*: whenever two consumption plans $z$ and $z'$ are acceptable, so is any blend $\lambda z + (1-\lambda)z'$ — preferences tolerate mixing.
+Convexity is what puts a *separating hyperplane* between what is feasible and what everyone would prefer, and a separating hyperplane is nothing but a price vector: one linear, anonymous number per good, supporting the efficient allocation.
+Signatures do not blend.
+Consent is indivisible and the quota is a step function, which is the kind of object convexity forbids, so for discrete goods the theory leans on a stand-in condition that restores price-supported equilibria: *gross substitutes* [@Kelso1982Job].
+Facing a list of prices, a buyer picks a bundle — here, which residents’ signatures to buy — and an item is *dropped* when it falls out of the bundle chosen: wanted at the old prices, unwanted at the new ones.
+Gross substitutes asks that raising the price of one item never makes the buyer drop an item whose own price did not move.
+Our firm at $k=3$ violates it as thoroughly as the definition permits: make resident $3$’s signature dearer and BigCorp™️ does not merely drop resident $3$, it drops residents $1$ and $2$ too, because the three signatures are worth nothing except together.
+Write BigCorp™️’s valuation over bundles of signatures:
+
+$$
+u(S) \;=\; \begin{cases} \pi, & |S| \ge k, \\ 0, & \text{otherwise.} \end{cases}
+$$
+
+At $k=1$ the signatures are substitutes, and the arithmetic is subadditive: $u(\{1\}) + u(\{2\}) = 2\pi > \pi = u(\{1,2\})$, because a second signature adds nothing to the first.
+At $k=n$ they are complements, and it runs the other way: every proper subset is worth nothing, so $u(S) + u(N \setminus S) = 0 < \pi = u(N)$.
+A coalition is a complementarity by construction — the reason a bloc forms at all is that its worth exceeds the sum of its parts — so the hypothesis price systems need is the hypothesis coalition problems are defined by breaking.
+
+To say a price mechanism functions smoothly is not to say it equilibriates to a desirable outcome.
+At $k=1$ we see another route to collapse.
+In this setting, signatures are substitutes, and the market in them clears efficient, at a price of nearly zero.
+At $k=3$ with $\pi=20$, BigCorp™️ needs all three signatures.
+With personalized transfers it pays each of us a shade over our own harm — $2$, $3$, $9$ — so $14$ of its $20$ goes out in compensation, it keeps the remaining $6$, and each of us ends a shade better off than under the clean-river status quo.
+Everybody gains, and the deal should close.
+Now require that payment to be a single anonymous price $c$, the same for every signature.
+Resident $3$, whose harm is $9$, signs only if $c \ge 9$; BigCorp™️, paying $3c$ out of a profit of $20$, proceeds only if $c \le 20/3$.
+No such $c$ exists.
+The deal exists and no uniform price can see it: there is the missing hyperplane, in one line of arithmetic.
+The heterogeneity that anonymous prices erase was the deal.
+
+<!-- phase two: trim the additive-representation arithmetic, which repeats the previous paragraph. -->
+
+It is worth being explicit about what we quietly assume a price to be, because the fallback mechanisms give every property up.
+A price is *public* — everyone reads the same number.
+It is *anonymous* — it attaches to the thing traded rather than to the party trading, so the same number faces all of us and our identities are not inputs to it.
+That leaves no channel to negotiate through: our only move is to take the number or leave it, and since nothing we report about ourselves can shift it, there is nothing to be had by misreporting either.
+And it is *low-dimensional* — one number per thing, not one number per person per bundle.
+With complements the theorems withdraw two of the three: supporting an efficient allocation now requires prices that are nonlinear — one number per bundle rather than per thing — and personalized — one schedule per person rather than one for everybody [@Bikhchandani2002Package].
+Publicity survives the theorem and goes in practice, once the fallback is a bilateral offer.
+The withdrawal is a duality rather than a coincidence, since market-clearing prices and stable coalition payoffs are two readings of the same linear program, failing together at the same gap [@Shapley1971Assignment].
+Prices, where they work, decentralize the allocation of things across a *given* structure of markets; what they cannot do is decentralize the choice of structure itself.
+The reason is visible in the notation.
+A price system is $n$ numbers, one per signature, so the only valuation it can express is the additive one, $\hat u(S) = \sum_{i \in S} c_i$ — but $u$ is a function on all $2^n$ subsets, and ours is not additive.
+At $k=3$ an additive representation would need $c_i + c_j = 0$ for each of the three pairs, since pairs are worthless, and $c_1 + c_2 + c_3 = \pi$, since the trio is not.
+Sum the three pairwise equations and we get $c_1 + c_2 + c_3 = 0$.
+No per-signature numbers exist.
+What prices cannot carry is value that attaches to a *set* rather than to its members,^[The general statement: every set function has a unique Möbius expansion $u(S) = \sum_{T \subseteq S} d(T)$, whose coefficients Harsanyi called *dividends*. A price system is the singleton dividends and nothing else. Complementarity is all the rest — in our $k=n$ game every dividend is zero but $d(N) = \pi$, so the entire worth of the arrangement sits on the one coefficient prices have no slot for.] and there are $2^n - n - 1$ such sets for them to miss.
+Bilateral contracts can always express it — pay this resident this much to join — but a bilateral contract is not a price in the sense above: it is private, named, and one-per-deal, which is to say it has handed back everything that made the marvel cheap.
+
+<!-- phase two: to a footnote on the next paragraph. -->
+
+Perhaps that is too strong a test, though — demanding that a supporting price vector exist for every configuration we might face.
+The softer hope is dynamic: that wherever such prices do exist, some process gropes its way to them.
+The folk model of how markets find prices — Walras called it *tâtonnement*, groping — is an adjustment loop: post prices, observe where demand outruns supply, nudge those prices up and the others down, repeat until everything clears.
+Some version of it is the mental model behind every thermostat metaphor of market governance, including Krier’s own — his system “shifts from statute to thermostat”, repricing externalities within seconds — so the question is whether the loop settles.
+In general it does not.
+@Scarf1960Examples exhibited tidy three-good economies in which it cycles forever; @Saari1978Effective showed that any adjustment rule guaranteed to converge must consume essentially all the derivative information of excess demand — the thermostat has to know the whole weather; and computing a market equilibrium in general sits in the same complexity classes the rest of this post lives behind [@Chen2009Settling].
+The success story runs the other way: under substitutes, ascending-auction processes do converge, and to core outcomes at that [@Kelso1982Job] — the groping works precisely on the side of the line where the core was never in trouble.
+
+Which leaves Krier’s actual mechanism.
+“Coalition $Q$ offers resident $i$ a transfer of $y$ to join” is a price, but a personalized, nonlinear one: a price for one person, for one bundle, today.
+A mesh of such offers has none of the properties the marvel runs on: no anonymity, so the terms each of us is offered are computed from the minimum each of us claims to accept, and since nobody else can supply that number, the incentive to overstate it comes straight back; no low dimension, since the mesh is as large as the preferences it was supposed to compress; no public signal for anyone outside the deal to condition on.^[The classical precedent is Lindahl pricing for public goods: personalized prices restore existence on paper, and Samuelson’s old objection — each agent is the monopoly supplier of the information that sets their own price — is the free-riding of the $k=0$ river in price clothing.] It is bargaining wearing the market’s clothes, and every bill and every floor of the preceding sections applies to it unchanged.
+
+## The contest over the division
+
+<!-- placeholder title; was "The computational core". -->
+
+Return to the bargaining club, and to the number it asks each of us to supply: the minimum we would accept.
+Krier’s design promise for that number is that honesty is the smart move: overstating risks killing the deal, and since the payout comes at a common clearing price, padding the number does not raise the cheque.^[And even with every minimum handed over free, the club cannot be honest, efficient and self-funding at once [@Myerson1983Efficient]; the river charged that rent already, and this one is about a different one.] That number is not $h_i$.
+My harm is what the pollution costs me; my *minimum* is what I can get, and what I can get depends on which winning coalitions exist without me, how badly BigCorp™️ wants my signature rather than somebody else’s, what the club would do if I walked.
+The standard yardstick for this is the Shapley–Shubik index of the consent game — the fraction of the $n!$ arrival orders in which our signature is the one that tips a coalition over the quota ([Shapley value](shapley_values.qmd)) — and from here on *pivotality* means that fraction, while *harm* keeps meaning $h_i$.
+A reservation price is a fact about pivotality, and harm is only one term in it.
+
+The toy shows how pivotality detaches from harm.
+Take the transparent river at $\pi=20$, $k=3$: every resident’s signature is needed, pivotality is symmetric by construction, and the natural division hands each party the same premium over harm — the surplus of $6$ divided evenly four ways, $1.5$ apiece, however unequal the $h_i$.
+Now change the consent rule to count water shares rather than heads: resident $i$’s signature carries a weight $w_i$ — riparian frontage, an irrigation licence — and BigCorp™️ needs signatures totalling the quota.
+With weights $(1,1,3)$ and quota $4$, resident $3$ sits in every winning coalition, a veto player, and the indices come out $2/3$, $1/6$, $1/6$.^[Of the six arrival orders, resident $3$’s signature is the tipping one in four.] Pivotality and harm have parted company on a river we can still work by hand; at fifty residents with heterogeneous weights, computing pivotality is the #P-complete problem of two sections ago.
+So the honesty patches assume as free input the most expensive object in the game: the club can only aggregate true minimums that none of its members can afford to compute.
+
+<!-- phase two: Larson–Sandholm to a footnote. -->
+
+What the members will hold instead are estimates — sampled indices with error bars, as we promised earlier.
+The error bars are not symmetric in consequence, because the other side samples too, from a bigger budget.
+A firm that holds tighter estimates of each resident’s pivotality than the resident does knows *which* members of the club are underpricing themselves, and those are the doors it knocks on with its offers: divide-and-conquer, guided by variance.
+@Larson2001Bargaining model the choice directly: at every moment an agent computes on its own problem, on its opponent’s, or on the joint one.
+Spending it on the opponent’s pays when the two sides’ solvers are correlated enough that our own run tells us something about the other side’s — which is the case when both sides are running similar models over similar data.
+Their other finding is the one this post keeps arriving at from different directions: computing on the *joint* problem enlarges what there is to divide, and weakens one’s own fallback once the dividing starts.
+
+The core is the set of divisions that no coalition can profitably walk out of:
+
+$$
+\mathrm{Core} = \Bigl\{ u : \sum_{i\in S} u_i \ge v(S)\ \text{for every}\ S\subseteq N \Bigr\},
+$$
+
+one constraint per coalition, $2^n - 1$ constraints.
+Certifying that a division sits in the core means clearing every one of them, and for general games we know of nothing essentially faster than checking them [@Conitzer2006Complexity; @Ballester2004NPcompleteness] — the certificate of stability costs exponentially more compute than any single deal it certifies.
+
+We should be careful about what this does and does not say.
+The residents who sign do consent, in the full contractual sense: valid signatures, no duress, no fraud.
+What breaks is not the licence but the certificate.
+In the frictionless story a deal nobody blocks is thereby revealed efficient — the absence of a better offer is evidence that no better offer existed.
+Under bounded budgets that inference fails twice over: the resident who signs cannot price what they gave up, and the coalition that would have done better never assembles to object.
+“None exists” is observationally identical to “none was affordable”, and non-appearance is not agreement.
+Under compute asymmetry, silence measures the search budget, not the absence of a better deal.
+
+And here too the technology has a direction of its own.
+Posted prices were never anonymous on principle; they were anonymous because tailoring an offer to each customer took attention, and attention was the scarce thing.
+Cheap agents remove that constraint, so the drift runs from a price toward a quote — a fare class of one, computed for us, offered once.
+Nobody need intend this, and each step of it looks like service: the discount that fits our circumstances, the schedule that matches our usage.
+What is being spent down is the property that made the mechanism cheap to begin with.
+When my terms are computed from what is known about me, my report about myself becomes worth shading again, the number of prices in the world grows with the number of people rather than the number of things, and there is no public figure left for anyone outside the transaction to reason from — which is also how the rest of us lose the ability to tell whether a bargain was a good one.
+
+## The rulebook
+
+<!-- placeholder title; was "When would cheaper compute help?". The capacity function and the Demand display are cut (decision D1). -->
+
+The message count deserves a glance before it disappears into the $2^m$ blow-up, because it is the one item here that is not a claim about anybody’s computer.
+Computation would yield to a large enough machine; communication would not, because the bits have to leave our heads before any machine can have them — which is why a central planner, granted infinite compute and perfect intentions, would still have to be told.
+Its fate under the caps is the good news of this section: cap $m$ and each bargain needs only a constant number of bits, so total communication runs *linear* in $n$.
+Posted prices and standard forms are message-frugal by construction, and that frugality is most of the engineering reason the market institutions we have manage to scale.
+So the constructive question is: which rules remove which cost?
+Three of them do, and we have to impose them in that order, because each one presupposes the last.
+
+<!-- new: NEW-6 -->
+
+*First, bound the bargain.* The physics of the river is a chain — harm flows downstream, neighbours border neighbours — and optimization on chains and sparse graphs is polynomial [@Nisan2007Algorithmic]: dynamic programming, not exhaustive search.
+The general form of the claim is parameterized by *treewidth*: many counting problems that are #P-complete on arbitrary graphs — those whose count is definable in monadic second-order logic, which covers the standard ones — run in $2^{O(t)}\,\mathrm{poly}(n)$ on graphs of treewidth $t$, and a chain has treewidth one.
+If the graph over which people can *contract* coincided with the graph along which harm flows, the problem would be exactly this simple.
+It does not: harm follows the water, coalitions form over the telephone, and nothing in nature aligns the two.
+We have to manufacture the coincidence as a rule of procedure — this bargain admits the residents of this reach, and upstream deals are separate deals — and it is that rule, not the riverbed, that caps the $n$ any single bargain sees at a neighbourhood-sized $\bar n$, whatever the catchment population.
+Inside such a bargain, computing pivotality exactly takes $2^{\bar n}$ operations rather than $2^n$, which a small $\bar n$ puts within every party’s budget.
+Then nobody can out-compute anybody on who is pivotal, and the contest over the division has nowhere to run.
+Bounding the bargain also does something the next two rules cannot do without: it makes a bargain into a countable object with a membership list.
+
+*Second, cap the language.* A fixed menu of clauses turns $2^m$ into a constant, deleting the valuation and message counts — the called-off race of the clause section.
+In the arithmetic: hold $m \le \bar m$, and $n\,2^m$ becomes $n\,2^{\bar m} = O(n)$.
+In the coupled world each newcomer brings contractable surfaces of their own, so the clause count across the whole system climbs with the population and no fixed ceiling on that total will hold.
+What we can hold fixed is the number of clauses admitted to any *one* bargain, and that is a quantity only because the first rule drew the boundary.
+Two things about the cap.
+It must bind everyone, for the reason given in that earlier passage, and that reason has two halves worth separating, because they are the two ways compute turns adversarial and they do not have the same remedy.
+Where budgets are unequal, an open clause menu is a weapon: the better-resourced side drafts contingencies the other side cannot afford to price, and converts budget into a larger share.
+Call that *extraction*; it is a failure of the division, it needs the asymmetry, and it is what the division section described.
+Where budgets are comparable, the same openness produces an arms race in which both sides spend, neither gains ground, and the spending comes out of the surplus.
+Call that *dissipation*; it is a failure of the action, since the surplus that funds the race is surplus the efficient outcome no longer delivers, it needs no asymmetry at all, and it has no winner — Hirshleifer’s ledger, and the reason the speed race had to be stopped rather than equalized [@Hirshleifer1989Conflict].
+In the decomposition, dissipation is $L$ growing as $p$ falls: the cheaper the unit, the more of the surplus the race can afford to burn.
+A cap addresses both.
+A compute subsidy addresses only extraction, which is a distinction the equity argument below turns on.
+And it matters where it is set: a cap set *low* fits inside every party’s budget, and nobody can beat anybody on contract complexity because there is none left to compete on; a cap set *high* — high enough that only one side can afford to price the full $2^m$ — is not a safety rail but a moat.
+So the cap is a second constitutional parameter, sitting beside $k$: a number fixed before the bargaining starts, never up for negotiation within the game it governs, and chosen by the same parties who then bargain beneath it.
+
+<!-- phase two: trim; 578 words. -->
+
+*Third, pin the division.* The $2^n$ count exists because the division is left open to negotiation: pivotality is worth computing only while computing it can move money.
+A formulaic division — per-capita, per registered stake, a statutory damages schedule — deletes the count, and with it the incentive to run the pivotality-estimating contest of the division section at all.
+In the arithmetic: fix the transfers as a rule $t_i = \phi_i(\cdot)$ over publicly observable quantities, settled before the bargaining rather than by it, and the $2^n$ count does not shrink but vanishes — nobody has to evaluate a coalition to know what they are owed.
+The precedent is @Budish2013HighFrequency on the speed race: coarsen time into batch auctions and the millisecond advantage stops paying, so the race stops being run; coarsen the division and the pivotality race follows it.
+This rule needs both of its predecessors.
+A formula divides among a defined set of claimants, which is what the first rule supplies; and a division stays pinned only while the language is capped, since an open clause menu is itself a currency — hand me a favourable clause rather than a larger share and we have renegotiated the division in kind, whatever the formula says.
+There is a price, and it is worth being exact about which kind.
+Under quasilinearity the division does not touch $W$: moving money between us leaves the total alone, so pinning it costs nothing by itself.
+What it can cost is the deal itself, and only under some entitlements.
+A formula that ignores differences in harm may offer somebody less than the harm they bear, and they refuse; whether the refusal matters depends on how many of them the consent rule can absorb.
+At $k=n$ one such resident blocks, and a bargain that should have closed does not: the action flips, and what is lost is surplus rather than somebody’s share.
+At small $k$ the same stinginess blocks nothing: BigCorp™️ needs only a few willing signatures, so those the formula shortchanges cannot stop the deal by declining it.
+Resident $3$ is paid what the schedule says, suffers $9$ regardless, and refusing alters neither figure — the futility of refusal from the river, arriving now without even the consolation of a bidding war, since a pinned formula leaves nothing to bid.
+There the shortfall stays in the division where it started.
+The pinned formula therefore interacts with the entitlement: the more consents a deal requires, the more nearly the formula has to track individual harms, and the more it has to know in order to do so.
+A per-capita division of the payment is an anonymous price under another name, and at $k=n$ it fails the way anonymous prices failed two sections ago: resident $3$ needs $9$, BigCorp™️ can afford $20/3$ apiece, and there is no number in between.
+The formulas that dodge this are the ones conditioned on private harms, which is the elicitation problem we were escaping — the cheap formulas are cheap because they do not ask.
+Set against that, the open division was never delivering the whole surplus either: some of it goes to running the pivotality race, and under private information some deals fail regardless.
+So this is a trade between two lossy regimes rather than the sacrifice of an attainable optimum, and Hirshleifer’s ledger is the reminder of what the other side of the trade costs: effort spent on the division is effort the surplus never sees.
+
+Set the caps low enough that a bargain’s $2^{\bar n}$ coalitions and $2^{\bar m}$ deals fit inside the smallest party’s budget — the condition from two rules ago, the difference between a cap and a moat — and every party can work the whole game out exactly: which coalitions are available, what each is worth, what the formula pays.
+That is what disarms the compute asymmetry, and we should be clear about the mechanism.
+It is not that the poor side can now afford more; it is that exact play is the ceiling, so the rich side’s further orders of magnitude buy nothing above it, and the escalation of the division section has no dimension left to run in.
+Pull the rules out again and they fail in reverse.
+Unpin the division and the pivotality race restarts inside bargains that are otherwise still small.
+Uncap the language and the division unpins itself, because concessions can be paid in clauses.
+Unbind the bargain and there is no longer a unit for either of the others to bind on, and everything the three rules removed comes back at once.
+So the chain is only as strong as its first link, which is also the crudest and the most nakedly political of the three: somebody has to say who is party to this negotiation and who is not.
+
+So: does cheaper compute, by itself, get us anywhere?
+What lets it help is bounded bargains, then a capped language, then a pinned division — and each of these is a rule that binds everyone, ignores willingness to pay, and must be set and enforced from outside the bargains it disciplines.
+Cheaper compute is not a substitute for that rulebook; it pays off roughly in proportion to it.^[In order to abolish the heavy-handed regulation, it became necessary to invent it.]
+
+## Institutions as contest-enders
+
+<!-- placeholder title; was "Institutions as cached computation" + "Institutions as compute armour". -->
+
+<!-- new: NEW-7 -->
+
+The oldest arrangement that answers in advance who bargains with whom is the firm.
+It settles a contest over two things and freezes the result: the membership, which the org chart records, and the division, which the wage pins and nobody renegotiates task by task.
+@Coase1937Nature put the boundary of the firm at a margin — the cost of organizing one more transaction inside it against the cost of buying that transaction outside — and a margin is a local rule, applied one transaction at a time, not a search over every way the parties could be grouped.
+He had an intuition about the inside cost curve, the entrepreneur’s diminishing returns to managing more, and no account at all of the outside one.
+The bill this post has been itemizing is an account of the outside one.
+
+Which inverts the prediction the programme is usually sold with.
+If bargaining costs are resource costs, cheap agents move Coase’s margin outward: coordinating through the market gets cheaper and transactions leave the firm.
+@Shahidi2025Coasean make that prediction from the same 1937 passage — cheap agents will bring “significant shifts in the traditional make-or-buy boundaries” — and leave the direction to the reader, who will supply the obvious one.
+That story is right about the category it names and silent about the other two.
+The outside curve is a contest, charged on the number of parties whose agreement is needed and on what each can spend, while an administrative decision is charged on nobody’s agreement at all; cheap cognition lowers the price of the decision and lets every party spend more on the contest.
+So in the regimes the programme most wants — many parties, rich clause menus, complements — cheap cognition strengthens the case for the firm instead of dissolving it.
+The technology that was going to abolish the org chart is, in those regimes, an argument for keeping one.^[Which is not an argument for any *particular* org chart, and the frozen partition we inherit was frozen by whoever was in the room. Institutions are cheap because they are not re-litigated, and unjust for the same reason.]
+
+<!-- new: NEW-8 -->
+
+Krier sees the cost coming and expects the freeze to grow on its own: agents, he predicts, will converge on stable equilibria for most issues to save computational overhead, letting some rules ossify by mutual agreement while others stay perpetually negotiable, because “constant renegotiation is expensive even for AGI”.
+That is this post’s premise, stated by its target, and the disagreement is over whether the stable point is found or given.
+Agents that stop renegotiating to save compute have not found the stable point, and on the river at $\pi=20$ and $k=3$ there is no single one to find: every division of the $6$ is in the core.
+They have frozen the membership and the division wherever the contest stood when the spending stopped, which favours whoever had more to spend.
+A frozen partition drawn from outside, by history or charter or statute, was at least chosen by somebody; the one that congeals from an abandoned contest was chosen by nobody, and has no more claim on us than any other place the money ran out.
+
+Two boundaries on the inversion.
+It is continuous with Coase’s own 1937 and largely orthogonal to what the field built afterwards: Williamson’s asset specificity [@Williamson1985Economic] and the residual-control-rights account of Grossman, Hart and Moore [@Grossman1986Costs; @Hart1990Property] are incomplete-contract and hold-up stories, made of what parties can verify and commit to rather than what they can compute, which makes them part of the floor that none of this arithmetic reaches.
+And a firm is not the only arrangement that answers in advance who bargains with whom.
+Catchment boundaries, chartered associations, standing committees, jurisdictions, and the blocs history happens to have left lying about are all frozen partitions, each a contest over membership, settled at some point by politics and not reopened bargain by bargain; the firm is only the instance with the cleanest edge and the best paper trail.
+The hierarchy concession below is this same observation arriving as an objection.
+
+The institutions above end a contest by freezing its terms; the other thing durable institutions do with computation is decline to spend it at all, which is a move in the contest rather than a saving on complexity.
+Everything so far has treated compute as an asset in bargaining, and this is the inversion: *verifiable inability* is an asset too.
+The object doing the work is a verifiably *non-adaptive* protocol — a bargaining posture that observably cannot respond to whatever the counterparty tries next — and the claim about institutions, coming below, is that the durable ones are implementations of exactly this.
+Schelling’s old point — the negotiator who cannot recalculate cannot be moved.
+The theory version comes from repeated games played by finite automata, where bounding the players’ machines can *enlarge* the set of cooperative equilibria [@Rubinstein1986Finite; @Papadimitriou1994Complexity]: a machine too simple to compute the profitable betrayal is a machine whose promises are cheap to trust.
+The river version: against a counterparty that estimates our pivotality and then probes us one at a time with tailored offers, to discover what each of us will settle for, the residents’ best defence may be an agent that is verifiably crude — a single take-it-or-leave-it schedule, published in advance and checkable afterwards, constitutionally incapable of hearing a side-offer.
+Checkable is the load-bearing word: a bound on what we can do is worth nothing unless the other side can confirm it, which for a software agent might mean publishing a hash of its instructions and for the rest of us has always meant a published tariff, a standing rule, a constitution somebody else can read.
+Divide-and-conquer needs doors to knock on; an agent that cannot open the door ends the game.
+
+Which is what the boring institutions were all along.
+The union’s no-side-deals rule, the class action’s single settlement, the statutory damages schedule: each is a verifiable crudeness, armour made of not-computing, deleting exactly the dimensions along which a well-resourced counterparty would otherwise escalate.
+The Coasean programme reads these as transaction-cost fossils awaiting dissolution by better negotiation technology.
+They read better as negotiation technology already — and were we to dissolve them and hand everyone supple, endlessly revisable negotiators, the first thing prudent parties would do is pay to have the crudeness built back.
+
+## What survives
+
+Everything above deserves its discount, so here is the case against this post, argued as well as I can manage.
+
+<!-- phase two: trim; with the Bell term gone what remains is the clause bound and the contest point about who picks the instance. -->
+
+First, every bound cited is a worst case over unstructured games, and worst cases are where guarantees die, not where life happens.
+SAT solvers dispatch industrial instances of an NP-complete problem before lunch; the kidney-exchange programmes solve an optimization problem that is formally hard, at national scale, on a schedule [@Roth2004Kidney].
+
+It is entirely possible that most real externality bargains sit in the easy regions — small, local, substitutes-flavoured — and that the combinatorial monsters counted earlier are creatures of the adversarial imagination.
+Why not restate every one of those bounds as an average case rather than a worst case, then?
+Two reasons.
+An average needs a distribution over instances, and nobody knows the distribution of real externality games; and — worse — the distribution is partly *chosen*, since a counterparty who profits from hardness will steer the game toward it.
+That is extraction again, one level up: rather than out-computing us on the instance in front of us, the well-resourced side selects which instances we face, and the contract-complexity arms race is what that looks like from inside a single bargain.
+Average-case analysis prices the weather; bargaining is played against an opponent who owns a cloud-seeder.
+Whether some natural class of externality games is provably benign on average is a question I would like answered, and defer.
+What the theorems remove is the *promise*, not the possibility: bargaining at scale may often land well, and cannot be relied on to, and which of those matters depends on how bad the bad cases are and who absorbs them.
+
+Second: everything above conceded the *substitutes* case — consents or goods that are interchangeable, so that the price machinery of the earlier sections works as advertised — and conceded it almost in passing, when the concession is in fact enormous.
+Deferred acceptance and its price-mediated cousins [@Kelso1982Job] run school assignment and medical residency; auction design allocates spectrum; and the low-stakes micro-bargains where Krier expects adoption to start — parking, calendars, thermostats, the office aircon — are exactly small-$n$, capped-$m$, substitutes-flavoured games where nothing in this post bites.
+Agent negotiators will plausibly transform that whole domain, which covers most of daily economic life, and I expect to be a cheerful user.
+It’s not what “at scale” normally inclines us to think though.
+
+<!-- new: NEW-9 -->
+
+Third, hierarchy.
+Nobody proposes ten thousand residents bargaining pairwise; they federate — households into a reach, reaches into a catchment — and a pyramid of small bargains replaces one vast one.
+Conceded, but with care about which feature of the arrangement does the work.
+The tree shape is convenient — small bargains at every level, the locality cap over again — but the load-bearing feature is that the membership is *not up for renegotiation*: nobody re-litigates, deal by deal, which households belong to which reach.
+It is the freeze, not the tree, that ends the contest: a membership settled outside the bargains cannot be moved by anything spent inside them, so there is no prize for working out which reach would make a household’s signature pivotal.
+And the freeze came from somewhere: somebody drew the catchment boundaries, chartered the associations, decided which blocs exist at all, and that drawing was a contest over membership, settled once, politically, by history.
+Institutions are settled contests, kept settled for decades; hierarchy works precisely because it is not spot bargaining.
+The $k=0$ river said the same thing from the other bank: the residents’ paying coalition needed a club or a tax to exist at all [@Olson2009Logic], and the real programmes of that shape^[Paying landholders not to clear, paying countries not to log, buying out fishing licences; the ones I can think of, asserted from general knowledge and uncited.] all have a state on the buyers’ side.
+
+Fourth, equity.
+Krier’s essay makes three separate claims here, and they deserve separate answers.
+
+The first claim is the one the whole programme is sold on: nobody is made worse off.
+His polluter and neighbour both end up “better off than the zero pollution or no-limits pollution counterfactuals”, his developer’s residents “are compensated”.
+That is a Pareto improvement, and it is a stronger promise than the yardstick we adopted, which scores the compensate-nobody outcome as efficient and moves on.
+The model delivers his promise under exactly one rule: $k=n$, because unanimity is the only entitlement under which every harmed party holds a consent that has to be bought.
+In the model a resident is paid only when pivotal, so every $k$ below $n$ leaves $n-k$ residents harmed and unpaid, $k=1$ leaves all of them so, and at $k=0$ the payments run the other way, from the harmed to the harmer.
+His remedies for holdout run the other way.
+The option fee makes a claimed valuation expensive to hold, and the reimbursing veto coalition makes a block expensive to mount; each one lets the deal close over the objection of somebody whose consent was formerly required, and that is what lowering $k$ *means*.
+So the promise and the remedies pull against each other: the rule under which everyone is compensated is the rule under which the deal does not close, and every device for closing it is a device for leaving someone unpaid.
+He can have universal compensation or he can have his anti-holdout machinery, and the essay does not say which it is choosing.
+<!--
+Two things I have NOT done here, deliberately:
+(a) The extraction/dissipation vocabulary defined earlier in this section (the "Call that *extraction*" / "*dissipation*" paragraph) could be wired in — "unpaid at k<n" is extraction by the rulebook rather than by the counterparty's budget, which is a slightly different animal. Left it out to keep this paragraph about Krier's promise rather than about our taxonomy.
+(b) Krier would presumably answer that the diffuse-cost reimbursement IS compensation for the non-pivotal — "any coalition that vetoes must then reimburse that quantified loss". But that reimburses the *blockers'* victims (the would-be gainers from the project), not the *harmed non-signatories*; the transfer runs in the pro-deal direction. If you think he'd contest it, the sentence to add is that his reimbursement runs from vetoers to the deal's beneficiaries, never from the deal's beneficiaries to the residents it overrides.
+-->
+
+The second claim: compute inequality won’t matter much, because capability commoditizes — the billionaire’s phone, he observes, is no better than anyone else’s.
+True of phones, but beside the point for negotiators.
+A phone is a consumption good: its value to me doesn’t depend on anyone else’s phone.
+A negotiating agent in a contested bargain is a contest input: its value is its capability *relative to the counterparty’s*.
+Commoditization compresses absolute differences and leaves the relative ones to be repurchased at the frontier — when knowing the other side’s pivotality is worth money, somebody pays for the model that is six months newer, and those six months are the entire edge.
+
+The third claim: where inequality does matter, subsidize — baseline “public defender” agents, agent vouchers, compute credits for civic functions.
+Whether that works depends on the size of the game, which is this post’s whole subject.
+In a small game — capped $m$, local $n$, pinned division — the subsidized baseline agent plays near-optimally, there is no headroom above it worth buying, and the voucher delivers exactly what Krier wants from it.
+In a large game the voucher buys the poor side a bigger shovel against an exponential mountain: the baseline rises, but the surplus at stake still funds the contest above the baseline, and the pivotality-estimating race resumes from a higher floor.
+So the voucher isn’t wrong; it’s an argument for the caps, because the caps are what make the subsidized baseline *sufficient* rather than merely less insufficient.
+In the vocabulary above: a subsidy can narrow a gap between budgets, which is what extraction runs on; it cannot end a contest that both sides can still afford to keep running.
+The subsidy works exactly where the rulebook has already disarmed the race.
+
+There is a fourth thing in the essay that is less a claim than a concession, and we think it deserves to be read as one.
+Alongside willingness-to-pay bargaining he proposes a second, *democratic* mode, “where each person gets equal voting weight regardless of wealth”, for community values such as neighbourhood character, with agents switching between the modes according to the issue.
+That is an admission that priced bargaining isn’t for everything, and that somebody has to decide, issue by issue, which things are off the price system — which is a rulebook, decided before the bargaining starts, and it isn’t far from where this essay ends up.
+<!--
+Possible tightening: the mode-switch is itself a k-dial choice (equal weight = one-head-one-vote = the symmetric k-of-n game with money removed), so it could be folded into the "family of instruments" paragraph instead. I kept it here because the point is rhetorical (he conceded it) rather than structural. Cut if the equity section is getting long — it is now the longest of the four "when would cheaper compute help" items.
+-->
+
+<!-- phase two: trim once NEW-4 states the frame. -->
+
+Stated at its strongest — stronger than the essay states it — the voucher claim is an existence claim: there are worlds in which *small* compute subsidies do more for equity at the margin than large ones, because the returns to compute have an early knee and past the knee everyone is equal.
+Which worlds?
+The ones where the interaction is a *decision problem* rather than a *contest*.
+Bidding in a strategyproof mechanism is a decision problem: once truth-telling is dominant there is nothing left for compute to buy, which is the computational meaning of strategyproofness — a returns curve flattened by design.
+Checking an offer against a standard form or a statutory schedule is a decision problem: verification is polynomial where search was exponential, so a modest agent avoids being cheated even where it could never have originated the deal.
+That second case is worth dwelling on, because it is where a language model is at its most useful and least dangerous.
+Reading a contract, matching it against the schedule, and saying plainly what it will cost us is a task these systems are already good at, it needs no frontier model to do, and doing it well confers no advantage over anybody else — the value is in not being cheated, which everyone can have at once.
+So the technology cuts both ways against the same institutions.
+Pointed at a capped world it is an equalizer, handing everyone the verification that used to require a lawyer.
+Pointed at an uncapped one it is a solvent, dissolving the caps by being fluent, and turning the same fluency into an advantage for whoever has the most of it.
+In a contest the knee never rescues us, however steeply absolute returns diminish, because payoff rides on *relative* performance and the marginal value of compute is set by the prize and the opponent rather than by the production function: sampling error shrinks with the square root of the budget on both sides, and the pick-off still goes to whoever holds the tighter error bars.
+@Shahidi2025Coasean have both branches on one page, as opposing forces on the price of an agent: returns to agent quality that diminish until agents commoditize like search, and prices that rise with the stakes of a transaction because quality depends on compute.
+Those are not two forces on one price but the two regimes, and which one a transaction lands in is decided by whether the rulebook has already made it a decision problem.
+So the class of negotiations where the cheapest subsidy is also the most effective one is exactly the class the rulebook has already converted from contest to decision.
+
+## Point the agents at the rulebook
+
+Where does that leave the disagreement?
+Not at “agents won’t help.”
+The plainest statement I can manage: the efficiency on offer from cheap negotiation-compute is small beside the efficiency already embodied in the boring institutional technology — standard forms, damage schedules, chartered associations, all of it settled and amortized — and so the live margin is in improving that technology, now perhaps with machine help, rather than in bypassing it.
+
+Which suggests where to look, and what to distrust while looking.
+The small cases will work.
+Roommates dividing chores, an office arguing about the thermostat, a strata committee and its parking: these are the cases where I expect agent negotiators to be a plain delight, and I do not think the enthusiasm is misplaced.
+But it is worth being clear about *why* they work, because the reason is not that bargaining scales.
+They work because they arrive with the caps pre-installed: few enough things at stake that $m$ is small, few enough people that the bargain is bounded, and a custom or a convention already standing in for a pinned division.
+The rules we had to impose by fiat are, in a household, simply the furniture.
+
+That sets a trap I would rather name in advance.
+Every pilot will look like evidence for the general programme, and none of it will be, because the thing doing the work in a successful pilot is invisible exactly when it is working.
+A demonstration that agents can settle a parking dispute tells us nothing about a catchment, in the same way that a demonstration of a bridge over a creek tells us nothing about a span across a strait, and for the same reason: it is the size that was carrying the design.
+
+And a demonstration failing upward is not the worst case.
+Removing the caps at scale does not return us to the status quo — it starts a game whose returns to compute the well-resourced side is best placed to collect, which is extraction, and whose contest costs come out of the surplus, which is dissipation.
+The downside is not that the utopia fails to arrive; it is a worse division than the clumsy rules were already producing, arrived at faster and with better documentation.
+
+So if I had to put the constructive reading in one line: point the agents at the rulebook rather than at each other.
+The caps are the design surface — where to draw a boundary, how long a menu to allow, what formula tracks harm closely enough to keep the deals that should close from failing.
+
+<!-- phase two: cake-cutting to a footnote. -->
+
+I want to be careful about how much that promises, because the obvious optimistic case for it is wrong.
+Designing the rules is not a soft problem that yields to a machine that is good at hard ones.
+Automated mechanism design is itself NP-hard [@Conitzer2002Complexity], and it has an unpleasant shape: searching over rules means evaluating each candidate, and evaluating a candidate means solving the game it induces, which is the exponential thing we were running from, now in the inner loop.
+Fair division is the cautionary tale rather than the promise.
+Envy-free cake cutting for an arbitrary number of players was a famous open problem, and when @Aziz2016Discretea settled it the protocol they produced needs, in the worst case, $a^{a^{a^{a^{a^a}}}}$ queries^[Queries in the Robertson–Webb model: each one is either a cut, or an evaluation of a piece.] — writing $a$ for the players, since our $n$ is spoken for.
+Three players have had a workable protocol since Selfridge and Conway found one independently, around 1960 and 1993, neither of them ever publishing it [@Procaccia2013Cake]; Aziz and Mackenzie in a companion paper gave four players a protocol finishing inside 203 queries [@Aziz2016Discrete].
+From five players upward the only bounded procedure known is that tower, and truncating it to its top three levels already names a number with more than $10^{2000}$ digits.
+Nothing about being good at proofs makes that number smaller.
+
+Three things nonetheless make the rulebook the better place to spend the cognition, and only the third is a matter of principle.
+Design is amortized: a rule devised once governs bargains for decades, so the question is never whether the search was cheap but whether it was cheap per use, which is the same arithmetic that made institutions worth settling in the first place.
+Design is low-dimensional: we are not searching the space of all conceivable mechanisms, we are choosing $\bar n$, choosing $\bar m$, and picking a formula out of a small family, with each candidate testable by simulation against sampled populations rather than by worst-case analysis.
+And design tolerates approximation, which bargaining does not.
+This is the Shalizi asymmetry^[Shalizi’s argument against central planning [@Shalizi2012Soviet] is that the planner’s problem is one enormous optimization, and that one solve of the Soviet plan would take a modern solver about a thousand years. In his accounting the plan need only come within a tolerance $\epsilon$ of the optimum, and loosening $\epsilon$ saves almost no time, but the planner is at least licensed to round the answer and declare the plan close enough, where a bargaining system has nobody entitled to say that.] read forwards: the planner’s epsilon is a tolerance, and rule-making is a planner-like act, so a rulebook that captures ninety per cent of the available surplus is a good rulebook — where a *bargain* that leaves ten per cent on the table has funded the coalition that comes to break it.
+Approximation is safe on the design side of the line and self-undermining on the bargaining side, which is a reason to move the compute across that line regardless of whether design is cheap.
+
+What none of this touches is the half that was never computational.
+Where $\bar n$ falls decides who is inside the bargain and who is merely downstream of it; the formula decides who gets shortchanged when it cannot track harms it is not permitted to ask about; and those are contested, by the same parties, with nobody outside to enforce the contest’s own rules — the political Coase theorem [@Acemoglu2003Why] that this whole essay has been deferring since we first turned $k$.
+A very good optimizer hands us a frontier of rulebooks and no way to choose among them.
+So: not a retreat from Krier’s ambition, and not a promise that the machines will do our constitutional thinking for us.
+The same ambition, aimed one level up, at the layer where a good answer compounds — and where the remaining difficulty is one we will have to argue about rather than compute.
+Regulation sits where it sits because that is where bargaining failed the first time we ran the experiment, at speech speed, over centuries; the regulatory state reads to me less like an imposition on the market than like a map of the market’s historical no-go terrain.
+Cheap cognition will redraw that map.
+The claim this post stakes is that it redraws it from inside the institutions, not from above them.
+
+## Incoming
+
+<!-- Residual TODOs, densest form. Admin items die before publish; content items either get done, get footnoted, or get pushed to the sequel stack. -->
+
+### related work
+
+* [The Choice Transition](https://strangecities.substack.com/p/the-choice-transition)
+* [Epistemics and Coordination: It’s complicated!](https://legacymode.substack.com/p/epistemics-and-coordination-its-complicated)
+* [The Intelligence Abundance: How Zero-Cost Coordination Solves the Scarcity Problem | by Carlos E. Perez](https://medium.com/intuitionmachine/the-intelligence-abundance-how-zero-cost-coordination-solves-the-scarcity-problem-c53e43459b94)
+* [AI Agents and Democratic Resilience | Carnegie Endowment for International Peace](https://carnegieendowment.org/research/2025/09/ai-agents-and-democratic-resilience)
+* [Price What You Can, Protect What You Must](https://mateopetel.substack.com/p/price-what-you-can-protect-what-you) [@Petel2025Price]
+* [Beyond Automated Politics: A Response to Seb Krier’s AI Agent Economy](https://democraticfuturist.substack.com/p/beyond-automated-politics-a-response) [@Snow2025Automated]
+* [Economic efficiency often undermines sociopolitical autonomy](https://www.mindthefuture.info/p/economic-efficiency-often-undermines) [@Ngo2026Economic]
+* **Prior critiques of Krier (2026-10-21):** Snow, Petel and Ngo are summarised, with the overlap against our findings, in `_plans/hyperscaling_coase_prior_critiques.md`; any argument we reprise or quantify from them is cited to them, our own new critiques are preferred, and that summary briefs future red-team agents.
+* **Related work to weave in or link:** the near-misses found in our literature sweep — Petel’s [Price What You Can, Protect What You Must](https://mateopetel.substack.com/p/price-what-you-can-protect-what-you) [@Petel2025Price] (Calabresi–Melamed against Krier, sympathetically); Stenger’s [Computational Market Creation](https://www.grantstenger.com/writing/trillion-markets/paper3_computational_market_creation.pdf) [@Stenger2026Computational] (Myerson–Satterthwaite as a floor computation cannot lower — closest formal neighbour to this post); @Lee2026MultiAgent; @Ngo2026Economic (the autonomy critique, orthogonal to ours). We must decide which to engage in-text versus dumping them here.
+
+### misc action items
+* **Admin, blocking publish:** re-run `zotero-export-bibs notebook/hyperscaling_coase.qmd` after any further Zotero adds; `[@Aziz2016Discrete]` is the STOC four-agent protocol and `[@Aziz2016Discretea]` the FOCS general-$n$ one. They were attached to the wrong claims until 2026-09-07, and since the keys differ by one letter and both resolve, a slip never shows up as a broken citation. `@Conitzer2004Selfinterested` is filed but unused.
+<!-- vale livingthing.IndefiniteYou = NO -->
+<!-- vale livingthing.IndefiniteYou = YES -->
+* **Deferred to sequels, per the one-model rule:** the empty core with two upstream firms (currently a homework footnote; a worked $2$-firm example would carry a whole post — @Aivazian1981Coase, @Aivazian2003Core). Wealth effects — drop quasilinearity and redo the $k$-dial with log utility; the entitlement stops washing out of the allocation entirely. The participation stage [@Dixit2000Does]: free-riding on coalition *formation* precedes any bargaining we modeled. Farsighted and coalition-proof stability [@Chwe1994Farsighted; @Ray2015Farsighted; @Bernheim1987CoalitionProof]: does machine-speed recontracting select the myopic or the farsighted solution concept, and can farsightedness *rescue* stability? The $\gamma$-core positive result for pollution economies [@Chander1997Core] as the strongest pro-Coase cooperative result — deserves a fair hearing we didn’t give it.
+* **The Acemoglu thread:** the political Coase theorem [@Acemoglu2003Why] — the dial-setting meta-game has no external enforcer; seeded in the river section, cashed nowhere. Probably the spine of the sequel about who sets $k$.
+* **The culled branch:** deliberation equilibrium and compute-asymmetry-as-information-asymmetry [@Larson2001Bargaining; @Halpern2015Algorithmic] died here under the outpace-Moore criterion but would carry a separate post on *asymmetric* compute in small games — the winner’s-curse pick-off, voucher floors, agent verification.
+* **Cross-links to add elsewhere:** [returns to Leviathan](./returns_to_leviathan.qmd#ai-coase) (the Coasean-boundary section should point here), [delegated agent governance](ai_institutions.qmd) (the Coasean Singularity section likewise), [coalition games](./coalition_games.qmd) (the computational core is its “action question” under budgets), [Shapley value](shapley_values.qmd) (this post is the worked example its TODO list wants).
+* **Unpriced threads, maybe footnotes, maybe nothing:** communication bounds versus privacy tech (Krier’s zero-knowledge gestures don’t touch Nisan–Segal — bits are bits however encrypted); the $m(n)$ coupled regime done properly; Ostrom read computationally (her design principles as the caps of the capacity section — small $n$, monitored $m$, graduated pinned sanctions); whether “the computational core” survives contact with the existing bounded-rationality-in-cooperative-games literature, which we should sweep before claiming the coinage; average-case or smoothed analysis of natural random externality-game ensembles — is any class provably benign, how favourable is the scaling, and how would we learn the instance distribution when adversaries steer it?
+
+
+## References
+
+::: {#refs}
+:::
