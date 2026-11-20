@@ -1,4 +1,4 @@
-# notes_on_agency
+# hyperscaling_coase
 
 A Quarto **website** (blog) on mechanized causal graphs, decision theory, and agency
 (MacDermott et al. framing). Each topic is a top-level `<name>.qmd`. See `CLAUDE.md` for

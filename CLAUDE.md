@@ -1,4 +1,4 @@
-# notes_on_agency
+# hyperscaling_coase
 
 Quarto website (blog) on mechanized causal graphs, decision theory, and agency. Settings in `_quarto.yml`; output `_site/`.
 

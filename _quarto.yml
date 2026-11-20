@@ -6,7 +6,7 @@ project:
     - "*.qmd"
 
 website:
-  title: "Notes on agency"
+  title: "Hyperscaling Coase"
   description: "Working notes on mechanised causal graphs, decision theory, and agency."
   reader-mode: true
   # To enable the RSS feed: set site-url to the deployed URL, re-add `feed: true`
