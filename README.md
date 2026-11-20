@@ -60,6 +60,63 @@ argument. Their working material lives under `_notes/`, apart from the site.
   repository, `HANDOVER.md` has a table mapping each file to its old path, since
   older notes will still refer to the old names.
 
+## References and Zotero
+
+Decisions as of 2026-11-20. Zotero is the only source of bibliographic data;
+no bibliography file is edited by hand.
+
+- **The reference tools are run from the livingthing checkout, not copied
+  here.** `ref-cite` and `zotero-export-bibs` live in `~/Source/livingthing`
+  (the blog). Together with the modules they import they come to about 5,000
+  lines, and a copy would have to be kept in step by hand. Both work on files
+  outside the blog, which was tested on this repository before deciding. If
+  someone without a livingthing checkout needs them, the move is to extract them
+  into a package of their own that both repositories depend on; copying the
+  code here, or declaring the blog as a dependency, are both ruled out.
+- **Notes cite by inline link.** A draft under `_notes/` cites each source as a
+  hyperlink to its DOI or arXiv page, with citation-shaped link text such as
+  `[Segal (1999)](https://doi.org/…)`. That is the form `ref-cite` reads.
+- **Ingest with `ref-cite`.** It resolves each link to metadata, creates the
+  items in a Zotero collection, and with `-i` rewrites the links in place as
+  `[@citekey]`. It reads `.md` and `.qmd` alike. Dry-run first:
+
+  ```sh
+  direnv exec ~/Source/livingthing uv run --project ~/Source/livingthing ref-cite _notes/<slug>/draft.md -c <collection> --dry-run --unresolved-report ""
+  ```
+
+  Drop `--dry-run` to write to Zotero; add `-i` to rewrite the links, which
+  needs Zotero running with Better BibTeX. `direnv exec ~/Source/livingthing`
+  supplies the blog's credentials and translation-server settings; this
+  repository's own `.env` is not used. Check the dry-run listing for wrong
+  metadata (a reprint's editors in place of the author, a revision date in place
+  of the publication date) and fix those items in Zotero afterwards.
+- **Items go into the personal library.** Both tools address "My Library"; the
+  library type is fixed in their code. Getting a collection into a group library
+  is a second step with `zot_coll_copy.py` (below).
+- **One Zotero collection per essay,** named after the essay's slug unless the
+  frontmatter says otherwise with `zotcollpath`.
+- **Bibliographies will be per-document YAML, exported from Zotero.** When a
+  draft is written up as a top-level `<slug>.qmd`, run from the repository root:
+
+  ```sh
+  uv run --project ~/Source/livingthing zotero-export-bibs <slug>.qmd
+  ```
+
+  This needs Zotero running with Better BibTeX and no credentials. It writes
+  `<slug>.yaml` beside the post, sets `bibliography`, `csl: minimalist.csl`,
+  `link-citations`, `nocite: '@*'` and `reference-section-title` in the
+  frontmatter, and appends a `## References` section if there is none. With
+  `nocite: '@*'` the reference list shows the whole collection, cited or not.
+  **Always name the file.** Run bare, it globs every `.qmd` in the tree, and for
+  a post whose collection does not exist it strips the bibliography keys from
+  the frontmatter. It handles `.qmd` only and skips `_`-prefixed folders, so it
+  never touches `_notes/`.
+- **`references.bib` is a leftover.** The `bibliography: references.bib` line in
+  `_quarto.yml` belongs to an earlier plan; the file no longer exists. It comes
+  out when the first essay moves to per-document YAML.
+- **The `dan-lit-search` skill is not installed here.** It lives in the blog's
+  `.claude/skills/`. The two commands above are what it would run.
+
 The repository also contains a small standalone utility,
 `zot_coll_copy.py` (a Zotero collection copier between personal and group
 libraries, in any direction); its
